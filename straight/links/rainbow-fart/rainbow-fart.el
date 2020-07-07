@@ -1,1 +1,0 @@
-h:/.emacs.d/straight/repos/rainbow-fart.el/rainbow-fart.el
