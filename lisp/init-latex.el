@@ -34,11 +34,19 @@
   (auto-fill-mode)  ;; 加载自动换行
   (flyspell-mode)   ;; 加载拼写检查 (需要安装aspell)
   (TeX-fold-mode t) ;; 加载TeX fold mode
-  (outline-hide-body) ;; 打开文件时只显示章节标题
-  (assq-delete-all (quote output-pdf) TeX-view-program-selection)    ;; 以下两行是正向搜索相关设置
+  ;; (outline-hide-body) ;; 打开文件时只显示章节标题
+  (assq-delete-all (quote output-pdf) TeX-view-program-selection)
+  ;; 以下两行是正向搜索相关设置
   (add-to-list 'TeX-view-program-selection '(output-pdf "Sumatra PDF"))
   )
 (add-hook 'LaTeX-mode-hook 'my-latex-hook)
+
+
+;; 设置正常的pdf 运行模式为pdftex
+(setq-default TeX-PDF-mode t)
+(setq latex-run-command "pdflatex")
+
+
 ;; LaTeX mode相关设置完毕
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: copyright
+# key: copyright
+# --
+
+#+BEGIN_HTML
+<p style="TEXT-ALIGN: center">
+原创文章，如转载请注明：blablabla
+</p>
+liangzihaha.
+#+END_HTML

@@ -37,5 +37,12 @@
 (global-set-key (kbd "M-9") 'previous-multiframe-window)
 
 
+;;字号切换，字号增大、减小、不变
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "C-0") 'text-scale-adjust)
+
+
+
 
 (provide 'init-keybindings)

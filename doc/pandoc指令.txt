@@ -1,0 +1,1 @@
+pandoc main.tex --bibliography=ref\refs.bib --reference-doc=example.docx  -o result.docx 

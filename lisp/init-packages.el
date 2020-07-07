@@ -24,6 +24,9 @@
 				 smart-tab
 				 yasnippet
 				 all-the-icons
+				 ace-flyspell
+				 ;; tramp ;;远程连接,无法使用，且有巨大缺陷！！！！！！
+				 ;;quelpa 一个包管理工具，不再进行使用。
 				 ;;提供各种类型文字模板的自动补全以供使用.
 
                                  ;;;;;;;;;;;;;python;;;;;;;;;;;;;;;;;
@@ -38,8 +41,6 @@
 				 ;; org-install
 				 ;; org-latex
 				 
-
-
 				 ;;ox-md
 				 ;;ox-publish
 				 htmlize
@@ -70,6 +71,36 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;安装一种新的包管理工具straight,需要电脑上内置git;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (defvar bootstrap-version)
+;; (let ((bootstrap-file
+;;        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+;;       (bootstrap-version 5))
+;;   (unless (file-exists-p bootstrap-file)
+;;     (with-current-buffer
+;;         (url-retrieve-synchronously
+;;          "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+;;          'silent 'inhibit-cookies)
+;;       (goto-char (point-max))
+;;       (eval-print-last-sexp)))
+;;   (load bootstrap-file nil 'nomessage))
+
+
+;; ;; 增加语音小姐姐功能 需要使用straight-use-package
+;; (straight-use-package
+;;  '(rainbow-fart :host  github
+;;                 :repo  "DogLooksGood/rainbow-fart.el"
+;;                 :files ("*.el" "voice")))
+;; (require 'rainbow-fart)
+
+;; (rainbow-fart-mode 1)
+;; (rainbow-fart-mode t)
+
+
+;; 设置自动断行功能
+(global-visual-line-mode 1)
+
+
 ;; let emacs could find the execuable
 ;;(when (memq window-system '(mac ns))
 ;;  (exec-path-from-shell-initialize))
@@ -84,6 +115,30 @@
 
 (yas-global-mode 1)
 
+
+;; ;; 激活高亮当前行的功能
+;; (use-package hl-line
+;;   :ensure nil
+;;   :hook (after-init . global-hl-line-mode))
+
+;; ;; 代码折叠 hideshow
+;; (use-package hideshow
+;;   :ensure nil
+;;   :diminish hs-minor-mode
+;;   :hook (prog-mode . hs-minor-mode))
+
+;; ;;==================显示被隐藏的代码行数
+;; ;; 这里额外启用了 :box t 属性使得提示更加明显
+;; (defconst hideshow-folded-face '((t (:inherit 'font-lock-comment-face :box t))))
+
+;; (defun hideshow-folded-overlay-fn (ov)
+;;     (when (eq 'code (overlay-get ov 'hs))
+;;       (let* ((nlines (count-lines (overlay-start ov) (overlay-end ov)))
+;;              (info (format " ... #%d " nlines)))
+;;         (overlay-put ov 'display (propertize info 'face hideshow-folded-face)))))
+
+;; (setq hs-set-up-overlay 'hideshow-folded-overlay-fn)
+;; ;; ===============================
 
 
 
@@ -155,7 +210,7 @@
   :mode ("\\.py" . python-mode)
   :ensure t)
 
-(use-package pyvenv)
+;;(use-package pyvenv)
 
 (use-package python-black
   :demand t
@@ -163,12 +218,12 @@
   :config
   (python-black-on-save-mode))
 
-(use-package pyenv-mode
-  :init
-  (add-to-list 'exec-path "~/.pyenv/shims")
-  (setenv "WORKON_HOME" "~/.pyenv/versions/")
-  :config
-  (pyenv-mode))
+;;(use-package pyenv-mode
+;;  :init
+;;  (add-to-list 'exec-path "~/.pyenv/shims")
+;;  (setenv "WORKON_HOME" "~/.pyenv/versions/")
+;;  :config
+;;  (pyenv-mode))
 
 
 

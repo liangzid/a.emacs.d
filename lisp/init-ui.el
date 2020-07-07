@@ -1,9 +1,19 @@
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
+;; 在进行这里的配置之前，我想告诉你，你曾经找到的这篇文章还没有阅读
+;; 如果某一天你的配置很多且很慢了，我希望你阅读它。
+;;                                      ------2020.04.20的梁子写给现在的梁子的话
+;; https://zhuanlan.zhihu.com/p/59509596
+
+
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
 
 (setq inhibit-splash-screen t)
 
 ;;(setq-default cursor-type 'bar)
+
+
+;; 设置默认路径。
+
 
 (setq  initial-frame-alist (quote ((fullscreen . maximized))))
 

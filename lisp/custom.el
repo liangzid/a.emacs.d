@@ -8,7 +8,9 @@
     (("" "%(PDF)%(latex) %(file-line-error) %(extraopts) %S%(PDFout)"))))
  '(TeX-command-list
    (quote
-    (("xelatex" "%`xelatex%(mode)% %t" TeX-run-TeX nil t)
+    (("LaTeXnonint" "%`%l -interaction=nonstopmode %(mode)% %t" TeX-run-command nil t)
+     ("pdflatex" "%`pdflatex%(mode)%' %t" TeX-run-TeX nil t)
+     ("xelatex" "%`xelatex%(mode)% %t" TeX-run-TeX nil t)
      ("TeX" "%(PDF)%(tex) %(file-line-error) %`%(extraopts) %S%(PDFout)%(mode)%' %t" TeX-run-TeX nil
       (plain-tex-mode texinfo-mode ams-tex-mode)
       :help "Run plain TeX")
@@ -80,6 +82,8 @@
  '(custom-safe-themes
    (quote
     ("6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
+ '(org-agenda-files (quote ("h:/new/czysj-存在与时间笔记.org")))
+ '(org-support-shift-select t)
  '(package-selected-packages (quote (company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

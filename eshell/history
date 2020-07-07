@@ -1,0 +1,73 @@
+cd ..
+ls 
+git clone https://github.com/liangzid/.emacs.d.git
+ls 
+ls -a
+mv .emacs.d/README.md ./
+mv .emacs.d/.git/ ./
+ls 
+ls -a
+rm -r .emacs.d/
+ls 
+ls -a
+git add -A
+ls 
+cd elpa/
+ls 
+rm -r *
+ls 
+cd ..
+git add -A
+git commit -m "the first time update...	"
+git config --global user.email "2273067585@qq.com"
+git config --global user,name "liangzid"
+git config --global user.name "liangzid"
+git commit -m "the first time update."
+git push original master
+git push origin master
+exit
+ls 
+git -add lisp/ 
+git --add lisp/ 
+exir
+exit
+python
+ls 
+cd ..
+cd ..
+ls 
+python
+ls 
+cd ..
+ls 
+cp new/ Code/NoteBook/
+cp -r new/ Code/NoteBook/
+cd Code/NoteBook/
+ls 
+ls 
+wget http://doc.norang.ca/org-mode.org
+curl http://doc.norang.ca/org-mode.org
+ls 
+curl http://doc.norang.ca/org-mode.org >manualORG.org
+cd ~
+ls 
+ls | grep org
+cd ~/git
+mkdir git
+cd ~/git/
+git clone git://orgmode.org/org-mode.git
+git clone git://orgmode.org/org-mode.git
+cd 
+tramp lz123@219.245.186.40
+cd ..
+cd ..
+ls 
+plink.exe lz123@219.245.186.40
+ls
+how to say
+motherfuck
+fuck
+cd
+cd ..
+cd ..
+cd ~
