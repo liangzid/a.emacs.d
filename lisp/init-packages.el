@@ -54,6 +54,9 @@
                                 ;;;;;;;;;;;;;;;latex;;;;;;;;;;;;;;;
 				 auctex
 				 cdlatex
+
+				 ;;;;;;;;;version control;;;;;;;;;;
+				 magit
 				 
 				 )  "Default packages")
 

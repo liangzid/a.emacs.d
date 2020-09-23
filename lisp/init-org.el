@@ -28,7 +28,7 @@
                             (file-name-directory buffer-file-name) "images/")))
     (setq capture-file (concat capture-save-path capture-name))
     (shell-command (concat
-                    "i_view64 /capture=4 /dpi=(150,150) /convert="
+                    "\"C://Program Files//IrfanView//i_view64.exe\"  /capture=4 /dpi=(300,300) /convert="
                     (replace-regexp-in-string "/" "\\\\" capture-file)))
     (insert (concat
              "[[file:./images/" capture-name "]]")))
