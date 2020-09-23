@@ -71,3 +71,23 @@ cd
 cd ..
 cd ..
 cd ~
+ls 
+cd elpa/
+ls 
+rm -
+ls 
+rm -r *
+ls 
+cd ..
+ls 
+git add -A
+git commit -m "修改了进行截图的配置，增加了git的管理包"
+git config --global user.email "2273067585@qq.com"
+git config --global user.name "liangzid"
+git commit -m "修改了进行截图的配置，增加了git的管理包"
+git push origin master
+git config --global user.name liangzid
+git commit -m "修改了进行截图的配置，增加了git的管理包"
+git push origin master
+git push origin master
+exit

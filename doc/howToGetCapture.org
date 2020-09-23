@@ -1,0 +1,30 @@
+#+title: 如何去使用截图
+
+1. 下载i_view64, 选择默认安装地址；
+2. 确认安装地址与~/.emacs.d/lisp/init-org.el 文件中的的地址一致，如下图所示的地址：
+
+
+#+BEGIN_SRC emacs-lisp
+  ;; "C:\Program Files\IrfanView\i_view64.exe"
+  (defun screen-capture ()
+    "Take a screenshot into a unique-named file in the current buffer file
+     directory and insert a link to this file."
+    (interactive)
+    (lower-frame)
+    (let ((capture-name (concat
+			 (format-time-string "%Y%m%d%H%M%S") ".png"))
+	  (capture-save-path (concat
+			      (file-name-directory buffer-file-name) "images/")))
+      (setq capture-file (concat capture-save-path capture-name))
+      (shell-command (concat
+		      "\"C://Program Files//IrfanView//i_view64.exe\"  /capture=4 /dpi=(300,300) /convert="
+		      (replace-regexp-in-string "/" "\\\\" capture-file)))
+      (insert (concat
+	       "[[file:./images/" capture-name "]]")))
+    )
+
+  (define-key org-mode-map (kbd "C-M-Y") 'screen-capture)
+  
+#+END_SRC
+
+
