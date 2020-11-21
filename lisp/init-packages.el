@@ -12,7 +12,10 @@
 ;;add whatever packages you want here
 (defvar my/packages '(
 				;;;;;;;;;;;;tool;;;;;;;;;;;;;;
-				 company
+		      company  ;; 用于进行自动补全
+		      ;; lsp-mode ;;emacs下的lsp协议库(language server protocol)
+		      ;; company-lsp ;;一种company后端
+		      ;; lsp-ui   ;; 提供一些诸如flycheck的功能
 				 hungry-delete
 				 swiper
 				 counsel
@@ -31,9 +34,12 @@
 
                                  ;;;;;;;;;;;;;python;;;;;;;;;;;;;;;;;
 				 python
-				 pyvenv
+				 pyvenv ;;需要和pipenv 联合使用
 				 python-black
 				 pyenv-mode
+				 anaconda-mode
+				 company-anaconda ;;为company提供的anaconda后台
+				 
 				 ;;;;;;;;;;;;;;;org;;;;;;;;;;;;;
 				 org-bullets
 				 org-alert
@@ -161,7 +167,18 @@
        '(("\\.js\\'" . js2-mode))
        auto-mode-alist))
 
-(global-company-mode t)
+;; 自动补全
+(setq company-idle-delay nil)
+(setq company-show-numbers t)
+(setq company-tooltip-limit 10)
+(setq company-minimum-prefix-length 0)
+(setq company-tooltip-align-annotations t)
+;; invert the navigation direction if the the completion popup-isearch-match
+;; is displayed on top (happens near the bottom of windows)
+(setq company-tooltip-flip-when-above t)
+
+(setq company-global-modes '(not shell-mode))
+(global-company-mode 1)
 
 
 
@@ -208,13 +225,18 @@
     (add-hook 'prog-mode-hook '@-enable-smart-tab)
     ))
 
-;; for python.
+;; for python
 (use-package python
   :mode ("\\.py" . python-mode)
   :ensure t)
 
 ;;(use-package pyvenv)
 
+(eval-after-load "company"
+  '(add-to-list 'company-backends 'company-anaconda))
+
+(add-hook 'python-mode-hook 'anaconda-mode)
+(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 (use-package python-black
   :demand t
   :after python
