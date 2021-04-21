@@ -1,0 +1,42 @@
+这篇笔记介绍了如何在没有sudo权限的linux上下载安装emacs
+
+参考链接:https://www.dazhuanlan.com/2019/10/07/5d9afbfd383a0/
+
+
+1. 下载必须的安装包emacs26.1和ncurses. 终端下可以使用wget.
+
+https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz
+
+http://ftp.wayne.edu/gnu/emacs/emacs-26.1.tar.gz
+
+2. 解压缩ncurses,并编译安装
+
+tar -xf ncurses-6.1
+
+进入其目录,
+
+./configure --prefix=/home/username/software/ncurses
+make
+make install
+
+3. 解压缩emacs并编译安装之
+
+tar -xf emacs-26.1
+
+./configure --prefix=/home/username/software/emacs --with-x=no --with-gnutls=no LDFLAGS=-L/home/username/software/ncurses/lib CPPFLAGS=-I/home/username/software/ncurses/include 
+make
+make install
+
+
+4. 配置别名
+使用echo $SHELL查看shell类型,以bash为例,vim 进入.bashrc中
+添加:
+
+alias emacs="/home/username/software/emacs/bin/emacs"
+
+5. 下载.emacs.d配置文件(你肯定已经下载好了)
+
+打开emacs,等待配置即可.
+
+
+
