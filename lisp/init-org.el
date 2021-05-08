@@ -37,12 +37,12 @@
 (define-key org-mode-map (kbd "C-M-Y") 'screen-capture)
 
 
-(message "========begin for auto image thing.============")
+;; (message "========begin for auto image thing.============")
 ;; 设置org自动显示图片。
 (add-hook 'org-mode-hook (auto-image-file-mode t))
 ;; (org-toggle-inline-images)
 (add-hook 'org-mode-hook (iimage-mode t))
-(message "============end for auto image thing=============")
+;; (message "============end for auto image thing=============")
 
 (setq org-todo-keywords 
       '((sequence "TODO(t)" "INPROGRESS(i)" "WAITING(w)" "REVIEW(r)" "|" "DONE(d)" "CANCELED(c)")))

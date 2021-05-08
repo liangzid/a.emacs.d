@@ -15,16 +15,11 @@
   :config
   (python-black-on-save-mode))
 
-
-;;;;;;;;;;;; 未完成的功能
-;; batch TAB
-;; 在选中一部分文本之后，使用tab实现他们的批量缩进
-
-
-;; 在选中一部分文本之后，使用 shift-TAB实现他们的批量反缩进
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package elpy
+  :ensure t
+  :defer t
+  :init
+  (advice-add 'python-mode :before 'elpy-enable))
 
 
 ;; 需要安装pyenv才能使用

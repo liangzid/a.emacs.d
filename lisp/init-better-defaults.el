@@ -26,8 +26,25 @@
 (setenv "LC_ALL" "en_US.UTF-8")
 (setenv "LC_CTYPE" "en_US.UTF-8")
 
+;; 设置拼写检查
+(setq ispell-program-name "aspell")
+(setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US" "--run-together" "--run-together-limit=16"))
 
+(add-hook 'prog-mode-hook #'wucuo-start)
+(add-hook 'text-mode-hook #'wucuo-start)
 
+(setq wucuo-spell-check-buffer-predicate
+      (lambda ()
+	(not (memq major-mode
+		   '(dired-mode
+		     log-edit-mode
+		     compilation-mode
+		     help-mode
+		     profiler-report-mode
+		     speedbar-mode
+		     gud-tooltip-mode
+		     calc-mode
+		     Info-mode)))))
 
 
 

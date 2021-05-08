@@ -27,6 +27,11 @@
 ;;add whatever packages you want here
 
 (defvar my/packages '(
+		                ;;;;;;dependency
+				ctable
+				deferred
+				epc
+				s		      
 				;;;;;;;;;;;;tool;;;;;;;;;;;;;;
 		                 company  ;; 用于进行自动补全
 				 hungry-delete
@@ -41,6 +46,11 @@
 				 yasnippet
 				 all-the-icons 
 				 ace-flyspell ;; 拼写检查工具，但是需要ispell或者aspell的预先安装？！
+				 wucuo ;;同样用来进行拼写检查
+
+				 metaweblog
+				 org2blog
+				 
 				 evil ;;众所周知？
                                  ;;;;;;;;;;;;;python;;;;;;;;;;;;;;;;;
 				 python
@@ -48,6 +58,7 @@
 				 python-black
 				 pyenv-mode
 				 anaconda-mode
+				 elpy
 				 company-anaconda ;;为company提供的anaconda后台
 				 
 				 ;;;;;;;;;;;;;;;org;;;;;;;;;;;;;

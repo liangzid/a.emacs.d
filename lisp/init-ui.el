@@ -5,7 +5,7 @@
 (require 'use-package)
 
 ;; 取消自动断行功能
-(global-visual-line-mode 0)
+(global-visual-line-mode 1)
 
 ;; 激活高亮当前行的功能
 (use-package hl-line
