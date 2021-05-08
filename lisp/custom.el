@@ -4,9 +4,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(LaTeX-command-style
-   '(("" "%(PDF)%(latex) %(file-line-error) %(extraopts) %S%(PDFout)")))
+   (quote
+    (("" "%(PDF)%(latex) %(file-line-error) %(extraopts) %S%(PDFout)"))))
  '(TeX-command-list
-   '(("LaTeXnonint" "%`%l -interaction=nonstopmode %(mode)% %t" TeX-run-command nil t)
+   (quote
+    (("LaTeXnonint" "%`%l -interaction=nonstopmode %(mode)% %t" TeX-run-command nil t)
      ("pdflatex" "%`pdflatex%(mode)%' %t" TeX-run-TeX nil t)
      ("xelatex" "%`xelatex%(mode)% %t" TeX-run-TeX nil t)
      ("TeX" "%(PDF)%(tex) %(file-line-error) %`%(extraopts) %S%(PDFout)%(mode)%' %t" TeX-run-TeX nil
@@ -73,15 +75,16 @@
      ("Spell" "(TeX-ispell-document \"\")" TeX-run-function nil t :help "Spell-check the document")
      ("Clean" "TeX-clean" TeX-run-function nil t :help "Delete generated intermediate files")
      ("Clean All" "(TeX-clean t)" TeX-run-function nil t :help "Delete generated intermediate and output files")
-     ("Other" "" TeX-run-command t t :help "Run an arbitrary command")))
+     ("Other" "" TeX-run-command t t :help "Run an arbitrary command"))))
  '(cdlatex-paired-parens "$[{(<")
  '(company-idle-delay 0.08)
  '(company-minimum-prefix-length 1)
  '(custom-safe-themes
-   '("6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default))
- '(org-agenda-files '("h:/new/czysj-存在与时间笔记.org"))
+   (quote
+    ("6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
+ '(org-agenda-files (quote ("h:/new/czysj-存在与时间笔记.org")))
  '(org-support-shift-select t)
- '(package-selected-packages '(evil which-key undo-tree company)))
+ '(package-selected-packages (quote (evil which-key undo-tree company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
