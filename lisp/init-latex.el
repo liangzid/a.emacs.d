@@ -12,8 +12,8 @@
       )
 
 ;; 数学符号默认字体为Cambria Math
-(set-fontset-font "fontset-default" 'symbol
- 		  "Cambria Math")
+;; (set-fontset-font "fontset-default" 'symbol
+;;  		  "Cambria Math")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 以下为LaTeX mode相关设置

@@ -9,7 +9,7 @@
 (require 'init-org)
 (require 'init-latex)
 (require 'init-cpp)
-(require 'init-blog)
+;;(require 'init-blog)
 
 (require 'init-ui)
 (require 'init-better-defaults)
@@ -29,7 +29,7 @@
 (if (and *is-linux* (not *is-server*))
     ((message "prepare to load eaf which may cost some time...")
      (require 'init-eaf))
-  ((message "---> In Server, donnot need to use eaf."))  
+  (message "---> In Server, donnot need to use eaf.")  
     )
 
 

@@ -1,6 +1,6 @@
 
 
-(require 'metaweblog)
+;;(require 'metaweblog)
 (require 'org2blog-autoloads)
 
 (setq org2blog/wp-blog-alist

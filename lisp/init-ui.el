@@ -14,10 +14,10 @@
 (global-hl-line-mode)
 
 ;; 取消UI界面的多余展示
-(tool-bar-mode 0)
-(scroll-bar-mode 1)
-(setq inhibit-startup-message t)
-(setq inhibit-startup-screen t)
+;; (tool-bar-mode 0)
+;; (scroll-bar-mode 1)
+;; (setq inhibit-startup-message t)
+;; (setq inhibit-startup-screen t)
 
 
 ;; theme
@@ -36,16 +36,16 @@
 ;;; 字体设置
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 解决显示Unicode字符的卡顿问题
-(setq inhibit-compacting-font-caches t)
+;(setq inhibit-compacting-font-caches t)
 ;; ;; 汉字默认字体为Kaiti(楷体)，可改为其它字体
 ;; (set-fontset-font "fontset-default" 'han
 ;; 		  "KaiTi")
-(set-fontset-font "fontset-default" 'han
-		  "SimHei")
+;(set-fontset-font "fontset-default" 'han
+;		  "SimHei")
 
 ;; 数学符号默认字体为Cambria Math
-(set-fontset-font "fontset-default" 'symbol
- 		  "Cambria Math")
+;(set-fontset-font "fontset-default" 'symbol
+; 		  "Cambria Math")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\
 
 

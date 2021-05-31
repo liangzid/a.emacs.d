@@ -48,8 +48,8 @@
 				 ace-flyspell ;; 拼写检查工具，但是需要ispell或者aspell的预先安装？！
 				 wucuo ;;同样用来进行拼写检查
 
-				 metaweblog
-				 org2blog
+				 ;;metaweblog
+				 ;;org2blog
 				 
 				 evil ;;众所周知？
                                  ;;;;;;;;;;;;;python;;;;;;;;;;;;;;;;;
