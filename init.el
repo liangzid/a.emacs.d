@@ -1,5 +1,7 @@
 ;; nothing.
 
+;;用来消除emacs 27以上版本的警告。
+(setq warning-suppress-log-types '((package reinitialization)))
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 

@@ -8,7 +8,7 @@
 (setq company-idle-delay nil)
 (setq company-show-numbers t)
 (setq company-tooltip-limit 10)
-(setq company-minimum-prefix-length 0)
+(setq company-minimum-prefix-length 3)
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-flip-when-above t)
 (setq company-global-modes '(not shell-mode))
@@ -35,7 +35,8 @@
   :config
   (progn
     (which-key-mode)
-    (which-key-setup-side-window-bottom)))
+    ;; (which-key-setup-side-window-bottom)
+    ))
 
 ;; 项目文件的树状图
 (use-package neotree

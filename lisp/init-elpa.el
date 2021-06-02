@@ -18,8 +18,8 @@
 ;; 			 ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
 
-;(if (< emacs-major-version 27)
-;  (package-initialize))
+;;(if (< emacs-major-version 27)
+;; (package-initialize))
 (package-initialize)
 ;; 防止出现签名校验失败的问题
 (setq package-check-signature nil)
@@ -115,10 +115,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; config for yasnippet.
-(setq yas-snippet-dirs              ;;设置模板存放的地址.
-      '("~/.emacs.d/snippets"))
+;; (setq yas-snippet-dirs              ;;设置模板存放的地址.
+      ;; '("~/.emacs.d/snippets"))
 
-(yas-global-mode 1)
+;; (yas-global-mode 1)
 
 ;; 代码折叠 hideshow
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -142,7 +142,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-(global-hungry-delete-mode)
 
 ;;; search and replace with ivy-counsel-swiper
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
