@@ -51,7 +51,8 @@
 				 ;;metaweblog
 				 ;;org2blog
 				 
-				 evil ;;众所周知？
+				 meow ;; used to replace evil and help my little finger.
+				 ;; evil ;;众所周知？
                                  ;;;;;;;;;;;;;python;;;;;;;;;;;;;;;;;
 				 python
 				 pyvenv ;;需要和pipenv 联合使用
@@ -99,10 +100,10 @@
 
 
 ;;开启evil 模式
-(use-package evil
-  :ensure t
-  :config
-  (evil-mode 1))
+;; (use-package evil
+  ;; :ensure t
+  ;; :config
+  ;; (evil-mode 1))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
