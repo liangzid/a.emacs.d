@@ -15,13 +15,13 @@
 
 (require 'init-ui)
 (require 'init-better-defaults)
-(require 'init-keybindings)
+
 
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
 
 (require 'init-packages)
-
+(require 'init-keybindings)
 
 
 
