@@ -9,6 +9,8 @@ https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz
 
 http://ftp.wayne.edu/gnu/emacs/emacs-26.1.tar.gz
 
+https://ftp.wayne.edu/gnu/emacs/emacs-27.2.tar.gz
+
 2. 解压缩ncurses,并编译安装
 
 tar -xf ncurses-6.1
