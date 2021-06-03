@@ -17,6 +17,8 @@
    ;; SPC j/k will run the original command in MOTION state.
    '("j" . meow-motion-origin-command)
    '("k" . meow-motion-origin-command)
+   '("b" . switch-to-next-buffer)
+   '("o" . next-window)
    ;; Use SPC (0-9) for digit arguments.
    '("1" . meow-digit-argument)
    '("2" . meow-digit-argument)
@@ -100,7 +102,7 @@
    '("&" . meow-query-replace)
    '("%" . meow-query-replace-regexp)
    '("'" . repeat)
-   '("\\" . quoted-insert)
+   '("\\" . comment-line )
    '("<escape>" . meow-last-buffer)))
 
 ;; new key bindings for my little finger.
