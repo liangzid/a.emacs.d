@@ -46,13 +46,14 @@
 				 yasnippet
 				 all-the-icons 
 				 ace-flyspell ;; 拼写检查工具，但是需要ispell或者aspell的预先安装？！
-				 wucuo ;;同样用来进行拼写检查
+				 ;; wucuo ;;同样用来进行拼写检查
 
 				 ;;metaweblog
 				 ;;org2blog
 				 
-				 meow ;; used to replace evil and help my little finger.
-				 ;; evil ;;众所周知？
+				 ;; meow ;; used to replace evil and help my little finger.
+				 evil ;;众所周知？
+				 evil-leader
                                  ;;;;;;;;;;;;;python;;;;;;;;;;;;;;;;;
 				 python
 				 pyvenv ;;需要和pipenv 联合使用
@@ -99,12 +100,6 @@
 
 
 
-;;开启evil 模式
-;; (use-package evil
-  ;; :ensure t
-  ;; :config
-  ;; (evil-mode 1))
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'smartparens)
@@ -141,30 +136,6 @@
 (setq hs-set-up-overlay 'hideshow-folded-overlay-fn)
 ;; ===============================
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-
-;;; search and replace with ivy-counsel-swiper
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(global-set-key "\C-s" 'swiper) ;; 在进行C-s时提供一个candidate
-(global-set-key (kbd "C-c C-r") 'ivy-resume)  ;; 不知道是干什么的。
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "C-h f") 'counsel-describe-function)
-(global-set-key (kbd "C-h v") 'counsel-describe-variable)
-
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
-
-(global-set-key (kbd "C-h C-f") 'find-function)
-(global-set-key (kbd "C-h C-v") 'find-variable)
-(global-set-key (kbd "C-h C-k") 'find-function-on-key)
-(global-set-key (kbd "C-c p f") 'counsel-git) ; find file in current git repo.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-
 
 
 (provide 'init-elpa)

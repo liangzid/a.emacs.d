@@ -4,16 +4,18 @@
 (use-package python
   :mode ("\\.py" . python-mode)
   :ensure t)
-(eval-after-load "company"
-  '(add-to-list 'company-backends 'company-anaconda))
+;; (eval-after-load "company"
+  ;; '(add-to-list 'company-backends 'company-anaconda))
 
-(add-hook 'python-mode-hook 'anaconda-mode)
-(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
-(use-package python-black
-  :demand t
-  :after python
-  :config
-  (python-black-on-save-mode))
+;; (add-hook 'python-mode-hook 'anaconda-mode)
+;; (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+
+;; (use-package python-black
+  ;; :demand t
+  ;; :after python
+  ;; :config
+  ;; (python-black-on-save-mode))
+
 
 (use-package elpy
   :ensure t
