@@ -34,6 +34,8 @@
 				s		      
 				;;;;;;;;;;;;tool;;;;;;;;;;;;;;
 		                 company  ;; 用于进行自动补全
+				 citre    ;; front of ctags, for Complete.
+				 projectile ;;project manager..
 				 hungry-delete
 				 swiper  
 				 counsel 
@@ -78,6 +80,8 @@
                                 ;;;;;;;;;;;;;;;latex;;;;;;;;;;;;;;;
 				 auctex
 				 cdlatex
+				 reftex
+				 company-auctex
 				 ;;;;;;;;;version control;;;;;;;;;;
 				 magit
 				 

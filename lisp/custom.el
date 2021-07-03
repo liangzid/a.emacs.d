@@ -94,7 +94,7 @@
      ("#F309DF" . 85)
      ("#3C3D37" . 100)))
  '(magit-diff-use-overlays nil)
- '(org-agenda-files '("h:/new/czysj-存在与时间笔记.org"))
+ '(org-agenda-files nil)
  '(org-support-shift-select t)
  '(package-selected-packages '(evil which-key undo-tree company))
  '(pos-tip-background-color "#FFFACE")

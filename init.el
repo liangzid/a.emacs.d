@@ -7,6 +7,10 @@
 
 (require 'init-elpa)
 (require 'init-self-config-function)
+
+(require 'init-packages)
+(require 'init-keybindings)
+
 (require 'init-python)
 (require 'init-org)
 (require 'init-latex)
@@ -17,11 +21,9 @@
 (require 'init-better-defaults)
 
 
-(setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
-(load-file custom-file)
+;; (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
+;; (load-file custom-file)
 
-(require 'init-packages)
-(require 'init-keybindings)
 
 
 
@@ -33,7 +35,6 @@
      (require 'init-eaf))
   (message "---> In Server, donnot need to use eaf.")  
     )
-
 
 
 (provide 'init)

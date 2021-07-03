@@ -4,7 +4,6 @@
 ;; 自动还原模式
 (global-auto-revert-mode t)
 
-
 ;; 显示行号
 (global-linum-mode t)
 

@@ -2,13 +2,39 @@
 (require 'use-package)
 
 
+(require 'projectile)
+(projectile-mode +1)
+;; Recommended keymap prefix on Windows/Linux
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+;;;;
+  ;; 评价：适合自己写库的人使用，目前感觉还不是很好用，就不多做评论了
+;;;;;
+
+;; (require 'citre-config)
+;; (use-package citre
+;;   :defer t
+;;   :init
+;;   ;; This is needed in `:init' block for lazy load to work.
+;;   ;; Bind your frequently used commands.
+;;   (global-set-key (kbd "C-x c j") 'citre-jump)
+;;   (global-set-key (kbd "C-x c J") 'citre-jump-back)
+;;   (global-set-key (kbd "C-x c p") 'citre-ace-peek)
+;;   :config
+;;   (setq
+;;    ;; Set this if readtags is not in your path.
+;;    ;; citre-readtags-program "/home/liangzi/.emacs.d/.tags"
+;;    ;; Set this if you use project management plugin like projectile.  It's
+;;    ;; only used to display paths relatively, and doesn't affect actual use.
+;;    ;; citre-project-root-function #'projectile-project-root
+;;    ))
 
 ;; 自动补全
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq company-idle-delay nil)
 (setq company-show-numbers t)
 (setq company-tooltip-limit 10)
-(setq company-minimum-prefix-length 3)
+(setq company-minimum-prefix-length 1)
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-flip-when-above t)
 (setq company-global-modes '(not shell-mode))
