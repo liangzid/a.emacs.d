@@ -1,3 +1,13 @@
+(tool-bar-mode -1)
+(when (display-graphic-p)
+(scroll-bar-mode -1)
+  )
+;; 关闭启动帮助画面
+(setq inhibit-splash-screen 1)
+
+
+
+
 ;; 不蜂鸣
 (setq ring-bell-function 'ignore)
 
@@ -51,8 +61,9 @@
 (setq make-backup-files nil)
 
 ;; 不进行自动保存
-;;(setq auto-save-default nil)
+(setq auto-save-default nil)
 
+;; (global-hl-line-mode 1)
 
 ;; 设置打开10个最近文件列表
 (recentf-mode 1)			

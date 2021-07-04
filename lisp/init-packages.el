@@ -2,6 +2,12 @@
 (require 'use-package)
 
 
+
+(use-package youdao-dictionary
+  :config
+  (global-set-key (kbd "C-c y") 'youdao-dictionary-search-at-point+))
+
+
 (require 'projectile)
 (projectile-mode +1)
 ;; Recommended keymap prefix on Windows/Linux

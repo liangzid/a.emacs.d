@@ -37,6 +37,7 @@
 				 citre    ;; front of ctags, for Complete.
 				 projectile ;;project manager..
 				 hungry-delete
+				 youdao-dictionary
 				 swiper  
 				 counsel 
 				 smartparens ;; 补全括号等成对出现的东西
@@ -84,6 +85,9 @@
 				 company-auctex
 				 ;;;;;;;;;version control;;;;;;;;;;
 				 magit
+				 ;;;;;;;;;js,html,...;;;;;;;;;;;;;;
+				 js2-mode
+				 web-mode
 				 
 				 )  "Default packages")
 
@@ -102,7 +106,14 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
-
+(defun liangzi/install-package-if-not-found (pkg)
+  (unless (package-installed-p pkg)
+    ;;	(when (need-refresh-contents)
+    (message "%s" "Refreshing package database...")
+    (package-refresh-contents))
+  ;;	  )
+  (message "install package %s ..." pkg)
+  (package-install pkg))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,5 +1,11 @@
 ;; nothing.
 
+
+
+;; Make startup faster by reducing the frequency of garbage
+;; collection.  The default is 800 kilobytes.  Measured in bytes.
+(setq gc-cons-threshold (* 50 1000 1000))
+
 ;;用来消除emacs 27以上版本的警告。
 (setq warning-suppress-log-types '((package reinitialization)))
 
@@ -25,10 +31,6 @@
 ;; (load-file custom-file)
 
 
-
-
-
-
 (defconst *is-server* t)
 (if (and *is-linux* (not *is-server*))
     ((message "prepare to load eaf which may cost some time...")
@@ -36,5 +38,6 @@
   (message "---> In Server, donnot need to use eaf.")  
     )
 
+(setq gc-cons-threshold (* 2 1000 1000))
 
 (provide 'init)

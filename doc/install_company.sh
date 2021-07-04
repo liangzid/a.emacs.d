@@ -1,0 +1,10 @@
+
+sudo pacman -S ctags
+
+
+
+
+
+
+
+
