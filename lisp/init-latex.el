@@ -44,7 +44,7 @@
 (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
 (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 (autoload 'cdlatex-mode "cdlatex" "CDLaTeX Mode" t)
-(autoload 'turn-on-cdlatex "cdlatex" "CDLaTeX Mode" nil)
+(autoload 'turn-on-cdlatex "cdlatex" "CDLaTeX Mode" t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;LaTex-mode settings;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-hook 'LaTeX-mode-hook (lambda ()
@@ -60,21 +60,21 @@
 
 		  
 		  (turn-on-auto-fill)              ;;LaTeX mode，turn off auto fold
-		  (linum-mode 1)
-		  ;;(auto-complete-mode 1)
+		  ;; (linum-mode 1)
+		  (auto-complete-mode 1)
 		  (latex-math-mode 1)
 		  (outline-minor-mode 1)            
   		  (imenu-add-menubar-index)
 
-		  (setq TeX-show-compilation nil)   ;;NOT display compilation windows
+		  ;; (setq TeX-show-compilation t)   ;;NOT display compilation windows
 		  (setq TeX-global-PDF-mode t       ;;PDF mode enable, not plain
 		  		TeX-engine 'default)  ;;use xelatex default
 		  (setq TeX-clean-confirm nil)
 		  (setq TeX-save-query nil)
 		 
                   (setq font-latex-fontify-script t)
-		  (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
-		  (setq TeX-electric-escape t)      ;; press \ then, jump to mini-buffer to input commands
+		  ;; (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
+		  (setq TeX-electric-escape nil)      ;; press \ then, jump to mini-buffer to input commands
 		  ;(setq TeX-view-program-list '(("Evince" "evince %o"))) ;;
 		  ; (setq TeX-view-program-selection '((output-pdf "Evince")))
 		  ;(add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))

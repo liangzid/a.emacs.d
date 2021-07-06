@@ -37,7 +37,7 @@
 
 ;; 自动补全
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq company-idle-delay nil)
+(setq company-idle-delay 0.01)
 (setq company-show-numbers t)
 (setq company-tooltip-limit 10)
 (setq company-minimum-prefix-length 1)
@@ -88,5 +88,12 @@
       (smart-tab-mode))
     (add-hook 'prog-mode-hook '@-enable-smart-tab)
     ))
+
+(require 'company-english-helper)
+(setq company-english-helper-active-p t)
+
+
+
+
 
 (provide 'init-packages)
