@@ -20,7 +20,7 @@
 (load "auctex.el" nil t t)
 (setq TeX-parse-self t)
 (setq TeX-parse-selt t) ;; 对新文件自动解析(usepackage, bibliograph, newtheorem等信息)
-(setq-default Tex-master nil)
+(setq-default Tex-master t)
 
 ;; 设置正常的pdf 运行模式为pdftex
 (setq-default TeX-PDF-mode t)
@@ -60,7 +60,6 @@
 
 		  
 		  (turn-on-auto-fill)              ;;LaTeX mode，turn off auto fold
-		  ;; (linum-mode 1)
 		  (auto-complete-mode 1)
 		  (latex-math-mode 1)
 		  (outline-minor-mode 1)            

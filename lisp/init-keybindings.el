@@ -49,10 +49,13 @@
 (require 'evil-leader)
 
 (evil-leader/set-key
- "ff" 'find-file
- "fr" 'recentf-open-files
- "bb" 'switch-to-buffer
- "bk" 'kill-buffer
+ "xf" 'find-file
+ "xr" 'recentf-open-files
+ "xb" 'switch-to-buffer
+ "kb" 'kill-buffer
+ "xc" 'save-buffers-kill-terminal
+ "cy" 'youdao-dictionary
+ "tce" 'toggle-company-english-helper
  "0" 'select-window-0
  "1" 'select-window-1
  "2" 'select-window-2
@@ -63,7 +66,9 @@
  ":" 'counsel-M-x
  "wM" 'delete-other-windows)
 
+(evil-leader/set-leader "<SPC>")
 
+(evil-leader-mode 1)
 
 ;;; search and replace with ivy-counsel-swiper
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -80,10 +85,7 @@
 
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
-(global-set-key (kbd "C-h C-f") 'find-function)
-(global-set-key (kbd "C-h C-v") 'find-variable)
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
-(global-set-key (kbd "C-c p f") 'counsel-git) ; find file in current git repo.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 

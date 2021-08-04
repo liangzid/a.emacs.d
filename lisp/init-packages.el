@@ -47,7 +47,7 @@
 (global-company-mode 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; 用以进行辅助查询
+;; the windows you have used will be clear after used. 
 (require 'popwin)
 (popwin-mode t)
 
@@ -90,10 +90,7 @@
     ))
 
 (require 'company-english-helper)
-(setq company-english-helper-active-p t)
-
-
-
-
+(setq company-english-helper-active-p nil)
+(global-set-key (kbd "C-c e") 'toggle-company-english-helper)
 
 (provide 'init-packages)

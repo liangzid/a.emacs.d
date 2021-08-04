@@ -42,3 +42,33 @@
 
 ** 
 
+* Key-bindings
+
+** major mode
+ |----------+----------------------------|
+ | key      | info                       |
+ |----------+----------------------------|
+ | C-c y    | youdao-dictionary          |
+ | C-c p    | projectile-command-map     |
+ | C-c e    | english helper             |
+ | C-\\     | comment-line               |
+ | M-0 M-9  | window switch              |
+ | ESC, C-d | EVIL ESC                   |
+ | <SPC>    | EVIL LEADER                |
+ | C-s      | search files               |
+ | C-c C-r  | rebegin after break        |
+ | C-h f    | help of function           |
+ | C-h v    | help of variable           |
+ | C-x C-r  | recent open file           |
+ | C-h C-k  | find function on key       |
+ | C-0,-,=  | screen big,small and so on |
+ |----------+----------------------------|
+
+** org mode
+
+** latex mode
+
+** python mode
+
+
+
