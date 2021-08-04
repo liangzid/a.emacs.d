@@ -1,0 +1,18 @@
+#+title: 使用WSL2配置全新的windows下的emacs开发环境 
+#+author: 
+#+date: Wed Aug  4 11:37:42 2021
+#+email: 2273067585@qq.com 
+* 安装WSL2
+
+  请见这里：https://zhuanlan.zhihu.com/p/348041371
+* 更新WSL2的源
+  请见这里：https://zhuanlan.zhihu.com/p/348041371
+
+  注意：
+1. 要将镜像源网站上被注释掉的src全部取消注释，以方便下一步的安装；
+2. 安装使用vim进行文本编辑
+* 安装emacs
+  请见这里：https://zhuanlan.zhihu.com/p/355312553
+  
+* 使用mobaxterm进行GUI风格的浏览
+自己搜索下载就好了。
