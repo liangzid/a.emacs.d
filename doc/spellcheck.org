@@ -1,0 +1,20 @@
+#+title: Spell Check in Linux. 
+#+author: Zi Liang
+#+date: Wed Aug  4 16:24:46 2021
+#+email: 2273067585@qq.com 
+
+Install aspell and aspell-en for English.
+
+You can use following command for install checking.
+#+BEGIN_SRC sh
+  aspell -c filename
+#+END_SRC
+
+Change the have-aspell into t.
+
+
+
+
+
+
+* 

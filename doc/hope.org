@@ -62,6 +62,9 @@
  | C-x C-r  | recent open file           |
  | C-h C-k  | find function on key       |
  | C-0,-,=  | screen big,small and so on |
+ | ac       | aspell check buffer        |
+ | fs       | flyspell                   |
+ |          |                            |
  |----------+----------------------------|
 
 ** org mode

@@ -25,6 +25,7 @@
 (require 'init-ui)
 (require 'init-better-defaults)
 (require 'init-keybindings)
+(require 'init-spell)
 
 (require 'init-packages)
 

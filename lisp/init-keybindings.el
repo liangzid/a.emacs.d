@@ -56,6 +56,8 @@
  "xc" 'save-buffers-kill-terminal
  "cy" 'youdao-dictionary
  "tce" 'toggle-company-english-helper
+ "ac" 'ispell-buffer
+ "fs" 'flyspell-mode
  "0" 'select-window-0
  "1" 'select-window-1
  "2" 'select-window-2
