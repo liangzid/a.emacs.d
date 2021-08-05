@@ -1,0 +1,53 @@
+(require 'org-roam)
+
+(setq org-roam-directory "~/roam")
+
+(add-hook 'after-init-hook 'org-roam-mode)
+
+
+(require 'org-roam-server)
+;; setting org-roam-server for visualization.
+(setq org-roam-server-host "127.0.0.1"
+      org-roam-server-port 9090
+      org-roam-server-export-inline-images t
+      org-roam-server-authenticate nil
+      org-roam-server-network-label-truncate t
+      org-roam-server-network-label-truncate-length 60
+      org-roam-server-network-label-wrap-length 20)
+(org-roam-server-mode)
+
+
+;; config the protocol
+(require 'org-roam-protocol)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(provide 'init-roam)

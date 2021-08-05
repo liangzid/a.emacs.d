@@ -26,7 +26,7 @@
 (require 'init-better-defaults)
 (require 'init-keybindings)
 (require 'init-spell)
-
+(require 'init-roam)
 (require 'init-packages)
 
 ;; (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))

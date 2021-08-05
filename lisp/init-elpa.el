@@ -71,6 +71,9 @@
 				 org-alert
 				 org-download
 				 htmlize
+				 org-roam
+				 ;;org-roam-protocol
+				 org-roam-server
 				 
 				 exec-path-from-shell
 				 popwin

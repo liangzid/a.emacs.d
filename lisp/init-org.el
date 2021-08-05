@@ -15,8 +15,7 @@
 ;;bind to C-F
 (define-key org-mode-map (kbd "C-f h") 'fastinsert-org-head )
 
-;; (setq org-agenda-files '("~/org"))
-
+(setq org-agenda-files '("~/org"))
 
 ;;...
 (add-to-list 'load-path (expand-file-name ""))
