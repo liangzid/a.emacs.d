@@ -15,11 +15,11 @@
 (require 'init-elpa)
 (require 'init-self-config-function)
 
-
 (require 'init-python)
 (require 'init-org)
 (require 'init-latex)
 (require 'init-cpp)
+(require 'init-rust)
 ;;(require 'init-blog)
 
 (require 'init-ui)
@@ -28,7 +28,7 @@
 (require 'init-spell)
 (require 'init-roam)
 (require 'init-packages)
-
+(require 'init-lsp)
 ;; (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 ;; (load-file custom-file)
 
@@ -43,3 +43,16 @@
 (setq gc-cons-threshold (* 2 1000 1000))
 
 (provide 'init)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(rust-mode ctable deferred epc s company citre projectile hungry-delete youdao-dictionary swiper counsel smartparens use-package undo-tree which-key neotree smart-tab yasnippet all-the-icons ace-flyspell evil evil-leader python pyvenv python-black pyenv-mode anaconda-mode elpy company-anaconda org-bullets org-alert org-download htmlize org-roam org-roam-server exec-path-from-shell popwin monokai-theme rainbow-mode rainbow-delimiters auctex cdlatex reftex company-auctex magit js2-mode web-mode leetcode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

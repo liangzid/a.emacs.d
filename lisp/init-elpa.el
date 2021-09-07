@@ -91,6 +91,8 @@
 				 ;;;;;;;;;js,html,...;;;;;;;;;;;;;;
 				 js2-mode
 				 web-mode
+
+				 leetcode
 				 
 				 )  "Default packages")
 
@@ -109,7 +111,7 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
-(defun liangzi/install-package-if-not-found (pkg)
+(defun my/install-package-if-not-found (pkg)
   (unless (package-installed-p pkg)
     ;;	(when (need-refresh-contents)
     (message "%s" "Refreshing package database...")

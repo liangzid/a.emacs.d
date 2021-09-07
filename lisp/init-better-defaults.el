@@ -6,8 +6,6 @@
 (setq inhibit-splash-screen 1)
 
 
-
-
 ;; 不蜂鸣
 (setq ring-bell-function 'ignore)
 
@@ -26,7 +24,6 @@
                                               ("qq" "2273067585")
                                               ("qqmail" "2273067585@qq.com")
                                               ))
-
 
 ;; set coding
 (prefer-coding-system 'utf-8)
@@ -55,8 +52,6 @@
 		     ;; calc-mode
 		     ;; Info-mode)))))
 
-
-
 ;; 不进行文件备份
 (setq make-backup-files nil)
 
@@ -74,6 +69,5 @@
 
 ;; 可以通过键入字符代替被选中的对象，或者键入删除删除被选中的对象。
 (delete-selection-mode t)
-
 
 (provide 'init-better-defaults)
