@@ -14,7 +14,8 @@
 (require 'init-self-config-function)
 (require 'init-modeline)
 (require 'init-window)
-
+(require 'init-chinese)
+(require 'init-evil)
 
 (require 'init-python)
 (require 'init-org)
