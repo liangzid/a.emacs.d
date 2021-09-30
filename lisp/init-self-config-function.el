@@ -1,5 +1,5 @@
 
-;; 定义快速打开init-flie的操作，并将之绑定在F2上.
+;; 定义快速打开init-file的操作，并将之绑定在F2上.
 (defun open-my-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))

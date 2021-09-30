@@ -73,7 +73,7 @@
 				 htmlize
 				 org-roam
 				 ;;org-roam-protocol
-				 org-roam-server
+				 ;; org-roam-server
 				 
 				 exec-path-from-shell
 				 popwin
@@ -115,7 +115,8 @@
   (unless (package-installed-p pkg)
     ;;	(when (need-refresh-contents)
     (message "%s" "Refreshing package database...")
-    (package-refresh-contents))
+    ;;(package-refresh-contents)
+    )
   ;;	  )
   (message "install package %s ..." pkg)
   (package-install pkg))
