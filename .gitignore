@@ -1,0 +1,17 @@
+# following dir should be ignored.
+/auto-save-list
+/bookmarks
+/elpa
+/eshell
+/pyim
+/quelpa
+/transient
+
+# following files should be ignored
+
+*\#
+*.db
+*.eld
+/recentf
+*~
+

@@ -10,12 +10,17 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/other-files")
 
+(defconst *is-server* t)
+
 (require 'init-elpa)
 (require 'init-self-config-function)
 (require 'init-modeline)
 (require 'init-window)
 (require 'init-chinese)
-(require 'init-evil)
+(require 'init-ssh)
+(require 'init-clipboard)
+(require 'init-yas)
+(require 'init-git)
 
 (require 'init-python)
 (require 'init-org)
@@ -30,18 +35,17 @@
 (require 'init-spell)
 (require 'init-packages)
 (require 'init-lsp)
+(require 'init-evil)
 
 ;; for computer custom application. cannot be used for any self-designing.
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
 
 
-(defconst *is-server* t)
-
-(if (and *is-linux* (not *is-server*))
+(if (and *is-linux* (or (not *is-server*) *is-gui*))
     ((message "prepare to load eaf which may cost some time...")
      (require 'init-eaf))
-  (message "---> In Server, donnot need to use eaf.")  
+  (message "NO EAF-INSTALL FOR TUI ENVIRONMENT.")  
     )
 
 (provide 'init)

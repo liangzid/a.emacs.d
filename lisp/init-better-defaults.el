@@ -15,15 +15,15 @@
 ;; 显示行号
 (global-linum-mode t)
 
-;; 使用缩写，缩写表如下图所示。
-(abbrev-mode t)
- (define-abbrev-table 'global-abbrev-table '(
-                                              ("lz" "liangzi")
-                                              ("lzd" "liangzid")
-                                              ("zi" "Zi Liang")
-                                              ("qq" "2273067585")
-                                              ("qqmail" "2273067585@qq.com")
-                                              ))
+;; ;; 使用缩写，缩写表如下图所示。
+;; (abbrev-mode t)
+;;  (define-abbrev-table 'global-abbrev-table '(
+;;                                               ("lz" "liangzi")
+;;                                               ("lzd" "liangzid")
+;;                                               ("zi" "Zi Liang")
+;;                                               ("qq" "2273067585")
+;;                                               ("qqmail" "2273067585@qq.com")
+;;                                               ))
 
 ;; set coding
 (prefer-coding-system 'utf-8)
@@ -62,7 +62,7 @@
 
 ;; 设置打开10个最近文件列表
 (recentf-mode 1)			
-(setq recentf-max-menu-items 10)
+(setq recentf-max-menu-items 30)
 
 ;; 自动括号补全？
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)

@@ -10,6 +10,7 @@
 (defconst *is-linux* (eq system-type 'gnu/linux))
 (defconst *is-windows* (or (eq system-type 'ms-dos) (eq system-type 'windows-nt)))
 
+(defconst *is-gui* (getenv "DISPLAY"))
 
 (provide 'init-self-config-function)
 

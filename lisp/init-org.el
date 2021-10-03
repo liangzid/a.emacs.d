@@ -7,7 +7,9 @@
   (interactive)
   (let ((head (concat "#+title: \n" "#+author: \n"
 		      (concat "#+date: " (current-time-string) "\n")
-		      "#+email: 2273067585@qq.com \n" "* 标题1" )))
+		      "#+email: 2273067585@qq.com \n"
+		      "#+latex_class: elegantpaper"
+		      "* 标题1" )))
     ;;insert
     (insert head)
     (goto-char 9)
@@ -26,8 +28,10 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 
 
+
+;;-----------------------INSERT IMAGE---------------------------------------------------------
 ;; "C:\Program Files\IrfanView\i_view64.exe"
-(defun screen-capture ()
+(defun my-screen-capture ()
   "Take a screenshot into a unique-named file in the current buffer file
    directory and insert a link to this file."
   (interactive)
@@ -37,14 +41,18 @@
         (capture-save-path (concat
                             (file-name-directory buffer-file-name) "images/")))
     (setq capture-file (concat capture-save-path capture-name))
-    (shell-command (concat
-                    "\"C://Program Files//IrfanView//i_view64.exe\"  /capture=4 /dpi=(300,300) /convert="
-                    (replace-regexp-in-string "/" "\\\\" capture-file)))
+    (if *is-windows*
+	((setq command (concat "\"C://Program Files//IrfanView//i_view64.exe\"  /capture=4 /dpi=(300,300) /convert="
+			       (replace-regexp-in-string "/" "\\\\" capture-file)))
+	 (shell-command command))
+      (call-process-shell-command "scrot" nil nil nil nil "-s" capture-file)
+      )
+    
     (insert (concat
              "[[file:./images/" capture-name "]]")))
   )
 
-(define-key org-mode-map (kbd "C-M-Y") 'screen-capture)
+(define-key org-mode-map (kbd "C-M-Y") 'my-screen-capture)
 
 
 ;; (message "========begin for auto image thing.============")
@@ -63,7 +71,7 @@
         ("WAITING" . "purple")
         ("REVIEW" . "orange")
         ("DONE" . "green")
-        ("CANCELED" .  "red")))
+        ("CANCELED" .  "green")))
 
 
 (use-package org-bullets
@@ -105,9 +113,9 @@
 ;;将其加载在快捷键上
 (add-hook 'org-mode-hook
 	  '(lambda ()
-	     ;; C-TAB for expanding
-             (local-set-key (kbd "C-<tab>")
-             'yas/expand-from-trigger-key)
+	     ;; ;; C-TAB for expanding
+             ;; (local-set-key (kbd "C-<tab>")
+             ;; 'yas/expand-from-trigger-key)
              ;; keybinding for editing source code blocks
              (local-set-key (kbd "C-c s e")
              'org-edit-src-code)
@@ -174,20 +182,5 @@
 ;; ;;===============================================================
 ;; ;;          end: org-to-latex
 ;; ;;===============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 (provide 'init-org)

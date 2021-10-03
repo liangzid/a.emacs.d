@@ -31,13 +31,16 @@
 				ctable
 				deferred
 				epc
-				s		      
+				s
+				general
 				;;;;;;;;;;;;tool;;;;;;;;;;;;;;
 		                 company  ;; 用于进行自动补全
 				 citre    ;; front of ctags, for Complete.
 				 projectile ;;project manager..
+				 command-log-mode
 				 hungry-delete
 				 youdao-dictionary
+				 highlight-symbol
 				 swiper  
 				 counsel 
 				 smartparens ;; 补全括号等成对出现的东西
@@ -106,7 +109,7 @@
 
 (unless (my/packages-installed-p)
   (message "%s" "Refreshing package database...")
-  (package-refresh-contents)
+  ;; (package-refresh-contents)
   (dolist (pkg my/packages)
     (when (not (package-installed-p pkg))
       (package-install pkg))))
@@ -131,11 +134,6 @@
 (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode) ;;smartparens
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; config for yasnippet.
-;; (setq yas-snippet-dirs              ;;设置模板存放的地址.
-      ;; '("~/.emacs.d/snippets"))
-
-;; (yas-global-mode 1)
 
 ;; 代码折叠 hideshow
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

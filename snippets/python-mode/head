@@ -1,0 +1,31 @@
+# -*- mode: snippet -*-
+# name:head 
+# key:head 
+# --
+
+import random
+import argparse
+from tqdm import tqdm
+import logging
+import os
+from os.path import join, exists
+
+from itertools import zip_longest, chain
+from datetime import datetime
+import pickle
+
+import transformers
+from transformers.models.gpt2.modeling_gpt2 import GPT2Config, GPT2LMHeadModel
+from transformers import BertTokenizer
+from transformers import pipeline
+
+import numpy as np
+
+import torch
+from torch.utils.tensorboard import SummaryWriter
+from torch.nn import DataParallel
+from torch.utils.data import Dataset, DataLoader
+from torch.nn import CrossEntropyLoss
+import torch.nn as nn
+
+

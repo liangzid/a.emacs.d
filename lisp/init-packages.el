@@ -1,7 +1,7 @@
 (require 'cl)
 (require 'use-package)
 
-
+(command-log-mode 1)
 
 (use-package youdao-dictionary
   :config
