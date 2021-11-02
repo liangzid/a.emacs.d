@@ -6,7 +6,7 @@
 
 ;; (yas-global-mode 1)
 
-(add-hook 'prog-mode-hook 'my-enable-yas-minor-mode)
-(add-hook 'text-mode-hook 'my-enable-yas-minor-mode)
+(add-hook 'prog-mode-hook 'yas-minor-mode)
+(add-hook 'text-mode-hook 'yas-minor-mode)
 
 (provide 'init-yas)

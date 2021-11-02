@@ -13,4 +13,5 @@ sudo apt install w3m
 
 sudo apt install aspell
 
+sudo apt install scrot
 

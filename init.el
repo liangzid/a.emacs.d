@@ -27,7 +27,8 @@
 (require 'init-latex)
 (require 'init-cpp)
 (require 'init-rust)
-;;(require 'init-blog)
+(require 'init-blog)
+(require 'init-web)
 
 (require 'init-ui)
 (require 'init-better-defaults)

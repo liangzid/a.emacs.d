@@ -5,6 +5,11 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#272822" "#F92672" "#A6E22E" "#E6DB74" "#66D9EF" "#FD5FF0" "#A1EFE4" "#F8F8F2"])
+ '(cnblogs-blog-id "frostliangzi")
+ '(cnblogs-server-url
+   "http://www.cnblogs.com/frostliangzi/services/metaweblog.aspx")
+ '(cnblogs-user-name "frostliangzi")
+ '(cnblogs-user-passwd "liangzi227302875")
  '(compilation-message-face 'default)
  '(custom-safe-themes
    '("d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" default))
@@ -21,7 +26,7 @@
      ("#3C3D37" . 100)))
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
-   '(pyim dap-mode lsp-ivy ivy lsp-treemacs flycheck lsp-mode rust-mode ctable deferred epc s company citre projectile hungry-delete youdao-dictionary swiper counsel smartparens use-package undo-tree which-key neotree smart-tab yasnippet all-the-icons ace-flyspell evil evil-leader python pyvenv python-black pyenv-mode anaconda-mode elpy company-anaconda org-bullets org-alert org-download htmlize org-roam exec-path-from-shell popwin monokai-theme rainbow-mode rainbow-delimiters auctex cdlatex reftex company-auctex magit js2-mode web-mode leetcode))
+   '(emmet-mode xml-rpc org2blog org2blg metaweblog pyim dap-mode lsp-ivy ivy lsp-treemacs flycheck lsp-mode rust-mode ctable deferred epc s company citre projectile hungry-delete youdao-dictionary swiper counsel smartparens use-package undo-tree which-key neotree smart-tab yasnippet all-the-icons ace-flyspell evil evil-leader python pyvenv python-black pyenv-mode anaconda-mode elpy company-anaconda org-bullets org-alert org-download htmlize org-roam exec-path-from-shell popwin monokai-theme rainbow-mode rainbow-delimiters auctex cdlatex reftex company-auctex magit js2-mode web-mode leetcode))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)

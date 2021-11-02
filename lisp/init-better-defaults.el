@@ -5,7 +5,6 @@
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)
 
-
 ;; 不蜂鸣
 (setq ring-bell-function 'ignore)
 

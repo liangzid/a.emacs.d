@@ -37,7 +37,7 @@
     ;; `global-mode-string' is useufl because `org-timer-set-timer' uses it
     "%M"
 
-    '(:eval my-extra-mode-line-info)
+    ;; '(:eval my-extra-mode-line-info)
 
     " %-" ;; fill with '-'
     ))
