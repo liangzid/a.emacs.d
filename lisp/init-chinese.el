@@ -5,7 +5,6 @@
 (my/install-package-if-not-found 'pyim-basedict)
 
 
-
 ;; {{ make IME compatible with evil-mode
 (defun evil-toggle-input-method ()
   "When input method is on, goto `evil-insert-state'."
