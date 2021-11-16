@@ -8,7 +8,7 @@
   (let ((head (concat "#+title: \n" "#+author: \n"
 		      (concat "#+date: " (current-time-string) "\n")
 		      "#+email: 2273067585@qq.com \n"
-		      "#+latex_class: elegantpaper"
+		      "#+latex_class: elegantpaper \n"
 		      "* 标题1" )))
     ;;insert
     (insert head)

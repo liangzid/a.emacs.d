@@ -12,6 +12,7 @@
 
 (defconst *is-server* t)
 
+(require 'init-wsl)
 (require 'init-elpa)
 (require 'init-self-config-function)
 (require 'init-modeline)
