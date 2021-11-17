@@ -10,6 +10,6 @@
 ;;
 ;;; Code:
 
-$3
+$0
 
 ;;; `(file-name-nondirectory (buffer-file-name))` ends here

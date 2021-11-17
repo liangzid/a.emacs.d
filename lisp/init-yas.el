@@ -11,7 +11,9 @@
 ;; definiting my auto init file for initilization files
 (defun lz/autoinsert-yas-expand()
   "Replace text in yasnippet template."
-  (message (concat "loading expand for buffer" (buffer-string)))
+  (message "loading expand for buffer")
+  (evil-insert 1)
+  ;; (message (concat "loading expand for buffer" (buffer-string)))
   (yas-expand-snippet (buffer-string) (point-min) (point-max)))
 
 ;;
@@ -29,8 +31,8 @@
   (define-auto-insert "\\.html$" ["~/.emacs.d/auto-insert/default-html.html" lz/autoinsert-yas-expand])
   (define-auto-insert "\\.py$" ["~/.emacs.d/auto-insert/default-py.py" lz/autoinsert-yas-expand])
   (define-auto-insert "\\.org$" ["~/.emacs.d/auto-insert/default-org.org" lz/autoinsert-yas-expand])
-  ;; (define-auto-insert "\\.md$" ["default-md.md" lz/autoinsert-yas-expand])
   (define-auto-insert "\\.txt$" ["~/.emacs.d/auto-insert/default-txt.txt" lz/autoinsert-yas-expand])
+  ;; (define-auto-insert "\\.py$" ["default-py.py" lz/autoinsert-yas-expand])
   )
 
 
