@@ -2,7 +2,8 @@
 
 
 (setq gc-cons-threshold most-positive-fixnum)
-(setq gc-cons-percentage 0.6)
+(setq gc-cons-threshold (* 50 1024 1024)) 
+;; (setq gc-cons-percentage 0.6)
 
 ;;用来消除emacs 27以上版本的警告。
 (setq warning-suppress-log-types '((package reinitialization)))

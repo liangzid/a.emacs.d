@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name:org-src-plantuml
+# key: suml
+# --
+
+
+
+#+begin_src plantuml :file `(expand-file-name (concat "./image/" (format-time-string "%Y%m%d%H%M%S") ".png"))`
+(a)-->(b)
+$1
+#+end_src
+
+
+
+
+

@@ -18,14 +18,14 @@
              :sitemap-title "Sitemap"         ; ... with title 'Sitemap'.
              :sitemap-sort-files anti-chronologically
              :sitemap-file-entry-format "%d %t"
-	     :html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"~/liangzid.github.io/notes/css/worg.css\"/>"
+	     :html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://liangzid.github.io/notes/css/worg.css\"/>"
 
          )
          ("blog-static"
              :base-directory "~/liangzid.github.io/notes/"
              :base-extension "css|js|png|jpg|gif|pdf|mp3|ogg|swf"
              :publishing-directory "~/liangzid.github.io/"
-	     :html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"~/liangzid.github.io/notes/css/worg.css\"/>"
+	     :html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://liangzid.github.io/notes/css/worg.css\"/>"
              :recursive t
              :publishing-function org-publish-attachment
           )

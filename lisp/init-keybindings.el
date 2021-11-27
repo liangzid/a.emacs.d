@@ -55,7 +55,7 @@
   (interactive)
   (load-file (buffer-name)))
 
-(add-hook 'elisp-byte-code-mode-hook '(lambda () (local-set-key (kbd "<f10>") 'lz/load-current-file)))
+(add-hook 'elisp-byte-code-mode-hook '(lambda () (local-set-key (kbd "<f8>") 'lz/load-current-file)))
 
 ;; (add-hook 'web-mode-hook '(lambda() (local-set-key (kbd "M-e") 'emmet-expand-yas)))
 
