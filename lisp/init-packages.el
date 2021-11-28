@@ -44,6 +44,12 @@
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-flip-when-above t)
 (setq company-global-modes '(not shell-mode))
+;; (setq company-auto-complete-chars '((kbd "TAB")))
+(define-key company-active-map (kbd "M-n") nil)
+(define-key company-active-map (kbd "M-p") nil)
+(define-key company-active-map (kbd "C-n") #'company-select-next)
+(define-key company-active-map (kbd "C-p") #'company-select-previous)
+;; (define-key company-active-map (kbd "TAB") #'yas-expand)
 (global-company-mode 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -80,14 +86,14 @@
     ;; (setq-default neo-show-hidden-files nil)
     (global-set-key [f3] 'neotree-toggle)))
 
-;; smart TAB
-(use-package smart-tab
-  :config
-  (progn
-    (defun @-enable-smart-tab ()
-      (smart-tab-mode))
-    (add-hook 'prog-mode-hook '@-enable-smart-tab)
-    ))
+;; ;; smart TAB
+;; (use-package smart-tab
+;;   :config
+;;   (progn
+;;     (defun @-enable-smart-tab ()
+;;       (smart-tab-mode))
+;;     (add-hook 'prog-mode-hook '@-enable-smart-tab)
+;;     ))
 
 (require 'company-english-helper)
 (setq company-english-helper-active-p nil)

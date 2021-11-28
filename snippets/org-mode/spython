@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name:spython
+# key:spython
+# --
+
+
+#+begin_src python
+$1
+
+#+end_src

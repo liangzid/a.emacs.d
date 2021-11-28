@@ -4,6 +4,7 @@
 (my/install-package-if-not-found 'evil-surround)
 (my/install-package-if-not-found 'evil-visualstar)
 (my/install-package-if-not-found 'evil-leader)
+
 ;; 开启evil 模式
 (use-package evil
   :ensure t
@@ -151,6 +152,15 @@
  "sr" 'highlight-symbol-query-replace
  "sn" 'highlight-symbol-nav-mode ;; 使用M-n,p进行上下导航
  
+ "sy" 'wsl-copy-region-to-clipboard ;; 将wsl中emacs的选中区域复制到系统clipboard中 
+ "sd" 'wsl-cut-region-to-clipboard ;; 同上，不过是剪切
+
+ "si" 'my-yank-image-from-win-clipboard-through-powershell ;; image 级别的yank
+
+ ;; shell relevant
+ "sh" 'shell
+ "sc" 'shell-command
+ 
  ;; "gd" 'evil-goto-definition
  "gd" 'xref-find-definitions-other-window
 
@@ -169,12 +179,10 @@
  "gs" 'git-add-commit-push-lz ;; git synroize.
 
 
- ;; shell relevant
- "sh" 'shell
- "sc" 'shell-command
  
  ;; ssh connect
  "41" 'ssh-connect-41
+ "42" 'ssh-connect-42
  "45" 'ssh-connect-45
  
  ;; manager for english query.
@@ -212,7 +220,6 @@
 (add-hook 'post-command-hook #'my-show-evil-state)
 ;; }}
 ;; -----------------------------------------------------------------------
-
 
 
 
