@@ -1,10 +1,4 @@
 #!/bin/bash
-
-
-
-
-
-
 sudo apt install xsel
 
 sudo apt install gdb

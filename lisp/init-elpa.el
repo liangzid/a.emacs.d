@@ -4,18 +4,33 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'cl)
-(setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
-                         ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/melpa-stable/")
-                         ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")))
+;(setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
+;                         ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
+;                         ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/melpa-stable/")
+					;                         ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")));
+(setq package-archives
+      '(
+	;; uncomment below line if you need use GNU ELPA
+	("gnu" . "https://elpa.gnu.org/packages/")
+	("melpa" . "https://melpa.org/packages/")
+	("melpa-stable" . "https://stable.melpa.org/packages/")
+
+	;("gnu"   . "http://elpa.emacs-china.org/gnu/")
+	;("melpa" . "http://elpa.emacs-china.org/melpa/")
+	;("melpa-stable" . "http://elpa.emacs-china.org/stable-melpa/")
+	;("org" . "http://elpa.emacs-china.org/org/")
+	))
 
 
-;; (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-;;                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-;; 			 ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
-;; (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-;;                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-;; 			 ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+;(setq package-archives '(("gnu" . "http://elpa.zilongshanren.com/gnu/")
+;			("melpa" . "http://elpa.zilongshanren.com/melpa/")))
+
+;(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+;                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+; 			 ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+; (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+;                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+; 			 ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
 
 ;;(if (< emacs-major-version 27)
