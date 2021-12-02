@@ -26,9 +26,42 @@
 
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
+
+
+;; org capture setup
 (global-set-key (kbd "C-c c") 'org-capture)
+(setq org-default-notes-file "~/liangzid.github.io/org/capture-file-inbox.org")
 
+(setq org-capture-templates nil)
 
+(add-to-list 'org-capture-templates
+             '("n" "Notes"
+               entry (file "~/liangzid.github.io/org/notes/inbox.org")
+               "* %^{heading} %t %^g\n  %?\n"
+               :empty-lines 1
+               ))
+
+(add-to-list 'org-capture-templates
+             '("t" "Tasks" entry
+               (file "~/liangzid.github.io/org/task.org")
+               "* TODO %^{title} %^g\n  %U\n\n  %?"
+               :empty-lines 1))
+
+;;; org agenda
+
+(setq org-agenda-span 'week)
+(setq org-agenda-files (list "~/liangzid.github.io/org/task.org" "~/liangzid.github.io/org/capture-file-inbox.org"))
+
+(setq org-deadline-warning-days 7)
+(setq org-agenda-todo-ignore-deadlines 'far)
+(setq org-agenda-inhibit-startup t)
+(setq org-agenda-skip-scheduled-if-done t)
+(setq org-agenda-skip-deadline-if-done t)
+(defun my-agenda-list ()
+  (interactive)
+  (progn
+    (org-agenda-list)
+    (delete-other-windows)))
 
 ;;-----------------------INSERT IMAGE---------(require 'org-download)
 (require 'org-download)

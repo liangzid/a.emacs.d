@@ -6,6 +6,10 @@
              :base-extension "org"
              :publishing-directory "~/liangzid.github.io/"
              :recursive t
+	     :htmlized-source t
+	     :html-extension "html"
+	     :body-only t
+	     :table-of-contents t
              :publishing-function org-html-publish-to-html
              :headline-levels 5
              :auto-preamble t
@@ -23,7 +27,7 @@
          )
          ("blog-static"
              :base-directory "~/liangzid.github.io/notes/"
-             :base-extension "css|js|png|jpg|gif|pdf|mp3|ogg|swf"
+             :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
              :publishing-directory "~/liangzid.github.io/"
 	     :html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://liangzid.github.io/notes/css/worg.css\"/>"
              :recursive t

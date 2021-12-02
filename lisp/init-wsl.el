@@ -9,7 +9,6 @@
   (call-process-region start end "clip.exe" nil 0)
   (kill-region start end))
 
-
 (defun my-yank-image-from-win-clipboard-through-powershell()
   "to simplify the logic, use c:/Users/Public as temporary directoy, and move it into current directoy"
   (interactive)
@@ -24,6 +23,5 @@
     (insert (concat "[[file:" file-path-wsl "]]"))
     (message "insert DONE.")
     ))
-
 
 (provide 'init-wsl)
