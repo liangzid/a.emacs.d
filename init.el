@@ -1,6 +1,5 @@
 ; nothing.
 
-
 (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-threshold (* 50 1024 1024)) 
 ;; (setq gc-cons-percentage 0.6)
@@ -13,6 +12,7 @@
 
 (defconst *is-server* t)
 
+
 (require 'init-wsl)
 (require 'init-elpa)
 (require 'init-self-config-function)
@@ -23,7 +23,7 @@
 (require 'init-clipboard)
 (require 'init-yas)
 (require 'init-git)
-
+;;(require 'init-telegram)
 (require 'init-python)
 (require 'init-org)
 (require 'init-latex)
@@ -39,6 +39,7 @@
 (require 'init-packages)
 (require 'init-lsp)
 (require 'init-evil)
+
 
 ;; for computer custom application. cannot be used for any self-designing.
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
