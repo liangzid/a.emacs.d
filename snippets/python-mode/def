@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: def 
+# key: def
+# --
+
+def $1($2):
+    """This function is used to ..."""
+    $3
+    return 0

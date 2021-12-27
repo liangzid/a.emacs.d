@@ -12,6 +12,48 @@
 
 (defconst *is-gui* (getenv "DISPLAY"))
 
+
+(defun select-a-region (begin end)
+  "select the region with begin and end posion; I use it for holding existing region."
+  (interactive)
+  (setq deactivate-mark nil)
+  (push-mark begin '() t)
+  (goto-char end))
+
+
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;; 补充满足正常编辑器风格的tab缩进和 S-TAB 反缩进
+
+;; (defun make-suojin (line)
+;;   ;; (message "%s" (concat "    " line))
+;;   (concat "    " line))
+
+
+;; (defun get-region-content ()
+;;   (buffer-substring-no-properties (region-beginning) (region-end))
+;;   )
+
+;; (defun replace-region-with-new-content (new-content)
+;;   (interactive)
+;;   (delete-region (region-beginning) (region-end))
+;;   (insert (concat new-content "\n")))
+
+;; (defun concat-string-list (slist)
+;;   (let ((num (length slist))
+;; 	(i 0)
+;; 	(finally-string ""))
+;;     (while (<= i num)
+;;       (setq finally-string (concat finally-string (nth i slist)))
+;;       (setq i (+ i 1)))
+;;     finally-string
+;;     ))
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+ 
+
 (provide 'init-self-config-function)
-
-

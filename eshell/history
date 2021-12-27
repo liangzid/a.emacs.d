@@ -91,3 +91,10 @@ git commit -m "修改了进行截图的配置，增加了git的管理包"
 git push origin master
 git push origin master
 exit
+ls 
+cp 1212_training_results.log 1207_resultss.log 
+python parser_result.py 
+python3 parser_result.py 
+python3 parser_result.py 
+oi
+exit

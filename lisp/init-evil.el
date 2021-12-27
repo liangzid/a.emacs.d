@@ -222,5 +222,33 @@
 ;; -----------------------------------------------------------------------
 
 
+;; -------------------------------------------------
+
+(defun zl/evil-shift-right ()
+  (interactive)
+  (if (use-region-p)
+      (progn
+	(setq beg (region-beginning))
+	(setq end (region-end))
+	(evil-shift-right beg end)
+	(select-a-region beg end))
+    (message "no region")))
+
+(defun zl/evil-shift-left ()
+  (interactive)
+  (if (use-region-p)
+      (progn
+	(setq beg (region-beginning))
+	(setq end (region-end))
+	(evil-shift-left beg end)
+	(select-a-region beg end))
+    (message "no region")))
+
+;; (global-set-key "" 'zl/evil-shift-left)
+;; (global-set-key ">" 'zl/evil-shift-right)
+;; -------------------------------------------------
+
+
+
 
 (provide 'init-evil)

@@ -9,6 +9,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/other-files")
+(add-to-list 'load-path "~/.emacs.d/other-files/netease-cloud-music.el")
 
 (defconst *is-server* t)
 
@@ -32,6 +33,8 @@
 (require 'init-blog)
 (require 'init-web)
 
+(require 'init-netease)
+
 (require 'init-ui)
 (require 'init-better-defaults)
 (require 'init-keybindings)
@@ -46,11 +49,11 @@
 (load-file custom-file)
 
 
-(if (and *is-linux* (or (not *is-server*) *is-gui*))
-    ((message "prepare to load eaf which may cost some time...")
-     (require 'init-eaf))
-  (message "NO EAF-INSTALL FOR TUI ENVIRONMENT.")  
-    )
+;; (if (and *is-linux* (or (not *is-server*) *is-gui*))
+;;     ((message "prepare to load eaf which may cost some time...")
+;;      (require 'init-eaf))
+;;   (message "NO EAF-INSTALL FOR TUI ENVIRONMENT.")  
+;;     )
 
 (provide 'init)
 

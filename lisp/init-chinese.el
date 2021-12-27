@@ -4,6 +4,21 @@
 (my/install-package-if-not-found 'pyim)
 (my/install-package-if-not-found 'posframe)
 (my/install-package-if-not-found 'pyim-basedict)
+(my/install-package-if-not-found 'rime)
+
+(require 'use-package)
+
+(use-package rime
+  :init
+  (setq rime-posframe-properties
+	(list :background-color "#333333"
+            :foreground-color "#dcdccc"
+            :internal-border-width 10))
+  (setq default-input-method "rime"
+	rime-show-candidate 'posframe)
+  :custom
+  (default-input-method "rime"))
+
 
 
 (add-hook 'emacs-startup-hook
@@ -52,7 +67,15 @@
   (if current-input-method (message "拼音已经打开!")))
 (advice-add 'evil-insert-state :around #'my-evil-insert-state-hack)
 
-(global-set-key (kbd "M-\\") 'evil-toggle-input-method)
+;; (global-set-key (kbd "M-\\") 'evil-toggle-input-method)
+
+(global-set-key (kbd "M-\\") 'toggle-input-method)
+
+;; (global-set-key (kbd "S") 'toggle-input-method)
+
+
+
+
 ;; }}
 
 ;; {{ pyim

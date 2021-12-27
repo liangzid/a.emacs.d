@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: defm
+# key: defm
+# --
+
+def $1(self, $2):
+    $3
+    return 0

@@ -1,0 +1,177 @@
+2021-12-23, Thursday, 10:41:53
+
+*scratch*
+
+</filepath>
+
+#+BEGIN_SRC  
+hahahahahaha
+[2021-12-23 Thu 10:11]
+
+
+(format-time-string "%F, %A, %T")
+
+
+
+
+
+(setq test "11111..2222")
+(setq test (s-replace ".." "33333333" test))
+
+
+test
+ 
+#+END_SRC 
+
+ceshi
+
+2021-12-23, Thursday, 10:43:16
+
+*scratch*
+
+</filepath>
+
+#+BEGIN_SRC  
+(setq test "11111..2222")
+(setq test (s-replace ".." "33333333" test))
+ 
+#+END_SRC 
+
+blablabla
+
+2021-12-23, Thursday, 10:45:04
+
+*scratch*
+
+</filepath>
+
+#+BEGIN_SRC  
+(setq test "11111..2222")
+(setq test (s-replace ".." "33333333" test))
+ 
+#+END_SRC 
+
+blablabla
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> COLLECTED TIME: 2021-12-23, Thursday, 10:49:34
+
+>> FROM BUFFER: init-collection.el
+
+>> FROM PATH: [[file:/home/liangzi/.emacs.d/lisp/init-collection.el]/home/liangzi/.emacs.d/lisp/init-collection.el]
+
+#+BEGIN_SRC  
+(defvar collected-format (concat
+			  ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+			  ">> COLLECTED TIME: </time>\n\n"
+			  ">> FROM BUFFER: </buffer>\n\n"
+			  ">> FROM PATH: </filepath>\n\n"
+			  "#+BEGIN_SRC </mode> \n"
+			  "</region> \n"
+			  "#+END_SRC \n\n"
+			  ">>YOUR COMMENT: ceshi format\n\n")
+
+  "This value means the default format you want to insert. 
+   The default is a pre-setting org format. 
+   Some special information can be insert, such as:
+   </time>, which is the collected time;
+   </buffer> which is the buffer name;
+   </filepath> which is the file path for selected buffer if it exists;
+   </region> which is the content you want to save;
+   ceshi format which is the comment if you want to insert a comment.")
+ 
+#+END_SRC 
+
+>>YOUR COMMENT: ceshi format
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> COLLECTED TIME: 2021-12-23, Thursday, 10:51:19
+
+>> FROM BUFFER: init-collection.el
+
+>> FROM PATH: [[file:/home/liangzi/.emacs.d/lisp/init-collection.el][/home/liangzi/.emacs.d/lisp/init-collection.el]]
+
+#+BEGIN_SRC  
+
+(defun collected-run ()
+ "When you select a region and execute this function, 
+  it will copy the contents you have seleted,
+  and then paste them into a text file ``collected-save-path'' you have pre-defined. 
+  And some information like collected-time, collected-buffer-from,
+  collected-file-path-from, as well as comments you have 
+  written will be recorded with your self-defined format ``collected-format''."
+  (interactive)
+  (let* ((text-return collected-format))
+    (progn
+      (if (use-region-p)
+	  (progn
+	    ;; running insert time command if have </time>
+	    (if (string-match-p (regexp-quote "</time>") collected-format)
+		;; replace
+		(setq text-return
+		      (s-replace "</time>" (format-time-string "%F, %A, %T") text-return))
+	      )
+
+	    ;; running insert buffer if have </buffer>
+	    (if (string-match-p (regexp-quote "</buffer>") collected-format)
+		;; replace
+		(setq text-return
+		      (s-replace "</buffer>" (buffer-name) text-return))
+	      )
+
+	    ;; running insert filepath if have </filepath>
+	    (if (string-match-p (regexp-quote "</filepath>") collected-format)
+		;; replace
+		(if (buffer-file-name)
+		    (setq text-return
+			  (s-replace "</filepath>" (concat "[[file:"
+							   (buffer-file-name)
+							   "]["
+							   (buffer-file-name)
+							   "]]")
+				     text-return))
+		  (setq text-return
+			(s-replace "</filepath>" "NONE" text-return))
+		  )
+	      )
+
+	    ;; running insert prog-mode if its main mode is prog-mode
+	    (if (string-match-p (regexp-quote "</mode>") collected-format)
+		(progn
+		  ;; get current buffer mode
+		  (setq current-major-mode (get-buffer-mode (current-buffer)))
+		  (if (progmode-p current-major-mode)
+		      (setq text-return
+			    (s-replace "</mode>" (model2prog current-buffer-mode) text-return))
+		    (setq text-return
+			  (s-replace "</mode>" "" text-return))
+		      )
+		  )
+	      )
+
+	    ;; running insert region contents 
+	      (setq text-return
+		    (s-replace "</region>" (buffer-substring-no-properties
+				    (region-beginning) (region-end))
+			       text-return))
+
+	    ;; running insertcomment
+	    (if (string-match-p (regexp-quote "blablabla") collected-format)
+		;; replace
+		(setq text-return
+		      (s-replace "blablabla" (read-from-minibuffer "your comment: ") text-return))
+	      )
+
+	    ;; save and exit files
+	    (create-empty-file-if-no-exists collected-save-path)
+	    (append-to-file text-return nil (expand-file-name collected-save-path))
+
+	    (message (concat "DONE. Save to: " (expand-file-name collected-save-path)))
+
+	    )
+	(message "no regions need to be collected."))
+
+    )))
+ 
+#+END_SRC 
+
+>>YOUR COMMENT: blablabla
+
