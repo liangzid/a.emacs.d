@@ -21,17 +21,17 @@
       (kill-buffer (nth i bufls))))
     (message "All buffers cleaning done.")))
 
-(buffer-list)
+;; (buffer-list)
 
-(length (buffer-list))
+;; (length (buffer-list))
 
-(kill-buffer "0.02_test.res")
+;; (kill-buffer "0.02_test.res")
 
-(clean-all-buffers)
+;; (clean-all-buffers)
 
-(current-buffer)
+;; (current-buffer)
 
-(kill-buffer (current-buffer))
+;; (kill-buffer (current-buffer))
 
 (provide 'init-buffer)
 ;;; init-buffer.el ends here
