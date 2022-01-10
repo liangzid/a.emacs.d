@@ -1,4 +1,6 @@
 #+title: $1
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./css/worg.css" />
 #+date: `(current-time-string)`
 #+author: Zi Liang
 #+email: liangzid@stu.xjtu.edu.cn

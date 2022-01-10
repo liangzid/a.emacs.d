@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <21/10/03 10:55:13 /home/liangzi/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <22/01/10 20:09:41 /home/liangzi/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; Run `M-x tramp-cleanup-all-connections' instead.
 
@@ -21,5 +21,38 @@
   ("uid-integer" 1004)
   ("gid-integer" 1004)
   ("readlink" "\\readlink")
+  ("case-insensitive" nil)
+  ("~" "/home/szhang"))
+ ((tramp-file-name "ssh" "zliang" nil "219.245.186.42" nil nil nil)
+  ("readlink" "\\readlink")
+  ("uname" "Linux 4.15.0-140-generic")
+  ("locale" "LC_ALL=en_US.utf8")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("pipe-buf" 4096)
+  ("remote-shell" "/bin/sh")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("~" "/home/zliang")
+  ("file-exists" "test -e")
+  ("case-insensitive" nil)
+  ("stat" nil)
+  ("id" "/usr/bin/id")
+  ("gid-string" "zliang")
+  ("gid-integer" 1007))
+ ((tramp-file-name "ssh" "szhang" nil "219.245.186.45" nil nil nil)
+  ("uname" "Linux 4.4.0-131-generic")
+  ("locale" "LC_ALL=en_US.utf8")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("pipe-buf" 4096)
+  ("remote-shell" "/bin/sh")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("file-exists" "test -e")
   ("case-insensitive" nil)
   ("~" "/home/szhang")))
