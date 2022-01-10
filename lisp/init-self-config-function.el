@@ -21,6 +21,9 @@
   (goto-char end))
 
 
+(defun helpme-select ()
+  (interactive)
+  (message "%s" (random 2)))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;; 补充满足正常编辑器风格的tab缩进和 S-TAB 反缩进

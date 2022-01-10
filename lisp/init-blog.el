@@ -1,4 +1,12 @@
 (require 'ox-publish)
+
+
+(defvar blog-note-path "~/liangzid.github.io/notes/" "my path of take notes.")
+
+(defun open-org-note()
+  (interactive)
+  (counsel-find-file blog-note-path))
+
 (setq org-publish-project-alist
       '(
          ("blog-notes"

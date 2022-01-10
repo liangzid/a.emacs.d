@@ -178,7 +178,14 @@
  ;; git relevant
  "gs" 'git-add-commit-push-lz ;; git synroize.
 
+ "op" 'org-publish
+ "on" 'open-org-note
+ "ol" 'open-papers-in-writing ;; open latex paper in writing...
 
+ "rs" 'lz/running-current-bash-with-nohup 
+ "rp" 'lz/running-current-python-with-nohup-env
+ "rtb" 'lz/open-tensorboard-in-current-buffer
+ "ns" 'lz/look-nvidia-state
  
  ;; ssh connect
  "41" 'ssh-connect-41
@@ -190,13 +197,16 @@
  "te" 'toggle-company-english-helper
 
  ;; manager for other frequency.
- "ac" 'ispell-buffer
+ "is" 'ispell-buffer
  "fs" 'flyspell-mode
 
  ;; for orgmode application
  "ii" 'my-screen-capture
  "ih" 'fastinsert-org-head
  "ic" 'org-insert-src-block
+
+ ;; easy collections
+ "ec" 'collected-run
 
  )
 

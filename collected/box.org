@@ -175,3 +175,29 @@ blablabla
 
 >>YOUR COMMENT: blablabla
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>> COLLECTED TIME: 2022-01-10, Monday, 10:16:48
+
+>> FROM BUFFER: ijcai22.tex
+
+>> FROM PATH: [[file:/mnt/d/paper/theBanality/ijcai22.tex][/mnt/d/paper/theBanality/ijcai22.tex]]
+
+#+BEGIN_SRC  
+Recently there are increasing concerns about 
+#+END_SRC 
+
+>>YOUR COMMENT: latex usage application...
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>> COLLECTED TIME: 2022-01-10, Monday, 10:52:48
+
+>> FROM BUFFER: ijcai22.tex
+
+>> FROM PATH: [[file:/mnt/d/paper/theBanality/ijcai22.tex][/mnt/d/paper/theBanality/ijcai22.tex]]
+
+#+BEGIN_SRC  
+In particular,  
+#+END_SRC 
+
+>>YOUR COMMENT: latex comments
+

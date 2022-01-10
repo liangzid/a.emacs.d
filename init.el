@@ -32,6 +32,8 @@
 (require 'init-rust)
 (require 'init-blog)
 (require 'init-web)
+(require 'init-path)
+(require 'init-collection)
 
 (require 'init-netease)
 
