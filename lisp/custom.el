@@ -27,7 +27,7 @@
  '(magit-diff-use-overlays nil)
  '(org-agenda-files '("~/liangzid.github.io/org/task.org"))
  '(package-selected-packages
-   '(request rime telega eglot evil-visualstar evil-surround undo-fu evil-escape exwm posframe pyim-basedict showkey calfw autoinsert emmet-mode xml-rpc org2blog org2blg metaweblog pyim dap-mode lsp-ivy ivy lsp-treemacs flycheck lsp-mode rust-mode ctable deferred epc s company citre projectile hungry-delete youdao-dictionary swiper counsel smartparens use-package undo-tree which-key neotree smart-tab yasnippet all-the-icons ace-flyspell evil evil-leader python pyvenv python-black pyenv-mode anaconda-mode elpy company-anaconda org-bullets org-alert org-download htmlize org-roam exec-path-from-shell popwin monokai-theme rainbow-mode rainbow-delimiters auctex cdlatex reftex company-auctex magit js2-mode web-mode leetcode))
+   '(elfeed elfeed-org request rime telega eglot evil-visualstar evil-surround undo-fu evil-escape exwm posframe pyim-basedict showkey calfw autoinsert emmet-mode xml-rpc org2blog org2blg metaweblog pyim dap-mode lsp-ivy ivy lsp-treemacs flycheck lsp-mode rust-mode ctable deferred epc s company citre projectile hungry-delete youdao-dictionary swiper counsel smartparens use-package undo-tree which-key neotree smart-tab yasnippet all-the-icons ace-flyspell evil evil-leader python pyvenv python-black pyenv-mode anaconda-mode elpy company-anaconda org-bullets org-alert org-download htmlize org-roam exec-path-from-shell popwin monokai-theme rainbow-mode rainbow-delimiters auctex cdlatex reftex company-auctex magit js2-mode web-mode leetcode))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)

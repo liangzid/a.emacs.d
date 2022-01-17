@@ -34,6 +34,7 @@
 (require 'init-web)
 (require 'init-path)
 (require 'init-collection)
+(require 'init-rss)
 
 (require 'init-netease)
 

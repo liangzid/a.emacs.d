@@ -7,3 +7,6 @@
 [submodule "other-files/org-static-blog"]
 	path = other-files/org-static-blog
 	url = https://github.com/bastibe/org-static-blog.git
+[submodule "other-files/ox-rss"]
+	path = other-files/ox-rss
+	url = https://github.com/emacsmirror/ox-rss.git

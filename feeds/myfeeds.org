@@ -1,0 +1,31 @@
+#+title: My feed list
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./css/worg.css" />
+#+date: Mon Jan 17 14:21:30 2022
+#+author: Zi Liang
+#+email: liangzid@stu.xjtu.edu.cn
+#+latex_class: elegantpaper
+#+filetags: emacs:rss:config
+
+
+* blogs                                                        :elfeed:
+** daily                                                        :daily:
+*** http://telescoper.wordpress.com/feed/
+*** http://xkcd.com/rss.xml
+*** http://timharford.com/feed/
+*** http://understandinguncertainty.org/rss.xml
+** emacs                                                        :emacs:
+*** http://www.reddit.com/r/emacs/.rss
+*** http://planet.emacsen.org/atom.xml
+*** http://feeds.feedburner.com/XahsEmacsBlog
+*** http://pragmaticemacs.com/feed/
+*** [[http://emacs.stackexchange.com/feeds][SX]]
+** AI :AI:
+*** [[https://lilianweng.github.io/lil-log/feed.xml][lilianweng-blog]]
+*** [[https://www.microsoft.com/en-us/research/feed/][MSR-AI-BLOG]]
+*** MSRA-AI-blog
+*** [[https://openai.com/blog/rss/][OpenAI]]
+** havefun :havefun:
+*** [[https://www.douban.com/feed/people/155144115/interests][douban-myself]]
+*** [[https://www.douban.com/feed/people/Caligulaandsu/interests][苏乔的豆瓣经历]]
+*** 
