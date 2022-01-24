@@ -161,8 +161,12 @@
  "sh" 'shell
  "sc" 'shell-command
  
- ;; "gd" 'evil-goto-definition
- "gd" 'xref-find-definitions-other-window
+ "gd" 'evil-goto-definition
+ ;; "gd" 'xref-find-definitions-other-window
+ "cu" 'citre-update-this-tags-file
+ "cd" 'citre-jump
+ "cD" 'citre-jump-back
+ "cp" 'citre-ace-peek
 
  ;; python debug
  "dd" 'pdb 

@@ -60,7 +60,7 @@
   (interactive)
   (let* ((buffer-name (buffer-name))
 	 (filepath (buffer-file-name))
-	 (current-day-time (format-time-string "%F_%A_%T"))
+	 (current-day-time (format-time-string "%F"))
 	 (filename (concat "running_" (s-replace ".sh" "" buffer-name)))
 	 (directory-path (nth 0(split-string filepath buffer-name)))
 	 (running-string (concat "nohup python " buffer-name "> "
@@ -74,7 +74,7 @@
   (interactive)
   (let* ((buffer-name (buffer-name))
 	 (filepath (buffer-file-name))
-	 (current-day-time (format-time-string "%F_%A_%T"))
+	 (current-day-time (format-time-string "%F"))
 	 (filename (concat "running_" (s-replace ".sh" "" buffer-name)))
 	 (directory-path (nth 0(split-string filepath buffer-name)))
 	 (running-string (concat "nohup python " buffer-name "> "
@@ -98,7 +98,7 @@
 
   (let* ((buffer-name (buffer-name))
 	 (filepath (buffer-file-name))
-	 (current-day-time (format-time-string "%F_%A_%T"))
+	 (current-day-time (format-time-string "%F"))
 	 (directory-path (nth 0(split-string filepath buffer-name)))
 	 (default-directory directory-path)
 	 (host (nth 0 (split-string (nth 1 (split-string filepath "@")) ":"))))

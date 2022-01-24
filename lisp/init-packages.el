@@ -1,6 +1,17 @@
 (require 'cl)
 (require 'use-package)
 
+
+;; (my/install-package-if-not-found 'exec-path-from-shell)
+
+;; (require 'exec-path-from-shell)
+
+;; (exec-path-from-shell-initialize)
+
+
+
+
+
 (command-log-mode 1)
 
 (use-package youdao-dictionary

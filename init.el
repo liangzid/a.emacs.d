@@ -1,4 +1,4 @@
-; nothing. add something
+; nothing. add something.
 
 (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-threshold (* 50 1024 1024)) 
@@ -25,6 +25,7 @@
 (require 'init-yas)
 (require 'init-git)
 ;;(require 'init-telegram)
+(require 'init-citre)
 (require 'init-python)
 (require 'init-org)
 (require 'init-latex)
@@ -43,7 +44,7 @@
 (require 'init-keybindings)
 (require 'init-spell)
 (require 'init-packages)
-(require 'init-lsp)
+(require 'init-lsp) ;; language server p
 (require 'init-evil)
 
 

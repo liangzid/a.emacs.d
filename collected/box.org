@@ -201,3 +201,30 @@ In particular,
 
 >>YOUR COMMENT: latex comments
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>> COLLECTED TIME: 2022-01-17, Monday, 22:37:28
+
+>> FROM BUFFER: whyemacs.org
+
+>> FROM PATH: [[file:/home/liangzi/whyemacs.org][/home/liangzi/whyemacs.org]]
+
+#+BEGIN_SRC  
+* 为什么要使用emacs？
+
+1. 高效率；
+   1. 键盘 vs 鼠标
+   2. 自我加速
+   3. 站在别人的肩膀上
+   4. all things in one way
+2. 自配置；
+   1. 乐高玩法
+   2. 前端玩法
+3. 自由；
+   1. GNU is Not Unix
+4. 可以学到很多东西
+   1. coding
+ 
+#+END_SRC 
+
+>>YOUR COMMENT: 我的大纲————关于emacs
+

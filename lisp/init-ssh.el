@@ -1,3 +1,5 @@
+(require 'tramp)
+;; (add-to-list 'tramp-remote-path "/home/zliang/software/ctags/")
 
 (defun ssh-connect-41 ()
   (interactive)
