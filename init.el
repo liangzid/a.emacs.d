@@ -16,6 +16,7 @@
 
 (require 'init-wsl)
 (require 'init-elpa)
+(require 'init-dired)
 (require 'init-self-config-function)
 (require 'init-modeline)
 (require 'init-window)

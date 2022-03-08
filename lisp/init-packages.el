@@ -1,6 +1,6 @@
 (require 'cl)
 (require 'use-package)
-
+(my/install-package-if-not-found 'orderless)
 
 ;; (my/install-package-if-not-found 'exec-path-from-shell)
 
@@ -46,6 +46,15 @@
 ;;    ;; citre-project-root-function #'projectile-project-root
 ;;    ))
 
+(require 'orderless)
+(setq completion-styles '(orderless))
+(setq orderless-component-separator "[ &]")
+
+(defun just-one-face (fn &rest args)
+  (let ((orderless-match-faces [completions-common-part]))
+    (apply fn args)))
+
+(advice-add 'company-capf--candidates :around #'just-one-face)
 ;; 自动补全
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq company-idle-delay 0.01)

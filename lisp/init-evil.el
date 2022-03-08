@@ -146,6 +146,10 @@
  "hv" 'counsel-describe-variable
  "hk" 'describe-key
  "hm" 'describe-mode
+
+ ;; hide level and shou block.
+ "hl" 'hs-hide-level
+ "sl" 'hs-show-block
  
  ;; code navigation.
  "sh" 'highlight-symbol
@@ -182,9 +186,11 @@
  ;; git relevant
  "gs" 'git-add-commit-push-lz ;; git synroize.
 
+ "owd" 'my-open-windows-downloads ;; open windows download dir
  "op" 'org-publish
  "on" 'open-org-note
  "ol" 'open-papers-in-writing ;; open latex paper in writing...
+ "oc" 'open-codes-in-d
 
  "rs" 'lz/running-current-bash-with-nohup 
  "rp" 'lz/running-current-python-with-nohup-env
@@ -195,6 +201,7 @@
  "41" 'ssh-connect-41
  "42" 'ssh-connect-42
  "45" 'ssh-connect-45
+ "48" 'ssh-connect-48
  
  ;; manager for english query.
  "cy" 'youdao-dictionary

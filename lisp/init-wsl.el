@@ -24,4 +24,9 @@
     (message "insert DONE.")
     ))
 
+(defun my-open-windows-downloads()
+  "open directory ``Downloads'' in Windows Systems."
+  (interactive)
+  (counsel-find-file "/mnt/d/Downloads/"))
+
 (provide 'init-wsl)

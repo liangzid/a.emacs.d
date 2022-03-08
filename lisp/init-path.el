@@ -11,11 +11,15 @@
 ;;; Code:
 
 (defvar paper-path "/mnt/d/paper/" "PATH of Latex Papers in Writing...")
+(defvar code-path "/mnt/d/code/" "PATH of codes in writing...")
 
 (defun open-papers-in-writing()
   (interactive)
   (counsel-find-file paper-path))
 
+(defun open-codes-in-d()
+  (interactive)
+  (counsel-find-file code-path))
 (provide 'init-path)
 
 ;;; init-path.el ends here

@@ -21,5 +21,9 @@
   (counsel-find-file "/ssh:szhang@219.245.186.45:/home/szhang/liangzi_need_smile")
   )
 
+(defun ssh-connect-48 ()
+  (interactive)
+  (counsel-find-file "/ssh:zliang@219.245.186.48:/home/zliang/")
+  )
  
 (provide 'init-ssh)
