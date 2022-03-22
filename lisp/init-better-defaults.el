@@ -26,6 +26,9 @@
 
 ;; set coding
 (prefer-coding-system 'utf-8)
+;; (reset-language-environment 'utf-8)
+;; (set-buffer-file-coding-system 'utf-8-unix)
+;; (setq default-buffer-file-coding-system 'utf-8-unix)
 
 (setenv "LANG" "en_US.UTF-8")
 (setenv "LC_ALL" "en_US.UTF-8")

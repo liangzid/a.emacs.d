@@ -3,9 +3,10 @@
 ;;                                      ------2020.04.20的梁子写给现在的梁子的话
 ;; https://zhuanlan.zhihu.com/p/59509596
 (require 'use-package)
+(my/install-package-if-not-found 'darcula-theme)
 
 ;; 取消自动断行功能
-(global-visual-line-mode 1)
+(global-visual-line-mode nil)
 
 ;; 激活高亮当前行的功能
 (use-package hl-line
@@ -21,7 +22,11 @@
 
 
 ;; theme
-(load-theme 'monokai t)
+(if *is-windows*
+    (load-theme 'darcula t)
+  (load-theme 'adwaita)
+  )
+;; (load-theme 'monokai t)
 (add-hook 'prog-mode-hook (rainbow-mode t))
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
 
@@ -32,20 +37,22 @@
 (set-keyboard-coding-system 'utf-8) 
 (setq default-buffer-file-coding-system 'utf-8)
 
-
 ;;; 字体设置
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 解决显示Unicode字符的卡顿问题
-;(setq inhibit-compacting-font-caches t)
-;; ;; 汉字默认字体为Kaiti(楷体)，可改为其它字体
+;; ;; ;; 汉字默认字体为Kaiti(楷体)，可改为其它字体
 ;; (set-fontset-font "fontset-default" 'han
 ;; 		  "KaiTi")
-;(set-fontset-font "fontset-default" 'han
-;		  "SimHei")
-
-;; 数学符号默认字体为Cambria Math
-;(set-fontset-font "fontset-default" 'symbol
-; 		  "Cambria Math")
+;; (set-fontset-font "fontset-default" 'han
+;; 		  "SimHei")
+;; ;; 数学符号默认字体为Cambria Math
+;; (set-fontset-font "fontset-default" 'symbol
+;; 		  "Cambria Math")
+(if *is-windows*
+    (progn
+      ;; 解决显示Unicode字符的卡顿问题
+      (setq inhibit-compacting-font-caches t)
+      (set-face-attribute 'default nil :font "微软雅黑 12")
+      ))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\
 
 

@@ -12,7 +12,7 @@
  '(cnblogs-user-passwd "liangzi227302875")
  '(compilation-message-face 'default)
  '(custom-safe-themes
-   '("d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" default))
+   '("f76b5717f04b34542972fb4d320df806d9a465f16c07b31b4bd6e79e4feb1794" "d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" default))
  '(fci-rule-color "#3C3D37")
  '(highlight-changes-colors '("#FD5FF0" "#AE81FF"))
  '(highlight-tail-colors
@@ -26,8 +26,7 @@
      ("#3C3D37" . 100)))
  '(magit-diff-use-overlays nil)
  '(org-agenda-files '("~/liangzid.github.io/org/task.org"))
- '(package-selected-packages
-   '(lsp-pyright tramp orderless dirvish elfeed elfeed-org request rime telega eglot evil-visualstar evil-surround undo-fu evil-escape exwm posframe pyim-basedict showkey calfw autoinsert emmet-mode xml-rpc org2blog org2blg metaweblog pyim dap-mode lsp-ivy ivy lsp-treemacs flycheck lsp-mode rust-mode ctable deferred epc s company citre projectile hungry-delete youdao-dictionary swiper counsel smartparens use-package undo-tree which-key neotree smart-tab yasnippet all-the-icons ace-flyspell evil evil-leader python pyvenv python-black pyenv-mode anaconda-mode elpy company-anaconda org-bullets org-alert org-download htmlize org-roam exec-path-from-shell popwin monokai-theme rainbow-mode rainbow-delimiters auctex cdlatex reftex company-auctex magit js2-mode web-mode leetcode))
+ '(package-selected-packages '(company))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)

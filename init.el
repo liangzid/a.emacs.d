@@ -38,7 +38,7 @@
 (require 'init-collection)
 (require 'init-rss)
 
-(require 'init-netease)
+;;(require 'init-netease)
 
 (require 'init-ui)
 (require 'init-better-defaults)

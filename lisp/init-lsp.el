@@ -25,6 +25,8 @@
 (add-hook 'python-mode-hook 'eglot-ensure)
 ;; (add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
 (add-to-list 'eglot-server-programs '(python-mode . ("pyright-langserver" "--stdio")))
+(add-to-list 'eglot-server-programs '(rust-mode . ("/home/zliang/.cargo/bin/rust-analyzer")))
+;; (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer" "/home/zliang/.cargo/bin/rust-analyzer")))
 
 	     ;; (add-to-list 'eglot-server-programs
 ;;              `(python-mode . ("/home/liangzi/anaconda3/bin/pyright")))
