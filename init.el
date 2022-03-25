@@ -54,8 +54,9 @@
 (load-file custom-file)
 
 
-;; (if (and *is-linux* (or (not *is-server*) *is-gui*))
-;;     ((message "prepare to load eaf which may cost some time...")
+;; (if (or *is-linux* (or (not *is-server*) *is-gui*))
+;;     (progn
+;;      (message "prepare to load eaf which may cost some time...")
 ;;      (require 'init-eaf))
 ;;   (message "NO EAF-INSTALL FOR TUI ENVIRONMENT.")  
 ;;     )

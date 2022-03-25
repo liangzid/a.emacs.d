@@ -12,6 +12,19 @@
 
 (defconst *is-gui* (getenv "DISPLAY"))
 
+;; solving the windows encoding problems
+(defun lz/save-buffer()
+    (interactive)
+   (set-buffer-file-coding-system 'utf-8 't) 
+   (set-buffer-file-coding-system 'unix 't) 
+    (save-buffer)
+  )
+(if *is-windows*
+    (progn
+  (global-set-key (kbd "C-x C-s") 
+  'lz/save-buffer)
+   ))
+
 
 (defun select-a-region (begin end)
   "select the region with begin and end posion; I use it for holding existing region."

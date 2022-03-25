@@ -12,7 +12,7 @@
  '(cnblogs-user-passwd "liangzi227302875")
  '(compilation-message-face 'default)
  '(custom-safe-themes
-   '("f76b5717f04b34542972fb4d320df806d9a465f16c07b31b4bd6e79e4feb1794" "d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" default))
+   '("78e6be576f4a526d212d5f9a8798e5706990216e9be10174e3f3b015b8662e27" "f76b5717f04b34542972fb4d320df806d9a465f16c07b31b4bd6e79e4feb1794" "d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" default))
  '(fci-rule-color "#3C3D37")
  '(highlight-changes-colors '("#FD5FF0" "#AE81FF"))
  '(highlight-tail-colors

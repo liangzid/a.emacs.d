@@ -10,6 +10,9 @@
 ;;
 ;;; Code:
 
+(require 'ibuffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 (defun clean-all-buffers()
   (let* ((bufls (buffer-list))
 	 (i (length bufls)))
