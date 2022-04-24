@@ -2,7 +2,20 @@
 
 (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-threshold (* 50 1024 1024)) 
-;; (setq gc-cons-percentage 0.6)
+
+
+;; 定义快速打开init-file的操作，并将之绑定在F2上.
+(defun open-my-init-file()
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
+(global-set-key (kbd "<f2>") 'open-my-init-file)
+
+
+;; load eaf if necessary, bounding it into <F9>
+(defun zl/load-eaf()
+  (interactive)
+  (require 'init-eaf))
+(global-set-key (kbd "<f1>") 'zl/load-eaf)
 
 ;;用来消除emacs 27以上版本的警告。
 (setq warning-suppress-log-types '((package reinitialization)))
@@ -32,6 +45,7 @@
 (require 'init-latex)
 (require 'init-cpp)
 (require 'init-rust)
+(require 'init-cider)
 (require 'init-blog)
 (require 'init-web)
 (require 'init-path)
@@ -40,27 +54,36 @@
 
 ;;(require 'init-netease)
 
-(require 'init-ui)
 (require 'init-better-defaults)
+(require 'init-ui)
 (require 'init-keybindings)
 (require 'init-spell)
 (require 'init-packages)
 (require 'init-lsp) ;; language server p
 (require 'init-evil)
 
-
+(zl/load-eaf)
 ;; for computer custom application. cannot be used for any self-designing.
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
 
+(setq gc-cons-percentage 0.6)
 
-;; (if (or *is-linux* (or (not *is-server*) *is-gui*))
-;;     (progn
-;;      (message "prepare to load eaf which may cost some time...")
-;;      (require 'init-eaf))
-;;   (message "NO EAF-INSTALL FOR TUI ENVIRONMENT.")  
-;;     )
+
+
+
+
+
+
+;; toggle maximized screen
+;; (maximize-window)
+;; (toggle-frame-fullscreen)
+
+(add-to-list 'default-frame-alist '(full-screen . maximized))
+
+
+
+
+
 
 (provide 'init)
-
-

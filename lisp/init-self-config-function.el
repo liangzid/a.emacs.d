@@ -1,9 +1,4 @@
 
-;; 定义快速打开init-file的操作，并将之绑定在F2上.
-(defun open-my-init-file()
-  (interactive)
-  (find-file "~/.emacs.d/init.el"))
-(global-set-key (kbd "<f2>") 'open-my-init-file)
 
 ;; 判断是哪一个操作系统，有利于后续的一些操作
 (defconst *is-mac* (eq system-type 'darwin))
@@ -12,27 +7,57 @@
 
 (defconst *is-gui* (getenv "DISPLAY"))
 
+(defun lz/is-tramp()
+  (interactive)
+  "describe current buffer is in tramp or not."
+  (let* ((buffer-path (buffer-file-name))
+	 (if-have-ssh (cl-search "/ssh:" buffer-path))
+	 (if-have-plink (cl-search "/plink:" buffer-path))
+	 )
+    (if (or if-have-ssh if-have-plink)
+	1
+     nil 
+	)
+    
+    )
+  )
+;; 哈哈哈
 ;; solving the windows encoding problems
 (defun lz/save-buffer()
     (interactive)
-   (set-buffer-file-coding-system 'utf-8 't) 
-   (set-buffer-file-coding-system 'unix 't) 
+    (if (lz/is-tramp)
+	(set-buffer-file-coding-system 'utf-8-unix) 
+      (set-buffer-file-coding-system 'utf-8 't) 
+	)
     (save-buffer)
   )
-(if *is-windows*
-    (progn
-  (global-set-key (kbd "C-x C-s") 
-  'lz/save-buffer)
-   ))
+(global-set-key (kbd "C-x C-s") 'lz/save-buffer)
+;; (if *is-windows*
+;;     (progn
+;;   (global-set-key (kbd "C-x C-s") 
+;;   'lz/save-buffer)
+;;    ))
 
 
-(defun select-a-region (begin end)
-  "select the region with begin and end posion; I use it for holding existing region."
-  (interactive)
-  (setq deactivate-mark nil)
-  (push-mark begin '() t)
-  (goto-char end))
+;; (defun select-a-region (begin end)
+;;   "select the region with begin and end posion; I use it for holding existing region."
+;;   (interactive)
+;;   (setq deactivate-mark nil)
+;;   (push-mark begin '() t)
+;;   (goto-char end))
 
+;; (defun zl/select-region-then-query-replace (replacement)
+;;   "Replace the region with REPLACEMENT."
+;;   (interactive (let (())
+;;                  (highlight-symbol-temp-highlight)
+;;                  (set query-replace-to-history-variable
+;;                       (cons (substring-no-properties symbol)
+;;                             (eval query-replace-to-history-variable)))
+;;                  (list
+;;                   (read-from-minibuffer "Replacement: " nil nil nil
+;;                                         query-replace-to-history-variable))))
+;;   (goto-char (beginning-of-thing 'symbol))
+;;   (query-replace-regexp (highlight-symbol-get-symbol) replacement))
 
 (defun helpme-select ()
   (interactive)
@@ -66,7 +91,6 @@
 ;;     ))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 
 

@@ -91,7 +91,6 @@
 ;; ---------------------------------------------------------------------
 
 
-
 ;; ---------------evil leader key---------------------------------------
 ;; set evil key mode.
 (require 'evil-leader)
@@ -141,6 +140,7 @@
  "x1" 'delete-other-windows
  "x2" 'split-window-below
  "x3" 'split-window-right
+ "x5" 'split-3-windows-horizontally-evenly
 
  "hf" 'counsel-describe-function
  "hv" 'counsel-describe-variable
@@ -186,11 +186,12 @@
  ;; git relevant
  "gs" 'git-add-commit-push-lz ;; git synroize.
 
- "owd" 'my-open-windows-downloads ;; open windows download dir
+ ;; "owd" 'my-open-windows-downloads ;; open windows download dir
  "op" 'org-publish
  "on" 'open-org-note
  "ol" 'open-papers-in-writing ;; open latex paper in writing...
  "oc" 'open-codes-in-d
+ "ow" 'open-worklog-in-d
 
  "rs" 'lz/running-current-bash-with-nohup 
  "rp" 'lz/running-current-python-with-nohup-env
@@ -202,9 +203,10 @@
  "42" 'ssh-connect-42
  "45" 'ssh-connect-45
  "48" 'ssh-connect-48
+ "49" 'ssh-connect-49
  
  ;; manager for english query.
- "cy" 'youdao-dictionary
+ "cy" 'youdao-dictionary-search-at-point+
  "te" 'toggle-company-english-helper
 
  ;; manager for other frequency.
@@ -268,6 +270,19 @@
 ;; (global-set-key "" 'zl/evil-shift-left)
 ;; (global-set-key ">" 'zl/evil-shift-right)
 ;; -------------------------------------------------
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; resetting the vanilla emacs Keybindings
+;; (global-set-key (kbd "C-e") 'move-end-of-line)
+(define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line)
+(define-key evil-normal-state-map (kbd "C-p") 'previous-line)
+(define-key evil-normal-state-map (kbd "C-n") 'next-line)
+(define-key evil-normal-state-map (kbd "C-b") 'backward-char)
+(define-key evil-normal-state-map (kbd "C-f") 'forward-char)
+(define-key evil-normal-state-map (kbd "C-v") 'scroll-up-command)
+
+
 
 
 

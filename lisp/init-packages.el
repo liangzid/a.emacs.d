@@ -9,9 +9,6 @@
 ;; (exec-path-from-shell-initialize)
 
 
-
-
-
 (command-log-mode 1)
 
 (use-package youdao-dictionary
@@ -104,7 +101,8 @@
     ;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
     (setq neo-window-fixed-size nil)
     ;; (setq-default neo-show-hidden-files nil)
-    (global-set-key [f3] 'neotree-toggle)))
+    (global-set-key [f3] 'neotree-toggle)
+    (setq neo-theme (if *is-gui* 'icons 'arrow))))
 
 ;; ;; smart TAB
 ;; (use-package smart-tab

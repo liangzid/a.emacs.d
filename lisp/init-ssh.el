@@ -27,7 +27,7 @@
 (defun ssh-connect-45 ()
   (interactive)
   (if *is-windows*
-  (counsel-find-file "/plink:szhang@219.245.186.45:/home/szhang/liangzi_need_smile")
+  (counsel-find-file "/plink:liangzi@219.245.186.45:/home/liangzi")
   (counsel-find-file "/ssh:szhang@219.245.186.45:/home/szhang/liangzi_need_smile")
   )
   )
@@ -35,8 +35,16 @@
 (defun ssh-connect-48 ()
   (interactive)
   (if *is-windows*
-   (counsel-find-file "/plink:zliang@219.245.186.48:/home/zliang/")
-   (counsel-find-file "/ssh:zliang@219.245.186.48:/home/zliang/")
+   (counsel-find-file "/plink:liangzi@219.245.186.48:/home/liangzi/")
+   (counsel-find-file "/ssh:liangzi@219.245.186.48:/home/liangzi/")
+      )
+  )
+
+(defun ssh-connect-49 ()
+  (interactive)
+  (if *is-windows*
+   (counsel-find-file "/plink:liangzi@219.245.186.49:/home/liangzi/")
+   (counsel-find-file "/ssh:liangzi@219.245.186.49:/home/liangzi/")
       )
   )
 

@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: example
+# key: beamer 
+# --
+#+title: $1 
+#+author: Zi Liang
+#+latex_class: lz-beamer
+#+OPTIONS: H:2
+#+PROPERTY: comments yes
+#+PROPERTY: header-args :exports both :eval never-export
+
+$0

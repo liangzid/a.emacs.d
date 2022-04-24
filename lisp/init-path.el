@@ -13,13 +13,28 @@
 (defvar paper-path "/mnt/d/paper/" "PATH of Latex Papers in Writing...")
 (defvar code-path "/mnt/d/code/" "PATH of codes in writing...")
 
+(defvar win10-paper-path "~/paper/" "PATH of Latex Papers in Writing...")
+(defvar win10-code-path "~/code/" "PATH of codes in writing...")
+(defvar win10-worklog-path "~/worklog/" "PATH of worklogs in writing...")
+
 (defun open-papers-in-writing()
   (interactive)
-  (counsel-find-file paper-path))
+  (if *is-windows*
+      (counsel-find-file win10-paper-path)
+  (counsel-find-file paper-path)))
 
 (defun open-codes-in-d()
   (interactive)
-  (counsel-find-file code-path))
+  (if *is-windows*
+      (counsel-find-file win10-code-path)
+  (counsel-find-file code-path)))
+
+(defun open-worklog-in-d()
+  (interactive)
+  (if *is-windows*
+      (counsel-find-file win10-worklog-path)
+  (counsel-find-file code-path)))
+
 (provide 'init-path)
 
 ;;; init-path.el ends here

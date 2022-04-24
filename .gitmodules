@@ -10,3 +10,6 @@
 [submodule "other-files/ox-rss"]
 	path = other-files/ox-rss
 	url = https://github.com/emacsmirror/ox-rss.git
+[submodule "doc/netease-cloud-music.el"]
+	path = doc/netease-cloud-music.el
+	url = https://github.com/SpringHan/netease-cloud-music.el.git

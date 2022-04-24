@@ -20,9 +20,11 @@
 (my/install-package-if-not-found 'auctex)
 ;;(my/install-package-if-not-found 'reftex)
 (my/install-package-if-not-found 'cdlatex)
+(my/install-package-if-not-found 'company-reftex)
 ;;(my/install-package-if-not-found 'company-auctex)
 ;;;;;;初始化acutex
 
+(require 'company-reftex)
 
 
   ;; (if (system-is-linux)
@@ -38,7 +40,7 @@
 (load "auctex.el" nil t t)
 (setq TeX-parse-self t)
 (setq TeX-parse-selt t) ;; 对新文件自动解析(usepackage, bibliograph, newtheorem等信息)
-(setq-default Tex-master t)
+(setq-default Tex-master nil) ;; nil means it will query which file is the master file.
 
 
 ;; 设置正常的pdf 运行模式为pdftex
@@ -70,7 +72,17 @@
           (setq font-latex-fontify-script t) ;;简单的可视化
 		  (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
 		  (setq TeX-electric-escape nil)   ;; press \ then, jump to mini-buffer to input commands
-		  ;(setq TeX-view-program-list '(("Evince" "evince %o"))) ;;
+		  (if *is-linux*
+		      (setq TeX-view-program-list '(("Evince" "evince %o")))
+		    )
+		  ;; (setq TeX-view-program-list '(("Evince" "evince %o"))) ;;
+
+(add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex --synctex=1%(mode)%' %t" TeX-run-TeX nil t))
+
+(add-to-list 'TeX-view-program-list '("eaf" eaf-pdf-synctex-forward-view))
+
+(add-to-list 'TeX-view-program-selection '(output-pdf "eaf"))
+
 		  ; (setq TeX-view-program-selection '((output-pdf "Evince")))
 
 		  ;(add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))

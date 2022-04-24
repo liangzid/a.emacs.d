@@ -3,7 +3,7 @@
 
 ;; config for yasnippet.
 (setq yas-snippet-dirs              ;;设置模板存放的地址.
-      '("/home/liangzi/.emacs.d/snippets/"))
+      '("~/.emacs.d/snippets/"))
 (yas-global-mode 1)
 (add-hook 'prog-mode-hook 'yas-minor-mode)
 (add-hook 'text-mode-hook 'yas-minor-mode)
@@ -26,12 +26,12 @@
   (auto-insert-mode 1)
 
   :config
-  (define-auto-insert "\\.el$" ["/home/liangzi/.emacs.d/auto-insert/default-el.el" lz/autoinsert-yas-expand])
-  (define-auto-insert "\\.sh$" ["/home/liangzi/.emacs.d/auto-insert/default-sh.sh" lz/autoinsert-yas-expand])
-  (define-auto-insert "\\.html$" ["/home/liangzi/.emacs.d/auto-insert/default-html.html" lz/autoinsert-yas-expand])
-  (define-auto-insert "\\.py$" ["/home/liangzi/.emacs.d/auto-insert/default-py.py" lz/autoinsert-yas-expand])
-  (define-auto-insert "\\.org$" ["/home/liangzi/.emacs.d/auto-insert/default-org.org" lz/autoinsert-yas-expand])
-  (define-auto-insert "\\.txt$" ["/home/liangzi/.emacs.d/auto-insert/default-txt.txt" lz/autoinsert-yas-expand])
+  (define-auto-insert "\\.el$" ["~/.emacs.d/auto-insert/default-el.el" lz/autoinsert-yas-expand])
+  (define-auto-insert "\\.sh$" ["~/.emacs.d/auto-insert/default-sh.sh" lz/autoinsert-yas-expand])
+  (define-auto-insert "\\.html$" ["~/.emacs.d/auto-insert/default-html.html" lz/autoinsert-yas-expand])
+  (define-auto-insert "\\.py$" ["~/.emacs.d/auto-insert/default-py.py" lz/autoinsert-yas-expand])
+  (define-auto-insert "\\.org$" ["~/.emacs.d/auto-insert/default-org.org" lz/autoinsert-yas-expand])
+  (define-auto-insert "\\.txt$" ["~/.emacs.d/auto-insert/default-txt.txt" lz/autoinsert-yas-expand])
   ;; (define-auto-insert "\\.py$" ["default-py.py" lz/autoinsert-yas-expand])
   )
 

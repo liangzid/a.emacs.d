@@ -57,6 +57,8 @@
 
 (add-hook 'elisp-byte-code-mode-hook '(lambda () (local-set-key (kbd "<f8>") 'lz/load-current-file)))
 
+(global-set-key (kbd "M-r") 'query-replace)
+
 ;; (add-hook 'web-mode-hook '(lambda() (local-set-key (kbd "M-e") 'emmet-expand-yas)))
 
 ;;(load-file "init-keybindings.el")

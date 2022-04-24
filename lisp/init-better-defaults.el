@@ -24,12 +24,6 @@
 ;;                                               ("qqmail" "2273067585@qq.com")
 ;;                                               ))
 
-;; set coding
-(prefer-coding-system 'utf-8)
-;; (reset-language-environment 'utf-8)
-;; (set-buffer-file-coding-system 'utf-8-unix)
-;; (setq default-buffer-file-coding-system 'utf-8-unix)
-
 (setenv "LANG" "en_US.UTF-8")
 (setenv "LC_ALL" "en_US.UTF-8")
 (setenv "LC_CTYPE" "en_US.UTF-8")
@@ -71,5 +65,9 @@
 
 ;; 可以通过键入字符代替被选中的对象，或者键入删除删除被选中的对象。
 (delete-selection-mode t)
+
+;; setting tabs.
+;;(setq tab-always-indent nil)
+
 
 (provide 'init-better-defaults)
