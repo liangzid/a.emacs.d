@@ -96,7 +96,11 @@ load a beautiful theme."
       ;; 解决显示Unicode字符的卡顿问题
       (setq inhibit-compacting-font-caches t)
       (set-face-attribute 'default nil :font "微软雅黑 12")
-      ))
+      )
+  (if *is-linux*
+      (progn
+	(set-face-attribute 'default nil :font "文泉驿正黑 12")
+	)))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\
 
 ;; set icons
