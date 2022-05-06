@@ -11,7 +11,7 @@
 ##  
 ##############################################################################################
 
-
+cd ~/.emacs.d/other-files/
 git clone https://github.com/liangzid/easy-collections.git
 
 git clone https://github.com/SpringHan/netease-cloud-music.el.git
