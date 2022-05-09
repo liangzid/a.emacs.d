@@ -27,7 +27,7 @@
  '(magit-diff-use-overlays nil)
  '(org-agenda-files '("~/liangzid.github.io/org/task.org"))
  '(package-selected-packages
-   '(all-the-icons-dired all-the-icons-completion all-the-icons doom-themes zenburn-theme inkpot-theme ample-theme nimbus-theme kaolin-themes solarized-theme darcula-theme company))
+   '(evil-leader evil-visualstar evil-surround undo-fu evil-escape evil orderless all-the-icons-dired all-the-icons-completion all-the-icons doom-themes zenburn-theme inkpot-theme ample-theme nimbus-theme kaolin-themes solarized-theme darcula-theme company))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)

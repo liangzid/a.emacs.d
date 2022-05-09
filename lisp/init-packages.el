@@ -17,7 +17,7 @@
 
 
 (require 'projectile)
-(projectile-mode +1)
+(projectile-mode 1)
 ;; Recommended keymap prefix on Windows/Linux
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
@@ -43,16 +43,16 @@
 ;;    ;; citre-project-root-function #'projectile-project-root
 ;;    ))
 
-(require 'orderless)
-(setq completion-styles '(orderless))
-(setq orderless-component-separator "[ &]")
+;; (require 'orderless)
+;; (setq completion-styles '(orderless))
+;; (setq orderless-component-separator "[ &]")
 
-(defun just-one-face (fn &rest args)
-  (let ((orderless-match-faces [completions-common-part]))
-    (apply fn args)))
+;; (defun just-one-face (fn &rest args)
+;;   (let ((orderless-match-faces [completions-common-part]))
+;;     (apply fn args)))
 
-(advice-add 'company-capf--candidates :around #'just-one-face)
-;; 自动补全
+;; (advice-add 'company-capf--candidates :around #'just-one-face)
+;; ;; 自动补全
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq company-idle-delay 0.01)
 (setq company-show-numbers t)
@@ -60,6 +60,8 @@
 (setq company-minimum-prefix-length 1)
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-flip-when-above t)
+(setq company-require-match nil)
+(global-company-mode 1)
 (setq company-global-modes '(not shell-mode))
 ;; (setq company-auto-complete-chars '((kbd "TAB")))
 (define-key company-active-map (kbd "M-n") nil)
@@ -67,7 +69,6 @@
 (define-key company-active-map (kbd "C-n") #'company-select-next)
 (define-key company-active-map (kbd "C-p") #'company-select-previous)
 ;; (define-key company-active-map (kbd "TAB") #'yas-expand)
-(global-company-mode 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; the windows you have used will be clear after used. 
@@ -80,10 +81,12 @@
   :ensure t
   :config
   (progn
-    (global-undo-tree-mode)
+(global-undo-tree-mode)
     (setq undo-tree-visualizer-timestamps t)
     (setq undo-tree-visualizer-diff t)
     ))
+
+(global-set-key (kbd "C-x u") 'undo-tree-undo)
 
 ;; display keybindings with which key
 (use-package which-key

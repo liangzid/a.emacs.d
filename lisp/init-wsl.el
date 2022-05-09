@@ -24,6 +24,20 @@
     (message "insert DONE.")
     ))
 
+
+(defun linux-my-yank-image-through-bash()
+  "Using scrot to make yank in linux, if you like."
+  (interactive)
+  (let* ((file-name (format-time-string "screenshot_%Y%m%d_%H%M%S.png"))
+	 (file-path (concat "./images/" file-name))
+	 )
+    ;; xclip -selection clipboard -t TARGETS -o
+    (shell-command (concat "xclip -selection clipboard -t image/png -o >" file-path))
+    (insert (concat "[[file:" file-path "]]"))
+    (message "insert DONE.")
+    )
+  )
+
 (defun win10-my-yank-image-from-win-clipboard-through-powershell()
   "to simplify the logic, use c:/Users/Public as temporary directoy, and move it into current directoy"
   (interactive)
@@ -43,7 +57,11 @@
   (interactive)
   (if *is-windows*
       (win10-my-yank-image-from-win-clipboard-through-powershell)
-    (wsl-my-yank-image-from-win-clipboard-through-powershell))
+    (if *is-gui*
+	(linux-my-yank-image-through-bash)
+(wsl-my-yank-image-from-win-clipboard-through-powershell)
+      )
+    )
   )
 
 

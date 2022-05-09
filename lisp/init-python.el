@@ -4,8 +4,9 @@
 (use-package python
   :mode ("\\.py" . python-mode)
   :ensure t)
-(eval-after-load "company"
-  '(add-to-list 'company-backends 'company-anaconda))
+
+;; (eval-after-load "company"
+;;   '(add-to-list 'company-backends 'company-anaconda))
 
 ;; (add-hook 'python-mode-hook 'anaconda-mode)
 ;; (add-hook 'python-mode-hook 'anaconda-eldoc-mode)

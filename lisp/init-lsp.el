@@ -3,6 +3,19 @@
 ;; (my/install-package-if-not-found 'lsp-pyright)
 
 (require 'eglot)
+(add-to-list 'load-path "~/.emacs.d/other-files/lsp-bridge/")
+(require 'lsp-bridge)
+(add-to-list 'company-backends 'lsp-bridge)
+
+;; (lsp-bridge-enable)
+
+(dolist (hook (list
+               'python-mode-hook
+               ))
+  (add-hook hook (lambda ()
+                   (lsp-bridge-enable)
+                   )))
+
 
 ;; (defun my--project-files-in-directory (dir)
 ;; "Use `fd' to list files in DIR."
