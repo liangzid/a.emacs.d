@@ -63,7 +63,7 @@ load a beautiful theme."
 
 
 ;; theme
-(if *is-windows*
+(if *is-gui*
     (my/random-theme)
     (load-theme 'monokai t)
 )

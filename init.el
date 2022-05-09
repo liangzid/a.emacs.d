@@ -26,7 +26,6 @@
 
 (defconst *is-server* t)
 
-
 (require 'init-wsl)
 (require 'init-elpa)
 (require 'init-dired)
@@ -59,10 +58,10 @@
 (require 'init-keybindings)
 (require 'init-spell)
 (require 'init-packages)
-(require 'init-lsp) ;; language server p
+(require 'init-lsp) ;; language server protocol
 (require 'init-evil)
-
 (zl/load-eaf)
+
 ;; for computer custom application. cannot be used for any self-designing.
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
@@ -71,19 +70,12 @@
 
 
 
-
-
-
-
 ;; toggle maximized screen
 ;; (maximize-window)
-;; (toggle-frame-fullscreen)
+(toggle-frame-fullscreen)
 
-(add-to-list 'default-frame-alist '(full-screen . maximized))
-
-
+;; (add-to-list 'default-frame-alist '(full-screen . maximized))
 
 
-
-
+(require 'init-dashboard)
 (provide 'init)

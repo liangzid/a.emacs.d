@@ -1,5 +1,7 @@
 (require 'org)
 (my/install-package-if-not-found 'org-download)
+(my/install-package-if-not-found 'org-superstar)
+(require 'org-superstar)
 
 (setq org-src-fontify-natively t)
 ;; (add-hook 'org-beamer-mode-hook)
@@ -120,22 +122,37 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "INPROGRESS(i)" "WAITING(w)" "REVIEW(r)" "|" "DONE(d)" "CANCELED(c)")))
 
+
+(setq-default org-enforce-todo-dependencies t)
+
 (setq org-todo-keyword-faces
-      '(("TODO" . org-warning)
-        ("INPROGRESS" . "yellow")
+      '(("TODO" :foreground "red" :weight "bold")
+        ("INPROGRESS" :foreground "blue" :weight "bold")
         ("WAITING" . "purple")
         ("REVIEW" . "orange")
-        ("DONE" . "green")
+        ("DONE" . "forest green")
         ("CANCELED" .  "green")))
 
 
 (use-package org-bullets
   :config
   (progn
-    (setq org-bullets-bullet-list '("▶" "★" "●" "▸" "•" ))
+    (setq org-bullets-bullet-list '("▶" "★" "➤" "▸" "•" ))
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
     ))
 
+(setq org-superstar-todo-bullet-alist
+      '(
+	("TODO" . ?☐)
+          ("NEXT" . ?✒)
+          ("HOLD" . ?✰)
+          ("WAITING" . ?☕)
+          ("CANCELLED" . ?✘)
+          ("DONE" . ?✔)
+	))
+(org-superstar-restart)
+
+(setq org-ellipsis " ▼ ")
 
 (use-package org-alert
   :defer t
@@ -301,5 +318,39 @@
 
 ;;code执行免应答（Eval code without confirm）
 (setq org-confirm-babel-evaluate nil)
+
+(defun my/set-specific-faces-org ()
+  (set-face-attribute 'org-code nil
+                      :inherit '(shadow fixed-pitch))
+  ;; Without indentation the headlines need to be different to be visible
+  (set-face-attribute 'org-level-1 nil
+                      :height 1.25
+                      :foreground "#BEA4DB")
+  (set-face-attribute 'org-level-2 nil
+                      :height 1.15
+                      :foreground "#A382FF"
+                      :slant 'italic)
+  (set-face-attribute 'org-level-3 nil
+                      :height 1.1
+                      :foreground "#5E65CC"
+                      :slant 'italic)
+  (set-face-attribute 'org-level-4 nil
+                      :height 1.05
+                      :foreground "#ABABFF")
+  (set-face-attribute 'org-level-5 nil
+                      :foreground "#2843FB")
+  (set-face-attribute 'org-date nil
+                      :foreground "#ECBE7B"
+                      :height 0.8)
+  (set-face-attribute 'org-document-title nil
+                      :foreground "DarkOrange3"
+                      :height 1.3)
+  (set-face-attribute 'org-ellipsis nil
+                      :foreground "#4f747a" :underline nil)
+  (set-face-attribute 'variable-pitch nil
+                      :family "Roboto Slab" :height 1.2))
+
+(my/set-specific-faces-org)
+
 
 (provide 'init-org)

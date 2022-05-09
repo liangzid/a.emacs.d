@@ -6,8 +6,7 @@
 (add-to-list 'load-path "~/.emacs.d/other-files/lsp-bridge/")
 (require 'lsp-bridge)
 (add-to-list 'company-backends 'lsp-bridge)
-
-;; (lsp-bridge-enable)
+(setq lsp-bridge-enable-debug t)
 
 (dolist (hook (list
                'python-mode-hook
