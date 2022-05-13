@@ -17,15 +17,15 @@
 ;;   :config
 ;;   (python-black-on-save-mode))
 
-;; (require 'elpy)
+(require 'elpy)
 ;; (setq elpy-get-info-from-shell t)
 ;; (setq elpy-shell-echo-input t)
 ;; (setq elpy-shell-echo-output t)
 ;; (use-package elpy
-;;   :ensure t
-;;   :defer t
-;;   :init
-;;   (advice-add 'python-mode :before 'elpy-enable))
+  ;; :ensure t
+  ;; :defer t
+  ;; :init
+  ;; (advice-add 'python-mode :before 'elpy-enable))
 
 
 ;; 需要安装pyenv才能使用

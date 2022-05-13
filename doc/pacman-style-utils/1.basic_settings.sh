@@ -71,7 +71,7 @@ echo "----------------------------------------------------------------"
 echo "FINALLY WE SHOULD INSTALL SOME APPLICATIONS."
 echo "----------------------------------------------------------------"
 
-export yay_package_ls=("drawio" "wemeeting" "")
+export yay_package_ls=("drawio" "wemeeting" "mendeleydesktop-bundled")
 export pacman_package_ls=("emacs" "texlive-most" "textlive-lang")
 
 echo ">>>>>>>>>>>YAY INSTALL"
