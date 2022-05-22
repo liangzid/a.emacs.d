@@ -1,5 +1,15 @@
 ;; only for latex files.
 ;; liangzid in 2020.4.18
+(my/install-package-if-not-found 'ivy-bibtex)
+
+(autoload 'ivy-bibtex "ivy-bibtex" "" t)
+;; ivy-bibtex requires ivy's `ivy--regex-ignore-order` regex builder, which
+;; ignores the order of regexp tokens when searching for matching candidates.
+;; Add something like this to your init file:
+(setq ivy-re-builders-alist
+      '((ivy-bibtex . ivy--regex-ignore-order)
+        (t . ivy--regex-plus)))
+
 
 ;; (mapc (lambda (mode)
 ;; 	(add-hook 'LaTeX-mode-hook mode))
