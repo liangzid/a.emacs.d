@@ -1,7 +1,10 @@
 ;; (message "donot use lsp")
 (my/install-package-if-not-found 'eglot)
 (my/install-package-if-not-found 'corfu)
+(my/install-package-if-not-found 'corfu-doc)
+(my/install-package-if-not-found 'posframe)
 (my/install-package-if-not-found 'orderless)
+(my/install-package-if-not-found 'markdown-mode)
 ;; (my/install-package-if-not-found 'lsp-pyright)
 
 (require 'eglot)

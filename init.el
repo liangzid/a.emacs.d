@@ -17,7 +17,10 @@
 ;; load eaf if necessary, bounding it into <F9>
 (defun zl/load-eaf()
   (interactive)
-  (require 'init-eaf))
+  (if *is-gui*
+      (require 'init-eaf))
+  (message "do not need to load eaf! thanks sky.")
+      )
 (global-set-key (kbd "<f1>") 'zl/load-eaf)
 
 ;;用来消除emacs 27以上版本的警告。
