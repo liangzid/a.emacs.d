@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: jsonload
+# key: jsonload
+# --
+
+# from collections import OrderedDict
+with open($1, 'r',encoding='utf8') as f:
+    data=json.load(f,object_pairs_hook=OrderedDict)
+    $0

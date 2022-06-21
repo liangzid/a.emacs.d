@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: jsondump
+# key: jsondump
+# --
+
+with open($1, 'w',encoding='utf8') as f:
+    json.dump($2,f,ensure_ascii=False)
+    $0
