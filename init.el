@@ -66,6 +66,7 @@
 (require 'init-packages)
 (require 'init-lsp) ;; language server protocol
 (require 'init-evil)
+(require 'init-undo)
 (zl/load-eaf)
 
 ;; for computer custom application. cannot be used for any self-designing.
