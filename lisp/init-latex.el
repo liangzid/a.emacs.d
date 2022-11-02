@@ -42,6 +42,7 @@
 (setq TeX-parse-selt t) ;; 对新文件自动解析(usepackage, bibliograph, newtheorem等信息)
 (setq-default Tex-master nil) ;; nil means it will query which file is the master file.
 
+(setq TeX-source-correlate-start-server t)
 
 ;; 设置正常的pdf 运行模式为pdftex
 (setq-default TeX-PDF-mode t)
@@ -59,7 +60,7 @@
 		  (auto-fill-mode 1) ;;开启自动断行
 		  ;; (turn-on-auto-fill)              ;;LaTeX mode，turn off auto fold
 		  ;; (auto-complete-mode 1)
-          (LaTeX-math-mode 1) ;; using ` for similar latex symbol insert!
+		  (LaTeX-math-mode 1) ;; using ` for similar latex symbol insert!
 		  (outline-minor-mode 1)
   		  (imenu-add-menubar-index)
 
@@ -74,14 +75,13 @@
 		  (setq TeX-electric-escape nil)   ;; press \ then, jump to mini-buffer to input commands
 		  (if *is-linux*
 		      (setq TeX-view-program-list '(("Evince" "evince %o")))
+		    (setq TeX-view-program-list'(("~/.emacs.d/software/SumatraPDF-3.3.3-64-portable.exe -reuse-instance" (mode-io-correlate " -forward-search %b %n") " %o")))
 		    )
 		  ;; (setq TeX-view-program-list '(("Evince" "evince %o"))) ;;
 
-(add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex --synctex=1%(mode)%' %t" TeX-run-TeX nil t))
-
-(add-to-list 'TeX-view-program-list '("eaf" eaf-pdf-synctex-forward-view))
-
-(add-to-list 'TeX-view-program-selection '(output-pdf "eaf"))
+		  (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex --synctex=1%(mode)%' %t" TeX-run-TeX nil t))
+		  ;; (add-to-list 'TeX-view-program-list '("eaf" eaf-pdf-synctex-forward-view))
+		  ;; (add-to-list 'TeX-view-program-selection '(output-pdf "eaf"))
 
 		  ; (setq TeX-view-program-selection '((output-pdf "Evince")))
 

@@ -62,16 +62,15 @@
 (require 'init-lsp) ;; language server p
 (require 'init-evil)
 
-(zl/load-eaf)
+(if *is-linux*
+    (zl/load-eaf)
+    )
+
 ;; for computer custom application. cannot be used for any self-designing.
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
 
 (setq gc-cons-percentage 0.6)
-
-
-
-
 
 
 
