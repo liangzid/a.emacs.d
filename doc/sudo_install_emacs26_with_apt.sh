@@ -5,7 +5,7 @@ sudo add-apt-repository ppa:kelleyk/emacs
 
 # install emacs26
 sudo apt update
-sudo apt install emacs27
+sudo apt install emacs28
 
 # if no GUI, you can use
 # sudo apt install emacs26-nox

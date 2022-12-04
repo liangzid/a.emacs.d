@@ -19,19 +19,19 @@
 
 (defun open-papers-in-writing()
   (interactive)
-  (if *is-windows*
+  (if *is-gui*
       (counsel-find-file win10-paper-path)
   (counsel-find-file paper-path)))
 
 (defun open-codes-in-d()
   (interactive)
-  (if *is-windows*
+  (if *is-gui*
       (counsel-find-file win10-code-path)
   (counsel-find-file code-path)))
 
 (defun open-worklog-in-d()
   (interactive)
-  (if *is-windows*
+  (if *is-gui*
       (counsel-find-file win10-worklog-path)
   (counsel-find-file code-path)))
 

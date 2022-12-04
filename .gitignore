@@ -7,8 +7,6 @@
 /quelpa
 /transient
 
-# following files should be ignored
-
 *\#
 *.db
 *.eld
@@ -22,3 +20,5 @@
 /other-files/emacs-application-framework/
 /server/
 /url/
+recentf
+tramp

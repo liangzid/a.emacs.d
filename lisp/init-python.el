@@ -4,8 +4,9 @@
 (use-package python
   :mode ("\\.py" . python-mode)
   :ensure t)
-(eval-after-load "company"
-  '(add-to-list 'company-backends 'company-anaconda))
+
+;; (eval-after-load "company"
+;;   '(add-to-list 'company-backends 'company-anaconda))
 
 ;; (add-hook 'python-mode-hook 'anaconda-mode)
 ;; (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
@@ -16,15 +17,20 @@
 ;;   :config
 ;;   (python-black-on-save-mode))
 
-;; (require 'elpy)
-;; (setq elpy-get-info-from-shell t)
-;; (setq elpy-shell-echo-input t)
-;; (setq elpy-shell-echo-output t)
-;; (use-package elpy
-;;   :ensure t
-;;   :defer t
-;;   :init
-;;   (advice-add 'python-mode :before 'elpy-enable))
+;; (if *is-gui*
+;;     (message "we do not use elpy on GUI.")
+;;   (progn
+;;     (require 'elpy)
+;;     (setq elpy-get-info-from-shell t)
+;;     (setq elpy-shell-echo-input t)
+;;     (setq elpy-shell-echo-output t)
+;;     (use-package elpy
+;;     :ensure t
+;;     :defer t
+;;     :init
+;;     (advice-add 'python-mode :before 'elpy-enable))
+;;     )
+;;   )
 
 
 ;; 需要安装pyenv才能使用

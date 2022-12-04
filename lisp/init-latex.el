@@ -1,5 +1,15 @@
 ;; only for latex files.
 ;; liangzid in 2020.4.18
+(my/install-package-if-not-found 'ivy-bibtex)
+
+(autoload 'ivy-bibtex "ivy-bibtex" "" t)
+;; ivy-bibtex requires ivy's `ivy--regex-ignore-order` regex builder, which
+;; ignores the order of regexp tokens when searching for matching candidates.
+;; Add something like this to your init file:
+(setq ivy-re-builders-alist
+      '((ivy-bibtex . ivy--regex-ignore-order)
+        (t . ivy--regex-plus)))
+
 
 ;; (mapc (lambda (mode)
 ;; 	(add-hook 'LaTeX-mode-hook mode))
@@ -27,16 +37,6 @@
 (require 'company-reftex)
 
 
-  ;; (if (system-is-linux)
-  ;;     (setq TeX-view-program-selection
-  ;; 	    (quote (((output-dvi style-pstricks) "dvips and gv")
-  ;; 		    (output-dvi "xdvi")
-  ;; 		    (output-pdf "Evince")
-  ;; 		                        (output-html "xdg-open"))))))
-
-
-
-
 (load "auctex.el" nil t t)
 (setq TeX-parse-self t)
 (setq TeX-parse-selt t) ;; 对新文件自动解析(usepackage, bibliograph, newtheorem等信息)
@@ -55,6 +55,23 @@
 (autoload 'turn-on-cdlatex "cdlatex" "CDLaTeX Mode" t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;LaTex-mode settings;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(if *is-linux*
+    (progn
+    (setq TeX-view-program-list '())
+    (setq TeX-view-program-selection '())
+    (add-to-list 'TeX-view-program-list '("Evince" "evince %o"))
+    (add-to-list 'TeX-view-program-list '("okular" "okular %o"))
+    (add-to-list 'TeX-view-program-list '("eaf" eaf-pdf-synctex-forward-view))
+    (add-to-list 'TeX-view-program-selection '(output-pdf "eaf"))
+    (add-to-list 'TeX-view-program-selection '(output-pdf "Evince"))
+    (add-to-list 'TeX-view-program-selection '(output-pdf "okular"))
+    )
+  (
+   "message: not setting. USING DEFAULT."
+   )
+)
+
 (add-hook 'LaTeX-mode-hook (lambda ()
 		  ;; (TeX-fold-mode 1) ;; 自动折叠，似乎不是很需要
 		  (auto-fill-mode 1) ;;开启自动断行
@@ -64,7 +81,7 @@
 		  (outline-minor-mode 1)
   		  (imenu-add-menubar-index)
 
-		  (setq TeX-show-compilation t)   ;; display compilation windows
+		  (setq TeX-show-compilation nil)   ;; display compilation windows
 		  (setq TeX-global-PDF-mode t       ;;PDF mode enable, not plain
 		  		TeX-engine 'default)  ;;use xelatex default
 
@@ -82,8 +99,9 @@
 		  (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex --synctex=1%(mode)%' %t" TeX-run-TeX nil t))
 		  ;; (add-to-list 'TeX-view-program-list '("eaf" eaf-pdf-synctex-forward-view))
 		  ;; (add-to-list 'TeX-view-program-selection '(output-pdf "eaf"))
+		  
 
-		  ; (setq TeX-view-program-selection '((output-pdf "Evince")))
+		  (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex --synctex=1%(mode)%' %t" TeX-run-TeX nil t))
 
 		  ;(add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
 		  ;(setq TeX-command-default "XeLaTeX")

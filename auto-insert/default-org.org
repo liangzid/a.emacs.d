@@ -9,7 +9,7 @@
 
 
 ## this is the beamer style
-#+title: YOUR TITLES
+#+title: $2
 #+author: Zi Liang
 #+latex_class: lz-beamer
 #+OPTIONS: H:2

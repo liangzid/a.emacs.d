@@ -14,20 +14,20 @@
 export inKDE=1
 
 echo "first setting to the same time for two operation systems."
-timedatectl set-local-rtc 1
+#timedatectl set-local-rtc 1
 
 echo "1. begin to update the source of pacman."
 echo "switch to china"
-sudo pacman -Syy
-sudo pacman-mirrors -i -c China -m rank
+# sudo pacman -Syy
+# sudo pacman-mirrors -i -c China -m rank
 echo "now sleep 30 second."
-sleep 30
-sudo pacman -Syyu
+# sleep 30
+# sudo pacman -Syyu
 
 echo "now appending the `archlinuxcn` into `/etc/pacman.conf`"
-sudo echo "[archlinuxcn]
-SigLevel = Optional TrustedOnly
-Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux-cn/$arch" >>/etc/pacman.conf 
+#sudo echo "[archlinuxcn]
+#SigLevel = Optional TrustedOnly
+#Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux-cn/$arch" >>/etc/pacman.conf 
 
 echo "now update keyrings..."
 sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
@@ -71,8 +71,8 @@ echo "----------------------------------------------------------------"
 echo "FINALLY WE SHOULD INSTALL SOME APPLICATIONS."
 echo "----------------------------------------------------------------"
 
-export yay_package_ls=("drawio" "wemeeting" "")
-export pacman_package_ls=("emacs" "texlive-most" "textlive-lang")
+export yay_package_ls=("drawio" "wemeeting" "mendeleydesktop-bundled")
+export pacman_package_ls=("xclip" "emacs" "texlive-most" "textlive-lang")
 
 echo ">>>>>>>>>>>YAY INSTALL"
 for yayp in ${yay_package_ls[*]};

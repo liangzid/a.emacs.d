@@ -31,7 +31,19 @@
 ;; (setq inhibit-startup-message t)
 ;; (setq inhibit-startup-screen t)
 
-(setq my-prefer-themes '(darcula monokai solarized-light solarized-dark))
+
+(if *is-windows*
+    (progn
+      ;; 解决显示Unicode字符的卡顿问题
+      (setq inhibit-compacting-font-caches t)
+      (set-face-attribute 'default nil :font "微软雅黑 12")
+      )
+  (if *is-linux*
+      (progn
+	(set-face-attribute 'default nil :font "文泉驿正黑 12")
+	)))
+
+;; (setq my-prefer-themes '(darcula monokai solarized-light solarized-dark))
 
 (defun my/random-theme ()
   "Random load the theme from random theme list. I use it for random
@@ -51,7 +63,7 @@ load a beautiful theme."
 
 
 ;; theme
-(if *is-windows*
+(if *is-gui*
     (my/random-theme)
     (load-theme 'monokai t)
 )
@@ -91,16 +103,6 @@ load a beautiful theme."
 ;; ;; 数学符号默认字体为Cambria Math
 ;; (set-fontset-font "fontset-default" 'symbol
 ;; 		  "Cambria Math")
-(if *is-windows*
-    (progn
-      ;; 解决显示Unicode字符的卡顿问题
-      (setq inhibit-compacting-font-caches t)
-      (set-face-attribute 'default nil :font "微软雅黑 12")
-      )
-  (if *is-linux*
-      (progn
-	(set-face-attribute 'default nil :font "文泉驿正黑 12")
-	)))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\
 
 ;; set icons
