@@ -30,8 +30,8 @@
   (setq
    ;; Set these if readtags/ctags is not in your path.
    
-   citre-readtags-program "/home/zliang/software/ctags/bin/readtags"
-   citre-ctags-program "/home/zliang/software/ctags/bin/ctags"
+   citre-readtags-program "/home/liangzi/software/ctags/bin/readtags"
+   citre-ctags-program "/home/liangzi/software/ctags/bin/ctags"
 
    ;; citre-readtags-program "/usr/local/bin/readtags"
    ;; citre-ctags-program "/usr/local/bin/ctags"

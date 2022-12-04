@@ -78,6 +78,11 @@
 (add-hook 'org-mode-hook
           #'org-download-enable)
 
+(add-hook (quote org-mode-hook)
+          (lambda ()
+            (org-shifttab 2)))
+
+
 ;; 设置插入图片的快捷键
 ;; (after-load 'org-download
   (define-key org-mode-map (kbd "C-c C-x s") 'org-download-screenshot) ;; 插入截图
