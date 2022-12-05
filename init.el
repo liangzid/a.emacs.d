@@ -67,6 +67,8 @@
 (require 'init-lsp) ;; language server protocol
 (require 'init-evil)
 (require 'init-undo)
+(require 'init-keyfreq)
+(require 'init-smex)
 
 ;; for computer custom application. cannot be used for any self-designing.
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))

@@ -79,7 +79,7 @@
       (push '(?\( . ("( " . ")")) evil-surround-pairs-alist)
       (push '(?` . ("`" . "'")) evil-surround-pairs-alist))
 
-    ;; generic
+    ;;  /generic/ 
     (push '(?/ . ("/" . "/")) evil-surround-pairs-alist))
   (add-hook 'prog-mode-hook 'evil-surround-prog-mode-hook-setup)
   (global-evil-surround-mode 1))
