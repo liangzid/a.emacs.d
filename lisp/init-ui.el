@@ -127,7 +127,9 @@ load a beautiful theme."
 
 
 ;; adding the 80-char lines
+(if *is-gui*
 (global-display-fill-column-indicator-mode)
+    )
 
 ;; show time at modeline
 (display-time-mode)
