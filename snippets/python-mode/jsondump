@@ -4,5 +4,5 @@
 # --
 
 with open($1, 'w',encoding='utf8') as f:
-    json.dump($2,f,ensure_ascii=False)
+    json.dump($2,f,ensure_ascii=False,indent=4)
     $0

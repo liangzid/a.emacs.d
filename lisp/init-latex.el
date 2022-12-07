@@ -67,7 +67,7 @@
     (add-to-list 'TeX-view-program-selection '(output-pdf "Evince"))
     (add-to-list 'TeX-view-program-selection '(output-pdf "okular"))
     )
-  (
+  (message
    "message: not setting. USING DEFAULT."
    )
 )

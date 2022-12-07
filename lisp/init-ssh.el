@@ -28,8 +28,8 @@
 (defun ssh-connect-45 ()
   (interactive)
   (if *is-windows*
-  (counsel-find-file "/plink:liangzi@219.245.186.45:/home/liangzi")
-  (counsel-find-file "/ssh:szhang@219.245.186.45:/home/szhang/liangzi_need_smile")
+  (counsel-find-file "/plink:liangzi@219.245.186.45:/home/liangzi/")
+  (counsel-find-file "/ssh:liangzi@219.245.186.45:/home/liangzi/")
   )
   )
 
