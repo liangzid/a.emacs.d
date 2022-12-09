@@ -1,4 +1,10 @@
 
+
+(my/install-package-if-not-found 'diff-hl)
+(require 'diff-hl)
+(global-diff-hl-mode)
+
+
 (defun git-add-and-commit-lz (mtext)
   (interactive "splease input sentence with commit:")
   (shell-command "git add -A")
