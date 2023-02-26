@@ -3,6 +3,33 @@
 # key: head
 # --
 
-#+title: filename
-#+author: liangzi, 3120305385
-#+date:
+#+title: $1
+#+date: `(current-time-string)`
+#+email: 2273067585@qq.com
+#+latex_class: elegantpaper
+
+## this is the beamer style
+#+title: $2
+#+author: Zi Liang
+#+latex_class: lz-beamer
+#+OPTIONS: H:2
+#+PROPERTY: comments yes
+#+PROPERTY: header-args :exports both :eval never-export
+# #+ATTR_latex: :width 200
+
+#+latex_header: \usepackage{amsthm}
+
+#+LATEX_HEADER: \usepackage[hidelinks]{hyperref}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[small]{caption}
+
+#+latex_header: \usepackage{multirow}
+#+latex_header: \usepackage{booktabs}
+#+latex_header: \usepackage{graphicx}
+
+#+latex_header: \usepackage{algorithm}
+#+latex_header: \usepackage{algorithmicx}
+
+#+latex_header: \usepackage{amsmath}
+#+latex_header: \usepackage{amsfonts}
+#+latex_header: \usepackage{algpseudocode}
