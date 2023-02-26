@@ -42,77 +42,78 @@
 ;;add whatever packages you want here
 
 (defvar my/packages '(
-		                ;;;;;;dependency
-				ctable
-				deferred
-				epc
-				s
-				general
-				;;;;;;;;;;;;tool;;;;;;;;;;;;;;
-		                 company  ;; 用于进行自动补全
-				 citre    ;; front of ctags, for Complete.
-				 projectile ;;project manager..
-				 command-log-mode
-				 hungry-delete
-				 youdao-dictionary
-				 highlight-symbol
-				 swiper  
-				 counsel 
-				 smartparens ;; 补全括号等成对出现的东西
-				 use-package
-				 undo-tree
-				 which-key
-				 neotree
-				 smart-tab
-				 yasnippet
-				 all-the-icons 
-				 ace-flyspell ;; 拼写检查工具，但是需要ispell或者aspell的预先安装？！
-				 ;; wucuo ;;同样用来进行拼写检查
+	    ;;;;;;dependency
+	    ctable
+	    deferred
+	    epc
+	    s
+	    general
+	    ;;;;;;;;;;;;tool;;;;;;;;;;;;;;
+		company  ;; 用于进行自动补全
+		citre    ;; front of ctags, for Complete.
+		projectile ;;project manager..
+		command-log-mode
+		hungry-delete
+		youdao-dictionary
+		highlight-symbol
+		swiper  
+		counsel 
+		smartparens ;; 补全括号等成对出现的东西
+		use-package
+		undo-tree
+		which-key
+		neotree
+		smart-tab
+		yasnippet
+		all-the-icons 
+		ace-flyspell ;; 拼写检查工具，但是需要ispell或者aspell的预先安装？！
+		;; wucuo ;;同样用来进行拼写检查
 
-				 ;;metaweblog
-				 ;;org2blog
-				 
-				 ;; meow ;; used to replace evil and help my little finger.
-				 evil ;;众所周知？
-				 evil-leader
-                                 ;;;;;;;;;;;;;python;;;;;;;;;;;;;;;;;
-				 python
-				 pyvenv ;;需要和pipenv 联合使用
-				 python-black
-				 pyenv-mode
-				 anaconda-mode
-				 elpy
-				 company-anaconda ;;为company提供的anaconda后台
-				 
-				 ;;;;;;;;;;;;;;;org;;;;;;;;;;;;;
-				 org-bullets
-				 org-alert
-				 org-download
-				 htmlize
-				 org-roam
-				 ;;org-roam-protocol
-				 ;; org-roam-server
-				 
-				 exec-path-from-shell
-				 popwin
-				;;;;;;;;;;;;;theme;;;;;;;;;;;;;
-				 monokai-theme
-				 rainbow-mode
-				 rainbow-delimiters
-                                ;;;;;;;;;;;;;;;latex;;;;;;;;;;;;;;;
-				 auctex
-				 cdlatex
-				 reftex
-				 company-auctex
-				 ;;;;;;;;;version control;;;;;;;;;;
-				 magit
-				 ;;;;;;;;;js,html,...;;;;;;;;;;;;;;
-				 js2-mode
-				 web-mode
+		;;metaweblog
+		;;org2blog
 
-				 leetcode
-				 
-				 )  "Default packages")
+		;; meow ;; used to replace evil and help my little finger.
+		evil ;;众所周知？
+		evil-leader
+		;;;;;;;;;;;;;python;;;;;;;;;;;;;;;;;
+		python
+		pyvenv ;;需要和pipenv 联合使用
+		python-black
+		pyenv-mode
+		anaconda-mode
+		elpy
+		company-anaconda ;;为company提供的anaconda后台
+
+		;;;;;;;;;;;;;;;org;;;;;;;;;;;;;
+		org-bullets
+		org-alert
+		org-download
+		htmlize
+		org-roam
+		;; org-modern
+		;;org-roam-protocol
+		;; org-roam-server
+
+		exec-path-from-shell
+		popwin
+	    ;;;;;;;;;;;;;theme;;;;;;;;;;;;;
+		monokai-theme
+		rainbow-mode
+		rainbow-delimiters
+	    ;;;;;;;;;;;;;;;latex;;;;;;;;;;;;;;;
+		auctex
+		cdlatex
+		reftex
+		company-auctex
+		;;;;;;;;;version control;;;;;;;;;;
+		magit
+		;;;;;;;;;js,html,...;;;;;;;;;;;;;;
+		js2-mode
+		web-mode
+
+		leetcode
+
+		)  "Default packages")
 
 
 (setq package-selected-packages my/packages)
