@@ -14,7 +14,7 @@ sudo apt-get install -y nodejs
 echo "install texlab for latex completion."
 
 echo "running PYRIGHT"
-pyright
+# pyright
 
 
 echo "RUNNING 5.config_npm.sh DONE."

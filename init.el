@@ -30,21 +30,18 @@
 
 (defconst *is-server* t)
 
+
+;;; functional configs.
 (require 'init-wsl)
 (require 'init-elpa)
 (require 'init-dired)
 (require 'init-self-config-function)
-(require 'init-modeline)
-(require 'init-window)
-(require 'init-chinese)
 (require 'init-ssh)
 (require 'init-clipboard)
 (require 'init-yas)
 (require 'init-git)
-;;(require 'init-telegram)
 (require 'init-citre)
 (require 'init-python)
-(require 'init-org)
 (require 'init-latex)
 (require 'init-cpp)
 (require 'init-rust)
@@ -54,10 +51,6 @@
 (require 'init-path)
 (require 'init-collection)
 (require 'init-rss)
-
-;;(require 'init-netease)
-
-(require 'init-better-defaults)
 (require 'init-keybindings)
 (require 'init-spell)
 (require 'init-packages)
@@ -66,6 +59,20 @@
 (require 'init-undo)
 (require 'init-keyfreq)
 (require 'init-smex)
+;;(require 'init-telegram)
+;;(require 'init-netease)
+(require 'init-org)
+
+(desktop-save-mode)
+;; (desktop-read)
+
+;;; UI configs.
+(require 'init-ui)
+(require 'init-modeline)
+(require 'init-window)
+(require 'init-chinese) ;; only have part of UI.
+(require 'init-better-defaults)
+;; (require 'init-dashboard)
 
 ;; for computer custom application. cannot be used for any self-designing.
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
@@ -81,9 +88,5 @@
 
 ;; (add-to-list 'default-frame-alist '(full-screen . maximized))
 
-(desktop-save-mode)
-(desktop-read)
-(require 'init-ui)
-(require 'init-dashboard)
  ;; (setq default-frame-alist '((alpha-background . 80)))
 (provide 'init)
