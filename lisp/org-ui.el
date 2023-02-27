@@ -16,14 +16,18 @@
 
 (global-pangu-spacing-mode 0)
 
-(add-hook 'org-mode-hook #'org-modern-mode)
-(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+
 (add-hook 'org-mode-hook
           (lambda ()
             (org-shifttab 2)))
-(add-hook 'org-mode-hook 'org-fragtog-mode)
-(add-hook 'org-mode-hook 'org-visual-indent-mode)
-(add-hook 'org-mode-hook 'org-dynamic-bullets-mode)
+(if *is-gui*
+    (progn
+	(add-hook 'org-mode-hook #'org-modern-mode)
+	(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+	(add-hook 'org-mode-hook 'org-fragtog-mode)
+	(add-hook 'org-mode-hook 'org-visual-indent-mode)
+	(add-hook 'org-mode-hook 'org-dynamic-bullets-mode)
+      ))
 
 
 (setq org-src-fontify-natively t)
