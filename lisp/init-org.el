@@ -29,7 +29,8 @@
 
 (setq org-agenda-files '("~/org"))
 ;; org capture setup
-(global-set-key (kbd "C-c c") 'org-capture)
+(define-key org-mode-map (kbd "C-c c") 'org-capture)
+
 (setq org-default-notes-file "~/liangzid.github.io/org/capture-file-inbox.org")
 (setq org-capture-templates nil)
 (add-to-list 'org-capture-templates
