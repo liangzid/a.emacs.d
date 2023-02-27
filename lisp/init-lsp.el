@@ -7,7 +7,7 @@
       (require 'my-lspbridge)
       )
   (progn
-    (gloabl-comany-mode)
+    (global-company-mode)
     ))
 
 

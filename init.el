@@ -6,15 +6,13 @@
 ;; (set-frame-parameter nil 'alpha 0.85)
 (set-frame-parameter nil 'alpha 0.99)
 
-
 ;; 定义快速打开init-file的操作，并将之绑定在F2上.
 (defun open-my-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 
-
-;; load eaf if necessary, bounding it into <F9>
+;; load eaf if necessary, bounding it into <F1>
 (defun zl/load-eaf()
   (interactive)
   (if *is-gui*
@@ -60,7 +58,6 @@
 ;;(require 'init-netease)
 
 (require 'init-better-defaults)
-(require 'init-ui)
 (require 'init-keybindings)
 (require 'init-spell)
 (require 'init-packages)
@@ -84,7 +81,9 @@
 
 ;; (add-to-list 'default-frame-alist '(full-screen . maximized))
 
-
+(desktop-save-mode)
+(desktop-read)
+(require 'init-ui)
 (require 'init-dashboard)
  ;; (setq default-frame-alist '((alpha-background . 80)))
 (provide 'init)
