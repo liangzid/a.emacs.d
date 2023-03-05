@@ -40,7 +40,8 @@
       )
   (if *is-linux*
       (progn
-	(set-face-attribute 'default nil :font "文泉驿正黑 12")
+	(message "you should reset the font.")
+	;;(set-face-attribute 'default nil :font "文泉驿正黑 12")
 	)))
 
 ;; (setq my-prefer-themes '(darcula monokai solarized-light solarized-dark))
@@ -144,6 +145,11 @@ load a beautiful theme."
 
 (global-set-key (kbd "C-x 5") 'split-3-windows-horizontally-evenly)
 
+(setq shift-selection-mode t)
+(global-unset-key (vector (list 'shift 'left)))
+(global-unset-key (vector (list 'shift 'right)))
+(global-unset-key (vector (list 'shift 'up)))
+(global-unset-key (vector (list 'shift 'down)))
 
 
 (provide 'init-ui)
