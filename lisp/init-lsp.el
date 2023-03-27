@@ -1,7 +1,7 @@
 ;; (message "donot use lsp")
 (require 'eglot)
 
-(if *is-linux*
+(if (and *is-gui* *is-linux*)
     (progn
       (message "Using LSP-BRIDGE.")
       (require 'my-lspbridge)
