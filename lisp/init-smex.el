@@ -14,7 +14,7 @@
 (my/install-package-if-not-found 'smex)
 (require 'smex) ; Not needed if you use package.el
 (smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
+;; (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 (provide 'init-smex)
