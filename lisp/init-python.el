@@ -1,12 +1,27 @@
 (require 'use-package)
+(my/install-package-if-not-found 'company-anaconda)
+(my/install-package-if-not-found 'anaconda-mode)
 
 ;; for python
 (use-package python
   :mode ("\\.py" . python-mode)
   :ensure t)
 
-;; (eval-after-load "company"
-;;   '(add-to-list 'company-backends 'company-anaconda))
+(require 'anaconda-mode)
+
+;; disable some keys:
+
+(global-unset-key (kbd "C-x 4 ."))
+(global-unset-key (kbd "C-x 5 ."))
+(global-unset-key (kbd "C-x 4 ="))
+(global-unset-key (kbd "C-x 5 ="))
+(global-unset-key (kbd "C-x 4 r"))
+(global-unset-key (kbd "C-x 5 r"))
+
+(define-key python-mode-map (kbd "C-d") 'anaconda-mode-find-definitions)
+(define-key python-mode-map (kbd "C-c d") 'anaconda-mode-find-definitions-other-window)
+(define-key python-mode-map (kbd "M-r") 'anaconda-mode-find-references)
+(define-key python-mode-map (kbd "C-c r") 'anaconda-mode-find-references)
 
 ;; (add-hook 'python-mode-hook 'anaconda-mode)
 ;; (add-hook 'python-mode-hook 'anaconda-eldoc-mode)

@@ -171,6 +171,12 @@
  "cd" 'citre-jump
  "cD" 'citre-jump-back
  "cp" 'citre-ace-peek
+ "ad" 'anaconda-mode-find-definitions
+ "ar" 'anaconda-mode-find-references
+ "aD" 'anaconda-mode-find-definitions-other-window
+ "aR" 'anaconda-mode-find-references-other-window
+ "aa" 'anaconda-mode-find-assignments
+ "a/" 'anaconda-mode-show-doc
 
  ;; python debug
  "dd" 'pdb 
