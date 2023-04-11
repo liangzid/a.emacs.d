@@ -46,7 +46,9 @@
                :empty-lines 1))
 ;;; org agenda
 (setq org-agenda-span 'week)
-(setq org-agenda-files (list "~/liangzid.github.io/org/task.org" "~/liangzid.github.io/org/capture-file-inbox.org"))
+(setq org-agenda-files (list "~/liangzid.github.io/org/task.org"
+			     "~/liangzid.github.io/org/capture-file-inbox.org"
+			     "~/worklog/todo/todoing.org"))
 (setq org-deadline-warning-days 1)
 (setq org-agenda-todo-ignore-deadlines 'far)
 (setq org-agenda-inhibit-startup t)
