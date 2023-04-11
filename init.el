@@ -43,6 +43,7 @@
 (require 'init-citre)
 (require 'init-python)
 (require 'init-latex)
+(require 'init-cl)
 (require 'init-cpp)
 (require 'init-rust)
 (require 'init-cider)
