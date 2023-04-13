@@ -37,7 +37,7 @@
       ;; 解决显示Unicode字符的卡顿问题
       (setq inhibit-compacting-font-caches t)
       ;; (set-face-attribute 'default nil :font "微软雅黑 12")
-      (set-face-attribute 'default nil :font "Cascadia Mono 12")
+      (set-face-attribute 'default nil :font "Cascadia Mono 10")
       (dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font (frame-parameter nil 'font)
 			  charset
