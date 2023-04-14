@@ -61,9 +61,9 @@ load a beautiful theme."
 			     kaolin-aurora
 			     kaolin-bubblegum
 			     kaolin-eclipse
-			     nimbus
-			     ample
-			     inkpot
+			     ;; nimbus
+			     ;; ample
+			     ;; inkpot
 			     doom-tokyo-night
 				     ))
 	 (random-index (random (length my-prefer-themes)))

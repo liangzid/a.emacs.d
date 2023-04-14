@@ -12,7 +12,8 @@
 (global-auto-revert-mode t)
 
 ;; 显示行号
-(global-linum-mode t)
+;; unsupport for emacs 29
+;; (global-linum-mode t)
 
 ;; ;; 使用缩写，缩写表如下图所示。
 ;; (abbrev-mode t)

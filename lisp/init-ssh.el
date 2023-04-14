@@ -1,8 +1,48 @@
 (require 'tramp)
 ;; (add-to-list 'tramp-remote-path "/home/zliang/software/ctags/")
 
-(setq explicit-shell-file-name "/bin/bash")
+
+(if *is-windows*
+    (progn
+      (setq tramp-default-method "plink")
+      (add-to-list 'exec-path "D:/sf/Git/newgit/bin/")
+      (add-to-list 'exec-path "D:/sf/Git/newgit/")
+      (setq explicit-shell-file-name "bash")
+      (setq shell-file-name explicit-shell-file-name)
+      (setq tramp-default-remote-shell "/bin/bash")
+      (add-to-list 'tramp-connection-properties
+		   (list (regexp-quote "/plink:liangzi")
+			 "remote-shell" "/bin/bash"))
+      (add-to-list 'tramp-connection-properties
+		   (list (regexp-quote "/plink:liangzi")
+                   "remote-shell-login" '("-i")))
+      (connection-local-set-profile-variables
+       'remote-bash
+       '((explicit-shell-file-name . "/bin/bash")
+	 (explicit-bash-args . "-i")
+	 ))
+      (connection-local-set-profiles
+       '(:application tramp :protocol "plink")
+       'remote-bash)
+      )
+  (progn
+    (add-to-list 'tramp-connection-properties
+		 (list (regexp-quote "/ssh:liangzi")
+                       "remote-shell" "/bin/bash"))
+    (add-to-list 'tramp-connection-properties
+		 (list (regexp-quote "/ssh:liangzi")
+                       "remote-shell-login" '("-i")))
+    )
+
+    )
 (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
+
+(let ((process-environment tramp-remote-process-environment))
+  (setenv "ENV" "$HOME/.bashrc")
+  (setq tramp-remote-process-environment process-environment))
+
+
+
 
 (defun ssh-connect-41 ()
   (interactive)
@@ -49,10 +89,6 @@
       )
   )
 
-;; (defun plinkx-connect-48 ()
-;;   (interactive)
-;;   (counsel-find-file "/plink:zliang@219.245.186.48:/home/zliang/")
-;;   )
 
  
 (provide 'init-ssh)

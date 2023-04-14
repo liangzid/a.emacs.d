@@ -152,7 +152,7 @@
  "sl" 'hs-show-block
  
  ;; code navigation.
- "sh" 'highlight-symbol
+ "hs" 'highlight-symbol
  "sr" 'highlight-symbol-query-replace
  "sn" 'highlight-symbol-nav-mode ;; 使用M-n,p进行上下导航
  
@@ -199,9 +199,10 @@
  "oc" 'open-codes-in-d
  "ow" 'open-worklog-in-d
 
- "rs" 'lz/running-current-bash-with-nohup 
- "rp" 'lz/running-current-python-with-nohup-env
- "rtb" 'lz/open-tensorboard-in-current-buffer
+ "rb" 'lz/running-current-bash-with-nohup 
+ "rp" 'lz/running-current-python-with-nohup
+ "ro" 'lz/run-occupy-python
+ "rt" 'lz/open-tensorboard-in-current-buffer
  "ns" 'lz/look-nvidia-state
  
  ;; ssh connect
