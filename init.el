@@ -34,6 +34,8 @@
 ;;; functional configs.
 (require 'init-wsl)
 (require 'init-elpa)
+(require 'init-proxy)
+(require 'init-largefile)
 (require 'init-dired)
 (require 'init-self-config-function)
 (require 'init-clipboard)
