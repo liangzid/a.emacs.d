@@ -25,8 +25,9 @@
      ("#F309DF" . 85)
      ("#3C3D37" . 100)))
  '(magit-diff-use-overlays nil)
- '(org-agenda-files '("~/liangzid.github.io/org/task.org"))
- '(package-selected-packages '(smex keyfreq company))
+ '(org-agenda-files '("/home/liangzi/worklog/todo/todoing.org"))
+ '(package-selected-packages
+   '(citre markdown-mode orderless posframe corfu-doc corfu eglot dashboard smex keyfreq company))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)
