@@ -34,15 +34,17 @@
 ;;; functional configs.
 (require 'init-wsl)
 (require 'init-elpa)
+(require 'init-proxy)
+(require 'init-largefile)
 (require 'init-dired)
 (require 'init-self-config-function)
-(require 'init-ssh)
 (require 'init-clipboard)
 (require 'init-yas)
 (require 'init-git)
 (require 'init-citre)
 (require 'init-python)
 (require 'init-latex)
+(require 'init-cl)
 (require 'init-cpp)
 (require 'init-rust)
 (require 'init-cider)
@@ -57,10 +59,7 @@
 (require 'init-lsp) ;; language server protocol
 (require 'init-evil)
 (require 'init-undo)
-(require 'init-keyfreq)
-(require 'init-smex)
-;;(require 'init-telegram)
-;;(require 'init-netease)
+(require 'init-keyfreq);;(require 'init-netease)
 (require 'init-org)
 
 (desktop-save-mode)
@@ -80,7 +79,7 @@
 
 (setq gc-cons-percentage 0.6)
 
-
+(require 'init-ssh)
 
 ;; toggle maximized screen
 ;; (maximize-window)

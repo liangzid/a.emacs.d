@@ -1,12 +1,27 @@
 (require 'use-package)
+(my/install-package-if-not-found 'company-anaconda)
+(my/install-package-if-not-found 'anaconda-mode)
 
 ;; for python
 (use-package python
   :mode ("\\.py" . python-mode)
   :ensure t)
 
-;; (eval-after-load "company"
-;;   '(add-to-list 'company-backends 'company-anaconda))
+(require 'anaconda-mode)
+
+;; disable some keys:
+
+(global-unset-key (kbd "C-x 4 ."))
+(global-unset-key (kbd "C-x 5 ."))
+(global-unset-key (kbd "C-x 4 ="))
+(global-unset-key (kbd "C-x 5 ="))
+(global-unset-key (kbd "C-x 4 r"))
+(global-unset-key (kbd "C-x 5 r"))
+
+(define-key python-mode-map (kbd "C-d") 'anaconda-mode-find-definitions)
+(define-key python-mode-map (kbd "C-c d") 'anaconda-mode-find-definitions-other-window)
+(define-key python-mode-map (kbd "M-r") 'anaconda-mode-find-references)
+(define-key python-mode-map (kbd "C-c r") 'anaconda-mode-find-references)
 
 ;; (add-hook 'python-mode-hook 'anaconda-mode)
 ;; (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
@@ -48,54 +63,76 @@
 ;; (setq c (nth 0(split-string a b)))
 ;; (format-time-string "%F_%A_%T")
 
+;;nohup bash test.sh> 0414_1147-testlogres----running_test.log &
 (defun lz/running-current-bash-with-nohup ()
   (interactive)
   (let* ((buffer-name (buffer-name))
 	 (filepath (buffer-file-name))
-	 (current-day-time (format-time-string "%F_%A_%T"))
-	 (filename (concat "running_" (s-replace ".sh" "" buffer-name)))
+	 (current-day-time (format-time-string "%m%d_%H%M"))
+	 (filename (concat "runfile_" (s-replace ".sh" "" buffer-name)))
 	 (directory-path (nth 0(split-string filepath buffer-name)))
+	 (identify-part (read-from-minibuffer
+			 "Please insert log file name:"))
 	 (running-string (concat "nohup bash " buffer-name "> "
-				 current-day-time "-" filename ".log &"))
+				 current-day-time "-"
+				 identify-part "---"
+				 filename ".log &"))
 	 (default-directory directory-path))
-    
-    (shell-command running-string))
+    (message "RUNNING COMMAND '%s'" running-string)
+    (let ((output (with-output-to-string
+		    (shell-command running-string)
+		    )))))
   )
 
 (defun lz/running-current-python-with-nohup ()
   (interactive)
   (let* ((buffer-name (buffer-name))
 	 (filepath (buffer-file-name))
-	 (current-day-time (format-time-string "%F"))
-	 (filename (concat "running_" (s-replace ".sh" "" buffer-name)))
-	 (directory-path (nth 0(split-string filepath buffer-name)))
-	 (running-string (concat "nohup python " buffer-name "> "
-				 current-day-time "-" filename ".log &"))
-	 (default-directory directory-path))
-    
-    (shell-command running-string))
-  )
+	 (current-day-time (format-time-string "%m%d_%H%M"))
+	 (filename (concat "runfile_" (s-replace ".py" "" buffer-name)))
+	 (directory-path (nth 0 (split-string filepath buffer-name)))
+	 (identify-part (read-from-minibuffer
+			 "Please insert log file name:"))
+	 (conda-env-name (read-from-minibuffer
+			  "Please insert the anaconda name:"))
 
-(defun lz/running-current-python-with-nohup-env ()
-  (interactive)
-  (let* ((buffer-name (buffer-name))
-	 (filepath (buffer-file-name))
-	 (current-day-time (format-time-string "%F"))
-	 (filename (concat "running_" (s-replace ".sh" "" buffer-name)))
-	 (directory-path (nth 0(split-string filepath buffer-name)))
-	 (running-string (concat "nohup python " buffer-name "> "
-				 current-day-time "-" filename ".log &"))
-	 (default-directory directory-path))
-
-    (setq envname (read-from-minibuffer "running environment? Ans:"))
-    (setq full-string (concat
+	 (environ_conda-str
 		       (concat "export python=~/anaconda3/envs/"
-			       envname "/bin/python \n")
-		       "nohup $python " buffer-name "> "
-		       current-day-time "-" filename ".log &"))
-    
-    (shell-command (format "bash -c %s" (shell-quote-argument full-string))))
+			       conda-env-name "/bin/python \n"))
+	 (running-string (concat "nohup $python " buffer-name " > "
+				 current-day-time "-"
+				 identify-part "---"
+				 filename ".log &"))
+	 (final-command (concat environ_conda-str 
+				running-string))
+	 (default-directory directory-path))
+    (message "RUNNING COMMAND '%s'" final-command)
+    (shell-command (format "bash -c %s"(shell-quote-argument
+					final-command))))
   )
+
+(defun lz/nohup-switch-run()
+  (interactive)
+  (if (string-match ".py" (buffer-name))
+      (lz/running-current-python-with-nohup)
+    (lz/running-current-bash-with-nohup)))
+
+(global-set-key (kbd "<f5>") 'lz/nohup-switch-run)
+
+(defun lz/run-occupy-python()
+  (interactive)
+  (let* ((device (read-from-minibuffer "device occupied:"))
+	 (conda-env (read-from-minibuffer "conda environs:"))
+	 (command (concat
+		   (concat "export python=~/anaconda3/envs/" conda-env
+			   "/bin/python \n")
+		   (concat "nohup $python ~/occupyGPU/hehe.py --device="
+			   device " >nohup.out &")))
+	 )
+    (shell-command (format "bash -c '%s'" command))
+    (message command)
+    (message (format "working on device %s ~" device))
+    ))
 
 ;; tensorboard configuration.
 

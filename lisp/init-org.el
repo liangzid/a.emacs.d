@@ -49,8 +49,7 @@
 (setq org-agenda-files (list "~/liangzid.github.io/org/task.org"
 			     "~/liangzid.github.io/org/capture-file-inbox.org"
 			     "~/worklog/todo/todoing.org"))
-
-(setq org-deadline-warning-days 7)
+(setq org-deadline-warning-days 1)
 (setq org-agenda-todo-ignore-deadlines 'far)
 (setq org-agenda-inhibit-startup t)
 (setq org-agenda-skip-scheduled-if-done t)

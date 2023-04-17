@@ -11,15 +11,26 @@
 (my/install-package-if-not-found 'org-modern)
 (my/install-package-if-not-found 'pangu-spacing)
 (my/install-package-if-not-found 'org-fragtog)
+(my/install-package-if-not-found 'valign)
+;; (my/install-package-if-not-found 'ftable)
+(require 'valign)
+;; (require 'ftable)
 (require 'org-visual-indent)
 (require 'org-dynamic-bullets)
 
 (global-pangu-spacing-mode 0)
 
+(if *is-gui*
+    (progn
+      ;; open the valign for table alignments in org mode.
+       (add-hook 'org-mode-hook #'valign-mode)
+      ))
+
 
 (add-hook 'org-mode-hook
           (lambda ()
             (org-shifttab 2)))
+(setq org-modern-table nil) ;; 存在对齐问题，故禁用之~
 (if *is-gui*
     (progn
 	(add-hook 'org-mode-hook #'org-modern-mode)
@@ -28,6 +39,22 @@
 	(add-hook 'org-mode-hook 'org-visual-indent-mode)
 	(add-hook 'org-mode-hook 'org-dynamic-bullets-mode)
       ))
+
+;; set special font for org-mode.
+
+(defun set-org-font()
+  (interactive)
+  (progn
+    (make-face 'org-face)
+    (set-face-attribute 'org-face nil :font "Times New Roman 12")
+    (set-face-attribute 'org-face nil
+			:family "Microsoft YaHei UI 12")
+    (setq buffer-face-mode-face 'org-face)
+    (buffer-face-mode)))
+
+(if *is-windows*
+    (add-hook 'org-mode-hook 'set-org-font)
+    )
 
 
 (setq org-src-fontify-natively t)

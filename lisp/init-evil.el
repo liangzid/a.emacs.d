@@ -152,7 +152,7 @@
  "sl" 'hs-show-block
  
  ;; code navigation.
- "sh" 'highlight-symbol
+ "hs" 'highlight-symbol
  "sr" 'highlight-symbol-query-replace
  "sn" 'highlight-symbol-nav-mode ;; 使用M-n,p进行上下导航
  
@@ -171,6 +171,12 @@
  "cd" 'citre-jump
  "cD" 'citre-jump-back
  "cp" 'citre-ace-peek
+ "ad" 'anaconda-mode-find-definitions
+ "ar" 'anaconda-mode-find-references
+ "aD" 'anaconda-mode-find-definitions-other-window
+ "aR" 'anaconda-mode-find-references-other-window
+ "aa" 'anaconda-mode-find-assignments
+ "a/" 'anaconda-mode-show-doc
 
  ;; python debug
  "dd" 'pdb 
@@ -193,9 +199,10 @@
  "oc" 'open-codes-in-d
  "ow" 'open-worklog-in-d
 
- "rs" 'lz/running-current-bash-with-nohup 
- "rp" 'lz/running-current-python-with-nohup-env
- "rtb" 'lz/open-tensorboard-in-current-buffer
+ "rb" 'lz/running-current-bash-with-nohup 
+ "rp" 'lz/running-current-python-with-nohup
+ "ro" 'lz/run-occupy-python
+ "rt" 'lz/open-tensorboard-in-current-buffer
  "ns" 'lz/look-nvidia-state
  
  ;; ssh connect
