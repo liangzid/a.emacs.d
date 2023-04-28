@@ -5,11 +5,14 @@
 (my/install-package-if-not-found 'evil-visualstar)
 (my/install-package-if-not-found 'evil-leader)
 
+
 ;; 开启evil 模式
 (use-package evil
   :ensure t
   :config
   (evil-mode 1))
+
+(require 'my-evil-surround)
 
 ;; Move back the cursor one position when exiting insert mode
 (setq evil-move-cursor-back t)
@@ -164,6 +167,9 @@
  ;; shell relevant
  "sh" 'shell
  "sc" 'shell-command
+
+ "sp" 'liangzi-warp-pair
+ "su" 'liangzi-warp
  
  "gd" 'evil-goto-definition
  ;; "gd" 'xref-find-definitions-other-window

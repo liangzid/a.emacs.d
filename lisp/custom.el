@@ -27,7 +27,8 @@
  '(magit-diff-use-overlays nil)
  '(org-agenda-files
    '("d:/liangzid.github.io/org/task.org" "d:/worklog/todo/todoing.org"))
- '(package-selected-packages '(company))
+ '(package-selected-packages
+   '(evil-leader evil-visualstar evil-surround undo-fu evil-escape evil company))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)
