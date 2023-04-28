@@ -29,9 +29,8 @@ pip install epc sexpdata==0.0.3 six
 pip install orjson 
 
 
-echo "install LSP servers."
-
-pip install pyright
+# echo "install LSP servers."
+# pip install pyright
 
 
 

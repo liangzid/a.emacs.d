@@ -66,6 +66,7 @@
    (add-to-list 'org-latex-classes
                '("lz-beamer"
 "\\documentclass[aspectratio=169]{ctexbeamer} % 比例16:9, ctex以支持中文
+\\usetheme{Warsaw}
 % \\usefonttheme{serif}              % 衬线字体
 % \\usefonttheme{professionalfonts}  % 数学公式字体
 \\AtBeginSection{\\frame{\\sectionpage}} %我理解好像加入一个section首页
