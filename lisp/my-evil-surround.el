@@ -47,7 +47,7 @@
 (defvar pair-left-part "(")
 (defun liangzi-warp-pair ()
   (interactive)
-  (defvar pair-left-part (read-from-minibuffer "Left Part:"
+  (setq pair-left-part (read-from-minibuffer "Left Part:"
 					     pair-left-part))
   (let* ((start (evil-range-beginning (evil-visual-range)))
 	 (end (evil-range-end (evil-visual-range)))
@@ -66,7 +66,7 @@
 	(progn
 	  (kill-region start end)
 	  (insert new-text)
-	  (message "replace done.")
+	  (message "surrounded done.")
 	  )
       (message "quit."))
 
@@ -74,4 +74,4 @@
 
 (provide 'my-evil-surround)
 
-;;; my-evil-surround.el {"<ends> here
+;;; my-evil-surround.el {"<ends> [{here}]
