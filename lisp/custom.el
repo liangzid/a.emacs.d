@@ -28,7 +28,7 @@
  '(org-agenda-files
    '("/ssh:liangzi@219.245.186.48:/home/liangzi/BLUE/blue-metric-todo.org" "/ssh:liangzi@219.245.186.48:/home/liangzi/TEMP/temptodo.org" "/home/liangzi/worklog/overall-todo.org" "/ssh:liangzi@219.245.186.48:/home/liangzi/Yadan/yadantodo.org" "/ssh:liangzi@219.245.186.48:/home/liangzi/backinference/INP-todo.org"))
  '(package-selected-packages
-   '(ivy-bibtex orderless corfu org-superstar dashboard citre company-reftex cdlatex auctex eglot all-the-icons-dired all-the-icons-completion all-the-icons doom-themes zenburn-theme inkpot-theme ample-theme nimbus-theme kaolin-themes solarized-theme darcula-theme company))
+   '(code-cells ivy-bibtex orderless corfu org-superstar dashboard citre company-reftex cdlatex auctex eglot all-the-icons-dired all-the-icons-completion all-the-icons doom-themes zenburn-theme inkpot-theme ample-theme nimbus-theme kaolin-themes solarized-theme darcula-theme company))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)
