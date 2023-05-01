@@ -5,11 +5,14 @@
 (my/install-package-if-not-found 'evil-visualstar)
 (my/install-package-if-not-found 'evil-leader)
 
+
 ;; 开启evil 模式
 (use-package evil
   :ensure t
   :config
   (evil-mode 1))
+
+(require 'my-evil-surround)
 
 ;; Move back the cursor one position when exiting insert mode
 (setq evil-move-cursor-back t)
@@ -79,7 +82,7 @@
       (push '(?\( . ("( " . ")")) evil-surround-pairs-alist)
       (push '(?` . ("`" . "'")) evil-surround-pairs-alist))
 
-    ;; generic
+    ;;  /generic/ 
     (push '(?/ . ("/" . "/")) evil-surround-pairs-alist))
   (add-hook 'prog-mode-hook 'evil-surround-prog-mode-hook-setup)
   (global-evil-surround-mode 1))
@@ -152,7 +155,7 @@
  "sl" 'hs-show-block
  
  ;; code navigation.
- "sh" 'highlight-symbol
+ "hs" 'highlight-symbol
  "sr" 'highlight-symbol-query-replace
  "sn" 'highlight-symbol-nav-mode ;; 使用M-n,p进行上下导航
  
@@ -164,6 +167,9 @@
  ;; shell relevant
  "sh" 'shell
  "sc" 'shell-command
+
+ "sp" 'liangzi-warp-pair
+ "su" 'liangzi-warp
  
  "gd" 'evil-goto-definition
  ;; "gd" 'xref-find-definitions-other-window
@@ -171,6 +177,12 @@
  "cd" 'citre-jump
  "cD" 'citre-jump-back
  "cp" 'citre-ace-peek
+ "ad" 'anaconda-mode-find-definitions
+ "ar" 'anaconda-mode-find-references
+ "aD" 'anaconda-mode-find-definitions-other-window
+ "aR" 'anaconda-mode-find-references-other-window
+ "aa" 'anaconda-mode-find-assignments
+ "a/" 'anaconda-mode-show-doc
 
  ;; python debug
  "dd" 'pdb 
@@ -193,9 +205,10 @@
  "oc" 'open-codes-in-d
  "ow" 'open-worklog-in-d
 
- "rs" 'lz/running-current-bash-with-nohup 
- "rp" 'lz/running-current-python-with-nohup-env
- "rtb" 'lz/open-tensorboard-in-current-buffer
+ "rb" 'lz/running-current-bash-with-nohup 
+ "rp" 'lz/running-current-python-with-nohup
+ "ro" 'lz/run-occupy-python
+ "rt" 'lz/open-tensorboard-in-current-buffer
  "ns" 'lz/look-nvidia-state
  
  ;; ssh connect

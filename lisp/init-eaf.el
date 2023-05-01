@@ -30,7 +30,9 @@
   (use-package ctable :defer t :ensure t)
   (use-package deferred :defer t :ensure t)
   (use-package s :defer t :ensure t)
-
+  :config
+  (setq eaf-pdf-dark-mode "ignore")
+)
   ;; :custom
   ;; (eaf-browser-continue-where-left-off t)
   ;; :config

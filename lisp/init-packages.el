@@ -61,8 +61,9 @@
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-flip-when-above t)
 (setq company-require-match nil)
-(global-company-mode)
 (setq company-global-modes '(not shell-mode))
+;; 暂时关闭 COMPANY MODE
+
 ;; (setq company-auto-complete-chars '((kbd "TAB")))
 (define-key company-active-map (kbd "M-n") nil)
 (define-key company-active-map (kbd "M-p") nil)
@@ -76,17 +77,6 @@
 (popwin-mode t)
 
 
-;; undo tree
-(use-package undo-tree
-  :ensure t
-  :config
-  (progn
-(global-undo-tree-mode)
-    (setq undo-tree-visualizer-timestamps t)
-    (setq undo-tree-visualizer-diff t)
-    ))
-
-(global-set-key (kbd "C-x u") 'undo-tree-undo)
 
 ;; display keybindings with which key
 (use-package which-key

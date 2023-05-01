@@ -1,4 +1,4 @@
-;; (require 'ox-publish)
+(require 'ox-publish)
 ;; (require 'ox-rss)
 
 
@@ -31,7 +31,8 @@
              :sitemap-title "Sitemap"         ; ... with title 'Sitemap'.
              :sitemap-sort-files anti-chronologically
              :sitemap-file-entry-format "%d %t"
-	     ;; :html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://liangzid.github.io/notes/css/worg.css\"/>"
+	:sitemap-format-entry lz/org-publish-sitemap-with-time
+	:html-head "<link rel='stylesheet' type='text/css' href='https://gongzhitaao.org/orgcss/org.css'/>"
 
          )
          ("blog-static"
@@ -63,6 +64,38 @@
 	    ;; :sitemap-function rw/format-rss-feed
 	    :sitemap-format-entry rw/format-rss-feed-entry)
         ))
+
+(defun lz/org-publish-sitemap-with-time (entry style project)
+  "Default format for site map ENTRY, as a string.
+ENTRY is a file name.  STYLE is the style of the sitemap.
+PROJECT is the current project."
+  (cond ((not (directory-name-p entry))
+	 (format "[[file:%s][%s]]"
+		 entry
+		 (org-publish-find-date entry project)))
+	((eq style 'tree)
+	 ;; Return only last subdir.
+	 (file-name-nondirectory (directory-file-name entry)))
+	(t entry)))
+
+(defun lz/org-publish-sitemap-with-time (entry style project)
+  "Format ENTRY for the RSS feed.
+ENTRY is a file name.  STYLE is either 'list' or 'tree'.
+PROJECT is the current project."
+  (cond ((not (directory-name-p entry))
+         (let* ((file (org-publish--expand-file-name entry project))
+                (title (org-publish-find-title entry project))
+                (date (format-time-string "%Y-%m-%d" (org-publish-find-date entry project)))
+                (link (concat (file-name-sans-extension entry) ".html")))
+	   (format "[[file:%s][%s_%s]]"
+		   entry
+		   date
+		   title)))
+        ((eq style 'tree)
+         ;; Return only last subdir.
+         (file-name-nondirectory (directory-file-name entry)))
+        (t entry)))
+
 
 
 (defun rw/org-rss-publish-to-rss (plist filename pub-dir)

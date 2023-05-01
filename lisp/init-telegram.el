@@ -10,8 +10,12 @@
 ;;
 ;;; Code:
 
-(my/install-package-if-not-found 'telega)
-
+(if *is-linux*
+    (progn
+      (my/install-package-if-not-found 'telega)
+      (message "To use TELEGA, you need to open the proxy with <f1>.")
+      (if (not *is-gui*)
+	  (setq telega-use-images nil))))
 
 (provide 'init-telegram)
 

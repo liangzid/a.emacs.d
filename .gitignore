@@ -7,8 +7,6 @@
 /quelpa
 /transient
 
-# following files should be ignored
-
 *\#
 *.db
 *.eld
@@ -16,8 +14,11 @@
 *~
 
 /imdict/pyim-bigdict.pyim
+/datas/
 /eaf/
+/network-security.data
 /other-files/emacs-application-framework/
+/server/
 /url/
 recentf
 tramp

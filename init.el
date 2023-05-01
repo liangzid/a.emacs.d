@@ -6,7 +6,6 @@
 ;; (set-frame-parameter nil 'alpha 0.85)
 (set-frame-parameter nil 'alpha 0.99)
 
-
 ;; 定义快速打开init-file的操作，并将之绑定在F2上.
 (defun open-my-init-file()
   (interactive)
@@ -32,22 +31,21 @@
 
 (defconst *is-server* t)
 
+
+;;; functional configs.
 (require 'init-wsl)
 (require 'init-elpa)
+(require 'init-proxy)
+(require 'init-largefile)
 (require 'init-dired)
 (require 'init-self-config-function)
-(require 'init-modeline)
-(require 'init-window)
-(require 'init-chinese)
-(require 'init-ssh)
 (require 'init-clipboard)
 (require 'init-yas)
 (require 'init-git)
-;;(require 'init-telegram)
 (require 'init-citre)
 (require 'init-python)
-(require 'init-org)
 (require 'init-latex)
+(require 'init-cl)
 (require 'init-cpp)
 (require 'init-rust)
 (require 'init-cider)
@@ -56,17 +54,25 @@
 (require 'init-path)
 (require 'init-collection)
 (require 'init-rss)
-
-;;(require 'init-netease)
-
-(require 'init-better-defaults)
-(require 'init-ui)
 (require 'init-keybindings)
 (require 'init-spell)
 (require 'init-packages)
 (require 'init-lsp) ;; language server protocol
 (require 'init-evil)
-;; (zl/load-eaf)
+(require 'init-undo)
+(require 'init-keyfreq);;(require 'init-netease)
+(require 'init-org)
+
+(desktop-save-mode)
+;; (desktop-read)
+
+;;; UI configs.
+(require 'init-ui)
+(require 'init-modeline)
+(require 'init-window)
+(require 'init-chinese) ;; only have part of UI.
+(require 'init-better-defaults)
+;; (require 'init-dashboard)
 
 ;; for computer custom application. cannot be used for any self-designing.
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
@@ -74,7 +80,7 @@
 
 (setq gc-cons-percentage 0.6)
 
-
+(require 'init-ssh)
 
 ;; toggle maximized screen
 ;; (maximize-window)
@@ -82,7 +88,5 @@
 
 ;; (add-to-list 'default-frame-alist '(full-screen . maximized))
 
-
-(require 'init-dashboard)
  ;; (setq default-frame-alist '((alpha-background . 80)))
 (provide 'init)
