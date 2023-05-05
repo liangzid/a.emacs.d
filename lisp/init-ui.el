@@ -45,9 +45,23 @@
       )
   (if *is-linux*
       (progn
-	(message "you should reset the font.")
-	;;(set-face-attribute 'default nil :font "文泉驿正黑 12")
+	;; (message "you should reset the font.")
+	(set-face-attribute 'default nil :font "Maple Mono 10"
+			    :weight 'demibold)
+	;; (set-face-attribute 'default nil :font "DejaVu Sans Mono 10")
+	;; (set-face-attribute 'default nil :font "Fira Code 10")
+	;; (set-face-attribute 'default nil :font "Source Code Pro 10"
+			    ;; :weight 'demibold)
+	;; (set-face-attribute 'default nil :font "Cascadia Code 10"
+			    ;; :weight 'demibold)
+	(dolist (charset '(kana han symbol cjk-misc bopomofo))
+	(set-fontset-font (frame-parameter nil 'font)
+			  charset
+			  (font-spec :family "文泉驿正黑" :font 10)))
+	;; (set-face-attribute 'default nil :font "FiraCode 10")
+	;;(set-face-attribute 'default nil :font "文泉驿正黑 10")
 	)))
+
 
 ;; (setq my-prefer-themes '(darcula monokai solarized-light solarized-dark))
 
@@ -68,6 +82,7 @@ load a beautiful theme."
 				     ))
 	 (random-index (random (length my-prefer-themes)))
 	 (selected-theme (nth random-index my-prefer-themes )))
+    (message "theme name: %s" selected-theme)
     (load-theme selected-theme t)
     ))
 
@@ -77,6 +92,22 @@ load a beautiful theme."
     (my/random-theme)
     (load-theme 'monokai t)
 )
+
+(set-face-attribute 'font-lock-comment-face nil :slant
+		    'italic :weight 'light)
+(set-face-attribute 'font-lock-keyword-face nil :weight 'light
+		    :slant 'italic)
+(set-face-attribute 'border nil :weight 'bold)
+(set-face-attribute 'mode-line nil :weight 'bold :slant 'italic)
+
+(set-face-attribute 'font-lock-function-name-face nil
+    :foreground "red"
+    :italic nil
+    :bold t
+    :underline nil
+    )
+
+
 ;; (load-theme 'monokai t)
 (add-hook 'prog-mode-hook (rainbow-mode t))
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
