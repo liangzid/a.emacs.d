@@ -32,6 +32,7 @@
 ;; (setq lsp-bridge-python-lsp-server "pyright")
 (setq lsp-bridge-python-lsp-server "pylyzer")
 
+
 (setq lsp-bridge-python-command "/home/liangzi/anaconda3/bin/python")
 
 (unless *is-gui*
@@ -52,7 +53,6 @@
 (global-set-key (kbd "C-c i") 'lsp-bridge-find-impl-other-window)
 (global-set-key (kbd "C-c c") 'lsp-bridge-rename)
 (global-set-key (kbd "C-c b") 'lsp-bridge-diagnostic-jump-next)
-
 
 ;; (unless (display-graphic-p)
 ;;               (with-eval-after-load 'acm
