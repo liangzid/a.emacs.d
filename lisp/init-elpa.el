@@ -7,20 +7,24 @@
 ;(setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
 ;                         ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
 ;                         ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/melpa-stable/")
-					;                         ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")));
-(setq package-archives
-      '(
+;                         ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")))
+
+;;(setq package-archives
+;;      '(
 	;; uncomment below line if you need use GNU ELPA
-	("gnu" . "https://elpa.gnu.org/packages/")
-	("melpa" . "https://melpa.org/packages/")
-	("melpa-stable" . "https://stable.melpa.org/packages/")
+;;	("gnu" . "https://elpa.gnu.org/packages/")
+;;	("melpa" . "https://melpa.org/packages/")
+;;	("melpa-stable" . "https://stable.melpa.org/packages/")
 
-	;("gnu"   . "http://elpa.emacs-china.org/gnu/")
-	;("melpa" . "http://elpa.emacs-china.org/melpa/")
-	;("melpa-stable" . "http://elpa.emacs-china.org/stable-melpa/")
-	;("org" . "http://elpa.emacs-china.org/org/")
-	))
+	;;("gnu"   . "http://elpa.emacs-china.org/gnu/")
+	;;("melpa" . "http://elpa.emacs-china.org/melpa/")
+	;;("melpa-stable" . "http://elpa.emacs-china.org/stable-melpa/")
+	;;("org" . "http://elpa.emacs-china.org/org/")
+;;	))
 
+(setq package-archives '(("gnu"   . "http://1.15.88.122/gnu/")
+                           ("melpa" . "http://1.15.88.122/melpa/")))
+(package-refresh-contents)
 
 ;(setq package-archives '(("gnu" . "http://elpa.zilongshanren.com/gnu/")
 ;			("melpa" . "http://elpa.zilongshanren.com/melpa/")))

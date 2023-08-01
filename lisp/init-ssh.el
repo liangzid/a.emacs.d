@@ -4,26 +4,31 @@
 
 (if *is-windows*
     (progn
-      (setq tramp-default-method "plink")
-      (add-to-list 'exec-path "D:/sf/Git/newgit/bin/")
-      (add-to-list 'exec-path "D:/sf/Git/newgit/")
-      (setq explicit-shell-file-name "bash")
-      (setq shell-file-name explicit-shell-file-name)
-      (setq tramp-default-remote-shell "/bin/bash")
-      (add-to-list 'tramp-connection-properties
-		   (list (regexp-quote "/plink:liangzi")
-			 "remote-shell" "/bin/bash"))
-      (add-to-list 'tramp-connection-properties
-		   (list (regexp-quote "/plink:liangzi")
-                   "remote-shell-login" '("-i")))
-      (connection-local-set-profile-variables
-       'remote-bash
-       '((explicit-shell-file-name . "/bin/bash")
-	 (explicit-bash-args . "-i")
-	 ))
-      (connection-local-set-profiles
-       '(:application tramp :protocol "plink")
-       'remote-bash)
+      ;; (setq tramp-default-method "plink")
+      ;; (add-to-list 'exec-path "D:/sf/Git/newgit/bin/")
+      ;; (add-to-list 'exec-path "D:/sf/Git/newgit/")
+      ;; (setq explicit-shell-file-name "bash")
+      ;; (setq shell-file-name explicit-shell-file-name)
+      ;; (setq tramp-default-remote-shell "/bin/bash")
+      ;; (add-to-list 'tramp-connection-properties
+      ;; 		   (list (regexp-quote "/plink:liangzi")
+      ;; 			 "remote-shell" "/bin/bash"))
+      ;; (add-to-list 'tramp-connection-properties
+      ;; 		   (list (regexp-quote "/plink:liangzi")
+      ;;              "remote-shell-login" '("-i")))
+      ;; (connection-local-set-profile-variables
+      ;;  'remote-bash
+      ;;  '((explicit-shell-file-name . "/bin/bash")
+      ;; 	 (explicit-bash-args . "-i")
+      ;; 	 ))
+      ;; (connection-local-set-profiles
+      ;;  '(:application tramp :protocol "plink")
+      ;;  'remote-bash)
+      (add-to-list 'exec-path "D:/Program Files/Git/usr/bin")
+      (setq explicit-shell-file-name "bash.exe")
+      (setq shell-file-name "bash.exe")
+      (setq explicit-bash.exe-args '("--noediting" "--login" "-i"))
+      (prefer-coding-system 'utf-8)
       )
   (progn
     (add-to-list 'tramp-connection-properties

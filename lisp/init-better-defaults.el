@@ -70,5 +70,22 @@
 ;; setting tabs.
 ;;(setq tab-always-indent nil)
 
+(if (version< "29" emacs-version)
+    (progn
+
+      ; set pixel scroll
+      (pixel-scroll-precision-mode 1)
+      (setq pixel-scroll-precision-interpolate-page t)
+      (defalias 'scroll-up-command 'pixel-scroll-interpolate-down)
+      (defalias 'scroll-down-command 'pixel-scroll-interpolate-up)
+
+	; solve the problem of xref
+      ;;?
+      (setq xref-history-storage 'xref-window-local-history)
+
+      (display-line-numbers-mode)
+
+      ))
+
 
 (provide 'init-better-defaults)
