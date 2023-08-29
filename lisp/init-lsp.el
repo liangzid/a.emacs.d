@@ -12,6 +12,8 @@
     (add-to-list 'company-backends 'company-anaconda)
     ;; (add-hook 'python-mode-hook 'anaconda-mode) ;; key conficts
     (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+
+    ;; (require 'my-lspmode)
     
     ))
 
