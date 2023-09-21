@@ -59,6 +59,7 @@
 (require 'init-packages)
 (require 'init-lsp) ;; language server protocol
 (require 'init-evil)
+;; (require 'init-meow)
 (require 'init-undo)
 (require 'init-keyfreq);;(require 'init-netease)
 (require 'init-org)

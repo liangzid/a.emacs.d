@@ -71,15 +71,16 @@
 load a beautiful theme."
   (interactive)
   (let* ((my-prefer-themes '(
-			     darcula
-			     monokai
-			     kaolin-aurora
-			     kaolin-bubblegum
+			     ;; darcula
+			     ;; monokai
+			     doom-monokai-pro
+			     doom-dracula
+			     doom-feather-dark
+			     ;; kaolin-aurora
+			     ;; kaolin-bubblegum
 			     kaolin-eclipse
-			     ;; nimbus
 			     ;; ample
-			     ;; inkpot
-			     doom-tokyo-night
+			     ;; doom-tokyo-night
 				     ))
 	 (random-index (random (length my-prefer-themes)))
 	 (selected-theme (nth random-index my-prefer-themes )))
@@ -91,19 +92,19 @@ load a beautiful theme."
 ;; theme
 (if *is-gui*
     (my/random-theme)
-    (load-theme 'monokai t)
+    ;; (load-theme 'monokai t)
 )
 
 (set-face-attribute 'font-lock-comment-face nil :slant
 		    'italic :weight 'light)
-(set-face-attribute 'font-lock-keyword-face nil :weight 'light
-		    :slant 'italic :underline t)
-(set-face-attribute 'font-lock-string-face nil :weight 'regular
-		    :slant 'italic)
+;; (set-face-attribute 'font-lock-keyword-face nil :weight 'light
+		    ;; :slant 'italic :underline t)
+;; (set-face-attribute 'font-lock-string-face nil :weight 'regular
+		    ;; :slant 'italic)
 (set-face-attribute 'font-lock-variable-name-face nil
 		    :weight 'demibold :background "#372E40")
 (set-face-attribute 'border nil :weight 'black)
-(set-face-attribute 'mode-line nil :weight 'bold :slant 'italic)
+;; (set-face-attribute 'mode-line nil :weight 'bold :slant 'italic)
 
 ;; (set-face-attribute 'font-lock-function-name-face nil
 ;;     :foreground "red"
@@ -191,10 +192,10 @@ load a beautiful theme."
 (global-set-key (kbd "C-x 5") 'split-3-windows-horizontally-evenly)
 
 (setq shift-selection-mode t)
-(global-unset-key (vector (list 'shift 'left)))
-(global-unset-key (vector (list 'shift 'right)))
-(global-unset-key (vector (list 'shift 'up)))
-(global-unset-key (vector (list 'shift 'down)))
+;; (global-unset-key (vector (list 'shift 'left)))
+;; (global-unset-key (vector (list 'shift 'right)))
+;; (global-unset-key (vector (list 'shift 'up)))
+;; (global-unset-key (vector (list 'shift 'down)))
 
 
 (provide 'init-ui)
