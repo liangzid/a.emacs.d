@@ -13,7 +13,10 @@
 
 ;; 显示行号
 ;; unsupport for emacs 29
-;; (global-linum-mode t)
+(if (version< emacs-version "29")
+    (global-linum-mode t)
+  (global-display-line-numbers-mode 1)
+    )
 
 ;; ;; 使用缩写，缩写表如下图所示。
 ;; (abbrev-mode t)
