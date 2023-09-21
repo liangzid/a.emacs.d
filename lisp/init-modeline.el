@@ -9,14 +9,15 @@
     ;; '%02' to set to 2 chars at least; prevents flickering
     "(%02l,%01c)"
     "["
-    "%m " ; major mode name
+    "%m" ; major mode name
+    "]["
     ;; buffer file encoding
     '(:eval (let ((sys (coding-system-plist buffer-file-coding-system)))
               (if (memq (plist-get sys :category)
                         '(coding-category-undecided coding-category-utf-8))
                   "UTF-8"
                 (upcase (symbol-name (plist-get sys :name))))))
-    " "
+    "]["
     ;; insert vs overwrite mode
     '(:eval (propertize (if overwrite-mode "O" "I")
               'face nil
@@ -39,7 +40,9 @@
 
     ;; '(:eval my-extra-mode-line-info)
 
-    " %-" ;; fill with '-'
+    ;; how percentage
+    "(" "%p" ")"
+    ;; " %-" ;; fill with '-'
     ))
 
 (provide 'init-modeline)
