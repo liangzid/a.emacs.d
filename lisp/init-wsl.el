@@ -41,7 +41,7 @@
 (defun win10-my-yank-image-from-win-clipboard-through-powershell()
   "to simplify the logic, use c:/Users/Public as temporary directoy, and move it into current directoy"
   (interactive)
-  (let* ((powershell "c:Windows/System32/WindowsPowerShell/v1.0/powershell.exe")
+  (let* ((powershell "c:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe")
          (file-name (format-time-string "screenshot_%Y%m%d_%H%M%S.png"))
          ;; (file-path-powershell (concat "c:/Users/\$env:USERNAME/" file-name))
          (file-path-wsl (concat "./images/" file-name))

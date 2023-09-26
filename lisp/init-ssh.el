@@ -62,6 +62,14 @@
   (counsel-find-file "/ssh:zijian@128.173.236.231:22/")
   )
 
+(defun ssh-connect-aliyun ()
+  (interactive)
+  (if *is-windows*
+  (counsel-find-file "/plink:liangzi@47.108.50.94/home/liangzi/")
+  (counsel-find-file "/ssh:liangzi@47.108.50.94:/home/liangzi/")
+  )
+  )
+
 (defun ssh-connect-42 ()
   (interactive)
   (if *is-windows*
