@@ -24,7 +24,14 @@
 
 (setq package-archives '(("gnu"   . "http://1.15.88.122/gnu/")
                            ("melpa" . "http://1.15.88.122/melpa/")))
-(package-refresh-contents)
+
+(if (file-exists-p "~/.emacs.d/lisp/")
+    (message "no fresh")
+  (package-refresh-contents)
+    )
+
+
+;; (package-refresh-contents)
 
 ;(setq package-archives '(("gnu" . "http://elpa.zilongshanren.com/gnu/")
 ;			("melpa" . "http://elpa.zilongshanren.com/melpa/")))
@@ -145,37 +152,6 @@
   (package-install pkg))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'smartparens)
-(require 'smartparens-config)
-(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil) ;; 停止对单引号的smart补全
-(sp-local-pair 'web-mode "<" nil :actions nil)
-;;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
-(smartparens-global-mode t)
-(add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode) ;;smartparens
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-;; 代码折叠 hideshow
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package hideshow
-  :ensure nil
-  :diminish hs-minor-mode
-  :hook (prog-mode . hs-minor-mode))
-
-;; 显示被隐藏的代码行数
-;; 这里额外启用了 :box t 属性使得提示更加明显
-(defconst hideshow-folded-face '((t (:inherit 'font-lock-comment-face :box t))))
-
-(defun hideshow-folded-overlay-fn (ov)
-    (when (eq 'code (overlay-get ov 'hs))
-      (let* ((nlines (count-lines (overlay-start ov) (overlay-end ov)))
-             (info (format " ... #%d " nlines)))
-        (overlay-put ov 'display (propertize info 'face hideshow-folded-face)))))
-
-(setq hs-set-up-overlay 'hideshow-folded-overlay-fn)
-;; ===============================
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 (provide 'init-elpa)

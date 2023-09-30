@@ -198,4 +198,17 @@ load a beautiful theme."
 ;; (global-unset-key (vector (list 'shift 'down)))
 
 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'smartparens)
+(require 'smartparens-config)
+(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil) ;; 停止对单引号的smart补全
+(sp-local-pair 'web-mode "<" nil :actions nil)
+;;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
+(smartparens-global-mode t)
+(add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode) ;;smartparens
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 (provide 'init-ui)
