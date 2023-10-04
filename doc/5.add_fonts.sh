@@ -15,6 +15,13 @@
 
 sudo cp ttfs/*.ttf /usr/share/fonts/
 sudo fc-cache -fv
+echo "English fonts done."
+
+cd ~/
+git clone https://github.com/liangzid/ttfs-backup/ 
+cd ~/ttfs-backup/
+bash install.sh
+echo "CJK fonts done."
 
 echo "RUNNING 5.add_fonts.sh DONE."
 # 5.add_fonts.sh ends here

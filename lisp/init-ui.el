@@ -57,7 +57,7 @@
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font (frame-parameter nil 'font)
 			  charset
-			  (font-spec :family "文泉驿正黑" :font 10
+			  (font-spec :family "LXGW WenKai Mono" :font 14
 				     :weight 'normal)))
 	;; (set-face-attribute 'default nil :font "FiraCode 10")
 	;;(set-face-attribute 'default nil :font "文泉驿正黑 10")
