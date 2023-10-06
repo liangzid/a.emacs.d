@@ -61,7 +61,7 @@
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-flip-when-above t)
 (setq company-require-match nil)
-(setq company-global-modes '(not shell-mode))
+(setq company-global-modes '(not sh-mode))
 ;; 暂时关闭 COMPANY MODE
 
 ;; (setq company-auto-complete-chars '((kbd "TAB")))
