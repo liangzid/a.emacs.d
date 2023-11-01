@@ -19,10 +19,5 @@ git clone https://github.com/SpringHan/netease-cloud-music.el.git
 git clone https://github.com/manateelazycat/lsp-bridge.git
 
 
-
-
-
-
-
 echo "RUNNING 3.gitclone.sh DONE."
 # 3.gitclone.sh ends here

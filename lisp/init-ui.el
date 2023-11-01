@@ -171,7 +171,8 @@ load a beautiful theme."
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "C-0") 'text-scale-adjust)
 
-
+(require 'ui-rdp-wsl)
+(global-set-key (kbd "<f10>") 'enable-150%-scale-big)
 
 ;; adding the 80-char lines
 (if *is-gui*
@@ -189,6 +190,16 @@ load a beautiful theme."
   (command-execute 'balance-windows)
 )
 
+
+(defun split-4-windows-horizontally-evenly ()
+  (interactive)
+  (command-execute 'split-window-horizontally)
+  (command-execute 'split-window-horizontally)
+  (command-execute 'split-window-horizontally)
+  (command-execute 'balance-windows)
+)
+
+(global-set-key (kbd "C-x 4") 'split-4-windows-horizontally-evenly)
 (global-set-key (kbd "C-x 5") 'split-3-windows-horizontally-evenly)
 
 (setq shift-selection-mode t)
@@ -196,9 +207,6 @@ load a beautiful theme."
 ;; (global-unset-key (vector (list 'shift 'right)))
 ;; (global-unset-key (vector (list 'shift 'up)))
 ;; (global-unset-key (vector (list 'shift 'down)))
-
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'smartparens)
