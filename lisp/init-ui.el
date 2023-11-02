@@ -15,6 +15,11 @@
 (my/install-package-if-not-found 'all-the-icons-completion)
 (my/install-package-if-not-found 'all-the-icons-dired)
 
+(my/install-package-if-not-found 'marginalia)
+
+;; enable marginalia mode
+(marginalia-mode)
+
 ;; 取消自动断行功能
 (global-visual-line-mode nil)
 
