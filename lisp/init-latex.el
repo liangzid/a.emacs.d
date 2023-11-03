@@ -10,21 +10,6 @@
       '((ivy-bibtex . ivy--regex-ignore-order)
         (t . ivy--regex-plus)))
 
-
-;; (mapc (lambda (mode)
-;; 	(add-hook 'LaTeX-mode-hook mode))
-;;       (list 'turn-on-org-cdlatex
-;; 	    'reftex-mode
-;; 	    'outline-minor-mode
-;; 	    'auto-fill-mode
-;; 	    'flyspell-mode
-;; 	    'hide-body t)
-;;       )
-
-;; 数学符号默认字体为Cambria Math
-;; (set-fontset-font "fontset-default" 'symbol
-;;  		  "Cambria Math")
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'use-package)
 (my/install-package-if-not-found 'auctex)
@@ -91,7 +76,7 @@
 		  (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
 		  (setq TeX-electric-escape nil)   ;; press \ then, jump to mini-buffer to input commands
 		  (if *is-linux*
-		      (setq TeX-view-program-list '(("Evince" "evince %o")))
+		      (message "setted before.")
 		    (setq TeX-view-program-list'(("~/.emacs.d/software/SumatraPDF-3.3.3-64-portable.exe -reuse-instance" (mode-io-correlate " -forward-search %b %n") " %o")))
 		    )
 		  ;; (setq TeX-view-program-list '(("Evince" "evince %o"))) ;;
@@ -116,58 +101,24 @@
             LaTeX-section-label))
 ));;
 
+(defvar cover-command "")
+(defun latex-cover-region-with@zl ()
+  (interactive)
+  (setq cover-command (read-from-minibuffer "command:" cover-command))
+  (let* ((s (evil-range-beginning (evil-visual-range)))
+	 (e (evil-range-end (evil-visual-range)))
+	 (selected-text (buffer-substring s e))
+	 (new-text (concat command "{" selected-text "}"))
+	 (is-run (read-from-minibuffer (format "replace %s to %s? y or n:"
+					       selected-text new-text))))
+    (if (or (string-equal is-run "") (string-equal is-run "y"))
+	(progn
+	  (kill-region s e)
+	  (insert new-text)
+	  (message "done"))))
+  )
+(define-key LaTeX-mode-map (kbd "C-c s") 'latex-cover-region-with@zl)
 
 
-;; ==============================废弃，无法使用==================================================
-;; ==============================废弃，无法使用==================================================
-;; (use-package company-auctex
-;;   :config
-;;   (add-hook 'LaTeX-mode-hook
-;; 	    (lambda ()
-;; 	      (make-local-variable 'company-backends)
-;; 	      (setq company-backends '())
-;; 	      (company-auctex-init))))
-
-;; ;;;-------------------------------------------------------------------------------------
-
-;; ;; ;; PDF正向搜索相关设置
-;; ;; (setq TeX-PDF-mode t) 
-;; ;; (setq TeX-source-correlate-mode t) 
-;; ;; (setq TeX-source-correlate-method 'synctex) 
-;; (setq TeX-view-program-list
-;;       '(("foxitreader" "foxitreader %s.pdf")
-;; 	("Sumatra PDF" ("\"c:/Users/liangzi/AppData/Local/SumatraPDF/SumatraPDF.exe\" -reuse-instance" (mode-io-correlate " -forward-search %b %n ") " %o")))) 
-;; (setq Tex-view-program-selection '((output-pdf "foxitreader")))
-
-
-;; ;; ;; 打开TeX文件时应该加载的mode/执行的命令
-;; ;; (defun my-latex-hook ()
-;; ;;   (turn-on-cdlatex) ;; 加载cdlatex
-;; ;;   (outline-minor-mode) ;; 加载outline mode
-;; ;;   (turn-on-reftex)  ;; 加载reftex
-;; ;;   (auto-fill-mode)  ;; 加载自动换行
-;; ;;   (flyspell-mode)   ;; 加载拼写检查 (需要安装aspell)
-;; ;;   (TeX-fold-mode t) ;; 加载TeX fold mode
-;; ;;   ;; (outline-hide-body) ;; 打开文件时只显示章节标题
-;; ;;   (assq-delete-all (quote output-pdf) TeX-view-program-selection)
-;; ;;   ;; 以下两行是正向搜索相关设置
-;; ;;   )
-;; ;; (add-hook 'LaTeX-mode-hook 'my-latex-hook)
-
-
-		  ;; ;;;;;;;;;;;;;;;; flyspell settings
-		  ;; (flyspell-mode 1)
-		  ;; (setq flyspell-sort-corrections nil)
-		  ;; (setq flyspell-doublon-as-error-flag nil)
-
-		  ;; (define-key LaTeX-mode-map (kbd "C-c C-p") 'reftex-parse-all)
-
-
-;; LaTeX mode相关设置完毕
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'init-latex)
