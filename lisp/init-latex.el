@@ -117,7 +117,7 @@
 	  (insert new-text)
 	  (message "done"))))
   )
-(define-key LaTeX-mode-map (kbd "C-c s") 'latex-cover-region-with@zl)
+;;(define-key LaTeX-mode-map (kbd "C-c s") 'latex-cover-region-with@zl)
 
 
 
