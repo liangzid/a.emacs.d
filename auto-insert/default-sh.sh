@@ -2,7 +2,7 @@
 ######################################################################
 #`(upcase (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))` --- $1
 
-# Author: Zi Liang <liangzid@stu.xjtu.edu.cn>
+# Author: Zi Liang <frost.liang@polyu.edu.hk>
 # Copyright © `(format-time-string "%Y")`, ZiLiang, all rights reserved.
 # Created: `(format-time-string "%e %B %Y")`
 ######################################################################

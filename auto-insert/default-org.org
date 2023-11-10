@@ -1,7 +1,7 @@
 #+title: $1
 #+date: `(current-time-string)`
 #+author: Zi Liang
-#+email: liangzid@stu.xjtu.edu.cn
+#+email: frost.liang@polyu.edu.hk
 #+latex_class: elegantpaper
 #+filetags: $2:$3:$4
 
