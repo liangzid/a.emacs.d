@@ -8,7 +8,8 @@ export installList=("xsel" "gdb" "w3m" "aspell" \
 # devs of libs for ubuntu. Might be useful in WSL.
 export libinstallLs=("librime-dev" "pkg-config" "libglib2.0-dev"\
 				   "libssl-dev" "libgtk-3-dev"\
-				   "libatk1.0-dev"
+				   "libatk1.0-dev"\
+		     "libenchant-2-dev" "pkgconf"
 		    )
 
 sudo apt update
