@@ -68,6 +68,16 @@
 	;;(set-face-attribute 'default nil :font "文泉驿正黑 10")
 	)))
 
+;; set face for flymake-warning and flymake-error
+(set-face-attribute 'flymake-warning nil
+		    :underline '(:color "#f6e58d" :style wave))
+(set-face-attribute 'flymake-error nil
+		    :underline '(:color "#0c2461" :style line)
+		    :background "#eb2f06")
+(set-face-attribute 'jinx-misspelled nil
+		    :underline '(:color "#eb2f06" :style line)
+		    :background nil)
+(global-set-key (kbd "C-x e") 'flymake-show-project-diagnostics)
 
 ;; (setq my-prefer-themes '(darcula monokai solarized-light solarized-dark))
 
