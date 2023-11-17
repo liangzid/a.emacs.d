@@ -64,7 +64,7 @@
 (require 'init-keyfreq);;(require 'init-netease)
 (require 'init-org)
 
-(desktop-save-mode)
+;; (desktop-save-mode)
 ;; (desktop-read)
 
 ;;; UI configs.
@@ -86,6 +86,7 @@
 ;; toggle maximized screen
 ;; (maximize-window)
 (toggle-frame-fullscreen)
+(enable-150%-scale-big)
 
 ;; (add-to-list 'default-frame-alist '(full-screen . maximized))
 

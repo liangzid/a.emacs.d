@@ -25,40 +25,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 (global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c a") 'org-agenda)
-
-(setq org-agenda-files '("~/org"))
-;; org capture setup
-(define-key org-mode-map (kbd "C-c c") 'org-capture)
-
-(setq org-default-notes-file "~/liangzid.github.io/org/capture-file-inbox.org")
-(setq org-capture-templates nil)
-(add-to-list 'org-capture-templates
-             '("n" "Notes"
-               entry (file "~/liangzid.github.io/org/notes/inbox.org")
-               "* %^{heading} %t %^g\n  %?\n"
-               :empty-lines 1
-               ))
-(add-to-list 'org-capture-templates
-             '("t" "Tasks" entry
-               (file "~/liangzid.github.io/org/task.org")
-               "* TODO %^{title} %^g\n  %U\n\n  %?"
-               :empty-lines 1))
-;;; org agenda
-(setq org-agenda-span 'week)
-(setq org-agenda-files (list "~/liangzid.github.io/org/task.org"
-			     "~/liangzid.github.io/org/capture-file-inbox.org"
-			     "~/worklog/todo/todoing.org"))
-(setq org-deadline-warning-days 1)
-(setq org-agenda-todo-ignore-deadlines 'far)
-(setq org-agenda-inhibit-startup t)
-(setq org-agenda-skip-scheduled-if-done t)
-(setq org-agenda-skip-deadline-if-done t)
-(defun my-agenda-list ()
-  (interactive)
-  (progn
-    (org-agenda-list)
-    (delete-other-windows)))
 
 ;; (message "========begin for auto image thing.============")
 ;; 设置org自动显示图片。
@@ -67,25 +33,7 @@
 (add-hook 'org-mode-hook (iimage-mode t))
 ;; (message "====end for auto image thing====")
 
-(setq org-todo-keywords
-      '((sequence "TODO(t)" "INPROGRESS(i)" "WAITING(w)" "REVIEW(r)" "|" "DONE(d)" "CANCELED(c)")))
 
-(setq-default org-enforce-todo-dependencies t)
-
-(setq org-todo-keyword-faces
-      '(("TODO" :foreground "red" :weight "bold")
-        ("INPROGRESS" :foreground "blue" :weight "bold")
-        ("WAITING" . "purple")
-        ("REVIEW" . "orange")
-        ("DONE" . "forest green")
-        ("CANCELED" .  "green")))
-
-(use-package org-alert
-  :defer t
-  :config
-  (progn
-    (setq alert-default-style 'libnotify)
-    ))
 
 ;; 设置org快速插入源代码
 (defun org-insert-src-block (src-code-type)
@@ -140,4 +88,5 @@
 
 (require 'org-ui)
 (require 'org-export)
+(require 'org-todo-related)
 (provide 'init-org)
