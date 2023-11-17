@@ -17,14 +17,14 @@ export local_pip=/usr/bin/pip
 
 
 echo "install LSP server for python"
-local_pip install "python-lsp-server[all]"
+$local_pip install "python-lsp-server[all]"
 
 
 echo "install basic libraries for deep learning DEBUG."
-local_pip install torch
-local_pip install numpy 
-local_pip install scikit-learn
-local_pip install matplotlib
+$local_pip install torch
+$local_pip install numpy 
+$local_pip install scikit-learn
+$local_pip install matplotlib
 
 
 
