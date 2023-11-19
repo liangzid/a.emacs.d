@@ -2,6 +2,7 @@
 ;; 如果某一天你的配置很多且很慢了，我希望你阅读它。
 ;;                                      ------2020.04.20的梁子写给现在的梁子的话
 ;; https://zhuanlan.zhihu.com/p/59509596
+(my/install-package-if-not-found 'use-package)
 (require 'use-package)
 (my/install-package-if-not-found 'darcula-theme)
 (my/install-package-if-not-found 'solarized-theme)
@@ -69,11 +70,18 @@
 	)))
 
 ;; set face for flymake-warning and flymake-error
-(set-face-attribute 'flymake-warning nil
-		    :underline '(:color "#f6e58d" :style wave))
-(set-face-attribute 'flymake-error nil
-		    :underline '(:color "#0c2461" :style line)
-		    :background "#eb2f06")
+;; (flymake-mode-on)
+
+(add-hook 'flymake-mode-hook '(lambda ()
+				(progn
+    (set-face-attribute 'flymake-warning nil
+			:underline '(:color "#f6e58d" :style wave))
+    (set-face-attribute 'flymake-error nil
+			:underline '(:color "#0c2461" :style line)
+			:background "#eb2f06")
+				  )
+				))
+
 (set-face-attribute 'jinx-misspelled nil
 		    :underline '(:color "#eb2f06" :style line)
 		    :background nil)

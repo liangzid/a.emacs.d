@@ -106,9 +106,9 @@
      ("#F309DF" . 85)
      ("#3C3D37" . 100)))
  '(magit-diff-use-overlays nil)
- '(org-agenda-files '("/home/liangzi/orgtodo/extracting_developers_data.org"))
+ '(org-agenda-files nil)
  '(package-selected-packages
-   '(org-alert org-pomodoro org-pomotoro org-promotoro jinx wucuo marginalia lsp-mode all-the-icons-dired all-the-icons-completion all-the-icons doom-themes zenburn-theme inkpot-theme ample-theme nimbus-theme kaolin-themes solarized-theme darcula-theme zoom-window zoom company))
+   '(use-package rime pyim-basedict posframe pyim winum org-alert org-pomodoro org-pomotoro org-promotoro jinx wucuo marginalia lsp-mode all-the-icons-dired all-the-icons-completion all-the-icons doom-themes zenburn-theme inkpot-theme ample-theme nimbus-theme kaolin-themes solarized-theme darcula-theme zoom-window zoom company))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)

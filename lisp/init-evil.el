@@ -137,6 +137,7 @@
  "xk" 'kill-buffer
  "xc" 'save-buffers-kill-terminal
  "bb" (lambda () (interactive) (switch-to-buffer nil)) ;; switch to last buffer.
+ "bf" 'eglot-format-buffer ;; switch to last buffer.
  "jj" 'scroll-other-window
  "kk" 'scroll-other-window-up
  "x0" 'delete-window

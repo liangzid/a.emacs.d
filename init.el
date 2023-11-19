@@ -63,25 +63,25 @@
 (require 'init-undo)
 (require 'init-keyfreq);;(require 'init-netease)
 (require 'init-org)
+(require 'init-ssh)
 
 ;; (desktop-save-mode)
 ;; (desktop-read)
-
-;;; UI configs.
-(require 'init-ui)
-(require 'init-modeline)
-(require 'init-window)
-(require 'init-chinese) ;; only have part of UI.
-(require 'init-better-defaults)
-;; (require 'init-dashboard)
-
 ;; for computer custom application. cannot be used for any self-designing.
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
 
+;;; UI configs.
+(require 'init-modeline)
+(require 'init-window)
+(require 'init-chinese) ;; only have part of UI.
+(require 'init-better-defaults)
+(require 'init-ui)
+;; (require 'init-dashboard)
+
+
 (setq gc-cons-percentage 0.6)
 
-(require 'init-ssh)
 
 ;; toggle maximized screen
 ;; (maximize-window)
