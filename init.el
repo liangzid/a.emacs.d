@@ -35,6 +35,7 @@
 ;;; functional configs.
 (require 'init-wsl)
 (require 'init-elpa)
+(require 'init-docker)
 (require 'init-proxy)
 (require 'init-largefile)
 (require 'init-dired)

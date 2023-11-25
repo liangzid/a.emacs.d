@@ -47,6 +47,13 @@
   (setq tramp-remote-process-environment process-environment))
 
 
+(defun ssh-connect-226 ()
+  (interactive)
+  (if *is-windows*
+  (counsel-find-file "/plink:zi@158.132.150.226:/home/zi/")
+  (counsel-find-file "/ssh:zi@158.132.150.226:/home/zi")
+  )
+  )
 
 
 (defun ssh-connect-41 ()

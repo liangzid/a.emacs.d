@@ -173,6 +173,8 @@
  "su" 'liangzi-warp
  
  "gd" 'evil-goto-definition
+ "g9" 'ssh-connect-226
+
  ;; "gd" 'xref-find-definitions-other-window
  "cu" 'citre-update-this-tags-file
  "cd" 'citre-jump
