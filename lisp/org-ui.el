@@ -60,8 +60,9 @@
 (setq org-src-fontify-natively t)
 
 ;; Make verbatim with highlight text background.
-(add-to-list 'org-emphasis-alist
-           '("=" (:background " #fef7ca")))
+
+;; (add-to-list 'org-emphasis-alist
+;;            '("=" (:background " #fef7ca")))
 
 ;; Make deletion(obsolote) text foreground with dark gray.
 (add-to-list 'org-emphasis-alist

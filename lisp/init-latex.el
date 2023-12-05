@@ -58,9 +58,9 @@
 )
 
 (add-hook 'LaTeX-mode-hook (lambda ()
-		  ;; (TeX-fold-mode 1) ;; 自动折叠，似乎不是很需要
+		  (TeX-fold-mode 1) ;; 自动折叠，似乎不是很需要
 		  (auto-fill-mode 0) ;;开启自动断行
-		  ;; (turn-on-auto-fill)              ;;LaTeX mode，turn off auto fold
+		  (turn-on-auto-fill)              ;;LaTeX mode，turn off auto fold
 		  ;; (auto-complete-mode 1)
 		  (LaTeX-math-mode 1) ;; using ` for similar latex symbol insert!
 		  (outline-minor-mode 1)
