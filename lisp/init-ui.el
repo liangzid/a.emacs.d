@@ -37,6 +37,15 @@
 ;; (setq inhibit-startup-message t)
 ;; (setq inhibit-startup-screen t)
 
+(setq font-ls '("Maple Mono 15"
+		"Iosevka 17"
+		"DejaVu Sans Mono 15"
+		"FantasqueSansMono 18"
+		"LXGWWenKaiMono 18"
+		"Cascadia Mono PL 17"
+		"Cascadia Code 17"
+		)
+      )
 
 (if *is-windows*
     (progn
@@ -49,17 +58,20 @@
 			  charset
 			  (font-spec :family "微软雅黑" :font 14)))
       )
-  (if *is-linux*
+  (if (and *is-linux* (not (equal ":0" *is-gui*)) *is-gui*)
       (progn
+	(message "is GUI: %s" *is-gui*)
 	;; (message "you should reset the font.")
-	(set-face-attribute 'default nil :font "Maple Mono 10"
-			    :weight 'demibold)
-	;; (set-face-attribute 'default nil :font "DejaVu Sans Mono 10")
-	;; (set-face-attribute 'default nil :font "Fira Code 10")
-	;; (set-face-attribute 'default nil :font "Source Code Pro 10"
-			    ;; :weight 'demibold)
-	;; (set-face-attribute 'default nil :font "Cascadia Code 10"
-			    ;; :weight 'demibold)
+
+	(set-face-attribute
+	'default nil :font
+	(nth
+	(random (length font-ls))
+	font-ls)
+	:weight 'normal)
+	;; (set-face-attribute 'default nil :font "Maple Mono 10"
+	;; 		    :weight 'demibold)
+
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font (frame-parameter nil 'font)
 			  charset

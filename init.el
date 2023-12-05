@@ -87,6 +87,9 @@
 ;; toggle maximized screen
 ;; (maximize-window)
 (toggle-frame-fullscreen)
+(if (and *is-gui* (not (equal *is-gui* ":0")))
+    (enable-150%-scale-big)
+    )
 (enable-150%-scale-big)
 
 ;; (add-to-list 'default-frame-alist '(full-screen . maximized))

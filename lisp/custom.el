@@ -108,7 +108,7 @@
  '(magit-diff-use-overlays nil)
  '(org-agenda-files '("/home/liangzi/orgtodo/extracting_developers_data.org"))
  '(package-selected-packages
-   '(dockerfile-mode use-package rime pyim-basedict posframe pyim winum org-alert org-pomodoro org-pomotoro org-promotoro jinx wucuo marginalia lsp-mode all-the-icons-dired all-the-icons-completion all-the-icons doom-themes zenburn-theme inkpot-theme ample-theme nimbus-theme kaolin-themes solarized-theme darcula-theme zoom-window zoom company))
+   '(counsel-tramp tramp dockerfile-mode use-package rime pyim-basedict posframe pyim winum org-alert org-pomodoro org-pomotoro org-promotoro jinx wucuo marginalia lsp-mode all-the-icons-dired all-the-icons-completion all-the-icons doom-themes zenburn-theme inkpot-theme ample-theme nimbus-theme kaolin-themes solarized-theme darcula-theme zoom-window zoom company))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)

@@ -10,13 +10,18 @@
 ;;
 ;;; Code:
 
+
 (defun enable-150%-scale-big()
   (interactive)
   ;; first show larger texts
   (progn
 	;; (message "you should reset the font.")
-	(set-face-attribute 'default nil :font "Maple Mono 14"
-			    :weight 'demibold)
+    (set-face-attribute
+     'default nil :font
+     (nth
+      (random (length font-ls))
+      font-ls)
+     :weight 'normal)
 	;; (set-face-attribute 'default nil :font "DejaVu Sans Mono 10")
 	;; (set-face-attribute 'default nil :font "Fira Code 10")
 	;; (set-face-attribute 'default nil :font "Source Code Pro 10"
