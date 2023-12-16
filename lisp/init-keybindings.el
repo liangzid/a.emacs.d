@@ -1,5 +1,7 @@
 ;; 关于快捷键绑定的一些东西。
 
+(my/install-package-if-not-found 'ivy-posframe)
+
 ;; some key-bindings past.
 (global-set-key (kbd "C-\\") 'comment-line) ;;用来注释的
 
@@ -49,6 +51,20 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
+
+(require 'ivy-posframe)
+(setq ivy-posframe-display-functions-alist
+      '((swiper . ivy-posframe-display-at-point)
+	(complete-symbol . ivy-posframe-display-at-point)
+	(counsel-M-x . ivy-posframe-display-at-window-center)
+	(t . ivy-posframe-display)
+	)
+      )
+(setq ivy-posframe-height-alist '((swiper . 15)
+				  (ivy . 20)
+				  (counsel . 15)
+                                  (t      . 20)))
+(ivy-posframe-mode 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
