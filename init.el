@@ -52,6 +52,7 @@
 (require 'init-cider)
 (require 'init-blog)
 (require 'init-web)
+(require 'init-astaple)
 (require 'init-path)
 (require 'init-collection)
 (require 'init-rss)

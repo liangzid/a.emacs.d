@@ -187,16 +187,16 @@
  "aa" 'anaconda-mode-find-assignments
  "a/" 'anaconda-mode-show-doc
 
- ;; python debug
- "dd" 'pdb 
- "db" 'gud-break
- "dr" 'gud-remove
- "dc" 'gud-cont
- "dn" 'gud-next
- "ds" 'gud-step
- "di" 'gud-stepi
- "dp" 'gud-print
- "de" 'gud-finish
+ ;; ;; python debug
+ ;; "dd" 'pdb 
+ ;; "db" 'gud-break
+ ;; "dr" 'gud-remove
+ ;; "dc" 'gud-cont
+ ;; "dn" 'gud-next
+ ;; "ds" 'gud-step
+ ;; "di" 'gud-stepi
+ ;; "dp" 'gud-print
+ ;; "de" 'gud-finish
 
  ;; git relevant
  "gs" 'git-add-commit-push-lz ;; git synroize.
@@ -207,6 +207,7 @@
  "ol" 'open-papers-in-writing ;; open latex paper in writing...
  "oc" 'open-codes-in-d
  "ow" 'open-worklog-in-d
+ "ob" 'open-onedrive-file-dir
 
  "rb" 'lz/running-current-bash-with-nohup 
  "rp" 'lz/running-current-python-with-nohup

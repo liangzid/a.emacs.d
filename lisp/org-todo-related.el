@@ -173,10 +173,10 @@
 ;; 启用 Org Agenda 自动保存文件
 (setq org-agenda-repeating-timestamp-show-all nil)
 
-;; 自定义 Org Agenda 颜色
-(setq org-agenda-done-keywords '("DONE" "CANCELLED"))
-(setq org-agenda-todo-keywords '("TODO" "WAIT" "LATER" "SOMEDAY" "|"
-                                "DONE" "CANCELLED"))
+;; ;; 自定义 Org Agenda 颜色
+;; (setq org-agenda-done-keywords '("DONE" "CANCELLED"))
+;; (setq org-agenda-todo-keywords '("TODO" "WAIT" "LATER" "SOMEDAY" "|"
+;;                                 "DONE" "CANCELLED"))
 
 ;; 在 Org Agenda 视图中启用日程表
 (setq org-agenda-include-deadlines t)
