@@ -154,6 +154,7 @@
  ;; hide level and shou block.
  "hl" 'hs-hide-level
  "sl" 'hs-show-block
+ "s1" 'latex-cover-region-with@zl
  
  ;; code navigation.
  "hs" 'highlight-symbol
