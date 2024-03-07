@@ -1,9 +1,11 @@
 ;; load this package
-(load-file "~/.emacs.d/other-files/easy-collections/collections.el")
-(require 'easy-collections)
+;; (load-file "~/.emacs.d/other-files/easy-collections/collections.el")
+;; (require 'easy-collections)
+
 ;;; custom setting variables if you needed.
 ;; setting your save path. default:"~/.emacs.d/collected/box.org"
-(setq collected-save-path "~/.emacs.d/collected/box.org")
+;; (setq collected-save-path "~/.emacs.d/collected/box.org")
+
 ;; setting your save format. default:
 ;;--------------------------------------------------------------------------
 ;; ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> COLLECTED TIME: </time>

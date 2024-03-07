@@ -12,8 +12,8 @@
 
 (my/install-package-if-not-found 'request)
 
-(require 'netease-cloud-music)
-(require 'netease-cloud-music-ui)
+;; (require 'netease-cloud-music)
+;; (require 'netease-cloud-music-ui)
 
 
 (provide 'init-netease)

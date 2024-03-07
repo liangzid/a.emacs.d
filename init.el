@@ -27,7 +27,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/other-files")
-(add-to-list 'load-path "~/.emacs.d/other-files/netease-cloud-music.el")
+;; (add-to-list 'load-path "~/.emacs.d/other-files/netease-cloud-music.el")
 
 (defconst *is-server* t)
 
@@ -35,7 +35,7 @@
 ;;; functional configs.
 (require 'init-wsl)
 (require 'init-elpa)
-(require 'init-docker)
+;; (require 'init-docker)
 (require 'init-proxy)
 (require 'init-largefile)
 (require 'init-dired)
@@ -52,7 +52,7 @@
 (require 'init-cider)
 (require 'init-blog)
 (require 'init-web)
-(require 'init-astaple)
+;;(require 'init-astaple)
 (require 'init-path)
 (require 'init-collection)
 (require 'init-rss)
