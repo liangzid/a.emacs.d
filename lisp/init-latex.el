@@ -1,6 +1,9 @@
 ;; only for latex files.
 ;; liangzid in 2020.4.18
 (my/install-package-if-not-found 'ivy-bibtex)
+(my/install-package-if-not-found 'lsp-grammarly)
+(my/install-package-if-not-found 'lsp-ltex)
+(my/install-package-if-not-found 'langtool)
 
 (autoload 'ivy-bibtex "ivy-bibtex" "" t)
 ;; ivy-bibtex requires ivy's `ivy--regex-ignore-order` regex builder, which
@@ -108,7 +111,7 @@
   (let* ((s (evil-range-beginning (evil-visual-range)))
 	 (e (evil-range-end (evil-visual-range)))
 	 (selected-text (buffer-substring s e))
-	 (new-text (concat command "{" selected-text "}"))
+	 (new-text (concat cover-command "{" selected-text "}"))
 	 (is-run (read-from-minibuffer (format "replace %s to %s? y or n:"
 					       selected-text new-text))))
     (if (or (string-equal is-run "") (string-equal is-run "y"))
@@ -119,6 +122,51 @@
   )
 ;;(define-key LaTeX-mode-map (kbd "C-c s") 'latex-cover-region-with@zl)
 
+;; (message "now enable the grammarly for writing latex.")
 
+;; (use-package lsp-grammarly
+;;   :ensure t
+;;   :hook (text-mode . (lambda ()
+;; 		       (require 'lsp-grammarly)
+;; 		       (lsp)
+;; 		       )))
+
+;; (use-package lsp-ltex
+;;   :ensure t
+;;   :hook (text-mode . (lambda ()
+;; 		       (require 'lsp-ltex)
+;; 		       (lsp)))
+;;   :config (progn
+;; 	    (setq lsp-ltex--combined-disabled-rules nil)
+;; 	    (setq lsp-ltex-additional-rules-language-model "")
+;; 	    (setq lsp-ltex-check-frequency "save")
+;; 	    (setq lsp-ltex-status-bar-item 1)
+;; 	    )
+  
+;;   :init
+;;   (setq lsp-ltex-version "15.2.0"))
+
+
+; make sure you have set this, see below
+
+;; (require 'flycheck)
+;; (flycheck-define-checker vale
+;;   "A prose linter"
+;;   :command ("vale" "--output" "line"
+;;             source)
+;;   :standard-input nil
+;;   :error-patterns
+;;   ((error line-start (file-name) ":" line ":" column ":" (id (one-or-more (not (any ":")))) ":" (message) line-end))
+;;   :modes (markdown-mode org-mode text-mode)
+;;   )
+;; (add-to-list 'flycheck-checkers 'vale 'append)
+;; (setq flycheck-vale-executable "/snap/bin/vale")
+
+(setq langtool-language-tool-jar
+      "/home/liangzi/LanguageTool-stable/LanguageTool-6.3/languagetool-commandline.jar")
+(require 'langtool)
+(global-set-key (kbd "C-, C-c") 'langtool-check)
+(global-set-key (kbd "C-, C") 'langtool-check-done)
+(global-set-key (kbd "C-, y") 'langtool--correction-popup)
 
 (provide 'init-latex)

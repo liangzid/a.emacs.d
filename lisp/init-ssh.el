@@ -1,4 +1,7 @@
+;; (my/install-package-if-not-found 'tramp)
+;; (my/install-package-if-not-found 'counsel-tramp)
 (require 'tramp)
+;; (require 'counsel-tramp)
 ;; (add-to-list 'tramp-remote-path "/home/zliang/software/ctags/")
 
 
@@ -37,6 +40,15 @@
     (add-to-list 'tramp-connection-properties
 		 (list (regexp-quote "/ssh:liangzi")
                        "remote-shell-login" '("-i")))
+    (add-to-list 'tramp-connection-properties
+		 (list (regexp-quote "/ssh:zi")
+                       "remote-shell" "/bin/bash"))
+    (add-to-list 'tramp-connection-properties
+		 (list (regexp-quote "/ssh:zi")
+                       "remote-shell-login" '("-i")))
+   (setq tramp-default-method "ssh")
+   (setq tramp-ssh-controlmaster-options "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+   (setq tramp-ssh-extra-args "-o ForwardAgent=yes")
     )
 
     )
@@ -51,7 +63,7 @@
   (interactive)
   (if *is-windows*
   (counsel-find-file "/plink:zi@158.132.150.226:/home/zi/")
-  (counsel-find-file "/ssh:zi@158.132.150.226:/home/zi")
+  (counsel-find-file "/ssh:zi@158.132.150.226:/home/zi/")
   )
   )
 
@@ -108,6 +120,12 @@
    (counsel-find-file "/plink:liangzi@219.245.186.49:/home/liangzi/")
    (counsel-find-file "/ssh:liangzi@219.245.186.49:/home/liangzi/")
       )
+  )
+
+
+(defun ssh-connect-234 ()
+  (interactive)
+   (counsel-find-file "/ssh:liangzi@158.132.150.234:/home/liangzi/")
   )
 
 
