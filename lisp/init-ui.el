@@ -15,8 +15,17 @@
 (my/install-package-if-not-found 'all-the-icons)
 (my/install-package-if-not-found 'all-the-icons-completion)
 (my/install-package-if-not-found 'all-the-icons-dired)
+(my/install-package-if-not-found 'beacon)
 
 (my/install-package-if-not-found 'marginalia)
+
+(require 'beacon)
+(setq beacon-blink-when-focused t)
+(setq beacon-blink-when-window-changes t)
+(setq beacon-blink-when-point-moves-horizontally nil)
+(setq beacon-blink-when-point-moves-vertically nil)
+(setq beacon-color "#e84393")
+(beacon-mode 1)
 
 ;; enable marginalia mode
 (marginalia-mode)
@@ -98,6 +107,8 @@
 		    :underline '(:color "#eb2f06" :style line)
 		    :background nil)
 (global-set-key (kbd "C-x e") 'flymake-show-project-diagnostics)
+(global-set-key (kbd "C-x n") 'flymake-goto-next-error)
+(global-set-key (kbd "C-x N") 'flymake-goto-prev-error)
 
 ;; (setq my-prefer-themes '(darcula monokai solarized-light solarized-dark))
 
