@@ -11,12 +11,12 @@
 ;; 自动还原模式
 (global-auto-revert-mode t)
 
-;; 显示行号
-;; unsupport for emacs 29
-(if (version< emacs-version "29")
-    (global-linum-mode t)
-  (global-display-line-numbers-mode 1)
-    )
+;; ;; 显示行号
+;; ;; unsupport for emacs 29
+;; (if (version< emacs-version "29")
+;;     (global-linum-mode t)
+;;   (global-display-line-numbers-mode 1)
+;;     )
 
 ;; ;; 使用缩写，缩写表如下图所示。
 ;; (abbrev-mode t)
@@ -86,7 +86,7 @@
       ;;?
       (setq xref-history-storage 'xref-window-local-history)
 
-      (display-line-numbers-mode)
+      ;; (display-line-numbers-mode)
 
       ))
 

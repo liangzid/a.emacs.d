@@ -10,8 +10,13 @@
 (my/install-package-if-not-found 'nimbus-theme)
 (my/install-package-if-not-found 'ample-theme)
 (my/install-package-if-not-found 'inkpot-theme)
-(my/install-package-if-not-found 'zenburn-theme)
 (my/install-package-if-not-found 'doom-themes)
+(my/install-package-if-not-found 'almost-mono-themes)
+(my/install-package-if-not-found 'modus-themes)
+(my/install-package-if-not-found 'gruvbox-theme)
+(my/install-package-if-not-found 'sublime-themes)
+(my/install-package-if-not-found 'tao-theme)
+
 (my/install-package-if-not-found 'all-the-icons)
 (my/install-package-if-not-found 'all-the-icons-completion)
 (my/install-package-if-not-found 'all-the-icons-dired)
@@ -24,8 +29,25 @@
 (setq beacon-blink-when-window-changes t)
 (setq beacon-blink-when-point-moves-horizontally nil)
 (setq beacon-blink-when-point-moves-vertically nil)
-(setq beacon-color "#e84393")
-(beacon-mode 1)
+
+(run-with-timer
+ 0
+ (* 0.5 10)
+ (lambda ()
+   (progn
+     (setq color-ls '(
+		     "#e84393"
+		     "#badc58"
+		     "#f6e58d"
+		     "#4bcffa"
+		     )
+	   )
+     (setq beacon-color (nth (random (length color-ls)) color-ls))
+     (beacon-mode 1)
+     )))
+
+;; (setq beacon-color "#e84393")
+;; (beacon-mode 1)
 
 ;; enable marginalia mode
 (marginalia-mode)
@@ -117,27 +139,51 @@
 load a beautiful theme."
   (interactive)
   (let* ((my-prefer-themes '(
-			     ;; darcula
-			     ;; monokai
-			     doom-monokai-pro
-			     doom-dracula
-			     doom-feather-dark
-			     ;; kaolin-aurora
-			     ;; kaolin-bubblegum
+			     ;;; Beautiful but cannot be used.
+			     ;; doom-monokai-pro
+			     ;; doom-dracula
+			     ;; doom-feather-dark
+
+			     ;;; dark
 			     kaolin-eclipse
-			     ;; ample
-			     ;; doom-tokyo-night
+			     kaolin-dark
+			     kaolin-aurora
+			     kaolin-temple
+			     kaolin-galaxy
+			     kaolin-valley-dark
+			     gruvbox-dark-medium
+			     gruvbox-dark-hard
+			     tao-yin
+
+			     ;;; light
+			     kaolin-valley-light
+			     almost-mono-white
+			     modus-operandi
+			     gruvbox-light-medium
+			     gruvbox-light-hard
+			     tao-yang
+
 				     ))
 	 (random-index (random (length my-prefer-themes)))
 	 (selected-theme (nth random-index my-prefer-themes )))
     (message "theme name: %s" selected-theme)
     (load-theme selected-theme t)
+    (global-display-line-numbers-mode 0) 
+    (global-linum-mode 0)
+    ;; (global-display-line-numbers-mode 1) 
+    (window-divider-mode -1)
+    (scroll-bar-mode -1)
+    ;; (global-display-line-numbers-mode 1) 
     ))
+
+(global-set-key (kbd "<f3>") 'my/random-theme)
 
 
 ;; theme
 (if *is-gui*
-    (my/random-theme)
+    (run-with-timer 0 (* 15 60)
+		    'my/random-theme
+		    )
     ;; (load-theme 'monokai t)
 )
 
@@ -150,7 +196,9 @@ load a beautiful theme."
 (set-face-attribute 'font-lock-variable-name-face nil
 		    :weight 'demibold :background "#372E40")
 (set-face-attribute 'border nil :weight 'black)
-;; (set-face-attribute 'mode-line nil :weight 'bold :slant 'italic)
+
+
+(set-face-attribute 'mode-line nil :height 250)
 
 ;; (set-face-attribute 'font-lock-function-name-face nil
 ;;     :foreground "red"
