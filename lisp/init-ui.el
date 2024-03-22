@@ -134,56 +134,69 @@
 
 ;; (setq my-prefer-themes '(darcula monokai solarized-light solarized-dark))
 
-(defun my/random-theme ()
+(setq light-themes '(
+		    ;;; light
+		    kaolin-valley-light
+		    almost-mono-white
+		    modus-operandi
+		    gruvbox-light-medium
+		    gruvbox-light-hard
+		    tao-yang
+	))
+(setq dark-themes '(
+		;;; Beautiful but cannot be used.
+		;; doom-monokai-pro
+		;; doom-dracula
+		;; doom-feather-dark
+
+		;;; dark
+		kaolin-eclipse
+		kaolin-dark
+		kaolin-aurora
+		kaolin-temple
+		kaolin-galaxy
+		kaolin-valley-dark
+		gruvbox-dark-medium
+		gruvbox-dark-hard
+		tao-yin
+	))
+
+
+(defun my/random-theme (my-prefer-themes)
   "Random load the theme from random theme list. I use it for random
 load a beautiful theme."
-  (interactive)
-  (let* ((my-prefer-themes '(
-			     ;;; Beautiful but cannot be used.
-			     ;; doom-monokai-pro
-			     ;; doom-dracula
-			     ;; doom-feather-dark
-
-			     ;;; dark
-			     kaolin-eclipse
-			     kaolin-dark
-			     kaolin-aurora
-			     kaolin-temple
-			     kaolin-galaxy
-			     kaolin-valley-dark
-			     gruvbox-dark-medium
-			     gruvbox-dark-hard
-			     tao-yin
-
-			     ;;; light
-			     kaolin-valley-light
-			     almost-mono-white
-			     modus-operandi
-			     gruvbox-light-medium
-			     gruvbox-light-hard
-			     tao-yang
-
-				     ))
+  (let* (
 	 (random-index (random (length my-prefer-themes)))
 	 (selected-theme (nth random-index my-prefer-themes )))
     (message "theme name: %s" selected-theme)
     (load-theme selected-theme t)
     (global-display-line-numbers-mode 0) 
     (global-linum-mode 0)
-    ;; (global-display-line-numbers-mode 1) 
     (window-divider-mode -1)
     (scroll-bar-mode -1)
-    ;; (global-display-line-numbers-mode 1) 
     ))
 
-(global-set-key (kbd "<f3>") 'my/random-theme)
-
+(defun _between-hours (a b)
+  "After hours `a', and before the hours `b' is true"
+  (let* ((current-time (decode-time))
+	 (hour (nth 2 current-time))
+	 )
+    (or (> hour a) (< hour b)))
+  )
 
 ;; theme
 (if *is-gui*
-    (run-with-timer 0 (* 15 60)
-		    'my/random-theme
+    (setq random-theme-timer
+	  (run-with-timer 0 (* 15 60)
+		    (lambda ()
+		      (if (_between-hours 18 9)
+			  (my/random-theme dark-themes)
+			(my/random-theme (append
+					  light-themes
+					  dark-themes)))
+		      )
 		    )
+    )
     ;; (load-theme 'monokai t)
 )
 
