@@ -187,18 +187,6 @@ load a beautiful theme."
     ;; (load-theme 'monokai t)
 )
 
-(set-face-attribute 'font-lock-comment-face nil :slant
-		    'italic :weight 'light)
-;; (set-face-attribute 'font-lock-keyword-face nil :weight 'light
-		    ;; :slant 'italic :underline t)
-;; (set-face-attribute 'font-lock-string-face nil :weight 'regular
-		    ;; :slant 'italic)
-(set-face-attribute 'font-lock-variable-name-face nil
-		    :weight 'demibold :background "#372E40")
-(set-face-attribute 'border nil :weight 'black)
-
-
-(set-face-attribute 'mode-line nil :height 250)
 
 ;; (set-face-attribute 'font-lock-function-name-face nil
 ;;     :foreground "red"
