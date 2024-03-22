@@ -33,9 +33,9 @@
 
 
 ;;; functional configs.
-(require 'init-eshell)
 (require 'init-wsl)
 (require 'init-elpa)
+(require 'init-eshell)
 ;; (require 'init-docker)
 (require 'init-proxy)
 (require 'init-largefile)
