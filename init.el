@@ -68,6 +68,8 @@
 (require 'init-org)
 (require 'init-ssh)
 
+(require 'easy-surround)
+
 ;; (desktop-save-mode)
 ;; (desktop-read)
 ;; for computer custom application. cannot be used for any self-designing.

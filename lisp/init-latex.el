@@ -63,21 +63,21 @@
 (add-hook 'LaTeX-mode-hook (lambda ()
 		  (TeX-fold-mode 1) ;; 自动折叠，似乎不是很需要
 		  (auto-fill-mode 0) ;;开启自动断行
-		  (turn-on-auto-fill)              ;;LaTeX mode，turn off auto fold
+		  (turn-on-auto-fill)   ;;LaTeX mode，turn off auto fold
 		  ;; (auto-complete-mode 1)
 		  (LaTeX-math-mode 1) ;; using ` for similar latex symbol insert!
 		  (outline-minor-mode 1)
   		  (imenu-add-menubar-index)
 
-		  (setq TeX-show-compilation nil)   ;; display compilation windows
-		  (setq TeX-global-PDF-mode t       ;;PDF mode enable, not plain
+		  (setq TeX-show-compilation nil) 
+		  (setq TeX-global-PDF-mode t ;;PDF mode enable, not plain
 		  		TeX-engine 'default)  ;;use xelatex default
 
 		  (setq TeX-clean-confirm nil) ;; cleaning file without ask human.
-		  (setq TeX-save-query nil)    ;; for save permission. we give it.
-          (setq font-latex-fontify-script t) ;;简单的可视化
+		  (setq TeX-save-query nil);; for save permission. we give it.
+		  (setq font-latex-fontify-script t) ;;简单的可视化
 		  (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
-		  (setq TeX-electric-escape nil)   ;; press \ then, jump to mini-buffer to input commands
+		  (setq TeX-electric-escape nil) ;; press \ then, jump to mini-buffer to input commands
 		  (if *is-linux*
 		      (message "setted before.")
 		    (setq TeX-view-program-list'(("~/.emacs.d/software/SumatraPDF-3.3.3-64-portable.exe -reuse-instance" (mode-io-correlate " -forward-search %b %n") " %o")))
@@ -107,20 +107,19 @@
 (defvar cover-command "")
 (defun latex-cover-region-with@zl ()
   (interactive)
-  (setq cover-command (read-from-minibuffer "command:" cover-command))
+  (setq cover-command (concat "\\" (read-from-minibuffer "command:"
+						   cover-command)))
   (let* ((s (evil-range-beginning (evil-visual-range)))
 	 (e (evil-range-end (evil-visual-range)))
 	 (selected-text (buffer-substring s e))
 	 (new-text (concat cover-command "{" selected-text "}"))
-	 (is-run (read-from-minibuffer (format "replace %s to %s? y or n:"
-					       selected-text new-text))))
-    (if (or (string-equal is-run "") (string-equal is-run "y"))
+	 )
 	(progn
 	  (kill-region s e)
 	  (insert new-text)
-	  (message "done"))))
-  )
-;;(define-key LaTeX-mode-map (kbd "C-c s") 'latex-cover-region-with@zl)
+	  (message "done")))
+    )
+(define-key LaTeX-mode-map (kbd "C-c s") 'latex-cover-region-with@zl)
 
 ;; (message "now enable the grammarly for writing latex.")
 

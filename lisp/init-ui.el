@@ -30,6 +30,7 @@
 (setq beacon-blink-when-point-moves-horizontally nil)
 (setq beacon-blink-when-point-moves-vertically nil)
 
+(setq beacon-timerk
 (run-with-timer
  0
  (* 0.5 10)
@@ -43,11 +44,10 @@
 		     )
 	   )
      (setq beacon-color (nth (random (length color-ls)) color-ls))
-     (beacon-mode 1)
      )))
-
+)
 ;; (setq beacon-color "#e84393")
-;; (beacon-mode 1)
+(beacon-mode 1)
 
 ;; enable marginalia mode
 (marginalia-mode)
@@ -174,6 +174,19 @@ load a beautiful theme."
     (global-linum-mode 0)
     (window-divider-mode -1)
     (scroll-bar-mode -1)
+
+    ;; hard coding of the themes
+    (set-face-attribute 'font-lock-comment-face nil :slant
+		'italic :weight 'light)
+    ;; (set-face-attribute 'font-lock-keyword-face nil :weight 'light
+		;; :slant 'italic :underline t)
+    ;; (set-face-attribute 'font-lock-string-face nil :weight 'regular
+		;; :slant 'italic)
+    (set-face-attribute 'font-lock-variable-name-face nil
+		:weight 'demibold :background "#372E40")
+    (set-face-attribute 'border nil :weight 'black)
+    (set-face-attribute 'mode-line nil :height 160)
+
     ))
 
 (defun _between-hours (a b)
