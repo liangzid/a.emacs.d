@@ -90,6 +90,30 @@
 ;;     finally-string
 ;;     ))
 
+
+(defun my/indent-4-space (backward)
+  "Indent/dedent region or insert/delete 4 sapce."
+  (interactive "P")
+  (cond ((and (use-region-p) backward)
+         (replace-regexp "^    " "" nil (region-beginning) (region-end)))
+        ((and (use-region-p) (not backward))
+         (replace-regexp "^" "    " nil (region-beginning) (region-end)))
+        (backward
+         (let ((spaces 4)
+               char)
+           (while (> spaces 0)
+             (setq char (char-after (point)))
+             (cond ((char-equal (char-after (point)) 32) ; delete a space char
+                    (delete-char 1)
+                    (setq spaces (- spaces 1)))
+                   ((char-equal (char-after (point)) 9) ; delete a tab char
+                    (delete-char 1)
+                    (setq spaces (- spaces 4)))))))
+        (t (insert "    "))))
+(global-set-key (kbd "TAB") 'my/indent-4-space)
+(global-set-key (kbd "S-TAB") 'my/indent-4-space)
+
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 

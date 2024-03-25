@@ -183,7 +183,9 @@ load a beautiful theme."
     ;; (set-face-attribute 'font-lock-string-face nil :weight 'regular
 		;; :slant 'italic)
     (set-face-attribute 'font-lock-variable-name-face nil
-		:weight 'demibold :background "#372E40")
+			:weight 'demibold
+			;; :background nil
+			)
     (set-face-attribute 'border nil :weight 'black)
     (set-face-attribute 'mode-line nil :height 160)
 
@@ -307,8 +309,21 @@ load a beautiful theme."
   (command-execute 'balance-windows)
 )
 
+(defun split-5-windows-horizontally-evenly ()
+  (interactive)
+  (command-execute 'split-4-windows-horizontally-evenly)
+  (command-execute 'other-window)
+  (command-execute 'other-window)
+  (command-execute 'other-window)
+  (command-execute 'delete-window)
+  (command-execute 'split-window-vertically)
+  (command-execute 'other-window)
+  (command-execute 'split-window-horizontally)
+)
+
 (global-set-key (kbd "C-x 4") 'split-4-windows-horizontally-evenly)
 (global-set-key (kbd "C-x 5") 'split-3-windows-horizontally-evenly)
+(global-set-key (kbd "C-x 6") 'split-5-windows-horizontally-evenly)
 
 (setq shift-selection-mode t)
 ;; (global-unset-key (vector (list 'shift 'left)))

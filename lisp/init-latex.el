@@ -119,7 +119,7 @@
 	  (insert new-text)
 	  (message "done")))
     )
-(define-key LaTeX-mode-map (kbd "C-c s") 'latex-cover-region-with@zl)
+;;(define-key latex-mode-map (kbd "C-c c") 'latex-cover-region-with@zl)
 
 ;; (message "now enable the grammarly for writing latex.")
 
