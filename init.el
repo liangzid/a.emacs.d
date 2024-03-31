@@ -96,6 +96,11 @@
     )
 (enable-150%-scale-big)
 
+
+(setq debug-on-error nil)
+(setq debug-on-signal nil)
+
+
 ;; (add-to-list 'default-frame-alist '(full-screen . maximized))
 
  ;; (setq default-frame-alist '((alpha-background . 80)))

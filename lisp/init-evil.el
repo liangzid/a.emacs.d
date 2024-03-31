@@ -224,6 +224,7 @@
  "49" 'ssh-connect-49
  "234" 'ssh-connect-234
  "226" 'ssh-connect-226
+ "231" 'ssh-connect-231
  
  ;; manager for english query.
  "cy" 'youdao-dictionary-search-at-point+

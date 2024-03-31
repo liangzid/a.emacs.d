@@ -114,7 +114,7 @@
 
 (require 'cl-lib)
 (defvar surround/language-code "")
-(setq debug-on-error 'surround/surround_a_text_with)
+;; (setq debug-on-error 'surround/surround_a_text_with)
 
 (defun surround/surround_a_text_with (label)
   "Surround the region depending on the type of files."

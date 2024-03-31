@@ -21,8 +21,8 @@
 
 
 
-(add-hook 'emacs-startup-hook
-	  (lambda () (pyim-restart-1 t)))
+;; (add-hook 'emacs-startup-hook
+;; 	  (lambda () (pyim-restart-1 t)))
 
 (setq pyim-dicts
       '((:name "bigdict" :file "~/.emacs.d/imdict/pyim-bigdict.pyim")

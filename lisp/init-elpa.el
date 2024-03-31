@@ -8,7 +8,7 @@
 ;                         ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
 ;                         ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/melpa-stable/")
 ;                         ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")))
-
+;;(package-refresh-contents)
 ;;(setq package-archives
 ;;      '(
 	;; uncomment below line if you need use GNU ELPA
@@ -20,10 +20,16 @@
 	;;("melpa" . "http://elpa.emacs-china.org/melpa/")
 	;;("melpa-stable" . "http://elpa.emacs-china.org/stable-melpa/")
 	;;("org" . "http://elpa.emacs-china.org/org/")
+
 ;;	))
 
-(setq package-archives '(("gnu"   . "http://1.15.88.122/gnu/")
-                           ("melpa" . "http://1.15.88.122/melpa/")))
+
+(setq package-archives '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+                         ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+
+;;(setq package-archives '(("gnu"   . "http://1.15.88.122/gnu/")
+;;                           ("melpa" . "http://1.15.88.122/melpa/")))
 
 (if (file-exists-p "~/.emacs.d/lisp/")
     (message "no fresh")

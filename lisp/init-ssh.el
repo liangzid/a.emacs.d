@@ -46,6 +46,7 @@
     (add-to-list 'tramp-connection-properties
 		 (list (regexp-quote "/ssh:zi")
                        "remote-shell-login" '("-i")))
+
    (setq tramp-default-method "ssh")
    (setq tramp-ssh-controlmaster-options "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
    (setq tramp-ssh-extra-args "-o ForwardAgent=yes")
@@ -59,13 +60,6 @@
   (setq tramp-remote-process-environment process-environment))
 
 
-(defun ssh-connect-226 ()
-  (interactive)
-  (if *is-windows*
-  (counsel-find-file "/plink:zi@158.132.150.226:/home/zi/")
-  (counsel-find-file "/ssh:zi@158.132.150.226:/home/zi/")
-  )
-  )
 
 
 (defun ssh-connect-41 ()
@@ -128,6 +122,20 @@
    (counsel-find-file "/ssh:liangzi@158.132.150.234:/home/liangzi/")
   )
 
+(defun ssh-connect-226 ()
+  (interactive)
+  (if *is-windows*
+  (counsel-find-file "/plink:zi@158.132.150.226:/home/zi/")
+  (counsel-find-file "/ssh:zi@158.132.150.226:/home/zi/")
+  )
+  )
 
+(defun ssh-connect-231 ()
+  (interactive)
+  (if *is-windows*
+  (counsel-find-file "/plink:zi@158.132.150.231:/home/zi/")
+  (counsel-find-file "/ssh:zi@158.132.150.231:/home/zi/")
+  )
+  )
  
 (provide 'init-ssh)

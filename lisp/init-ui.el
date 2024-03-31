@@ -137,11 +137,15 @@
 (setq light-themes '(
 		    ;;; light
 		    kaolin-valley-light
-		    almost-mono-white
-		    modus-operandi
-		    gruvbox-light-medium
-		    gruvbox-light-hard
-		    tao-yang
+		    kaolin-breeze
+		    kaolin-light
+		    kaolin-mono-light
+		    
+		    ;; almost-mono-white
+		    ;; modus-operandi
+		    ;; gruvbox-light-medium
+		    ;; gruvbox-light-hard
+		    ;; tao-yang
 	))
 (setq dark-themes '(
 		;;; Beautiful but cannot be used.
@@ -153,14 +157,18 @@
 		kaolin-eclipse
 		kaolin-dark
 		kaolin-aurora
-		kaolin-temple
+		kaolin-blossom
 		kaolin-galaxy
 		kaolin-valley-dark
-		gruvbox-dark-medium
-		gruvbox-dark-hard
-		tao-yin
+		kaolin-mono-dark
+		kaolin-shiva
+
+		;; gruvbox-dark-medium
+		;; gruvbox-dark-hard
+		;; tao-yin
 	))
 
+;; (load-theme 'kaolin-galaxy t)
 
 (defun my/random-theme (my-prefer-themes)
   "Random load the theme from random theme list. I use it for random
@@ -202,7 +210,7 @@ load a beautiful theme."
 ;; theme
 (if *is-gui*
     (setq random-theme-timer
-	  (run-with-timer 0 (* 15 60)
+	  (run-with-timer 0 (* 30 60)
 		    (lambda ()
 		      (if (_between-hours 18 9)
 			  (my/random-theme dark-themes)
@@ -227,6 +235,19 @@ load a beautiful theme."
 ;; (load-theme 'monokai t)
 (add-hook 'prog-mode-hook (rainbow-mode t))
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
+;; (require 'rainbow-mode)
+;; (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
+;; (set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
+;; (set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue
+;; (set-face-foreground 'rainbow-delimiters-depth-4-face "#cc6")  ; yellow
+;; (set-face-foreground 'rainbow-delimiters-depth-5-face "#6cc")  ; cyan
+;; (set-face-foreground 'rainbow-delimiters-depth-6-face "#c6c")  ; magenta
+;; (set-face-foreground 'rainbow-delimiters-depth-7-face "#ccc")  ; light gray
+;; (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
+;; (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
+
+
+
 
 ;; 设置编码格式为UTF-8
 (prefer-coding-system 'utf-8)

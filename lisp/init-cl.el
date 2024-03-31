@@ -9,9 +9,9 @@
 
 
 
-(my/install-package-if-not-found 'slime)
+(my/install-package-if-not-found 'sly)
 
-(require 'slime)
-(setq inferior-lisp-program "sbcl")
+;; (require 'sly)
+
 (provide 'init-cl)
 ;;; init-cl.el ends here
