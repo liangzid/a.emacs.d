@@ -3,7 +3,7 @@
 (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-threshold (* 50 1024 1024)) 
 
-(set-frame-parameter nil 'alpha 0.2)
+(set-frame-parameter nil 'alpha 0.8)
 ;; (set-frame-parameter nil 'alpha 0.99999)
 
 ;; 定义快速打开init-file的操作，并将之绑定在F2上.
