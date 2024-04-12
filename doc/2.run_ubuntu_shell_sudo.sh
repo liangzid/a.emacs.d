@@ -1,15 +1,20 @@
 #!/bin/bash
 
+echo "================================================================"
+echo "                 RUNNING INSTALL PACKAGES                    "
+echo "================================================================"
 
 export installList=("xsel" "gdb" "w3m" "aspell" \
 		    "scrot" "openjdk-17-jdk" "graphviz"\
-		    "python3" "python-is-python3" "pipenv" "librime-dev"\
-		   "mplayer" "socat" "cmake" "libtool" "libtool-bin")
+		    "python3" "python-is-python3" "pipenv"\
+		   "mplayer" "socat" "cmake" "zsh")
 # devs of libs for ubuntu. Might be useful in WSL.
 export libinstallLs=("librime-dev" "pkg-config" "libglib2.0-dev"\
 				   "libssl-dev" "libgtk-3-dev"\
 				   "libatk1.0-dev"\
-		     "libenchant-2-dev" "pkgconf"
+                                   "librime-dev"\
+				   "libtool" "libtool-bin"\
+		                   "libenchant-2-dev" "pkgconf"
 		    )
 
 sudo apt update
@@ -17,17 +22,34 @@ sudo apt upgrade
 
 for package in ${installList[*]};
 do
-    echo "begin to install $package..."
+    echo "-->>>SOFTWARE: begin to install $package..."
     sudo apt install $package
-    echo "install $package done."
 done
 
 for alib in ${libinstallLs[*]};
 do
-    echo "begin to install $package..."
+    echo "-->>>LIBRARY: begin to install $package..."
     sudo apt install $alib
-    echo "install $package done."
 done 
+
+echo "================================================================"
+echo "                    Configure zsh                   "
+echo "================================================================"
+
+cp ./.zshrc ${HOME}/.zshrc
+echo "-->>>configuration file copyed."
+
+echo "Now install oh-my-zsh..."
+
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+echo"DONE of installation."
+
+
+echo "================================================================"
+echo "                    Configure zsh                   "
+echo "================================================================"
+
 
 
 ## install tdlib, which is for running telegram.
