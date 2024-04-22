@@ -70,7 +70,7 @@
 % \\usefonttheme{serif}              % 衬线字体
 % \\usefonttheme{professionalfonts}  % 数学公式字体
 \\AtBeginSection{\\frame{\\sectionpage}} %我理解好像加入一个section首页
-%\\institute{Xi'an Jiaotong University}         %加入学校名称
+\\institute{The Hong Kong Polytechnic University}         %加入学校名称
 \\usetheme{CambridgeUS}                       % 主题
 \\usecolortheme{default}                          %使用默认颜色
 \\useinnertheme{rectangles}                       % itemize的形式

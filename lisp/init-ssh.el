@@ -34,22 +34,25 @@
       (prefer-coding-system 'utf-8)
       )
   (progn
-    (add-to-list 'tramp-connection-properties
-		 (list (regexp-quote "/ssh:liangzi")
-                       "remote-shell" "/bin/bash"))
-    (add-to-list 'tramp-connection-properties
-		 (list (regexp-quote "/ssh:liangzi")
-                       "remote-shell-login" '("-i")))
-    (add-to-list 'tramp-connection-properties
-		 (list (regexp-quote "/ssh:zi")
-                       "remote-shell" "/bin/bash"))
-    (add-to-list 'tramp-connection-properties
-		 (list (regexp-quote "/ssh:zi")
-                       "remote-shell-login" '("-i")))
+    (message "...")
+
+   ;;  (add-to-list 'tramp-connection-properties
+   ;; 		 (list (regexp-quote "/ssh:liangzi")
+   ;;                     "remote-shell" "/bin/bash"))
+   ;;  (add-to-list 'tramp-connection-properties
+   ;; 		 (list (regexp-quote "/ssh:liangzi")
+   ;;                     "remote-shell-login" '("-i")))
+   ;;  (add-to-list 'tramp-connection-properties
+   ;; 		 (list (regexp-quote "/ssh:zi")
+   ;;                     "remote-shell" "/bin/bash"))
+   ;;  (add-to-list 'tramp-connection-properties
+   ;; 		 (list (regexp-quote "/ssh:zi")
+   ;;                     "remote-shell-login" '("-i")))
 
    (setq tramp-default-method "ssh")
    (setq tramp-ssh-controlmaster-options "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
    (setq tramp-ssh-extra-args "-o ForwardAgent=yes")
+
     )
 
     )

@@ -103,7 +103,6 @@
 ;;   :prefix ","
 ;;   :states '(normal visual))
 
-
 ;; {{ Use `SPC` as leader key
 ;; all keywords arguments are still supported
 (general-create-definer my-space-leader-def

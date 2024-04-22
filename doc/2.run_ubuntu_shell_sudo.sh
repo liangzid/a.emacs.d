@@ -36,6 +36,8 @@ echo "================================================================"
 echo "                    Configure zsh                   "
 echo "================================================================"
 
+# sudo apt install zsh
+
 cp ./.zshrc ${HOME}/.zshrc
 echo "-->>>configuration file copyed."
 
