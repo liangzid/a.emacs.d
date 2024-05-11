@@ -178,8 +178,8 @@ load a beautiful theme."
 	 (selected-theme (nth random-index my-prefer-themes )))
     (message "theme name: %s" selected-theme)
     (load-theme selected-theme t)
-    (global-display-line-numbers-mode 0) 
-    (global-linum-mode 0)
+    ;; (global-display-line-numbers-mode 0) 
+    ;; (global-linum-mode 0)
     (window-divider-mode -1)
     (scroll-bar-mode -1)
 
@@ -222,6 +222,8 @@ load a beautiful theme."
     )
     ;; (load-theme 'monokai t)
 )
+
+(global-linum-mode)
 
 
 ;; (set-face-attribute 'font-lock-function-name-face nil

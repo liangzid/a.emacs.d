@@ -168,4 +168,21 @@
 (global-set-key (kbd "C-, C") 'langtool-check-done)
 (global-set-key (kbd "C-, y") 'langtool--correction-popup)
 
+;; (my/install-package-if-not-found 'flycheck-grammarly)
+;; (with-eval-after-load 'flycheck
+;;   (flycheck-grammarly-setup))
+
+;; (setq flycheck-grammarly-check-time 0.8)
+
+(my/install-package-if-not-found 'lsp-grammarly)
+
+(use-package lsp-grammarly
+  :ensure t
+  :hook (text-mode . (lambda ()
+                       (require 'lsp-grammarly)
+                       (lsp))))
+
+
+
+
 (provide 'init-latex)
