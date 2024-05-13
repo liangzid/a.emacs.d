@@ -179,7 +179,7 @@ load a beautiful theme."
     (message "theme name: %s" selected-theme)
     (load-theme selected-theme t)
     ;; (global-display-line-numbers-mode 0) 
-    ;; (global-linum-mode 0)
+    (global-linum-mode 1)
     (window-divider-mode -1)
     (scroll-bar-mode -1)
 

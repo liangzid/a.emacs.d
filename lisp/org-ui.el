@@ -20,11 +20,11 @@
 
 (global-pangu-spacing-mode 0)
 
-(if *is-gui*
-    (progn
-      ;; open the valign for table alignments in org mode.
-       (add-hook 'org-mode-hook #'valign-mode)
-      ))
+;; (if *is-gui*
+;;     (progn
+;;       ;; open the valign for table alignments in org mode.
+;;        (add-hook 'org-mode-hook #'valign-mode)
+;;       ))
 
 
 (add-hook 'org-mode-hook
