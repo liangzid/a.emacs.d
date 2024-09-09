@@ -178,8 +178,12 @@ load a beautiful theme."
 	 (selected-theme (nth random-index my-prefer-themes )))
     (message "theme name: %s" selected-theme)
     (load-theme selected-theme t)
-    ;; (global-display-line-numbers-mode 0) 
-    (global-linum-mode 1)
+    ;; (global-display-line-numbers-mode 1) 
+    ;; (global-linum-mode 1)
+    (if (version< emacs-version "29")
+	(global-linum-mode t)
+        (global-display-line-numbers-mode 1)
+	)
     (window-divider-mode -1)
     (scroll-bar-mode -1)
 
@@ -223,7 +227,10 @@ load a beautiful theme."
     ;; (load-theme 'monokai t)
 )
 
-(global-linum-mode)
+(if (version< emacs-version "29")
+    (global-linum-mode t)
+  (global-display-line-numbers-mode 1)
+    )
 
 
 ;; (set-face-attribute 'font-lock-function-name-face nil
