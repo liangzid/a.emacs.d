@@ -14,7 +14,7 @@
 ######################################################################
 
 echo "installing compile packages"
-sudo apt install -y build-essential automake autoconf libncurses-dev libxpm-dev libgif-dev gnutls-dev
+sudo apt install -y build-essential automake autoconf libncurses-dev libxpm-dev libgif-dev gnutls-dev libjpeg-dev libtiff-dev
 
 echo "Download the emacs"
 
@@ -24,6 +24,7 @@ wget http://mirror.team-cymru.com/gnu/emacs/emacs-29.2.tar.gz
 
 tar -xf emacs-29.2.tar.gz
 
+cd emacs-29.2
 ./autogen.sh
 
 echo "sleep 20 seconds..."
