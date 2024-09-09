@@ -23,34 +23,27 @@ sudo apt upgrade
 for package in ${installList[*]};
 do
     echo "-->>>SOFTWARE: begin to install $package..."
-    sudo apt install $package
+    sudo apt install -y $package
 done
 
 for alib in ${libinstallLs[*]};
 do
     echo "-->>>LIBRARY: begin to install $package..."
-    sudo apt install $alib
+    sudo apt install -y $alib
 done 
 
-echo "================================================================"
-echo "                    Configure zsh                   "
-echo "================================================================"
-
+# echo "================================================================"
+# echo "                    Configure zsh                   "
+# echo "================================================================"
 # sudo apt install zsh
-
-cp ./.zshrc ${HOME}/.zshrc
-echo "-->>>configuration file copyed."
-
-echo "Now install oh-my-zsh..."
-
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-
-echo"DONE of installation."
-
-
-echo "================================================================"
-echo "                    Configure zsh                   "
-echo "================================================================"
+# cp ./.zshrc ${HOME}/.zshrc
+# echo "-->>>configuration file copyed."
+# echo "Now install oh-my-zsh..."
+# sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+# echo"DONE of installation."
+# echo "================================================================"
+# echo "                    Configure zsh                   "
+# echo "================================================================"
 
 
 
