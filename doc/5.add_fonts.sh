@@ -23,5 +23,8 @@ cd ~/ttfs-backup/
 bash install.sh
 echo "CJK fonts done."
 
+
+# /usr/bin/python -m pip install epc sexpdata six pynput inflect PyQt6 PyQt6-Qt6 PyQt6-sip
+
 echo "RUNNING 5.add_fonts.sh DONE."
 # 5.add_fonts.sh ends here

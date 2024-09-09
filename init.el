@@ -87,7 +87,6 @@
 
 (setq gc-cons-percentage 0.6)
 
-
 ;; toggle maximized screen
 ;; (maximize-window)
 (toggle-frame-fullscreen)

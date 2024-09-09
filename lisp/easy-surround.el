@@ -172,7 +172,7 @@
     )
 
 (define-key org-mode-map (kbd "C-c C-s") nil)
-;;(define-key tex-mode-map (kbd "C-c C-s") nil)
+;; (define-key tex-mode-map (kbd "C-c C-s") nil)
 ;; (define-key latex-mode-map (kbd "C-c C-s") nil)
 ;; (define-key LaTeX-mode-map (kbd surround/prefix-key) nil)
 

@@ -174,13 +174,12 @@
 
 ;; (setq flycheck-grammarly-check-time 0.8)
 
-(my/install-package-if-not-found 'lsp-grammarly)
-
-(use-package lsp-grammarly
-  :ensure t
-  :hook (text-mode . (lambda ()
-                       (require 'lsp-grammarly)
-                       (lsp))))
+;; (my/install-package-if-not-found 'lsp-grammarly)
+;; (use-package lsp-grammarly
+ ;; ( :ensure t
+ ;; ( :hook (text-mode . (lambda ()
+ ;; (                      (require 'lsp-grammarly)
+ ;; (                      (lsp))))
 
 
 

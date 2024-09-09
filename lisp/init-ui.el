@@ -47,7 +47,7 @@
      )))
 )
 ;; (setq beacon-color "#e84393")
-(beacon-mode 1)
+(beacon-mode t)
 
 ;; enable marginalia mode
 (marginalia-mode)
@@ -70,11 +70,11 @@
 
 (setq font-ls '("Maple Mono 15"
 		"Iosevka 17"
-		"DejaVu Sans Mono 15"
+		;; "DejaVu Sans Mono 15"
 		"FantasqueSansMono 18"
 		"LXGWWenKaiMono 18"
-		"Cascadia Mono PL 17"
-		"Cascadia Code 17"
+		;; "Cascadia Mono PL 17"
+		;; "Cascadia Code 17"
 		)
       )
 
@@ -179,7 +179,7 @@ load a beautiful theme."
     (message "theme name: %s" selected-theme)
     (load-theme selected-theme t)
     ;; (global-display-line-numbers-mode 0) 
-    (global-linum-mode 1)
+    ;; (global-linum-mode 1)
     (window-divider-mode -1)
     (scroll-bar-mode -1)
 
@@ -364,5 +364,7 @@ load a beautiful theme."
 (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode) ;;smartparens
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+;; (require 'dangerous-ui)
 
 (provide 'init-ui)
