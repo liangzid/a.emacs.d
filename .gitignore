@@ -6,6 +6,22 @@
 /pyim
 /quelpa
 /transient
+.cache
+.emacs.desktop
+.lsp-session-v1
+anaconda-mode
+eww-bookmarks
+lsp-ltex
+request
+rime
+/eshell/history
+/eshell/lastdir
+other-files/lsp-bridge
+diary
+recentf
+tramp
+transient/history
+
 
 *\#
 *.db
