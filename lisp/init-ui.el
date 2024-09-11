@@ -136,10 +136,10 @@
 
 (setq light-themes '(
 		    ;;; light
-		    kaolin-valley-light
-		    kaolin-breeze
-		    kaolin-light
-		    kaolin-mono-light
+		    ;; kaolin-valley-light
+		    ;; kaolin-breeze
+		    ;; kaolin-light
+		    ;; kaolin-mono-light
 		    
 		    ;; almost-mono-white
 		    ;; modus-operandi
