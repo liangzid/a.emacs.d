@@ -241,7 +241,7 @@
 
  ;; easy collections
  "ec" 'collected-run
-
+ "er" 'eglot-rename
  )
 
 (evil-leader-mode 1)

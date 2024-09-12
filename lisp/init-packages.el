@@ -1,6 +1,8 @@
 (require 'cl)
 (require 'use-package)
 (my/install-package-if-not-found 'orderless)
+(my/install-package-if-not-found 'company-box)
+(my/install-package-if-not-found 'company-prescient)
 
 ;; (my/install-package-if-not-found 'exec-path-from-shell)
 
@@ -54,10 +56,11 @@
 ;; (advice-add 'company-capf--candidates :around #'just-one-face)
 ;; ;; 自动补全
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq company-idle-delay 0.01)
-(setq company-show-numbers t)
-(setq company-tooltip-limit 10)
+
+(setq company-idle-delay 0)
 (setq company-minimum-prefix-length 1)
+(setq company-show-numbers t)
+(setq company-tooltip-limit 15)
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-flip-when-above t)
 (setq company-require-match nil)
@@ -65,11 +68,30 @@
 ;; 暂时关闭 COMPANY MODE
 
 ;; (setq company-auto-complete-chars '((kbd "TAB")))
+(define-key company-active-map (kbd "RET") nil)
+(define-key company-active-map (kbd "[return]") nil)
+;; (define-key company-active-map (kbd "TAB") #'company-complete-selection)
+;; (define-key company-active-map (kbd "<tab>")
+	    ;; #'company-complete-selection)
 (define-key company-active-map (kbd "M-n") nil)
 (define-key company-active-map (kbd "M-p") nil)
 (define-key company-active-map (kbd "C-n") #'company-select-next)
 (define-key company-active-map (kbd "C-p") #'company-select-previous)
-;; (define-key company-active-map (kbd "TAB") #'yas-expand)
+
+(require 'company-box)
+(company-box-mode 1)
+(setq company-box-show-single-candidate t)
+(setq company-box-frame-behavior 'point)
+(setq company-box-icons-alist 'company-box-icons-all-the-icons)
+(setq company-box-max-candidates 10)
+(setq company-box-icon-right-margin 0.5)
+(add-hook 'company-mode-hook 'company-box-mode)
+
+(use-package company-prescient
+  :after company
+  :config
+  (company-prescient-mode))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; the windows you have used will be clear after used. 
