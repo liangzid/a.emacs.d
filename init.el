@@ -1,9 +1,24 @@
 ; nothing. add something.
 
-(setq gc-cons-threshold most-positive-fixnum)
+(add-to-list 'exec-path (concat
+			 (getenv "HOME")
+			 "/.local/bin") t)
+(add-to-list 'exec-path (concat
+			 (getenv "HOME")
+			 "/miniconda3/bin") t)
+(add-to-list 'exec-path (concat
+			 (getenv "HOME")
+			 "/anaconda3/bin") t)
+
+;; (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-threshold (* 50 1024 1024)) 
 
+;; Improve lsp perf https://emacs-lsp.github.io/lsp-mode/page/performance/#increase-the-amount-of-data-which-emacs-reads-from-the-process
+(setq read-process-output-max (* 3 1024 1024))
+
 (set-frame-parameter nil 'alpha-background  0.75)
+(setq default-frame-alist '((alpha-background . 75)))
+
 
 ;; (set-frame-parameter nil 'alpha 0.99999)
 

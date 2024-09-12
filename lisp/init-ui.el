@@ -70,14 +70,16 @@
 
 (setq font-ls '("Maple Mono 15"
 		"Iosevka 17"
-		;; "DejaVu Sans Mono 15"
+		"DejaVu Sans Mono 15"
 		"FantasqueSansMono 18"
 		"LXGWWenKaiMono 18"
 		;; "Cascadia Mono PL 17"
-		;; "Cascadia Code 17"
+		"Cascadia Code 15"
+		"JetbrainsMono 15"
 		)
       )
 
+(defun my/set-fonts (font-ls)
 (if *is-windows*
     (progn
       ;; 解决显示Unicode字符的卡顿问题
@@ -89,7 +91,7 @@
 			  charset
 			  (font-spec :family "微软雅黑" :font 14)))
       )
-  (if (and *is-linux* (not (equal ":0" *is-gui*)) *is-gui*)
+  (if (and *is-linux* (not (equal "0" *is-gui*)) *is-gui*)
       (progn
 	(message "is GUI: %s" *is-gui*)
 	;; (message "you should reset the font.")
@@ -100,8 +102,8 @@
 	(random (length font-ls))
 	font-ls)
 	:weight 'normal)
-	;; (set-face-attribute 'default nil :font "Maple Mono 10"
-	;; 		    :weight 'demibold)
+	;; (set-face-attribute 'default nil :font "JetbrainsMono 15"
+	;; 		    :weight 'normal)
 
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font (frame-parameter nil 'font)
@@ -110,7 +112,8 @@
 				     :weight 'normal)))
 	;; (set-face-attribute 'default nil :font "FiraCode 10")
 	;;(set-face-attribute 'default nil :font "文泉驿正黑 10")
-	)))
+	))))
+
 
 ;; set face for flymake-warning and flymake-error
 ;; (flymake-mode-on)
@@ -124,15 +127,15 @@
 			:background "#eb2f06")
 				  )
 				))
-
-(set-face-attribute 'jinx-misspelled nil
-		    :underline '(:color "#eb2f06" :style line)
-		    :background nil)
 (global-set-key (kbd "C-x e") 'flymake-show-project-diagnostics)
 (global-set-key (kbd "C-x n") 'flymake-goto-next-error)
 (global-set-key (kbd "C-x N") 'flymake-goto-prev-error)
 
-;; (setq my-prefer-themes '(darcula monokai solarized-light solarized-dark))
+(if *is-linux*
+    (set-face-attribute 'jinx-misspelled nil
+		    :underline '(:color "#eb2f06" :style line)
+		    :background nil)
+    )
 
 (setq light-themes '(
 		    ;;; light
@@ -185,21 +188,24 @@ load a beautiful theme."
     (window-divider-mode -1)
     (scroll-bar-mode -1)
 
-    ;; hard coding of the themes
-    (set-face-attribute 'font-lock-comment-face nil :slant
-		'italic :weight 'light)
+    ;;;; hard coding of the themes
+    ;; (set-face-attribute 'font-lock-comment-face nil :slant
+    ;; 		'italic :weight 'light)
+
     ;; (set-face-attribute 'font-lock-keyword-face nil :weight 'light
 		;; :slant 'italic :underline t)
     ;; (set-face-attribute 'font-lock-string-face nil :weight 'regular
 		;; :slant 'italic)
-    (set-face-attribute 'font-lock-variable-name-face nil
-			:weight 'demibold
-			;; :background nil
-			)
-    (set-face-attribute 'border nil :weight 'black)
-    (set-face-attribute 'mode-line nil :height 160)
+    ;; (set-face-attribute 'font-lock-variable-name-face nil
+    ;; 			:weight 'demibold
+    ;; 			;; :background nil
+    ;; 			)
+
+    ;; (set-face-attribute 'border nil :weight 'black)
+    ;; (set-face-attribute 'mode-line nil :height 160)
 
     ))
+
 
 (defun _between-hours (a b)
   "After hours `a', and before the hours `b' is true"
@@ -214,6 +220,8 @@ load a beautiful theme."
     (setq random-theme-timer
 	  (run-with-timer 0 (* 30 60)
 		    (lambda ()
+
+                      (my/set-fonts font-ls)
 		      (if (_between-hours 18 9)
 			  (my/random-theme dark-themes)
 			(my/random-theme (append

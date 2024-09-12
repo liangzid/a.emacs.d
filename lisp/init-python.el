@@ -2,7 +2,7 @@
 (my/install-package-if-not-found 'company-anaconda)
 (my/install-package-if-not-found 'anaconda-mode)
 
-(setenv "PYTHONPATH" "$HOME/anaconda3/bin/python")
+;; (setenv "PYTHONPATH" "$HOME/anaconda3/bin/python")
 
 ;; for python
 (use-package python
