@@ -17,6 +17,7 @@
 (setq read-process-output-max (* 3 1024 1024))
 
 (set-frame-parameter nil 'alpha-background  0.75)
+;; (set-frame-parameter nil 'alpha  0.95)
 (setq default-frame-alist '((alpha-background . 75)))
 
 
@@ -49,6 +50,7 @@
 
 
 ;;; functional configs.
+(require 'init-self-config-function)
 (require 'init-wsl)
 (require 'init-elpa)
 (require 'init-eshell)
@@ -56,7 +58,6 @@
 (require 'init-proxy)
 (require 'init-largefile)
 (require 'init-dired)
-(require 'init-self-config-function)
 (require 'init-clipboard)
 (require 'init-yas)
 (require 'init-git)
