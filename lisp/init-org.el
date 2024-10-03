@@ -27,7 +27,6 @@
 (global-set-key (kbd "C-c l") 'org-store-link)
 
 ;; (message "========begin for auto image thing.============")
-;; 设置org自动显示图片。
 (add-hook 'org-mode-hook (auto-image-file-mode t))
 ;; (org-toggle-inline-images)
 (add-hook 'org-mode-hook (iimage-mode t))
@@ -66,8 +65,7 @@
              ;; keybinding for inserting code blocks
              (local-set-key (kbd "C-c s i") 'org-insert-src-block )))
 
-  ;; 不要自动创建备份文件
-  (setq make-backup-files nil)
+(setq make-backup-files nil)
 
 ;;code running
 (org-babel-do-load-languages

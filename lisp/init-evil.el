@@ -251,14 +251,14 @@
 ;; (defconst my-default-color (cons (face-background 'mode-line)
 ;;                                  (face-foreground 'mode-line)))
 
-(defconst zl-modeline-color (cons "#002fa7" "#ffffff"))
+(defconst zl-modeline-color (cons "#000000" "#ffff99"))
 ;; (defconst zl-modeline-color (cons (face-background 'mode-line)
 ;; 				  (face-foreground 'mode-line)))
 (defun my-show-evil-state ()
   "Change mode line color to notify user evil current state."
   (let* ((color (cond ((minibufferp) zl-modeline-color)
                       ((evil-insert-state-p) '("#470024" . "#ffffff"))
-                      ((evil-emacs-state-p)  '("#002fa7" . "#ffffff"))
+                      ((evil-emacs-state-p)  '("#000000" . "#ffffff"))
                       ((buffer-modified-p)   '("#8b4513" . "#ffffff"))
                       ;; (t my-default-color)
                       (t zl-modeline-color)

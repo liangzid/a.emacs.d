@@ -1,13 +1,15 @@
 ;; modeline configuration
 
 (my/install-package-if-not-found 'doom-modeline)
-
+(my/install-package-if-not-found 'nerd-icons)
+(require 'nerd-icons)
 (require 'doom-modeline)
 (doom-modeline-mode 1)
 
-(setq doom-modeline-height 35)
-(setq doom-modeline-bar-width 4)
+(setq doom-modeline-height 50)
+(setq doom-modeline-bar-width 8)
 (setq doom-modeline-hud nil)
+(setq doom-modeline-time-live-icon t)
 
 ;; show time at modeline
 ;; (display-time-mode)

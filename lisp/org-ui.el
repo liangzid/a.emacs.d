@@ -35,9 +35,10 @@
     (progn
 	(add-hook 'org-mode-hook #'org-modern-mode)
 	(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+	;; for org's mathmatical completion.
 	(add-hook 'org-mode-hook 'org-fragtog-mode)
 	(add-hook 'org-mode-hook 'org-visual-indent-mode)
-	(add-hook 'org-mode-hook 'org-dynamic-bullets-mode)
+	;; (add-hook 'org-mode-hook 'org-dynamic-bullets-mode)
       ))
 
 ;; set special font for org-mode.
@@ -54,6 +55,11 @@
 
 (if *is-windows*
     (add-hook 'org-mode-hook 'set-org-font)
+  (progn
+
+    (set-face-attribute 'org-level-2 nil :font "Maple Mono 16"
+			:weight bold)
+    )
     )
 
 
@@ -83,7 +89,10 @@
 (setq org-src-tab-acts-natively t)
 (setq org-src-preserve-indentation nil)
 
-(setq org-log-done t)
+(setq org-log-done 'time)
+(setq org-log-reschedule 'time)
+(setq org-log-redeadline 'time)
+
 (setq org-ellipsis " ▼ ")
 
 (provide 'org-ui)

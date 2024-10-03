@@ -24,22 +24,23 @@
 (setq beacon-blink-when-point-moves-horizontally nil)
 (setq beacon-blink-when-point-moves-vertically nil)
 
-(setq beacon-timerk
-(run-with-timer
- 0
- (* 0.5 10)
- (lambda ()
-   (progn
-     (setq color-ls '(
-		     "#e84393"
-		     "#badc58"
-		     "#f6e58d"
-		     "#4bcffa"
-		     )
-	   )
-     (setq beacon-color (nth (random (length color-ls)) color-ls))
-     )))
-)
+;; (setq beacon-timerk
+;; (run-with-timer
+;;  0
+;;  (* 0.5 10)
+;;  (lambda ()
+;;    (progn
+;;      (setq color-ls '(
+;; 		     "#e84393"
+;; 		     "#badc58"
+;; 		     "#f6e58d"
+;; 		     "#4bcffa"
+;; 		     )
+;; 	   )
+;;      (setq beacon-color (nth (random (length color-ls)) color-ls))
+;;      )))
+;; )
+
 (beacon-mode t)
 
 ;; prtovide extra informaiton via marginalia mode
@@ -98,7 +99,23 @@
 	;; :weight 'normal)
 
 	(set-face-attribute 'default nil :font "Iosevka 17"
-			    :weight 'normal)
+			    :weight 'semibold
+			    )
+	(set-face-attribute 'mode-line nil :font "Maple Mono 18"
+			    :weight 'normal
+			    :slant 'italic)
+        (set-face-attribute 'font-lock-comment-face nil
+			;; :slant 'italic
+			;; :font "DejaVu Sans Mono 15"
+			:weight 'normal
+			:foreground "#96a0aa"
+			)
+        (set-face-attribute 'org-headline-done nil
+			;; :slant 'italic
+			;; :font "DejaVu Sans Mono 15"
+			:weight 'normal
+			:foreground "#96a0aa"
+			)
 
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font (frame-parameter nil 'font)
@@ -108,7 +125,6 @@
 	;; (set-face-attribute 'default nil :font "FiraCode 10")
 	;;(set-face-attribute 'default nil :font "文泉驿正黑 10")
 	))))
-
 
 ;; set face for flymake-warning and flymake-error
 ;; (flymake-mode-on)
@@ -184,12 +200,6 @@ load a beautiful theme."
     (scroll-bar-mode -1)
 
     ;;;; hard coding of the themes
-    (set-face-attribute 'font-lock-comment-face nil
-			:slant 'italic
-			:weight 'normal
-			:foreground "#96a0aa"
-			)
-
     ;; (set-face-attribute 'font-lock-keyword-face nil :weight 'light
 		;; :slant 'italic :underline t)
     ;; (set-face-attribute 'font-lock-string-face nil :weight 'regular
@@ -243,21 +253,19 @@ load a beautiful theme."
 
 
 ;; (load-theme 'monokai t)
+(require 'rainbow-mode)
 (add-hook 'prog-mode-hook (rainbow-mode t))
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
 (rainbow-mode t)
-;; (require 'rainbow-mode)
-;; (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
-;; (set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
-;; (set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue
-;; (set-face-foreground 'rainbow-delimiters-depth-4-face "#cc6")  ; yellow
-;; (set-face-foreground 'rainbow-delimiters-depth-5-face "#6cc")  ; cyan
-;; (set-face-foreground 'rainbow-delimiters-depth-6-face "#c6c")  ; magenta
-;; (set-face-foreground 'rainbow-delimiters-depth-7-face "#ccc")  ; light gray
-;; (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
-;; (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
-
-
+(set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
+(set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
+(set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue
+(set-face-foreground 'rainbow-delimiters-depth-4-face "#cc6")  ; yellow
+(set-face-foreground 'rainbow-delimiters-depth-5-face "#6cc")  ; cyan
+(set-face-foreground 'rainbow-delimiters-depth-6-face "#c6c")  ; magenta
+(set-face-foreground 'rainbow-delimiters-depth-7-face "#ccc")  ; light gray
+(set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
+(set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
 
 
 ;; 设置编码格式为UTF-8
