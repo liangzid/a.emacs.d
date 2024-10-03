@@ -4,7 +4,7 @@
 (defconst *is-mac* (eq system-type 'darwin))
 (defconst *is-linux* (eq system-type 'gnu/linux))
 (defconst *is-windows* (or (eq system-type 'ms-dos) (eq system-type 'windows-nt)))
-
+(defconst *is-wsl* (string-match-p "-[Mm]icrosoft" operating-system-release))
 (defconst *is-gui* (getenv "DISPLAY"))
 
 (defun lz/is-tramp()

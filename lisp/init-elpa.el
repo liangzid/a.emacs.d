@@ -71,7 +71,6 @@
 		projectile ;;project manager..
 		command-log-mode
 		hungry-delete
-		youdao-dictionary
 		highlight-symbol
 		swiper  
 		counsel 

@@ -2,7 +2,7 @@
 ;; (require 'ox-rss)
 
 
-(defvar blog-note-path "~/liangzid.github.io/notes/" "my path of take notes.")
+(defvar blog-note-path "~/liangzid.github.io/orgs/" "my path of take notes.")
 
 (defun open-org-note()
   (interactive)

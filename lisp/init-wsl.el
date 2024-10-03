@@ -57,10 +57,12 @@
   (interactive)
   (if *is-windows*
       (win10-my-yank-image-from-win-clipboard-through-powershell)
+    (if *is-wsl*
+    (wsl-my-yank-image-from-win-clipboard-through-powershell)
     (if *is-gui*
 	(linux-my-yank-image-through-bash)
-(wsl-my-yank-image-from-win-clipboard-through-powershell)
       )
+	)
     )
   )
 

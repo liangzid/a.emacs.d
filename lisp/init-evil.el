@@ -6,7 +6,6 @@
 (my/install-package-if-not-found 'evil-leader)
 
 
-;; 开启evil 模式
 (use-package evil
   :ensure t
   :config
@@ -98,10 +97,10 @@
 ;; set evil key mode.
 (require 'evil-leader)
 
-;; ;; {{ use `,` as leader key
-;; (general-create-definer my-comma-leader-def
-;;   :prefix ","
-;;   :states '(normal visual))
+;; {{ use `,` as leader key
+(general-create-definer my-comma-leader-def
+  :prefix ","
+  :states '(normal visual))
 
 ;; {{ Use `SPC` as leader key
 ;; all keywords arguments are still supported
@@ -150,12 +149,12 @@
  "hk" 'describe-key
  "hm" 'describe-mode
 
- ;; hide level and shou block.
+ ;; hide level and show block.
  "hl" 'hs-hide-level
  "sl" 'hs-show-block
  "s1" 'latex-cover-region-with@zl
  
- ;; code navigation.
+ ;; code navigation
  "hs" 'highlight-symbol
  "sr" 'highlight-symbol-query-replace
  "sn" 'highlight-symbol-nav-mode ;; 使用M-n,p进行上下导航
@@ -227,7 +226,7 @@
  "215" 'ssh-connect-215
  
  ;; manager for english query.
- "cy" 'youdao-dictionary-search-at-point+
+ "cy" 'gt-do-translate
  "te" 'toggle-company-english-helper
 
  ;; manager for other frequency.
@@ -250,50 +249,29 @@
 ;; ----------------color designment: 为了更加醒目-----------------------
 ;; {{ change mode-line color by evil state
 ;; (defconst my-default-color (cons (face-background 'mode-line)
-                                 ;; (face-foreground 'mode-line)))
+;;                                  (face-foreground 'mode-line)))
 
-(defconst zl-modeline-color (cons "#16a085" "#ffffff"))
+(defconst zl-modeline-color (cons "#002fa7" "#ffffff"))
+;; (defconst zl-modeline-color (cons (face-background 'mode-line)
+;; 				  (face-foreground 'mode-line)))
 (defun my-show-evil-state ()
   "Change mode line color to notify user evil current state."
   (let* ((color (cond ((minibufferp) zl-modeline-color)
-                      ((evil-insert-state-p) '("#c0392b" . "#ffffff"))
-                      ((evil-emacs-state-p)  '("#2ecc71" . "#ffffff"))
-                      ((buffer-modified-p)   '("#f1c40f" . "#000000"))
+                      ((evil-insert-state-p) '("#470024" . "#ffffff"))
+                      ((evil-emacs-state-p)  '("#002fa7" . "#ffffff"))
+                      ((buffer-modified-p)   '("#8b4513" . "#ffffff"))
                       ;; (t my-default-color)
                       (t zl-modeline-color)
 		      )))
     (set-face-background 'mode-line (car color))
-    (set-face-foreground 'mode-line (cdr color))))
-
+    (set-face-foreground 'mode-line (cdr color))
+    (set-face-foreground 'mode-line-buffer-id (cdr color))
+    (set-face-foreground 'eglot-mode-line (cdr color))
+    (set-face-foreground 'doom-modeline-info (cdr color))
+    ))
 (add-hook 'post-command-hook #'my-show-evil-state)
 ;; }}
 ;; -----------------------------------------------------------------------
-
-;; -------------------------------------------------
-
-(defun zl/evil-shift-right ()
-  (interactive)
-  (if (use-region-p)
-      (progn
-	(setq beg (region-beginning))
-	(setq end (region-end))
-	(evil-shift-right beg end)
-	(select-a-region beg end))
-    (message "no region")))
-
-(defun zl/evil-shift-left ()
-  (interactive)
-  (if (use-region-p)
-      (progn
-	(setq beg (region-beginning))
-	(setq end (region-end))
-	(evil-shift-left beg end)
-	(select-a-region beg end))
-    (message "no region")))
-
-;; (global-set-key "" 'zl/evil-shift-left)
-;; (global-set-key ">" 'zl/evil-shift-right)
-;; -------------------------------------------------
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -305,10 +283,6 @@
 (define-key evil-normal-state-map (kbd "C-b") 'backward-char)
 (define-key evil-normal-state-map (kbd "C-f") 'forward-char)
 (define-key evil-normal-state-map (kbd "C-v") 'scroll-up-command)
-
-
-
-
 
 
 (provide 'init-evil)

@@ -1,7 +1,3 @@
-;; 在进行这里的配置之前，我想告诉你，你曾经找到的这篇文章还没有阅读
-;; 如果某一天你的配置很多且很慢了，我希望你阅读它。
-;;                                      ------2020.04.20的梁子写给现在的梁子的话
-;; https://zhuanlan.zhihu.com/p/59509596
 (my/install-package-if-not-found 'use-package)
 (require 'use-package)
 (my/install-package-if-not-found 'darcula-theme)
@@ -16,12 +12,10 @@
 (my/install-package-if-not-found 'gruvbox-theme)
 (my/install-package-if-not-found 'sublime-themes)
 (my/install-package-if-not-found 'tao-theme)
-
 (my/install-package-if-not-found 'all-the-icons)
 (my/install-package-if-not-found 'all-the-icons-completion)
 (my/install-package-if-not-found 'all-the-icons-dired)
 (my/install-package-if-not-found 'beacon)
-
 (my/install-package-if-not-found 'marginalia)
 
 (require 'beacon)
@@ -46,10 +40,9 @@
      (setq beacon-color (nth (random (length color-ls)) color-ls))
      )))
 )
-;; (setq beacon-color "#e84393")
 (beacon-mode t)
 
-;; enable marginalia mode
+;; prtovide extra informaiton via marginalia mode
 (marginalia-mode)
 
 ;; 取消自动断行功能
@@ -64,7 +57,7 @@
 ;; 取消UI界面的多余展示
 (tool-bar-mode 0)
 (menu-bar-mode 0)
-;; (scroll-bar-mode 1)
+(scroll-bar-mode 0)
 ;; (setq inhibit-startup-message t)
 ;; (setq inhibit-startup-screen t)
 
@@ -80,7 +73,7 @@
       )
 
 (defun my/set-fonts (font-ls)
-(if *is-windows*
+    (if *is-windows*
     (progn
       ;; 解决显示Unicode字符的卡顿问题
       (setq inhibit-compacting-font-caches t)
@@ -94,16 +87,18 @@
   (if (and *is-linux* (not (equal "0" *is-gui*)) *is-gui*)
       (progn
 	(message "is GUI: %s" *is-gui*)
-	;; (message "you should reset the font.")
 
-	(set-face-attribute
-	'default nil :font
-	(nth
-	(random (length font-ls))
-	font-ls)
-	:weight 'normal)
-	;; (set-face-attribute 'default nil :font "JetbrainsMono 15"
-	;; 		    :weight 'normal)
+	;;;; rqandom selection
+
+	;; (set-face-attribute
+	;; 'default nil :font
+	;; (nth
+	;; (random (length font-ls))
+	;; font-ls)
+	;; :weight 'normal)
+
+	(set-face-attribute 'default nil :font "Iosevka 17"
+			    :weight 'normal)
 
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font (frame-parameter nil 'font)
@@ -171,7 +166,7 @@
 		;; tao-yin
 	))
 
-;; (load-theme 'kaolin-galaxy t)
+(load-theme 'kaolin-shiva t)
 
 (defun my/random-theme (my-prefer-themes)
   "Random load the theme from random theme list. I use it for random
@@ -189,8 +184,11 @@ load a beautiful theme."
     (scroll-bar-mode -1)
 
     ;;;; hard coding of the themes
-    ;; (set-face-attribute 'font-lock-comment-face nil :slant
-    ;; 		'italic :weight 'light)
+    (set-face-attribute 'font-lock-comment-face nil
+			:slant 'italic
+			:weight 'normal
+			:foreground "#96a0aa"
+			)
 
     ;; (set-face-attribute 'font-lock-keyword-face nil :weight 'light
 		;; :slant 'italic :underline t)
@@ -202,10 +200,7 @@ load a beautiful theme."
     ;; 			)
 
     ;; (set-face-attribute 'border nil :weight 'black)
-    ;; (set-face-attribute 'mode-line nil :height 160)
-
     ))
-
 
 (defun _between-hours (a b)
   "After hours `a', and before the hours `b' is true"
@@ -221,7 +216,7 @@ load a beautiful theme."
 	  (run-with-timer 0 (* 30 60)
 		    (lambda ()
 
-                      (my/set-fonts font-ls)
+                      ;; (my/set-fonts font-ls)
 		      (if (_between-hours 18 9)
 			  (my/random-theme dark-themes)
 			(my/random-theme (append
@@ -250,6 +245,7 @@ load a beautiful theme."
 ;; (load-theme 'monokai t)
 (add-hook 'prog-mode-hook (rainbow-mode t))
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
+(rainbow-mode t)
 ;; (require 'rainbow-mode)
 ;; (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
 ;; (set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
@@ -286,14 +282,11 @@ load a beautiful theme."
 ;; Treat clipboard input as UTF-8 string first; compound text next, etc.
 ;;(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
-;;; 字体设置
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;; ;; 汉字默认字体为Kaiti(楷体)，可改为其它字体
 ;; (set-fontset-font "fontset-default" 'han
 ;; 		  "KaiTi")
 ;; (set-fontset-font "fontset-default" 'han
 ;; 		  "SimHei")
-;; ;; 数学符号默认字体为Cambria Math
 ;; (set-fontset-font "fontset-default" 'symbol
 ;; 		  "Cambria Math")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\
@@ -302,7 +295,6 @@ load a beautiful theme."
 (if *is-gui*
     (progn
       (require 'all-the-icons)
-
       ;; now config all the icons completion
       (require 'all-the-icons-completion)
       (all-the-icons-completion-mode)
@@ -312,7 +304,6 @@ load a beautiful theme."
 
 
 
-;;字号切换，字号增大、减小、不变
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "C-0") 'text-scale-adjust)
@@ -325,8 +316,6 @@ load a beautiful theme."
 (global-display-fill-column-indicator-mode)
     )
 
-;; show time at modeline
-(display-time-mode)
 
 ;; setting three even split and binding to C-x 5
 (defun split-3-windows-horizontally-evenly ()
