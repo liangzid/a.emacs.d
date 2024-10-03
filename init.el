@@ -51,6 +51,7 @@
 
 
 ;;; functional configs.
+(require 'init-self-config-function)
 (require 'init-wsl)
 (require 'init-elpa)
 (require 'init-eshell)
@@ -58,7 +59,6 @@
 (require 'init-proxy)
 (require 'init-largefile)
 (require 'init-dired)
-(require 'init-self-config-function)
 (require 'init-clipboard)
 (require 'init-yas)
 (require 'init-git)

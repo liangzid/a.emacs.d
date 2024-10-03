@@ -14,7 +14,8 @@
 ;; Remove Environment of Windows to improve the inference time.
 (my/install-package-if-not-found 'vterm)
 
-(require 'vterm)
+(if *is-linux*
+(require 'vterm))
 
 (defun eshell-remove-windows-path ()
   "Filter out windows paths from the $PATH."
