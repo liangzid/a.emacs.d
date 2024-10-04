@@ -9,10 +9,13 @@
 (setq doom-modeline-height 50)
 (setq doom-modeline-bar-width 8)
 (setq doom-modeline-hud nil)
-(setq doom-modeline-time-live-icon t)
+(setq doom-modeline-time-live-icon nil)
+(setq doom-modeline-time t)
+(doom-modeline-time-icon)
 
 ;; show time at modeline
-;; (display-time-mode)
+(setq display-time-mode t)
+(display-time)
 ;; (set-face-attribute 'mode-line nil :height 220)
 
 ;; (setq-default mode-line-format
