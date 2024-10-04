@@ -5,6 +5,7 @@
 (add-hook 'rust-mode-hook 'eglot-ensure)
 (add-hook 'python-mode-hook 'eglot-ensure)
 
+(add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
 
 ;; (if (and *is-gui* *is-linux* nil)
 ;;     (progn

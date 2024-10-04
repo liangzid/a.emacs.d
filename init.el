@@ -1,5 +1,4 @@
 ; nothing. add something.
-
 (add-to-list 'exec-path (concat
 			 (getenv "HOME")
 			 "/.local/bin") t)
@@ -11,8 +10,6 @@
 			 "/anaconda3/bin") t)
 (add-to-list 'exec-path 
 			 "/snap/bin" t)
-
-;;(add-to-list 'tramp-remote-path 'tramp-own-remote-path)
 
 ;; (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-threshold (* 50 1024 1024)) 

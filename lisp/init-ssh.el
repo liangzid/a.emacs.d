@@ -50,18 +50,25 @@
    ;;                     "remote-shell-login" '("-i")))
 
    (setq tramp-default-method "ssh")
-   (setq tramp-ssh-controlmaster-options "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
-   (setq tramp-ssh-extra-args "-o ForwardAgent=yes")
-
+   ;; (setq tramp-ssh-controlmaster-options "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+   ;; (setq tramp-ssh-extra-args "-o ForwardAgent=yes")
+    )
     )
 
-    )
-(add-to-list 'tramp-remote-path 'tramp-own-remote-path)
+(setq new-tramp-pth
+      '(
+	"/home/zi/anaconda3/bin"
+	"/home/zi/anaconda3/condabin"
+	"/home/liangzi/anaconda3/bin"
+	"/home/liangzi/anaconda3/condabin"
+	"/snap/bin"
+	))
 
-(let ((process-environment tramp-remote-process-environment))
-  (setenv "ENV" "$HOME/.bashrc")
-  (setq tramp-remote-process-environment process-environment))
-
+(with-eval-after-load "tramp" 
+  (progn
+    (loop for pth in new-tramp-pth
+	  do (add-to-list 'tramp-remote-path pth))
+    ))
 
 
 
