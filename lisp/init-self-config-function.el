@@ -7,31 +7,6 @@
 (defconst *is-wsl* (string-match-p "-[Mm]icrosoft" operating-system-release))
 (defconst *is-gui* (getenv "DISPLAY"))
 
-(defun lz/is-tramp()
-  (interactive)
-  "describe current buffer is in tramp or not."
-  (let* ((buffer-path (buffer-file-name))
-	 (if-have-ssh (cl-search "/ssh:" buffer-path))
-	 (if-have-plink (cl-search "/plink:" buffer-path))
-	 )
-    (if (or if-have-ssh if-have-plink)
-	1
-     nil 
-	)
-    
-    )
-  )
-;; 哈哈哈
-;; solving the windows encoding problems
-(defun lz/save-buffer()
-    (interactive)
-    (if (lz/is-tramp)
-	(set-buffer-file-coding-system 'utf-8-unix) 
-      (set-buffer-file-coding-system 'utf-8 't) 
-	)
-    (save-buffer)
-  )
-(global-set-key (kbd "C-x C-s") 'lz/save-buffer)
 ;; (if *is-windows*
 ;;     (progn
 ;;   (global-set-key (kbd "C-x C-s") 

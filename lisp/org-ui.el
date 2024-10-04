@@ -57,8 +57,8 @@
     (add-hook 'org-mode-hook 'set-org-font)
   (progn
 
-    (set-face-attribute 'org-level-2 nil :font "Maple Mono 16"
-			:weight bold)
+   ;; (set-face-attribute 'org-level-2 nil :font "Maple Mono 16"
+   ;;			:weight bold)
     )
     )
 

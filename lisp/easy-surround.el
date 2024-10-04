@@ -29,7 +29,8 @@
 	  (message "done")))
     )
 
-(defcustom surround/prefix-key "C-c C-s" "Prefix key of the formaiton")
+;; (defcustom surround/prefix-key "C-c C-s" "Prefix key of the formaiton")
+(defcustom surround/prefix-key "C-c M-s" "Prefix key of the formaiton")
 (defvar surround/TRIGGERS '(
 			  "b" ;; bold
 			  "e" ;; italic
@@ -171,7 +172,7 @@
 	)
     )
 
-(define-key org-mode-map (kbd "C-c C-s") nil)
+;; (define-key org-mode-map (kbd "C-c C-s") nil)
 ;; (define-key tex-mode-map (kbd "C-c C-s") nil)
 ;; (define-key latex-mode-map (kbd "C-c C-s") nil)
 ;; (define-key LaTeX-mode-map (kbd surround/prefix-key) nil)

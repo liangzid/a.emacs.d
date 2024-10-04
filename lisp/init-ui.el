@@ -254,6 +254,7 @@ load a beautiful theme."
 
 ;; (load-theme 'monokai t)
 (require 'rainbow-mode)
+(require ' rainbow-delimiters)
 (add-hook 'prog-mode-hook (rainbow-mode t))
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
 (rainbow-mode t)

@@ -1,6 +1,9 @@
 ;; 关于快捷键绑定的一些东西。
 
 (my/install-package-if-not-found 'ivy-posframe)
+(my/install-package-if-not-found 'mwim)
+;; (my/install-package-if-not-found 'avy)
+(require 'use-package)
 
 ;; some key-bindings past.
 (global-set-key (kbd "C-\\") 'comment-line) ;;用来注释的
@@ -66,6 +69,17 @@
                                   (t      . 20)))
 (ivy-posframe-mode 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (require 'mwim)
+(use-package mwim
+  :ensure t
+  :bind
+  ("C-a" . mwim-beginning-of-code-or-line)
+  ("C-e" . mwim-end-of-code-or-line))
+
+;;;; Give Up.
+;; (require 'avy)
+;; ;; (global-set-key (kbd "C-;") 'avy-goto-char)
+;; (global-set-key (kbd "C-;") 'avy-goto-char-timer)
 
 
 ;;;;; add keybindings for better debug emacs lisp files.
