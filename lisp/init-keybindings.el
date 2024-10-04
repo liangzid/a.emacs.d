@@ -44,20 +44,25 @@
 (setq ivy-use-virtual-buffers t)
 (global-set-key "\C-s" 'swiper) ;; 在进行C-s时提供一个candidate
 (global-set-key (kbd "C-c C-r") 'ivy-resume)  ;; 不知道是干什么的。
-(global-set-key (kbd "M-X") 'counsel-M-x)
+(global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x b") 'counsel-switch-buffer)
+(global-set-key (kbd "C-x B") 'counsel-switch-buffer-other-window)
+(global-set-key (kbd "C-x C-r") 'counsel-recentf)
 (global-set-key (kbd "C-h f") 'counsel-describe-function)
 (global-set-key (kbd "C-h v") 'counsel-describe-variable)
-(global-set-key (kbd "M-s") 'counsel-git-grep)
+(global-set-key (kbd "M-s") 'counsel-rg)
+(global-set-key (kbd "M-s") 'counsel-rg)
+;; (global-set-key (kbd "M-s") 'counsel-ag)
 
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+;; (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
 
 (require 'ivy-posframe)
 (setq ivy-posframe-display-functions-alist
-      '((swiper . ivy-posframe-display-at-point)
+      '((swiper . ivy-posframe-display-at-window-center)
 	(complete-symbol . ivy-posframe-display-at-point)
 	(counsel-M-x . ivy-posframe-display-at-window-center)
 	(t . ivy-posframe-display)

@@ -74,6 +74,7 @@
 (require 'init-collection)
 (require 'init-rss)
 (require 'init-keybindings)
+(require 'init-rg)
 (require 'init-spell)
 (require 'init-packages)
 (require 'init-lsp) ;; language server protocol

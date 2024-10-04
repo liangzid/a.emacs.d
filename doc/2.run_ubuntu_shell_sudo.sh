@@ -7,7 +7,9 @@ echo "================================================================"
 export installList=("xsel" "gdb" "w3m" "aspell" \
 		    "scrot" "openjdk-17-jdk" "graphviz"\
 		    "python3" "python-is-python3" "pipenv"\
-		   "mplayer" "socat" "cmake" "zsh")
+		    "mplayer" "socat" "cmake" "zsh" "ripgrep"
+		    "silversearcher-ag"
+		   )
 # devs of libs for ubuntu. Might be useful in WSL.
 export libinstallLs=("librime-dev" "pkg-config" "libglib2.0-dev"\
 				   "libssl-dev" "libgtk-3-dev"\
