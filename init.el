@@ -25,7 +25,6 @@
 (defun open-my-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
-(global-set-key (kbd "<f2>") 'open-my-init-file)
 
 
 ;; ;; load eaf if necessary, bounding it into <F9>
@@ -61,7 +60,7 @@
 (require 'init-git)
 (require 'init-citre)
 (require 'init-python)
-(require 'init-haskell)
+;;(require 'init-haskell)
 (require 'init-latex)
 (require 'init-cl)
 (require 'init-cpp)
@@ -116,5 +115,9 @@
 (setq debug-on-error nil)
 (setq debug-on-signal nil)
 
+(global-set-key (kbd "<f1>") 'restart-emacs)
+(global-set-key (kbd "<f2>") 'open-my-init-file)
+(global-set-key (kbd "C-c C-=") 'enable-150%-scale-big)
+(global-set-key (kbd "C-c C--") 'enable-75%-scale-big)
 
 (provide 'init)
