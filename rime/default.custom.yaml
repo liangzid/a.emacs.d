@@ -1,0 +1,23 @@
+# Rime custom settings
+# encoding: utf-8
+patch:
+  schema_list:
+    - schema: luna_pinyin_simp
+    - schema: luna_pinyin
+    - schema: wubi86
+
+  switcher:
+    caption: 〔切换方案〕
+    hotkeys:
+      - Control+grave
+      - Control+Shift+grave
+    save_options:
+      - full_shape
+      - ascii_punct
+      - simplification
+      - extended_charset
+      - zh_hant
+      - zh_hans
+    fold_options: true
+    abbreviate_options: true
+    option_list_separator: '／'

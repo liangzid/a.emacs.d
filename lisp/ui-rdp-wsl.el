@@ -34,6 +34,30 @@
   
   )
 
+(defun enable-75%-scale-big()
+  (interactive)
+  ;; first show larger texts
+  (progn
+    ;; (set-face-attribute
+    ;;  'default nil :font
+    ;;  (nth
+    ;;   (random (length font-ls))
+    ;;   font-ls)
+    ;;  :weight 'normal)
+
+    (set-face-attribute 'default nil :font "Iosevka 13"
+			:weight 'normal)
+
+    (dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+			charset
+			(font-spec :family "LXGW WenKai Mono" :font 13
+				    :weight 'normal)))
+
+    (setq doom-modeline-height 20)
+	)
+  )
+
 
 (provide 'ui-rdp-wsl)
 
