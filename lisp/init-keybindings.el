@@ -72,6 +72,10 @@
 				  (ivy . 20)
 				  (counsel . 15)
                                   (t      . 20)))
+(set-face-background 'ivy-posframe-border "#F4FF81")
+(set-face-background 'ivy-posframe-cursor "#F4FF81")
+(setq ivy-posframe-border-width 0)
+
 (ivy-posframe-mode 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (require 'mwim)
@@ -95,6 +99,8 @@
 (add-hook 'elisp-byte-code-mode-hook '(lambda () (local-set-key (kbd "<f8>") 'lz/load-current-file)))
 
 (global-set-key (kbd "M-r") 'query-replace)
+
+(global-set-key (kbd "<f1>") 'restart-emacs)
 
 ;; (add-hook 'web-mode-hook '(lambda() (local-set-key (kbd "M-e") 'emmet-expand-yas)))
 

@@ -87,7 +87,7 @@
       )
   (if (and *is-linux* (not (equal "0" *is-gui*)) *is-gui*)
       (progn
-	(message "is GUI: %s" *is-gui*)
+	(message "INIT-UI.EL:>>>is GUI: %s" *is-gui*)
 
 	;;;; rqandom selection
 
@@ -101,9 +101,6 @@
 	(set-face-attribute 'default nil :font "Iosevka 17"
 			    :weight 'semibold
 			    )
-	(set-face-attribute 'mode-line nil :font "Maple Mono 18"
-			    :weight 'normal
-			    :slant 'italic)
         (set-face-attribute 'font-lock-comment-face nil
 			;; :slant 'italic
 			;; :font "DejaVu Sans Mono 15"
@@ -126,6 +123,8 @@
 	;;(set-face-attribute 'default nil :font "文泉驿正黑 10")
 	))))
 
+(my/set-fonts font-ls)
+
 ;; set face for flymake-warning and flymake-error
 ;; (flymake-mode-on)
 
@@ -145,7 +144,8 @@
 (if *is-linux*
     (set-face-attribute 'jinx-misspelled nil
 		    :underline '(:color "#eb2f06" :style line)
-		    :background nil)
+		    ;; :background nil
+		    )
     )
 
 (setq light-themes '(
@@ -226,7 +226,7 @@ load a beautiful theme."
 	  (run-with-timer 0 (* 30 60)
 		    (lambda ()
 
-                      ;; (my/set-fonts font-ls)
+                      (my/set-fonts font-ls)
 		      (if (_between-hours 18 9)
 			  (my/random-theme dark-themes)
 			(my/random-theme (append
@@ -258,6 +258,7 @@ load a beautiful theme."
 (add-hook 'prog-mode-hook (rainbow-mode t))
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
 (rainbow-mode t)
+(rainbow-delimiters-mode t)
 (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
 (set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
 (set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue

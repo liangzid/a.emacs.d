@@ -7,11 +7,21 @@
 (doom-modeline-mode 1)
 
 (setq doom-modeline-height 50)
-(setq doom-modeline-bar-width 8)
+(setq doom-modeline-bar-width 1)
 (setq doom-modeline-hud nil)
 (setq doom-modeline-time-live-icon nil)
 (setq doom-modeline-time t)
+(setq doom-modeline-modal-icon nil)
+(setq doom-modeline-modal nil)
 (doom-modeline-time-icon)
+
+(with-eval-after-load 'doom-modeline
+  (set-face-attribute 'mode-line nil
+		      ;; :font "Maple Mono 12"
+		      :font "15"
+		    :weight 'normal
+		    :slant 'italic)
+  )
 
 ;; show time at modeline
 (setq display-time-mode t)
