@@ -50,9 +50,7 @@
 (global-visual-line-mode nil)
 
 ;; 激活高亮当前行的功能
-(use-package hl-line
-  :ensure t
-  :hook (after-init . global-hl-line-mode))
+(require 'hl-line)
 (global-hl-line-mode)
 
 ;; 取消UI界面的多余展示
@@ -87,7 +85,7 @@
       )
   (if (and *is-linux* (not (equal "0" *is-gui*)) *is-gui*)
       (progn
-	(message "is GUI: %s" *is-gui*)
+	(message "INIT-UI.EL:>>>is GUI: %s" *is-gui*)
 
 	;;;; rqandom selection
 
@@ -99,21 +97,20 @@
 	;; :weight 'normal)
 
 	(set-face-attribute 'default nil :font "Iosevka 17"
-			    :weight 'semibold
-			    )
-	(set-face-attribute 'mode-line nil :font "Maple Mono 18"
 			    :weight 'normal
-			    :slant 'italic)
+			    :foreground "#A9F16C"
+			    ;; :foreground "#badc58"
+			    )
         (set-face-attribute 'font-lock-comment-face nil
 			;; :slant 'italic
 			;; :font "DejaVu Sans Mono 15"
-			:weight 'normal
+			;; :weight 'normal
 			:foreground "#96a0aa"
 			)
         (set-face-attribute 'org-headline-done nil
 			;; :slant 'italic
 			;; :font "DejaVu Sans Mono 15"
-			:weight 'normal
+			;; :weight 'normal
 			:foreground "#96a0aa"
 			)
 
@@ -121,10 +118,13 @@
 	(set-fontset-font (frame-parameter nil 'font)
 			  charset
 			  (font-spec :family "LXGW WenKai Mono" :font 14
-				     :weight 'normal)))
+				     ;; :weight 'normal
+				     )))
 	;; (set-face-attribute 'default nil :font "FiraCode 10")
 	;;(set-face-attribute 'default nil :font "文泉驿正黑 10")
 	))))
+
+(my/set-fonts font-ls)
 
 ;; set face for flymake-warning and flymake-error
 ;; (flymake-mode-on)
@@ -145,7 +145,8 @@
 (if *is-linux*
     (set-face-attribute 'jinx-misspelled nil
 		    :underline '(:color "#eb2f06" :style line)
-		    :background nil)
+		    ;; :background nil
+		    )
     )
 
 (setq light-themes '(
@@ -182,7 +183,12 @@
 		;; tao-yin
 	))
 
-(load-theme 'kaolin-shiva t)
+;; (load-theme 'gruvbox-dark-hard t)
+;; (my/install-package-if-not-found 'fantom-theme)
+(my/install-package-if-not-found 'challenger-deep-theme)
+(require 'challenger-deep-theme)
+(load-theme 'challenger-deep t)
+;; (load-theme 'gruvbox-dark-hard t)
 
 (defun my/random-theme (my-prefer-themes)
   "Random load the theme from random theme list. I use it for random
@@ -220,23 +226,25 @@ load a beautiful theme."
     (or (> hour a) (< hour b)))
   )
 
-;; theme
-(if *is-gui*
-    (setq random-theme-timer
-	  (run-with-timer 0 (* 30 60)
-		    (lambda ()
+;;; THEME RANDOMIZATION
+;; (if *is-gui*
+;;     (setq random-theme-timer
+;; 	  (run-with-timer 0 (* 30 60)
+;; 		    (lambda ()
 
-                      ;; (my/set-fonts font-ls)
-		      (if (_between-hours 18 9)
-			  (my/random-theme dark-themes)
-			(my/random-theme (append
-					  light-themes
-					  dark-themes)))
-		      )
-		    )
-    )
-    ;; (load-theme 'monokai t)
-)
+;;                       (my/set-fonts font-ls)
+;; 		      (if (_between-hours 18 9)
+;; 			  (my/random-theme dark-themes)
+;; 			(my/random-theme (append
+;; 					  light-themes
+;; 					  dark-themes)))
+;; 		      )
+;; 		    )
+;;     )
+;;     ;; (load-theme 'monokai t)
+;; )
+
+;; THEME
 
 (if (version< emacs-version "29")
     (global-linum-mode t)
@@ -258,6 +266,7 @@ load a beautiful theme."
 (add-hook 'prog-mode-hook (rainbow-mode t))
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
 (rainbow-mode t)
+(rainbow-delimiters-mode t)
 (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
 (set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
 (set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue

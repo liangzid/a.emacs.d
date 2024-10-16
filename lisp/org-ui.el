@@ -75,10 +75,6 @@
            '("+" (:foreground "dark gray"
                   :strike-through t)))
 ;; Make code style around with box.
-(add-to-list 'org-emphasis-alist
-           '("~" (:box (:line-width 1
-                        :color "grey75"
-                        :style released-button))))
 
 ;; (setq org-hide-emphasis-markers nil)
 
@@ -94,6 +90,69 @@
 (setq org-log-redeadline 'time)
 
 (setq org-ellipsis " ▼ ")
+
+   ;; ;; org-mode
+   ;; `(org-agenda-date-today                            ((t (:foreground ,color-14 :slant italic :weight bold))) t)
+   ;; `(org-agenda-clocking                              ((t (:foreground ,color-14 :weight bold))) t)
+   ;; `(org-agenda-structure                             ((t (:inherit font-lock-comment-face))))
+   ;; `(org-archived                                     ((t (:foreground ,color-13 :weight bold))))
+   ;; `(org-checkbox                                     ((t (:foreground ,color-10 :background ,color-4 :bold t :inherit fixed-pitch))))
+   ;; `(org-checkbox-statistics-todo                     ((t (:foreground ,color-10 :background ,color-4 :bold t :inherit fixed-pitch))))
+   ;; `(org-date                                         ((t (:foreground ,color-11 :underline t))))
+   ;; `(org-deadline-announce                            ((t (:foreground ,color-9))))
+   ;; `(org-formula                                      ((t (:foreground ,color-11))))
+   ;; `(org-macro                                        ((t (:foreground ,color-11 :italic t))))
+   ;; `(org-headline-done                                ((t (:foreground ,color-8 :strike-through t))))
+   ;; `(org-hide                                         ((t (:foreground ,color-4))))
+   ;; `(org-document-title                               ((t (:foreground ,color-12 :height ,(tao-theme-height 0.8) :bold nil))))
+   ;; `(org-document-info                                ((t (:foreground ,color-7 :height ,(tao-theme-height 0.8)))))
+   ;; `(org-document-info-keyword                        ((t (:foreground ,color-7 :height ,(tao-theme-height 0.8)))))
+   ;; `(org-checkbox-statistics-done                     ((t (:foreground ,color-14 :weight normal))))
+   ;; `(org-checkbox-statistics-todo                     ((t (:foreground ,color-14 :weight normal))))
+   ;; `(org-heading                                      ((t (:foreground ,color-14 :weight normal :variable-pitch t :inherit variable-pitch ))))
+   ;; `(org-level-1                                      ((t ( :height ,(tao-theme-height 1.5) :inherit org-heading))))
+   ;; `(org-level-2                                      ((t ( :height ,(tao-theme-height 1.1) :inherit org-heading))))
+   ;; `(org-level-3                                      ((t ( :height ,(tao-theme-height 1.1) :inherit org-heading))))
+   ;; `(org-level-4                                      ((t ( :height ,(tao-theme-height 1.1) :inherit org-heading))))
+   ;; `(org-level-5                                      ((t ( :height ,(tao-theme-height 1.1) :inherit org-heading))))
+   ;; `(org-level-6                                      ((t ( :height ,(tao-theme-height 1.1) :inherit org-heading))))
+   ;; `(org-level-7                                      ((t ( :height ,(tao-theme-height 1.1) :inherit org-heading))))
+   ;; `(org-level-8                                      ((t ( :height ,(tao-theme-height 1.1) :inherit org-heading))))
+   ;; `(org-link                                         ((t (:foreground ,color-8 :underline ,color-7))))
+   ;; `(org-scheduled                                    ((t (:foreground ,color-13))))
+   ;; `(org-scheduled-previously                         ((t (:foreground ,color-10))))
+   ;; `(org-scheduled-today                              ((t (:foreground ,color-11))))
+   ;; `(org-sexp-date                                    ((t (:foreground ,color-11 :underline t))))
+   ;; `(org-table                                        ((t (:foreground ,color-11 :inherit fixed-pitch))))
+   ;; `(org-tag                                          ((t (:bold t :weight normal :italic nil :foreground ,color-8))))
+   ;; `(org-time-grid                                    ((t (:foreground ,color-11))))
+   ;; `(org-done                                         ((t (:bold nil :foreground ,color-8 :weight normal :box t))))
+   ;; `(org-todo                                         ((t (:bold nil :foreground ,color-9 :weight normal :box t))))
+   ;; `(org-upcoming-deadline                            ((t (:inherit font-lock-keyword-face))))
+   ;; `(org-warning                                      ((t (:bold t :foreground ,color-10 :weight bold :underline nil))))
+   ;; `(org-column                                       ((t (:background ,color-3))))
+   ;; `(org-column-title                                 ((t (:background ,color-3 :underline t :weight bold))))
+   ;; `(org-mode-line-clock                              ((t (:foreground ,color-13 :background ,color-3))))
+   ;; `(org-mode-line-clock-overrun                      ((t (:foreground ,color-5 :background ,color-9))))
+   ;; `(org-ellipsis                                     ((t (:foreground ,color-8 ))))
+   ;; `(org-footnote                                     ((t (:foreground ,color-12 ))))
+   ;; `(org-meta-line                                    ((t (:background ,color-4 :foreground ,color-7 :height ,(tao-theme-height 0.7) :inherit fixed-pitch :box nil))))
+   ;; `(org-drawer                                    ((t (:background ,color-4 :foreground ,color-7 :height ,(tao-theme-height 0.7) :inherit fixed-pitch :box nil))))
+   ;; `(org-block-begin-line                             ((t (:background ,color-4 :foreground ,color-7 :height ,(tao-theme-height 0.7) :inherit fixed-pitch :box nil))))
+   ;; `(org-block-end-line                               ((t (:background ,color-4 :foreground ,color-7 :height ,(tao-theme-height 0.7) :inherit fixed-pitch))))
+   ;; `(org-special-keyword                              ((t (:inherit org-meta-line :foreground ,color-8 :italic nil))))
+   ;; `(org-property-value                               ((t (:inherit org-meta-line :foreground ,color-8 :italic t ))))
+   ;; `(org-block-background                             ((t (:foreground ,color-4 :height ,(tao-theme-height 0.9) :inherit fixed-pitch))))
+   ;; `(org-block                                        ((t (:background ,color-4  :height ,(tao-theme-height 0.9) :inherit fixed-pitch))))
+
+
+
+
+
+
+
+
+
 
 (provide 'org-ui)
 ;;; org-ui.el ends here

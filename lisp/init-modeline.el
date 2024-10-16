@@ -7,16 +7,50 @@
 (doom-modeline-mode 1)
 
 (setq doom-modeline-height 50)
-(setq doom-modeline-bar-width 8)
+(setq doom-modeline-bar-width 1)
 (setq doom-modeline-hud nil)
 (setq doom-modeline-time-live-icon nil)
 (setq doom-modeline-time t)
+(setq doom-modeline-modal-icon nil)
+(setq doom-modeline-modal nil)
 (doom-modeline-time-icon)
+(setq doom-modeline-buffer-name nil)
+(setq doom-modeline-buffer-state-icon nil)
+(setq doom-modeline-env-enable-python nil)
+(setq doom-modeline-env-python-executable nil)
+(setq doom-modeline-buffer-encoding nil)
+(setq doom-modeline- nil)
+
+(with-eval-after-load 'doom-modeline
+  (set-face-attribute 'mode-line nil
+		      ;; :font "Maple Mono 12"
+		      :font "15"
+		    :weight 'normal
+		    :slant 'italic)
+  )
 
 ;; show time at modeline
 (setq display-time-mode t)
 (display-time)
-;; (set-face-attribute 'mode-line nil :height 220)
+
+(setq-default header-line-format
+	      (list
+    ;; buffer name
+    "[%b] <%f> [雨中泡沫]"
+
+    ;; ;; buffer file encoding
+    ;; '(:eval (let ((sys (coding-system-plist buffer-file-coding-system)))
+    ;;           (if (memq (plist-get sys :category)
+    ;;                     '(coding-category-undecided coding-category-utf-8))
+    ;;               "utf"
+    ;;             (upcase (symbol-name (plist-get sys :name))))))
+
+    ;; is this buffer read-only?
+    ;; '(:eval (and buffer-read-only
+    ;;              (propertize "R" 'face nil 'help-echo "Buffer is read-only")))
+    ;; " "
+
+	       ))
 
 ;; (setq-default mode-line-format
 ;;   (list
