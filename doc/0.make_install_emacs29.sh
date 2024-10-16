@@ -14,7 +14,8 @@
 ######################################################################
 
 echo "installing compile packages"
-sudo apt install -y build-essential automake autoconf libncurses-dev libxpm-dev libgif-dev gnutls-dev libjpeg-dev libtiff-dev
+#sudo apt install -y build-essential automake autoconf libncurses-dev libxpm-dev libgif-dev gnutls-dev libjpeg-dev libtiff-dev libx11-dev
+sudo apt install build-essential libgtk-3-dev libgnutls28-dev libtiff5-dev libgif-dev libjpeg-dev libpng-dev libxpm-dev libncurses-dev texinfo
 
 echo "Download the emacs"
 
