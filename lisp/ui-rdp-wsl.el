@@ -22,14 +22,32 @@
     ;;   font-ls)
     ;;  :weight 'normal)
 
-    (set-face-attribute 'default nil :font "Iosevka 17"
-			:weight 'normal)
+	(set-face-attribute 'default nil :font "Iosevka 17"
+			    :weight 'normal
+			    :foreground "#A9F16C"
+			    ;; :foreground "#badc58"
+			    )
+        (set-face-attribute 'font-lock-comment-face nil
+			;; :slant 'italic
+			;; :font "DejaVu Sans Mono 15"
+			;; :weight 'normal
+			:foreground "#96a0aa"
+			)
+        (set-face-attribute 'org-headline-done nil
+			;; :slant 'italic
+			;; :font "DejaVu Sans Mono 15"
+			;; :weight 'normal
+			:foreground "#96a0aa"
+			)
 
-    (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-			charset
-			(font-spec :family "LXGW WenKai Mono" :font 14
-				    :weight 'normal)))
+	(dolist (charset '(kana han symbol cjk-misc bopomofo))
+	(set-fontset-font (frame-parameter nil 'font)
+			  charset
+			  (font-spec :family "LXGW WenKai Mono" :font 14
+				     ;; :weight 'normal
+				     )))
+
+    (setq doom-modeline-height 50)
 	)
   
   )
@@ -46,13 +64,21 @@
     ;;  :weight 'normal)
 
     (set-face-attribute 'default nil :font "Iosevka 13"
-			:weight 'normal)
-
+			;; :weight 'normal
+			:foreground "#96a0aa"
+			)
+    (set-face-attribute 'font-lock-comment-face nil
+		    ;; :slant 'italic
+		    ;; :font "DejaVu Sans Mono 15"
+		    ;; :weight 'normal
+		    :foreground "#96a0aa"
+		    )
     (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
 			charset
 			(font-spec :family "LXGW WenKai Mono" :font 13
-				    :weight 'normal)))
+				   ;; :weight 'normal
+				   )))
 
     (setq doom-modeline-height 20)
 	)

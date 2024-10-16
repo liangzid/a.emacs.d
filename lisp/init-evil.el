@@ -251,7 +251,7 @@
 ;; (defconst my-default-color (cons (face-background 'mode-line)
 ;;                                  (face-foreground 'mode-line)))
 
-(defconst zl-modeline-color (cons "#000000" "#ffff99"))
+(defconst zl-modeline-color (cons "#000000" "green"))
 ;; (defconst zl-modeline-color (cons (face-background 'mode-line)
 ;; 				  (face-foreground 'mode-line)))
 (defun my-show-evil-state ()
