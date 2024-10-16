@@ -1,18 +1,8 @@
 
-
-(if *is-gui*
-    (progn
-	(my/install-package-if-not-found 'diff-hl)
-	(require 'diff-hl)
-	(global-diff-hl-mode)
-      )
-  (progn
-
-    (my/install-package-if-not-found 'git-gutter)
-    (require 'git-gutter)
-    (global-git-gutter-mode 1)
-    )
-    )
+;; using git-gittuer as it is more beautiful.
+(my/install-package-if-not-found 'git-gutter)
+(require 'git-gutter)
+(global-git-gutter-mode 1)
 
 (defun git-add-and-commit-lz (mtext)
   (interactive "splease input sentence with commit:")
