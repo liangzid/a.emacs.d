@@ -46,8 +46,5 @@
   (global-set-key (kbd "C-c a") 'aider-transient-menu))
 
 
-
-
-
 (provide 'init-openai)
 ;;; init-openai.el ends here
