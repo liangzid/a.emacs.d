@@ -38,3 +38,5 @@ transient/history
 /url/
 recentf
 tramp
+.aider*
+.env
