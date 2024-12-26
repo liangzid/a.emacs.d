@@ -3,7 +3,11 @@
 
 (setq x-select-enable-clipboard t)
 
-;; ;; only used in linux system.
+;; (setq interprogram-cut-function 'xsel-cut-function)
+;; (setq interprogram-cut-function)
+
+
+;; ;; ;; only used in linux system.
 ;; (if *is-linux*
 ;;     (when (getenv "DISPLAY")
 ;;       (defun xsel-cut-function (text &optional push)

@@ -4,6 +4,9 @@
 			 "/.local/bin") t)
 (add-to-list 'exec-path (concat
 			 (getenv "HOME")
+			 "/.ghcup/bin") t)
+(add-to-list 'exec-path (concat
+			 (getenv "HOME")
 			 "/miniconda3/bin") t)
 (add-to-list 'exec-path (concat
 			 (getenv "HOME")
@@ -17,8 +20,8 @@
 ;; Improve lsp perf https://emacs-lsp.github.io/lsp-mode/page/performance/#increase-the-amount-of-data-which-emacs-reads-from-the-process
 (setq read-process-output-max (* 3 1024 1024))
 
-(set-frame-parameter nil 'alpha-background  0.799)
-(setq default-frame-alist '((alpha-background . 80)))
+(set-frame-parameter nil 'alpha-background  0.999)
+(setq default-frame-alist '((alpha-background . 99)))
 
 ;; (set-frame-parameter nil 'alpha 0.99999)
 
@@ -75,6 +78,7 @@
 (require 'init-keybindings)
 (require 'init-rg)
 (require 'init-spell)
+
 (require 'init-packages)
 (require 'init-lsp) ;; language server protocol
 (require 'init-evil)

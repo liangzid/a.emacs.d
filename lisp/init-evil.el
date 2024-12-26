@@ -224,6 +224,7 @@
  "226" 'ssh-connect-226
  "231" 'ssh-connect-231
  "215" 'ssh-connect-215
+ "141" 'ssh-connect-141
  
  ;; manager for english query.
  "cy" 'gt-do-translate

@@ -155,5 +155,13 @@
   (counsel-find-file "/ssh:zi@158.132.150.215:/home/zi/")
   )
   )
+
+(defun ssh-connect-141 ()
+  (interactive)
+  (if *is-windows*
+  (counsel-find-file "/plink:zi@10.21.20.141:/home/zi/")
+  (counsel-find-file "/ssh:zi@10.21.20.141:/home/zi/")
+  )
+  )
  
 (provide 'init-ssh)
