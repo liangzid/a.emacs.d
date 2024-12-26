@@ -85,14 +85,6 @@
   (counsel-find-file "/ssh:zijian@128.173.236.231:22/")
   )
 
-(defun ssh-connect-aliyun ()
-  (interactive)
-  (if *is-windows*
-  (counsel-find-file "/plink:liangzi@47.108.50.94/home/liangzi/")
-  (counsel-find-file "/ssh:liangzi@47.108.50.94:/home/liangzi/")
-  )
-  )
-
 (defun ssh-connect-42 ()
   (interactive)
   (if *is-windows*
@@ -162,6 +154,25 @@
   (counsel-find-file "/plink:zi@10.21.20.141:/home/zi/")
   (counsel-find-file "/ssh:zi@10.21.20.141:/home/zi/")
   )
+
+(defun ssh-connect-fromout-226 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs9.astaple.com:/home/zi/")
+  )
+
+(defun ssh-connect-fromout-231 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs10.astaple.com:/home/zi/")
+  )
+
+(defun ssh-connect-fromout-215 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@158.132.150.215:/home/zi")
+  )
+
+(defun ssh-connect-fromout-141 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@10.21.20.141:/home/zi/")
   )
  
 (provide 'init-ssh)
