@@ -154,6 +154,7 @@
   (counsel-find-file "/plink:zi@10.21.20.141:/home/zi/")
   (counsel-find-file "/ssh:zi@10.21.20.141:/home/zi/")
   )
+  )
 
 (defun ssh-connect-fromout-226 ()
   (interactive)

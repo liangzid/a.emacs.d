@@ -64,6 +64,10 @@
 
 (setq company-idle-delay 0)
 (setq company-minimum-prefix-length 1)
+(add-hook 'latex-mode-hook
+	  (lambda ()
+	    (setq-local company-minimum-prefix-length 5)
+	    ))
 (setq company-show-numbers t)
 (setq company-tooltip-limit 15)
 (setq company-tooltip-align-annotations t)

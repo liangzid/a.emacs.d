@@ -18,30 +18,31 @@
 (my/install-package-if-not-found 'beacon)
 (my/install-package-if-not-found 'marginalia)
 
-(require 'beacon)
-(setq beacon-blink-when-focused t)
-(setq beacon-blink-when-window-changes t)
-(setq beacon-blink-when-point-moves-horizontally nil)
-(setq beacon-blink-when-point-moves-vertically nil)
+;; remove beacon as it is useless
+;; (require 'beacon)
+;; (setq beacon-blink-when-focused t)
+;; (setq beacon-blink-when-window-changes t)
+;; (setq beacon-blink-when-point-moves-horizontally nil)
+;; (setq beacon-blink-when-point-moves-vertically nil)
 
-;; (setq beacon-timerk
-;; (run-with-timer
-;;  0
-;;  (* 0.5 10)
-;;  (lambda ()
-;;    (progn
-;;      (setq color-ls '(
-;; 		     "#e84393"
-;; 		     "#badc58"
-;; 		     "#f6e58d"
-;; 		     "#4bcffa"
-;; 		     )
-;; 	   )
-;;      (setq beacon-color (nth (random (length color-ls)) color-ls))
-;;      )))
-;; )
+;; ;; (setq beacon-timerk
+;; ;; (run-with-timer
+;; ;;  0
+;; ;;  (* 0.5 10)
+;; ;;  (lambda ()
+;; ;;    (progn
+;; ;;      (setq color-ls '(
+;; ;; 		     "#e84393"
+;; ;; 		     "#badc58"
+;; ;; 		     "#f6e58d"
+;; ;; 		     "#4bcffa"
+;; ;; 		     )
+;; ;; 	   )
+;; ;;      (setq beacon-color (nth (random (length color-ls)) color-ls))
+;; ;;      )))
+;; ;; )
 
-(beacon-mode t)
+;; (beacon-mode t)
 
 ;; prtovide extra informaiton via marginalia mode
 (marginalia-mode)
