@@ -28,6 +28,27 @@
 
 (setq-default org-enforce-todo-dependencies t)
 
+(add-to-list
+ 'org-agenda-custom-commands
+ '("w" "THIS WEEK"
+   ((agenda ""
+            ((org-agenda-overriding-header
+              (concat "THIS WEEK (W" (format-time-string "%V") ")")))))))
+
+(add-to-list
+ 'org-agenda-custom-commands
+ '("d" "DAY'S AGENDA"
+   ((agenda ""
+            ((org-agenda-overriding-header
+              (concat "TODAY (W" (format-time-string "%V") ")"))
+             (org-agenda-span 'day)
+             (org-agenda-sorting-strategy
+              '((agenda time-up priority-down category-keep)))
+             (org-agenda-show-log t)
+             (org-agenda-log-mode-items '(clock)))))))
+
+
+
 (setq org-todo-keyword-faces
       '(("TODO" :foreground "red" :weight "bold")
         ("INPROGRESS" :foreground "blue" :weight "bold")
@@ -41,43 +62,10 @@
 (global-set-key (kbd "<f12>") 'org-agenda)
 
 (setq org-agenda-files '("~/orgtodo/*.org"
-			 "~/orgtodo/extracting_developers_data.org"))
+			 "~/orgtodo/extracting_developers_data.org"
+			 "~/orgtodo/2025-A.org"
+			 ))
 
-;; 配置 Org Agenda 视图
-(setq org-agenda-custom-commands
-      '(("d" "TODAY!"
-         ((agenda ""
-                  ((org-agenda-span 'day)
-                   (org-agenda-sorting-strategy
-                    '(time-up priority-down tag-up)))
-          (todo "TODO"
-                ((org-agenda-overriding-header "THINGs NEED TODO")
-                 (org-agenda-skip-function
-                  '(org-agenda-skip-entry-if 'scheduled 'deadline))))
-          (todo "DONE"
-                ((org-agenda-overriding-header "THINGs DONE.")
-                 (org-agenda-skip-function
-                  '(org-agenda-skip-entry-if 'scheduled 'deadline)))))
-         ((org-agenda-compact-blocks t)))
-        ("w" "THIS WEEK!"
-         ((agenda ""
-                  ((org-agenda-span 'week)
-                   (org-agenda-start-day "-3d")
-                   (org-agenda-skip-function
-                    '(org-agenda-skip-entry-if 'scheduled 'deadline)))))
-         nil
-         ("~/orgtodo/weekly-agenda.html")))))
-
-(setq org-agenda-start-day "2023-11-17") ; 设置默认的起始日期
-(setq org-agenda-span 7) ; 设置默认的时间范围，以天为单位
-
-;; 添加自定义的 Org Agenda 标签
-(setq org-tag-alist '(("coding" . ?c)
-                      ("social" . ?s)
-                      ("writePaper" . ?w)
-                      ("infoRetrieval" . ?r)
-		      ("plan" . ?p)
-		      ))
 
 ;; 设置 Org Agenda 的显示选项
 (setq org-agenda-prefix-format
@@ -187,6 +175,12 @@
 
 
 (setq org-deadline-warning-days 1)
+
+(setq org-agenda-sticky t)
+(setq org-agenda-restore-windows-after-quit t)
+(setq org-agenda-window-setup 'current-window-configuration)
+
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
