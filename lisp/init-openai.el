@@ -37,13 +37,15 @@
   ;; (setenv "ANTHROPIC_API_KEY" anthropic-api-key)
 
   ;; Or use chatgpt model since it is most well known
-  (setq aider-args '("--model" "gpt-4o-mini"))
+  ;; (setq aider-args '("--model" "gpt-4o-mini"))
+  (setq aider-args '("--deepseek -no-auto-commits"))
 
   ;; Or use gemini v2 model since it is very good and free
   ;; (setq aider-args '("--model" "gemini/gemini-exp-1206"))
   ;; (setenv "GEMINI_API_KEY" <your-gemini-api-key>)
   ;; ;; Optional: Set a key binding for the transient menu
-  (global-set-key (kbd "C-c a") 'aider-transient-menu))
+  (global-set-key (kbd "C-c A") 'aider-transient-menu)
+  )
 
 
 (provide 'init-openai)
