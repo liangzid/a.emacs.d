@@ -156,6 +156,14 @@
   )
   )
 
+(defun ssh-connect-designer ()
+  (interactive)
+  (if *is-windows*
+  (counsel-find-file "/plink:ronghua@206.189.46.166:/home/ronghua/")
+  (counsel-find-file "/ssh:ronghua@206.189.46.166:/home/ronghua/")
+  )
+  )
+
 (defun ssh-connect-fromout-226 ()
   (interactive)
   (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs9.astaple.com:/home/zi/")
