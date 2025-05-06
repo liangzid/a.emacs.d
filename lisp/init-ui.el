@@ -84,7 +84,7 @@
 			  charset
 			  (font-spec :family "微软雅黑" :font 14)))
       )
-  (if (and *is-linux* (not (equal "0" *is-gui*)) *is-gui*)
+  (if (and *is-linux* (not (equal ":0" *is-gui*)) *is-gui*)
       (progn
 	(message "INIT-UI.EL:>>>is GUI: %s" *is-gui*)
 
@@ -311,7 +311,7 @@ load a beautiful theme."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\
 
 ;; set icons
-(if *is-gui*
+(if (and *is-gui* (not (equal *is-gui* ":0")))
     (progn
       (require 'all-the-icons)
       ;; now config all the icons completion
@@ -328,7 +328,9 @@ load a beautiful theme."
 (global-set-key (kbd "C-0") 'text-scale-adjust)
 
 (require 'ui-rdp-wsl)
-(global-set-key (kbd "<f10>") 'enable-150%-scale-big)
+(if *is-gui*
+    (global-set-key (kbd "<f10>") 'enable-150%-scale-big)
+    )
 
 ;; adding the 80-char lines
 (if *is-gui*

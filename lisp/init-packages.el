@@ -77,8 +77,9 @@
 ;; 暂时关闭 COMPANY MODE
 
 ;; (setq company-auto-complete-chars '((kbd "TAB")))
-(define-key company-active-map (kbd "RET") nil)
-(define-key company-active-map (kbd "[return]") nil)
+;; (define-key company-active-map (kbd "RET") nil)
+;; (define-key company-active-map (kbd "[return]") nil)
+
 ;; (define-key company-active-map (kbd "TAB") #'company-complete-selection)
 ;; (define-key company-active-map (kbd "<tab>")
 	    ;; #'company-complete-selection)

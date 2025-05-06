@@ -21,20 +21,20 @@ echo "Download the emacs"
 
 cd ~/
 
-wget http://mirror.team-cymru.com/gnu/emacs/emacs-29.2.tar.gz
+wget http://mirror.team-cymru.com/gnu/emacs/emacs-30.1.tar.gz
 
-tar -xf emacs-29.2.tar.gz
+tar -xf emacs-30.1.tar.gz
 
-cd emacs-29.2
+cd emacs-30.1
 ./autogen.sh
 
 echo "sleep 20 seconds..."
-sleep 20
+sleep 10
 
 ./configure --without-dbus --without-gconf
 
 echo "sleep 20 seconds..."
-sleep 20
+sleep 10
 
 make
 

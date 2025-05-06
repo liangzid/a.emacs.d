@@ -223,7 +223,7 @@
  "234" 'ssh-connect-234
  "226" 'ssh-connect-226
  "231" 'ssh-connect-231
- "215" 'ssh-connect-215
+ "142" 'ssh-connect-142
  "141" 'ssh-connect-141
  
  ;; manager for english query.

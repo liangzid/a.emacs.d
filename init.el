@@ -114,7 +114,7 @@
 (if (and *is-gui* (not (equal *is-gui* ":0")))
     (enable-150%-scale-big)
     )
-(enable-150%-scale-big)
+;; (enable-150%-scale-big)
 
 
 (setq debug-on-error nil)
