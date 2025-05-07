@@ -174,9 +174,9 @@
   (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs10.astaple.com:/home/zi/")
   )
 
-(defun ssh-connect-fromout-215 ()
+(defun ssh-connect-fromout-142 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@158.132.150.215:/home/zi")
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@10.21.20.142:/home/zi")
   )
 
 (defun ssh-connect-fromout-141 ()
