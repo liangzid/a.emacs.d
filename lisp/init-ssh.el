@@ -49,11 +49,14 @@
    ;; 		 (list (regexp-quote "/ssh:zi")
    ;;                     "remote-shell-login" '("-i")))
 
-   (setq tramp-default-method "ssh")
+   (setq tramp-default-method "sshx")
    ;; (setq tramp-ssh-controlmaster-options "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
    ;; (setq tramp-ssh-extra-args "-o ForwardAgent=yes")
     )
     )
+
+(add-to-list 'tramp-ssh-controlmaster-options
+             "-o ServerAliveInterval=60 -o ServerAliveCountMax=3")
 
 (setq new-tramp-pth
       '(
@@ -140,11 +143,11 @@
   )
   )
 
-(defun ssh-connect-215 ()
+(defun ssh-connect-142 ()
   (interactive)
   (if *is-windows*
-  (counsel-find-file "/plink:zi@158.132.150.215:/home/zi/")
-  (counsel-find-file "/ssh:zi@158.132.150.215:/home/zi/")
+  (counsel-find-file "/plink:zi@10.21.20.142:/home/zi/")
+  (counsel-find-file "/ssh:zi@10.21.20.142:/home/zi/")
   )
   )
 

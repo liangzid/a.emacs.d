@@ -2,7 +2,12 @@
 
 (my/install-package-if-not-found 'doom-modeline)
 (my/install-package-if-not-found 'nerd-icons)
-(require 'nerd-icons)
+(if (and *is-gui* (not (equal ":0" *is-gui*)))
+    (progn
+    (require 'nerd-icons)
+    (doom-modeline-time-icon))
+  ) 
+
 (require 'doom-modeline)
 (doom-modeline-mode 1)
 
@@ -13,7 +18,7 @@
 (setq doom-modeline-time t)
 (setq doom-modeline-modal-icon nil)
 (setq doom-modeline-modal nil)
-(doom-modeline-time-icon)
+
 (setq doom-modeline-buffer-name nil)
 (setq doom-modeline-buffer-state-icon nil)
 (setq doom-modeline-env-enable-python nil)
