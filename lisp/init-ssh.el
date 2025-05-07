@@ -49,11 +49,14 @@
    ;; 		 (list (regexp-quote "/ssh:zi")
    ;;                     "remote-shell-login" '("-i")))
 
-   (setq tramp-default-method "ssh")
+   (setq tramp-default-method "sshx")
    ;; (setq tramp-ssh-controlmaster-options "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
    ;; (setq tramp-ssh-extra-args "-o ForwardAgent=yes")
     )
     )
+
+(add-to-list 'tramp-ssh-controlmaster-options
+             "-o ServerAliveInterval=60 -o ServerAliveCountMax=3")
 
 (setq new-tramp-pth
       '(
