@@ -16,6 +16,9 @@ export libinstallLs=("librime-dev" "pkg-config" "libglib2.0-dev"\
 				   "libatk1.0-dev"\
                                    "librime-dev"\
 				   "libtool" "libtool-bin"\
+				   "libglu1-mesa-dev" \
+				   "freeglut3-dev" \
+				   "librsvg2-dev" \
 		                   "libenchant-2-dev" "pkgconf"
 		    )
 
@@ -33,6 +36,25 @@ do
     echo "-->>>LIBRARY: begin to install $package..."
     sudo apt install -y $alib
 done 
+
+echo "Sleep 10s, and then config new gcc and g++"
+sleep 10
+
+sudo apt update
+sudo apt install build-essential
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt update
+sudo apt install gcc-13 g++-13
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 100
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 100
+gcc --version
+g++ --version
+
+sleep 10
+
+echo "Install UV"
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 
 # echo "================================================================"
 # echo "                    Configure zsh                   "

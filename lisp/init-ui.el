@@ -18,6 +18,21 @@
 (my/install-package-if-not-found 'beacon)
 (my/install-package-if-not-found 'marginalia)
 
+
+
+;; This is an example `use-package' configuration
+;; It is not tangled into wallpaper.el
+(use-package wallpaper
+  :ensure t
+  :hook ((exwm-randr-screen-change . wallpaper-set-wallpaper)
+         (after-init . wallpaper-cycle-mode))
+  :custom ((wallpaper-cycle-single t)
+           (wallpaper-scaling 'scale)
+           (wallpaper-cycle-interval 45)
+           (wallpaper-cycle-directory "~/Pictures/deskthemes/")))
+
+
+
 ;; remove beacon as it is useless
 ;; (require 'beacon)
 ;; (setq beacon-blink-when-focused t)

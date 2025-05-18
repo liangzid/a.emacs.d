@@ -1,4 +1,4 @@
-; nothing. add something.
+;;;;; Config Environment Path 
 (add-to-list 'exec-path (concat
 			 (getenv "HOME")
 			 "/.local/bin") t)
@@ -13,6 +13,12 @@
 			 "/anaconda3/bin") t)
 (add-to-list 'exec-path 
 			 "/snap/bin" t)
+;;;; Config Python Path
+(use-package pyvenv
+  :ensure t
+  :config (pyvenv-mode 1)
+  )
+(pyvenv-activate "~/.emacs.d/.venv")
 
 ;; (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-threshold (* 50 1024 1024)) 
@@ -29,16 +35,6 @@
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-
-;; ;; load eaf if necessary, bounding it into <F9>
-;; (defun zl/load-eaf()
-;;   (interactive)
-;;   (if *is-gui*
-;;       (require 'init-eaf))
-;;   (message "do not need to load eaf! thanks sky.")
-;;       )
-;; (global-set-key (kbd "<f1>") 'zl/load-eaf)
-
 ;;remove warns for version up to emacs 27
 (setq warning-suppress-log-types '((package reinitialization)))
 
@@ -48,12 +44,30 @@
 
 (defconst *is-server* t)
 
+;;; Config =straight.el= for common usages
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
 
 ;;; functional configs.
 (require 'init-openai)
 (require 'init-self-config-function)
 (require 'init-wsl)
 (require 'init-elpa)
+(require 'init-pdf)
 (require 'init-eshell)
 ;; (require 'init-docker)
 (require 'init-proxy)

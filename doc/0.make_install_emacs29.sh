@@ -31,7 +31,7 @@ cd emacs-30.1
 echo "sleep 20 seconds..."
 sleep 10
 
-./configure --without-dbus --without-gconf
+./configure --without-dbus --without-gconf --with-rsvg
 
 echo "sleep 20 seconds..."
 sleep 10
