@@ -129,7 +129,7 @@
 (if (and *is-gui* (not (equal *is-gui* ":0")))
     (enable-150%-scale-big)
     )
-;; (enable-150%-scale-big)
+(enable-150%-scale-big)
 
 
 (setq debug-on-error nil)
@@ -139,5 +139,16 @@
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 (global-set-key (kbd "C-c C-=") 'enable-150%-scale-big)
 (global-set-key (kbd "C-c C--") 'enable-75%-scale-big)
+
+
+;; easysession save
+(my/install-package-if-not-found 'easysession)
+(use-package easysession
+  :ensure t
+  ;; :custom
+  ;; (easysession-save-interval (* 10 60))
+  :init
+  (add-hook 'emacs-startup-hook #'easysession-load-including-geometry)
+  (add-hook 'emacs-startup-hook #'easysession-save-mode))
 
 (provide 'init)

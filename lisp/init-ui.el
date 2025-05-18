@@ -17,7 +17,8 @@
 (my/install-package-if-not-found 'all-the-icons-dired)
 (my/install-package-if-not-found 'beacon)
 (my/install-package-if-not-found 'marginalia)
-
+(my/install-package-if-not-found 'challenger-deep-theme)
+(require 'challenger-deep-theme)
 
 
 ;; This is an example `use-package' configuration
@@ -112,23 +113,30 @@
 	;; font-ls)
 	;; :weight 'normal)
 
-	(set-face-attribute 'default nil :font "Iosevka 17"
+	(set-face-attribute 'default nil 
+			    :font "Iosevka 17"
 			    :weight 'normal
-			    :foreground "#A9F16C"
-			    ;; :foreground "#badc58"
-			    )
-        (set-face-attribute 'font-lock-comment-face nil
-			;; :slant 'italic
-			;; :font "DejaVu Sans Mono 15"
-			;; :weight 'normal
-			:foreground "#96a0aa"
-			)
+			    :foreground "#A9F16C")
         (set-face-attribute 'org-headline-done nil
 			;; :slant 'italic
 			;; :font "DejaVu Sans Mono 15"
 			;; :weight 'normal
 			:foreground "#96a0aa"
 			)
+
+	;; Bold the keywords
+	(set-face-attribute 'font-lock-keyword-face nil
+                    :weight 'bold)
+
+        (set-face-attribute 'font-lock-function-name-face nil
+			    :bold
+			    )
+	(set-face-attribute 'show-paren-match nil
+                    :weight 'bold)
+	
+        (set-face-attribute 'font-lock-string-face nil
+			    :slant 'italic
+			    )
 
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font (frame-parameter nil 'font)
@@ -140,7 +148,6 @@
 	;;(set-face-attribute 'default nil :font "文泉驿正黑 10")
 	))))
 
-(my/set-fonts font-ls)
 
 ;; set face for flymake-warning and flymake-error
 ;; (flymake-mode-on)
@@ -148,7 +155,7 @@
 (add-hook 'flymake-mode-hook '(lambda ()
 				(progn
     (set-face-attribute 'flymake-warning nil
-			:underline '(:color "#f6e58d" :style wave))
+			:underline '(:color "#f6e58d" :style line))
     (set-face-attribute 'flymake-error nil
 			:underline '(:color "#0c2461" :style line)
 			:background "#eb2f06")
@@ -199,12 +206,25 @@
 		;; tao-yin
 	))
 
-;; (load-theme 'gruvbox-dark-hard t)
-;; (my/install-package-if-not-found 'fantom-theme)
-(my/install-package-if-not-found 'challenger-deep-theme)
-(require 'challenger-deep-theme)
-(load-theme 'challenger-deep t)
-;; (load-theme 'gruvbox-dark-hard t)
+;; First set fonts
+(my/set-fonts font-ls)
+
+;; Then load theme but don't allow it to override our custom faces
+(load-theme 'challenger-deep t)  ;; Third argument prevents override
+
+(set-face-attribute 'default nil 
+		    :font "Iosevka 17"
+		    :weight 'normal
+		    :foreground "#A9F16C")
+
+;; Now set our custom faces that should persist
+(set-face-attribute 'font-lock-keyword-face nil
+                    :weight 'bold
+                    )
+
+(set-face-attribute 'font-lock-string-face nil
+                    :slant 'italic
+                    )
 
 (defun my/random-theme (my-prefer-themes)
   "Random load the theme from random theme list. I use it for random
