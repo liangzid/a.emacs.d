@@ -117,12 +117,12 @@
 			    :font "Iosevka 17"
 			    :weight 'normal
 			    :foreground "#A9F16C")
-        (set-face-attribute 'org-headline-done nil
-			;; :slant 'italic
-			;; :font "DejaVu Sans Mono 15"
-			;; :weight 'normal
-			:foreground "#96a0aa"
-			)
+        ;; (set-face-attribute 'org-headline-done nil
+	;; 		;; :slant 'italic
+	;; 		;; :font "DejaVu Sans Mono 15"
+	;; 		;; :weight 'normal
+	;; 		:foreground "#96a0aa"
+	;; 		)
 
 	;; Bold the keywords
 	(set-face-attribute 'font-lock-keyword-face nil

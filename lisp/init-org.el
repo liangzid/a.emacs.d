@@ -84,7 +84,6 @@
 ;;code执行免应答（Eval code without confirm）
 (setq org-confirm-babel-evaluate nil)
 
-(require 'org-ui)
 (require 'org-export)
 (require 'org-todo-related)
 (provide 'init-org)

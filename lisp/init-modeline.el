@@ -28,8 +28,8 @@
 
 (with-eval-after-load 'doom-modeline
   (set-face-attribute 'mode-line nil
-		      ;; :font "Maple Mono 12"
-		      :font "15"
+		      :font "Maple Mono 12"
+		      :font "18"
 		    :weight 'normal
 		    :slant 'italic)
   )
@@ -41,7 +41,7 @@
 (setq-default header-line-format
 	      (list
     ;; buffer name
-    "[%b] <%f> [雨中泡沫]"
+    "[%b] <%f> 雨中泡沫"
 
     ;; ;; buffer file encoding
     ;; '(:eval (let ((sys (coding-system-plist buffer-file-coding-system)))

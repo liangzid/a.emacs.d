@@ -118,6 +118,7 @@
 (require 'init-chinese) ;; only have part of UI.
 (require 'init-better-defaults)
 (require 'init-ui)
+(require 'org-ui)
 ;; (require 'init-dashboard)
 
 

@@ -8,88 +8,185 @@
 ;;
 ;;; Code:
 
+;; 安装必要的包
 (my/install-package-if-not-found 'org-modern)
+(my/install-package-if-not-found 'org-superstar)
 (my/install-package-if-not-found 'pangu-spacing)
 (my/install-package-if-not-found 'org-fragtog)
 (my/install-package-if-not-found 'valign)
-;; (my/install-package-if-not-found 'ftable)
+;; (my/install-package-if-not-found 'org-visual-indent)
+;; (my/install-package-if-not-found 'org-dynamic-bullets)
+
+;; 加载必要的包
 (require 'valign)
-;; (require 'ftable)
 (require 'org-visual-indent)
 (require 'org-dynamic-bullets)
 
+;; 禁用全局 pangu-spacing 模式
 (global-pangu-spacing-mode 0)
 
-;; (if *is-gui*
-;;     (progn
-;;       ;; open the valign for table alignments in org mode.
-;;        (add-hook 'org-mode-hook #'valign-mode)
-;;       ))
-
-
+;; Org Mode 钩子函数
 (add-hook 'org-mode-hook
           (lambda ()
-            (org-shifttab 2)))
-(setq org-modern-table nil) ;; 存在对齐问题，故禁用之~
-(if *is-gui*
-    (progn
-	(add-hook 'org-mode-hook #'org-modern-mode)
-	(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
-	;; for org's mathmatical completion.
-	(add-hook 'org-mode-hook 'org-fragtog-mode)
-	(add-hook 'org-mode-hook 'org-visual-indent-mode)
-	;; (add-hook 'org-mode-hook 'org-dynamic-bullets-mode)
-      ))
+            ;; 启用 org-modern 模式
+            (org-modern-mode)
+            ;; 启用 org-fragtog 模式
+            (org-fragtog-mode)
+            ;; 启用 org-visual-indent 模式
+            (org-visual-indent-mode)
+            ;; 启用 org-dynamic-bullets 模式
+            (org-dynamic-bullets-mode)
+            ;; 设置 Org 模式下的字体
+            (set-org-font)
+            ;; 设置 Org 模式下的表格对齐
+            (if *is-gui*
+                (valign-mode))
+            ;; 设置 Org 模式下的缩进
+            (org-shifttab 2)
+            ;; 启用代码块原生字体美化
+            (setq org-src-fontify-natively t)
+            ;; 启用代码块内 TAB 键的原生行为
+            (setq org-src-tab-acts-natively t)
+            ;; 禁用代码块内容缩进
+            (setq org-src-preserve-indentation nil)
+            ;; 启用任务完成时间记录
+            (setq org-log-done 'time)
+            ;; 启用任务重新安排时间记录
+            (setq org-log-reschedule 'time)
+            ;; 启用任务重新设置截止时间记录
+            (setq org-log-redeadline 'time)
+            ;; 设置 Org 模式下的标题字体大小
+            (dolist (face '((org-level-1 . 1.2)
+                            (org-level-2 . 1.1)
+                            (org-level-3 . 1.05)
+                            (org-level-4 . 1.0)
+                            (org-level-5 . 1.0)
+                            (org-level-6 . 1.0)
+                            (org-level-7 . 1.0)
+                            (org-level-8 . 1.0)))
+              (set-face-attribute (car face) nil :font "LXGWWenKaiMono 18" :foreground "#66ff66" :weight 'bold :height (cdr face)))
+            ;; 设置 Org 模式下的文档标题字体大小
+            (set-face-attribute 'org-document-title nil :font "LXGWWenKaiMono" :weight 'bold :height 1.8)
+            ;; 设置 Org 模式下的字体属性
+            (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch))
+            (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch :height 0.85)
+            (set-face-attribute 'org-code nil :inherit '(shadow fixed-pitch) :height 0.85)
+            (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch) :height 0.85)
+            (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+            (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+            (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
+            ;; 设置 Org 模式下的文本美化
+            (setq org-adapt-indentation t
+                  org-hide-leading-stars t
+                  org-hide-emphasis-markers t
+                  org-pretty-entities t
+                  org-ellipsis "…")
+            ;; 设置 Org 模式下的源代码块设置
+            (setq org-src-fontify-natively t
+                  org-src-tab-acts-natively t
+                  org-edit-src-content-indentation 0)
+            ;; 设置 Org 模式下的任务关键字和颜色
+            (setq org-todo-keywords
+                  '((sequence
+                     "TODO" "INPROGRESS" "WAITING" "REVIEW" "|"
+                     "DONE")))
+            (setq org-todo-keyword-faces
+                  '(("TODO"      :inherit (org-todo region) :foreground "white" :background "#ff0a22" :weight bold)
+                    ("INPROGRESS" :inherit (org-todo region) :foreground "#3867d6" :background "yellow" :weight bold)
+                    ("WAITING"    :inherit (org-todo region) :foreground "#3867d6" :background "green" :weight bold)
+                    ("REVIEW"     :inherit (org-todo region) :foreground "#81A1C1" :background "#F2F4C1" :weight bold)
+                    ("DONE"       :inherit (org-todo region) :foreground "#808080" :background "#30343d" :weight bold)
+                    ("CANCELED"       :inherit (org-todo region) :foreground "#808080" :background "#30343d" :weight bold)))
+            ;; 设置 Org 模式下的特殊字体
+            (setq org-fontify-quote-and-verse-blocks t)
+            ;; 设置 Org 模式下的删除线颜色
+            (add-to-list 'org-emphasis-alist
+                         '("+" (:foreground "dark gray" :strike-through t)))
+            ;; 设置 Org 模式下的 LaTeX 预览大小
+            (plist-put org-format-latex-options :scale 2)
+            ;; 设置 Org 模式下的表格对齐
+            (if *is-gui*
+                (valign-mode))
+            ;; 设置 Org 模式下的动态子弹点
+            (org-dynamic-bullets-mode)
+            ;; 设置 Org 模式下的代码块高亮
+            (org-fragtog-mode)
+            ;; 设置 Org 模式下的视觉缩进
+            (org-visual-indent-mode)
+            ;; 设置 Org 模式下的 Org Modern 模式
+            (global-org-modern-mode)
+            ))
 
-;; set special font for org-mode.
-
+;; 设置 Org 模式下的字体
 (defun set-org-font()
   (interactive)
   (progn
     (make-face 'org-face)
-    (set-face-attribute 'org-face nil :font "Times New Roman 12")
-    (set-face-attribute 'org-face nil
-			:family "Microsoft YaHei UI 12")
+    (set-face-attribute 'org-face nil :font "LXGWWenKaiMono 12")
+    (set-face-attribute 'org-face nil :family "LXGWWenKaiMono 12")
     (setq buffer-face-mode-face 'org-face)
     (buffer-face-mode)))
 
+;; 为 Windows 系统设置字体
 (if *is-windows*
     (add-hook 'org-mode-hook 'set-org-font)
   (progn
+    ;; 为非 Windows 系统设置字体
+    (set-face-attribute 'default nil :font "LXGWWenKaiMono 12")
+    (set-face-attribute 'fixed-pitch nil :family "LXGWWenKaiMono")
+    (set-face-attribute 'variable-pitch nil :family "LXGWWenKaiMono" :height 1.18)
+    ))
 
-   ;; (set-face-attribute 'org-level-2 nil :font "Maple Mono 16"
-   ;;			:weight bold)
-    )
-    )
+;; 配置 org-superstar
+(use-package org-superstar
+  :ensure t
+  :config
+  (setq org-superstar-leading-bullet " ")
+  (setq org-superstar-special-todo-items t)
+  (setq org-superstar-todo-bullet-alist '(("TODO" . 9744)
+                                          ("INPROGRESS" . 9744)
+                                          ("WAITING" . 9744)
+                                          ("REVIEW" . 9744)
+                                          ("DONE" . 9744)
+                                          ("CANCELED" . 9744)
+					  )))
+
+;; 配置 org-modern
+(use-package org-modern
+  :ensure t
+  :config
+  (setq org-modern-tag t
+        org-modern-priority nil
+        org-modern-todo nil
+        org-modern-table nil
+        org-modern-list nil
+        org-modern-blocks nil
+        org-modern-indent nil
+        org-modern-headers nil
+        org-modern-footers nil
+        org-modern-keywords nil
+        org-modern-links nil
+        org-modern-images nil
+        org-modern-entities nil
+        org-modern-ellipsis "…"
+        org-modern-star "•"
+        org-modern-todo-bullet-alist '(("TODO" . "•")
+                                       ("INPROGRESS" . "•")
+                                       ("WAITING" . "•")
+                                       ("REVIEW" . "•")
+                                       ("DONE" . "•") ("CANCELED" . "•"))
+        org-modern-todo-faces '((todo . (:inherit org-todo :foreground "#A3BE8C" :weight bold))
+                                (inprogress . (:inherit org-todo :foreground "#88C0D0" :weight bold))
+                                (waiting . (:inherit org-todo :foreground "#8FBCBB" :weight bold))
+                                (review . (:inherit org-todo :foreground "#81A1C1" :weight bold))
+                                (done . (:inherit org-todo :foreground "#30343d" :weight bold))))
+  (global-org-modern-mode))
 
 
-(setq org-src-fontify-natively t)
 
-;; Make verbatim with highlight text background.
 
-;; (add-to-list 'org-emphasis-alist
-;;            '("=" (:background " #fef7ca")))
 
-;; Make deletion(obsolote) text foreground with dark gray.
-(add-to-list 'org-emphasis-alist
-           '("+" (:foreground "dark gray"
-                  :strike-through t)))
-;; Make code style around with box.
-
-;; (setq org-hide-emphasis-markers nil)
-
-;; (add-to-list 'org-emphasis-alist
-	     ;; '("/" italic))
-(setq org-fontify-quote-and-verse-blocks t)
-
-(setq org-src-tab-acts-natively t)
-(setq org-src-preserve-indentation nil)
-
-(setq org-log-done 'time)
-(setq org-log-reschedule 'time)
-(setq org-log-redeadline 'time)
-
-(setq org-ellipsis " ▼ ")
+;; CONFIG Ends here
 
    ;; ;; org-mode
    ;; `(org-agenda-date-today                            ((t (:foreground ,color-14 :slant italic :weight bold))) t)

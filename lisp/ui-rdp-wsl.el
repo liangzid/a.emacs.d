@@ -33,12 +33,6 @@
 			;; :weight 'normal
 			:foreground "#96a0aa"
 			)
-        (set-face-attribute 'org-headline-done nil
-			;; :slant 'italic
-			;; :font "DejaVu Sans Mono 15"
-			;; :weight 'normal
-			:foreground "#96a0aa"
-			)
 
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font (frame-parameter nil 'font)
@@ -48,6 +42,12 @@
 				     )))
 
     (setq doom-modeline-height 50)
+
+  (set-face-attribute 'mode-line nil
+		      :font "Maple Mono 12"
+		      :font "18"
+		    :weight 'normal
+		    :slant 'italic)
 	)
   
   )
