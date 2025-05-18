@@ -63,10 +63,10 @@
 
 
 ;;; functional configs.
-(require 'init-openai)
 (require 'init-self-config-function)
 (require 'init-wsl)
 (require 'init-elpa)
+(require 'init-openai)
 (require 'init-pdf)
 (require 'init-eshell)
 ;; (require 'init-docker)

@@ -58,7 +58,7 @@
         ("CANCELED" .  "green")))
 
 ;;; org agenda
-(global-set-key (kbd "C-c a") 'org-agenda)
+;; (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "<f12>") 'org-agenda)
 
 (setq org-agenda-files '("~/orgtodo/*.org"

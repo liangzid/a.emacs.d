@@ -161,12 +161,12 @@
 ;; (add-to-list 'flycheck-checkers 'vale 'append)
 ;; (setq flycheck-vale-executable "/snap/bin/vale")
 
-(setq langtool-language-tool-jar
-      "/home/liangzi/LanguageTool-stable/LanguageTool-6.3/languagetool-commandline.jar")
-(require 'langtool)
-(global-set-key (kbd "C-, C-c") 'langtool-check)
-(global-set-key (kbd "C-, C") 'langtool-check-done)
-(global-set-key (kbd "C-, y") 'langtool--correction-popup)
+;; (setq langtool-language-tool-jar
+;;       "/home/liangzi/LanguageTool-stable/LanguageTool-6.3/languagetool-commandline.jar")
+;; (require 'langtool)
+;; (global-set-key (kbd "C-, C-c") 'langtool-check)
+;; (global-set-key (kbd "C-, C") 'langtool-check-done)
+;; (global-set-key (kbd "C-, y") 'langtool--correction-popup)
 
 ;; (my/install-package-if-not-found 'flycheck-grammarly)
 ;; (with-eval-after-load 'flycheck

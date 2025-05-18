@@ -10,41 +10,28 @@
 ;;
 ;;; Code:
 
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name
-        "straight/repos/straight.el/bootstrap.el"
-        (or (bound-and-true-p straight-base-dir)
-            user-emacs-directory)))
-      (bootstrap-version 7))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+(my/install-package-if-not-found 'aidermacs)
 
-
-(use-package aider
-  :straight (:host github :repo "tninja/aider.el" :files ("aider.el"))
+(use-package aidermacs
+  :bind (("C-c a" . aidermacs-transient-menu))
   :config
-  ;; Use claude-3-5-sonnet cause it is best in aider benchmark 
-
-  ;; (setq aider-args '("--model"
-  ;; 		     "anthropic/claude-3-5-sonnet-20241022"))
-  ;; (setenv "ANTHROPIC_API_KEY" anthropic-api-key)
-
-  ;; Or use chatgpt model since it is most well known
-  ;; (setq aider-args '("--model" "gpt-4o-mini"))
-  (setq aider-args '("--deepseek -no-auto-commits"))
-
-  ;; Or use gemini v2 model since it is very good and free
-  ;; (setq aider-args '("--model" "gemini/gemini-exp-1206"))
-  ;; (setenv "GEMINI_API_KEY" <your-gemini-api-key>)
-  ;; ;; Optional: Set a key binding for the transient menu
-  (global-set-key (kbd "C-c A") 'aider-transient-menu)
+  ; Set API_KEY in .bashrc, that will automatically picked up by aider or in elisp
+  ; defun my-get-openrouter-api-key yourself elsewhere for security reasons
+  :custom
+  ; See the Configuration section below
+  (aidermacs-use-architect-mode nil)
+  (aidermacs-default-model "deepseek")
+  (aidermacs-architect-model "deepseek/deepseek-reasoner")
+  ;; Optional: Set specific model for code generation
+  (aidermacs-editor-model "deepseek/deepseek-chat")
+  ;; default to nil
+  (aidermacs-weak-model "deepseek/deepseek-chat")
+  ;; Use vterm backend (default is comint)
+  (aidermacs-backend 'vterm)
+  ;; Enable file watching
+  (aidermacs-watch-files t)
+  ;; Enable/disable showing diffs after changes (default: t)
+  (setq aidermacs-show-diff-after-change t)
   )
 
 
