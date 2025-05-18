@@ -13,12 +13,12 @@
 			 "/anaconda3/bin") t)
 (add-to-list 'exec-path 
 			 "/snap/bin" t)
-;;;; Config Python Path
-(use-package pyvenv
-  :ensure t
-  :config (pyvenv-mode 1)
-  )
-(pyvenv-activate "~/.emacs.d/.venv")
+;; ;;;; Config Python Path
+;; (use-package pyvenv
+;;   :ensure t
+;;   :config (pyvenv-mode 1)
+;;   )
+;; (pyvenv-activate "~/.emacs.d/.venv")
 
 ;; (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-threshold (* 50 1024 1024)) 
@@ -88,7 +88,7 @@
 (require 'init-web)
 ;;(require 'init-astaple)
 (require 'init-path)
-(require 'init-collection)
+;; (require 'init-collection)
 (require 'init-rss)
 (require 'init-keybindings)
 (require 'init-rg)
@@ -99,7 +99,8 @@
 (require 'init-evil)
 ;; (require 'init-meow)
 (require 'init-undo)
-(require 'init-keyfreq);;(require 'init-netease)
+(require 'init-keyfreq)
+;;(require 'init-netease)
 (require 'init-org)
 (require 'init-ssh)
 

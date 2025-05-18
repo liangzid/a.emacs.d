@@ -11,12 +11,12 @@
 ##  
 ##############################################################################################
 
-cd ~/.emacs.d/other-files/
-git clone https://github.com/liangzid/easy-collections.git
+# cd ~/.emacs.d/other-files/
+# git clone https://github.com/liangzid/easy-collections.git
 
-git clone https://github.com/SpringHan/netease-cloud-music.el.git
+# git clone https://github.com/SpringHan/netease-cloud-music.el.git
 
-git clone https://github.com/manateelazycat/lsp-bridge.git
+# git clone https://github.com/manateelazycat/lsp-bridge.git
 
 
 echo "RUNNING 3.gitclone.sh DONE."
