@@ -23,6 +23,9 @@
 ;; (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-threshold (* 50 1024 1024)) 
 
+(exec-path-from-shell-initialize)
+(exec-path-from-shell-copy-env "DEEPSEEK_API_KEY")
+
 ;; Improve lsp perf https://emacs-lsp.github.io/lsp-mode/page/performance/#increase-the-amount-of-data-which-emacs-reads-from-the-process
 (setq read-process-output-max (* 3 1024 1024))
 
@@ -67,7 +70,7 @@
 (require 'init-wsl)
 (require 'init-elpa)
 (require 'init-openai)
-(require 'init-pdf)
+;; (require 'init-pdf)
 (require 'init-eshell)
 ;; (require 'init-docker)
 (require 'init-proxy)
@@ -142,14 +145,14 @@
 (global-set-key (kbd "C-c C--") 'enable-75%-scale-big)
 
 
-;; easysession save
-(my/install-package-if-not-found 'easysession)
-(use-package easysession
-  :ensure t
-  ;; :custom
-  ;; (easysession-save-interval (* 10 60))
-  :init
-  (add-hook 'emacs-startup-hook #'easysession-load-including-geometry)
-  (add-hook 'emacs-startup-hook #'easysession-save-mode))
+;; ;; easysession save
+;; (my/install-package-if-not-found 'easysession)
+;; (use-package easysession
+;;   :ensure t
+;;   ;; :custom
+;;   ;; (easysession-save-interval (* 10 60))
+;;   :init
+;;   (add-hook 'emacs-startup-hook #'easysession-load-including-geometry)
+;;   (add-hook 'emacs-startup-hook #'easysession-save-mode))
 
 (provide 'init)

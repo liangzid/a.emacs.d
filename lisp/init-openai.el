@@ -21,6 +21,7 @@
   ; See the Configuration section below
   (aidermacs-use-architect-mode nil)
   (aidermacs-default-model "deepseek")
+  (aidermacs-default-chat-mode 'architect)
   (aidermacs-architect-model "deepseek/deepseek-reasoner")
   ;; Optional: Set specific model for code generation
   (aidermacs-editor-model "deepseek/deepseek-chat")
@@ -28,10 +29,11 @@
   (aidermacs-weak-model "deepseek/deepseek-chat")
   ;; Use vterm backend (default is comint)
   (aidermacs-backend 'vterm)
+  ;; (aidermacs-backend 'comint)
   ;; Enable file watching
   (aidermacs-watch-files t)
   ;; Enable/disable showing diffs after changes (default: t)
-  (setq aidermacs-show-diff-after-change t)
+  ;; (setq aidermacs-show-diff-after-change t)
   )
 
 
