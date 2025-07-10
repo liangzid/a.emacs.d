@@ -138,8 +138,8 @@
 ;;     (add-hook 'prog-mode-hook '@-enable-smart-tab)
 ;;     ))
 
-(require 'company-english-helper)
-(setq company-english-helper-active-p nil)
-(global-set-key (kbd "C-c e") 'toggle-company-english-helper)
+;; (require 'company-english-helper)
+;; (setq company-english-helper-active-p nil)
+;; (global-set-key (kbd "C-c e") 'toggle-company-english-helper)
 
 (provide 'init-packages)

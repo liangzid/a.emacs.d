@@ -23,8 +23,8 @@
 ;; (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-threshold (* 50 1024 1024)) 
 
-(exec-path-from-shell-initialize)
-(exec-path-from-shell-copy-env "DEEPSEEK_API_KEY")
+;; (exec-path-from-shell-initialize)
+;; (exec-path-from-shell-copy-env "DEEPSEEK_API_KEY")
 
 ;; Improve lsp perf https://emacs-lsp.github.io/lsp-mode/page/performance/#increase-the-amount-of-data-which-emacs-reads-from-the-process
 (setq read-process-output-max (* 3 1024 1024))
@@ -130,10 +130,10 @@
 ;; toggle maximized screen
 ;; (maximize-window)
 (toggle-frame-fullscreen)
-(if (and *is-gui* (not (equal *is-gui* ":0")))
-    (enable-150%-scale-big)
-    )
-(enable-150%-scale-big)
+;; (if (and *is-gui* (not (equal *is-gui* ":0")))
+    ;; (enable-150%-scale-big)
+    ;; )
+;; (enable-150%-scale-big)
 
 
 (setq debug-on-error nil)
