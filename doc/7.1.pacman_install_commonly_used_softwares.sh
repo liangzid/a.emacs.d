@@ -28,8 +28,12 @@ yay -S wps-office-cn ttf-wps-fonts ttf-wps-win10 wps-office-fonts wps-office-365
 echo "Install Wechat & QQ"
 yay -S wechat
 
-echo "Install youdao-dict"
-yay -S youdao-dict
+# echo "Install youdao-dict"
+# yay -S youdao-dict
+
+echo "腾讯会议 zoom"
+yay -S wemeet-bin
+yay -S zoom
 
 echo "Install tabby"
 yay -S tabby
