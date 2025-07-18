@@ -85,11 +85,7 @@
             (setq org-src-fontify-natively t
                   org-src-tab-acts-natively t
                   org-edit-src-content-indentation 0)
-            ;; 设置 Org 模式下的任务关键字和颜色
-            (setq org-todo-keywords
-                  '((sequence
-                     "TODO" "INPROGRESS" "WAITING" "REVIEW" "|"
-                     "DONE")))
+
             (setq org-todo-keyword-faces
                   '(("TODO"      :inherit (org-todo region) :foreground "white" :background "#ff0a22" :weight bold)
                     ("INPROGRESS" :inherit (org-todo region) :foreground "#3867d6" :background "yellow" :weight bold)

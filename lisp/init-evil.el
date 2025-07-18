@@ -267,7 +267,7 @@
     (set-face-background 'mode-line (car color))
     (set-face-foreground 'mode-line (cdr color))
     (set-face-foreground 'mode-line-buffer-id (cdr color))
-    (set-face-foreground 'eglot-mode-line (cdr color))
+    ;; (set-face-foreground 'eglot-mode-line (cdr color))
     (set-face-foreground 'doom-modeline-info (cdr color))
     ))
 (add-hook 'post-command-hook #'my-show-evil-state)

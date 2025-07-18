@@ -114,7 +114,8 @@
 	;; :weight 'normal)
 
 	(set-face-attribute 'default nil 
-			    :font "Iosevka 17"
+			    ;; :font "Iosevka 17"
+			    :font "JetbrainsMono 12"
 			    :weight 'normal
 			    :foreground "#A9F16C")
         ;; (set-face-attribute 'org-headline-done nil
@@ -165,12 +166,12 @@
 (global-set-key (kbd "C-x n") 'flymake-goto-next-error)
 (global-set-key (kbd "C-x N") 'flymake-goto-prev-error)
 
-(if *is-linux*
-    (set-face-attribute 'jinx-misspelled nil
-		    :underline '(:color "#eb2f06" :style line)
-		    ;; :background nil
-		    )
-    )
+;; (if *is-linux*
+;;     (set-face-attribute 'jinx-misspelled nil
+;; 		    :underline '(:color "#eb2f06" :style line)
+;; 		    ;; :background nil
+;; 		    )
+;;     )
 
 (setq light-themes '(
 		    ;;; light
