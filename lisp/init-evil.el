@@ -172,7 +172,6 @@
  "su" 'liangzi-warp
  
  "gd" 'evil-goto-definition
- "g9" 'ssh-connect-226
 
  ;; "gd" 'xref-find-definitions-other-window
  "cu" 'citre-update-this-tags-file
@@ -197,16 +196,13 @@
  ;; "dp" 'gud-print
  ;; "de" 'gud-finish
 
- ;; git relevant
- "gs" 'git-add-commit-push-lz ;; git synroize.
+ ;; ;; git relevant
+ ;; "gs" 'git-add-commit-push-lz ;; git synroize.
 
  ;; "owd" 'my-open-windows-downloads ;; open windows download dir
  "op" 'org-publish
  "on" 'open-org-note
- "ol" 'open-papers-in-writing ;; open latex paper in writing...
- "oc" 'open-codes-in-d
  "ow" 'open-worklog-in-d
- "ob" 'open-onedrive-file-dir
 
  "rb" 'lz/running-current-bash-with-nohup 
  "rp" 'lz/running-current-python-with-nohup
@@ -215,16 +211,25 @@
  "ns" 'lz/look-nvidia-state
  
  ;; ssh connect
- "41" 'ssh-connect-41
- "42" 'ssh-connect-42
- "45" 'ssh-connect-45
- "48" 'ssh-connect-48
- "49" 'ssh-connect-49
- "234" 'ssh-connect-234
- "226" 'ssh-connect-226
- "231" 'ssh-connect-231
- "142" 'ssh-connect-142
  "141" 'ssh-connect-141
+ "142" 'ssh-connect-142
+ "cs1" 'ssh-connect-cs1
+ "cs2" 'ssh-connect-cs2
+ "gs9" 'ssh-connect-gs9
+ "gs10" 'ssh-connect-gs10
+ "gs11" 'ssh-connect-gs11
+ "gs12" 'ssh-connect-gs12
+ "gs13" 'ssh-connect-gs13
+ "gs14" 'ssh-connect-gs14
+
+ "ocs1" 'ssh-connect-fromout-cs1
+ "ocs2" 'ssh-connect-fromout-cs2
+ "ogs9" 'ssh-connect-fromout-gs9
+ "ogs10" 'ssh-connect-fromout-gs10
+ "ogs11" 'ssh-connect-fromout-gs11
+ "ogs12" 'ssh-connect-fromout-gs12
+ "ogs13" 'ssh-connect-fromout-gs13
+ "ogs14" 'ssh-connect-fromout-gs14
  
  ;; manager for english query.
  "cy" 'gt-do-translate

@@ -61,9 +61,9 @@
 (setq new-tramp-pth
       '(
 	"/home/zi/anaconda3/bin"
-	"/home/zi/anaconda3/condabin"
+	"/home/zi/anaconda3/conda/bin"
 	"/home/liangzi/anaconda3/bin"
-	"/home/liangzi/anaconda3/condabin"
+	"/home/liangzi/anaconda3/conda/bin"
 	"/snap/bin"
 	))
 
@@ -74,74 +74,6 @@
     ))
 
 
-
-(defun ssh-connect-41 ()
-  (interactive)
-  (if *is-windows*
-  (counsel-find-file "/plink:szhang@219.245.186.41:/home/szhang/liangzi_need_smile")
-  (counsel-find-file "/ssh:szhang@219.245.186.41:/home/szhang/liangzi_need_smile")
-  )
-  )
-
-(defun ssh-connect-meidi ()
-  (interactive)
-  (counsel-find-file "/ssh:zijian@128.173.236.231:22/")
-  )
-
-(defun ssh-connect-42 ()
-  (interactive)
-  (if *is-windows*
-  (counsel-find-file "/plink:zliang@219.245.186.42:/home/zliang/")
-  (counsel-find-file "/ssh:zliang@219.245.186.42:/home/zliang/")
-  )
-  )
-
-(defun ssh-connect-45 ()
-  (interactive)
-  (if *is-windows*
-  (counsel-find-file "/plink:liangzi@219.245.186.45:/home/liangzi/")
-  (counsel-find-file "/ssh:liangzi@219.245.186.45:/home/liangzi/")
-  )
-  )
-;; "/ssh:szhang@219.245.186.45:/home/szhang/liangzi_need_smile"
-
-(defun ssh-connect-48 ()
-  (interactive)
-  (if *is-windows*
-   (counsel-find-file "/plink:liangzi@219.245.186.48:/home/liangzi/")
-   (counsel-find-file "/ssh:liangzi@219.245.186.48:/home/liangzi/")
-      )
-  )
-
-(defun ssh-connect-49 ()
-  (interactive)
-  (if *is-windows*
-   (counsel-find-file "/plink:liangzi@219.245.186.49:/home/liangzi/")
-   (counsel-find-file "/ssh:liangzi@219.245.186.49:/home/liangzi/")
-      )
-  )
-
-
-(defun ssh-connect-234 ()
-  (interactive)
-   (counsel-find-file "/ssh:liangzi@158.132.150.234:/home/liangzi/")
-  )
-
-(defun ssh-connect-226 ()
-  (interactive)
-  (if *is-windows*
-  (counsel-find-file "/plink:zi@158.132.150.226:/home/zi/")
-  (counsel-find-file "/ssh:zi@158.132.150.226:/home/zi/")
-  )
-  )
-
-(defun ssh-connect-231 ()
-  (interactive)
-  (if *is-windows*
-  (counsel-find-file "/plink:zi@158.132.150.231:/home/zi/")
-  (counsel-find-file "/ssh:zi@158.132.150.231:/home/zi/")
-  )
-  )
 
 (defun ssh-connect-142 ()
   (interactive)
@@ -166,6 +98,91 @@
   (counsel-find-file "/ssh:ronghua@206.189.46.166:/home/ronghua/")
   )
   )
+
+;; Visit Servers from Internal LLMs.
+
+(defun ssh-connect-cs1 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@cs1.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-cs2 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@cs2.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-gs9 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@gs9.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-gs10 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@gs10.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-gs11 ()
+  (interactive)
+  (counsel-find-file "/ssh:liangzi@gs11.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-gs12 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@gs12.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-gs13 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@gs13.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-gs14 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@gs14.astaple.com:/home/zi")
+  )
+
+;; setting servers from out service.
+
+(defun ssh-connect-fromout-cs1 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@cs1.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-fromout-cs2 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@cs2.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-fromout-gs9 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs9.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-fromout-gs10 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs10.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-fromout-gs11 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:liangzi@gs11.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-fromout-gs12 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs12.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-fromout-gs13 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs13.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-fromout-gs14 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs14.astaple.com:/home/zi")
+  )
+
 
 (defun ssh-connect-fromout-226 ()
   (interactive)
