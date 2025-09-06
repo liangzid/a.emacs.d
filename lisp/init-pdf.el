@@ -10,10 +10,10 @@
 ;;
 ;;; Code:
 
-(use-package reader
-:straight '(reader :type git :host codeberg :repo "divyaranjan/emacs-reader"
-	    :files ("reader.el" "render-core.so")
-	    :pre-build ("make" "all")))
+;; (use-package reader
+;; :straight '(reader :type git :host codeberg :repo "divyaranjan/emacs-reader"
+;; 	    :files ("reader.el" "render-core.so")
+;; 	    :pre-build ("make" "all")))
 
 (provide 'init-pdf)
 
