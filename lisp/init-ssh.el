@@ -141,6 +141,16 @@
   (counsel-find-file "/ssh:zi@gs14.astaple.com:/home/zi")
   )
 
+(defun ssh-connect-gs15 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@gs15.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-gs16 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@gs16.astaple.com:/home/zi")
+  )
+
 ;; setting servers from out service.
 
 (defun ssh-connect-fromout-cs1 ()
@@ -181,6 +191,16 @@
 (defun ssh-connect-fromout-gs14 ()
   (interactive)
   (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs14.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-fromout-gs15 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs15.astaple.com:/home/zi")
+  )
+
+(defun ssh-connect-fromout-gs16 ()
+  (interactive)
+  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs16.astaple.com:/home/zi")
   )
 
 

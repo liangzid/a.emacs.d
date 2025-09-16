@@ -221,6 +221,8 @@
  "gs12" 'ssh-connect-gs12
  "gs13" 'ssh-connect-gs13
  "gs14" 'ssh-connect-gs14
+ "gs15" 'ssh-connect-gs15
+ "gs16" 'ssh-connect-gs16
 
  "ocs1" 'ssh-connect-fromout-cs1
  "ocs2" 'ssh-connect-fromout-cs2
@@ -230,6 +232,8 @@
  "ogs12" 'ssh-connect-fromout-gs12
  "ogs13" 'ssh-connect-fromout-gs13
  "ogs14" 'ssh-connect-fromout-gs14
+ "ogs15" 'ssh-connect-fromout-gs15
+ "ogs16" 'ssh-connect-fromout-gs16
  
  ;; manager for english query.
  "cy" 'gt-do-translate
