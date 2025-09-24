@@ -3,7 +3,7 @@
 (my/install-package-if-not-found 'orderless)
 (my/install-package-if-not-found 'company-box)
 (my/install-package-if-not-found 'company-prescient)
-;; (my/install-package-if-not-found 'go-translate)
+(my/install-package-if-not-found 'gt)
 
 ;; (my/install-package-if-not-found 'exec-path-from-shell)
 
@@ -15,12 +15,12 @@
 (command-log-mode 1)
 
 ;; Configure the translation.
-;; (require 'go-translate)
-;; (setq gt-langs '(en zh))
-;; (setq gt-default-translator
-;;      (gt-translator :engines (gt-bing-engine)
-;;		     :render (gt-posframe-pop-render)))
-;; (global-set-key (kbd "C-c y") 'gt-do-translate)
+(require 'gt)
+(setq gt-langs '(en zh))
+(setq gt-default-translator
+     (gt-translator :engines (gt-bing-engine)
+		     :render (gt-posframe-pop-render)))
+(global-set-key (kbd "C-c y") 'gt-translate)
 
 
 (require 'projectile)

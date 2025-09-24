@@ -236,7 +236,7 @@
  "ogs16" 'ssh-connect-fromout-gs16
  
  ;; manager for english query.
- "cy" 'gt-do-translate
+ "cy" 'gt-translate
  "te" 'toggle-company-english-helper
 
  ;; manager for other frequency.

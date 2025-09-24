@@ -13,6 +13,10 @@
 			 "/anaconda3/bin") t)
 (add-to-list 'exec-path 
 			 "/snap/bin" t)
+
+(setenv "LC_ALL" "C.UTF-8")
+(setenv "LANG"   "C.UTF-8")
+
 ;; ;;;; Config Python Path
 ;; (use-package pyvenv
 ;;   :ensure t
