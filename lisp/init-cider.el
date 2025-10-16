@@ -13,6 +13,6 @@
 (my/install-package-if-not-found 'cider)
 
 ;;; init-cider.el ends here
-(require 'cider)
+;; (require 'cider)
 
 (provide 'init-cider)

@@ -54,9 +54,12 @@
    ;; (setq tramp-ssh-extra-args "-o ForwardAgent=yes")
     )
     )
-
-(add-to-list 'tramp-ssh-controlmaster-options
-             "-o ServerAliveInterval=60 -o ServerAliveCountMax=3")
+(require 'tramp)
+(with-eval-after-load 'tramp
+  (unless (boundp 'tramp-ssh-controlmaster-options)
+    (setq tramp-ssh-controlmaster-options nil))
+  (add-to-list 'tramp-ssh-controlmaster-options
+               "-o ServerAliveInterval=60 -o ServerAliveCountMax=3"))
 
 (setq new-tramp-pth
       '(

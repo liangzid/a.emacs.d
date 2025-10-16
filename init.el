@@ -49,7 +49,6 @@
 (add-to-list 'load-path "~/.emacs.d/other-files")
 ;; (add-to-list 'load-path "~/.emacs.d/other-files/netease-cloud-music.el")
 
-(defconst *is-server* t)
 
 ;; ;;; Config =straight.el= for common usages
 ;; (defvar bootstrap-version)
