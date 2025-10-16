@@ -11,6 +11,24 @@
 ;;  2. HTML for blogs
 ;;; Code:
 
+
+(my/install-package-if-not-found 'ox-reveal)
+;; NEW in 2025: I decide to use =reveal.js= for slides presentation.
+
+(with-eval-after-load 'ox
+  (require 'ox-reveal))
+
+(setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@4.3.1")
+(setq org-reveal-hlevel 2)           
+(setq org-reveal-theme "moon")
+(setq org-reveal-plugins '(classList markdown highlight zoom notes))
+
+
+
+
+
+
+
 ;;==================================
 ;;          begin: org-to-latex
 ;;==================================
