@@ -4,7 +4,7 @@ echo "================================================================"
 echo "                 RUNNING INSTALL PACKAGES                    "
 echo "================================================================"
 
-export installList=("xsel" "gdb" "w3m" "aspell" \
+export installList=("xclip" "xsel" "gdb" "w3m" "aspell" \
 		    "scrot" "openjdk-17-jdk" "graphviz"\
 		    "python3" "python-is-python3" "pipenv"\
 		    "mplayer" "socat" "cmake" "zsh" "ripgrep"
