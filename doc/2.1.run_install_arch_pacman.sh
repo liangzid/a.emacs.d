@@ -5,6 +5,7 @@ echo "                 RUNNING INSTALL PACKAGES (Arch Linux)          "
 echo "================================================================"
 
 export installList=(
+    "xclip" \
     "xsel" "gdb" "w3m" "aspell" \
     "scrot" "jdk17-openjdk" "graphviz" \
     "python" "python-pipenv" \

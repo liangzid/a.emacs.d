@@ -145,20 +145,22 @@
  '(magit-diff-use-overlays nil)
  '(org-agenda-files nil)
  '(package-selected-packages
-   '(straight git-gutter challenger-deep-theme challenger-deeper-theme
-	      fantom-theme dracula-theme eglot avy mwim nerd-icons
-	      go-translate doom-modeline rg vue-mode haskell-mode
-	      format-all company-prescient company-box tao-theme
-	      sublime-themes gruvbox-theme modus-themes
-	      almost-mono-themes beacon langtool lsp-ltex
-	      lsp-grammarly ivy-posframe counsel-tramp tramp
-	      dockerfile-mode use-package rime pyim-basedict posframe
-	      pyim winum org-alert org-pomodoro org-pomotoro
-	      org-promotoro jinx wucuo marginalia lsp-mode
-	      all-the-icons-dired all-the-icons-completion
-	      all-the-icons doom-themes zenburn-theme inkpot-theme
-	      ample-theme nimbus-theme kaolin-themes solarized-theme
-	      darcula-theme zoom-window zoom company))
+   '(all-the-icons all-the-icons-completion all-the-icons-dired
+		   almost-mono-themes ample-theme avy beacon
+		   challenger-deep-theme challenger-deeper-theme
+		   company company-box company-prescient counsel-tramp
+		   darcula-theme dockerfile-mode doom-modeline
+		   doom-themes dracula-theme eglot fantom-theme
+		   format-all git-gutter go-translate gruvbox-theme
+		   haskell-mode inkpot-theme ivy-posframe jinx
+		   kaolin-themes langtool lsp-grammarly lsp-ltex
+		   lsp-mode marginalia modus-themes mwim nerd-icons
+		   nimbus-theme org-alert org-fragtog org-modern
+		   org-pomodoro org-pomotoro org-promotoro org-reveal
+		   org-superstar ox-reveal pangu-spacing posframe pyim
+		   pyim-basedict rg rime solarized-theme straight
+		   sublime-themes tao-theme tramp use-package valign
+		   vue-mode winum wucuo zenburn-theme zoom zoom-window))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)

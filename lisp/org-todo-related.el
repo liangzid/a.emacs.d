@@ -61,9 +61,8 @@
 ;; (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "<f12>") 'org-agenda)
 
-(setq org-agenda-files '("~/orgtodo/*.org"
-			 "~/orgtodo/extracting_developers_data.org"
-			 "~/orgtodo/2025-A.org"
+(setq org-agenda-files '(
+			 "~/orgtodo/2025-C.org"
 			 ))
 
 

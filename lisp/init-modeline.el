@@ -42,7 +42,7 @@
 (setq-default header-line-format
 	      (list
     ;; buffer name
-    "[%b] <%f> 雨中泡沫"
+    "[%b] <%f> Just One Last Dance"
 
     ;; ;; buffer file encoding
     ;; '(:eval (let ((sys (coding-system-plist buffer-file-coding-system)))

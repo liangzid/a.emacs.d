@@ -68,7 +68,7 @@
 
 ;; 激活高亮当前行的功能
 (require 'hl-line)
-(global-hl-line-mode)
+(global-hl-line-mode -1)
 
 ;; 取消UI界面的多余展示
 (tool-bar-mode 0)

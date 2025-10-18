@@ -24,13 +24,13 @@
              :auto-preamble t
              :section-numbers t
              :author "Liang Zi"
-             :email "frostliangzi@qq.com"
+             :email "liangzi20163933@qq.com"
 	     ;; :exclude-tags "noshow"
              :auto-sitemap t                  ; 自动生成 sitemap.org 文件
              :sitemap-filename "sitemap.org"  ; ... call it sitemap.org (it's the default)...
              :sitemap-title "Zi's Blog"         ; ... with title 'Sitemap'.
              :sitemap-sort-files anti-chronologically
-             :sitemap-file-entry-format "%d %t"
+             :sitemap-file-entry-format "%t"
 	     :sitemap-format-entry lz/org-publish-sitemap-with-time
 
 	     ;; :html-head "<link rel='stylesheet' type='text/css' href='https://liangzid.github.io/orgcss/org.css'/>"
@@ -40,7 +40,7 @@
 
 	     :html-preamble t
 
-	     :html-preamble-format (("en" "<nav class=\"nav\"> <a href=\"/index.html\" class=\"button\">Home</a> <a href=\"/sitemap.html\" class=\"button\">Sitemaps</a> </nav> <hr>"))
+	     :html-preamble-format (("en" "<nav class=\"nav\"> <a href=\"/index.html\" class=\"button\">Home</a> <a href=\"/about.html\" class=\"button\">About</a> <a href=\"/sitemap.html\" class=\"button\">Sitemaps</a> </nav> <hr>"))
 
 	     :html-postamble t
 	     :html-postamble-format (("en" "<hr class=\"Solid\"> <div class=\"info\"> <span class=\"author\">Author: %a (%e)</span> <span class=\"date\">Create Date: %d</span> <span class=\"date\">Last modified: %C</span> <span>Creator: %c</span> </div>"))

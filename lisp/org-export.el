@@ -11,6 +11,31 @@
 ;;  2. HTML for blogs
 ;;; Code:
 
+
+(my/install-package-if-not-found 'ox-reveal)
+;; NEW in 2025: I decide to use =reveal.js= for slides presentation.
+
+(use-package ox-reveal
+  :ensure t
+  :config
+  ;; (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
+  (setq org-reveal-root (expand-file-name "../reveal.js"))
+  (setq org-reveal-hlevel 2)
+  (setq org-reveal-plugins '(markdown notes highlight zoom))
+  (setq org-reveal-theme "moon")
+  (use-package htmlize
+    :ensure t)
+  (setq org-reveal-highlight-css "%r/dist/theme/source/zenburn.css")
+  (setq org-reveal-mathjax-url "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"))
+
+(setq org-export-with-toc nil) ; Disable automatic TOC by default
+(setq org-reveal-title-slide 'auto) ; Enable default title slide
+
+
+
+
+
+
 ;;==================================
 ;;          begin: org-to-latex
 ;;==================================
@@ -113,8 +138,8 @@
 
 (setq org-html-coding-system 'utf-8)
 (setq org-html-doctype "html5")
-(setq org-html-head
-      "<link rel='stylesheet' type='text/css' href='https://gongzhitaao.org/orgcss/org.css'/> ")
+;; (setq org-html-head
+;;       "<link rel='stylesheet' type='text/css' href='https://gongzhitaao.org/orgcss/org.css'/> ")
 
 (provide 'org-export)
 ;; ;;=====================================

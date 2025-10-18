@@ -22,7 +22,7 @@
 
 (define-key python-mode-map (kbd "C-d") 'anaconda-mode-find-definitions)
 (define-key python-mode-map (kbd "C-c d") 'anaconda-mode-find-definitions-other-window)
-(define-key python-mode-map (kbd "M-r") 'anaconda-mode-find-references)
+;; (define-key python-mode-map (kbd "M-r") 'anaconda-mode-find-references)
 (define-key python-mode-map (kbd "C-c r") 'anaconda-mode-find-references)
 
 ;; (add-hook 'python-mode-hook 'anaconda-mode)
