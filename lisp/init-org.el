@@ -29,7 +29,7 @@
 ;; (message "========begin for auto image thing.============")
 (add-hook 'org-mode-hook (auto-image-file-mode t))
 ;; (org-toggle-inline-images)
-(add-hook 'org-mode-hook #'iimage-mode)
+;; (add-hook 'org-mode-hook #'iimage-mode)
 ;; (message "====end for auto image thing====")
 
 

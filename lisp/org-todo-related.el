@@ -215,43 +215,43 @@
    (concat "截止时间: " (org-entry-get (point) "DEADLINE"))))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 安装和加载 org-pomodoro 插件
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package org-pomodoro
-  :ensure t
-  :config
-  ;; 设置番茄工作法时钟周期
-  (setq org-pomodoro-length 25) ; 25 分钟的工作时间
-  (setq org-pomodoro-short-break-length 5) ; 5 分钟的短休息
-  (setq org-pomodoro-long-break-length 15) ; 15 分钟的长休息
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;; 安装和加载 org-pomodoro 插件
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (use-package org-pomodoro
+;;   :ensure t
+;;   :config
+;;   ;; 设置番茄工作法时钟周期
+;;   (setq org-pomodoro-length 25) ; 25 分钟的工作时间
+;;   (setq org-pomodoro-short-break-length 5) ; 5 分钟的短休息
+;;   (setq org-pomodoro-long-break-length 15) ; 15 分钟的长休息
 
-  ;; 启用声音提醒
-  (setq org-pomodoro-play-sounds t)
+;;   ;; 启用声音提醒
+;;   (setq org-pomodoro-play-sounds nil)
 
-  ;; 自定义声音文件的路径（可选）
-  ;; (setq org-pomodoro-sound-player "/usr/bin/mpg123")
+;;   ;; 自定义声音文件的路径（可选）
+;;   ;; (setq org-pomodoro-sound-player "/usr/bin/mpg123")
 
-  ;; 在完成番茄时自动开始短休息
-  (add-hook 'org-pomodoro-finished-hook
-            (lambda ()
-              (org-pomodoro-start :short-break)))
+;;   ;; 在完成番茄时自动开始短休息
+;;   (add-hook 'org-pomodoro-finished-hook
+;;             (lambda ()
+;;               (org-pomodoro-start :short-break)))
 
-  ;; 在完成短休息时自动开始新的番茄
-  (add-hook 'org-pomodoro-short-break-finished-hook
-            (lambda ()
-              (org-pomodoro-start)))
+;;   ;; 在完成短休息时自动开始新的番茄
+;;   (add-hook 'org-pomodoro-short-break-finished-hook
+;;             (lambda ()
+;;               (org-pomodoro-start)))
 
-  ;; 自定义状态变化的回调函数
-  (setq org-pomodoro-start-sound-p t) ; 启用开始番茄时的声音提醒
-  (setq org-pomodoro-tick-finished-sound-p t) ; 启用番茄结束时的声音提醒
-  (setq org-pomodoro-killed-sound-p t) ; 启用取消番茄时的声音提醒
+;;   ;; 自定义状态变化的回调函数
+;;   (setq org-pomodoro-start-sound-p t) ; 启用开始番茄时的声音提醒
+;;   (setq org-pomodoro-tick-finished-sound-p t) ; 启用番茄结束时的声音提醒
+;;   (setq org-pomodoro-killed-sound-p t) ; 启用取消番茄时的声音提醒
 
-  ;; 设置番茄工作法时钟显示样式
-  (setq org-pomodoro-format "Pomodoro: %s"))
+;;   ;; 设置番茄工作法时钟显示样式
+;;   (setq org-pomodoro-format "Pomodoro: %s"))
 
-;; 设置快捷键
-(global-set-key (kbd "C-c p") 'org-pomodoro)
+;; ;; 设置快捷键
+;; (global-set-key (kbd "C-c p") 'org-pomodoro)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
