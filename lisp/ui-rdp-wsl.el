@@ -22,9 +22,10 @@
     ;;   font-ls)
     ;;  :weight 'normal)
 
-	(set-face-attribute 'default nil :font "Iosevka 17"
+    (set-face-attribute 'default nil
+			    :font "JetbrainsMono 17"
 			    :weight 'normal
-			    :foreground "#A9F16C"
+			    ;; :foreground "#A9F16C"
 			    ;; :foreground "#badc58"
 			    )
         (set-face-attribute 'font-lock-comment-face nil

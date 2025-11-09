@@ -115,7 +115,8 @@
 
 	(set-face-attribute 'default nil 
 			    ;; :font "Iosevka 17"
-			    :font "JetbrainsMono 12"
+			    :font "LXGWWenKaiMono 18"
+			    ;; :font "JetbrainsMono 12"
 			    :weight 'normal
 			    :foreground "#A9F16C")
         ;; (set-face-attribute 'org-headline-done nil
@@ -211,12 +212,16 @@
 (my/set-fonts font-ls)
 
 ;; Then load theme but don't allow it to override our custom faces
-(load-theme 'challenger-deep t)  ;; Third argument prevents override
+;; (load-theme 'challenger-deep t)  ;; Third argument prevents override
+(load-theme 'monokai t)  ;; Third argument prevents override
 
 (set-face-attribute 'default nil 
-		    :font "Iosevka 17"
+		    ;; :font "Iosevka 17"
+		    :font "JetbrainsMono 15"
+		    ;; :font "FantasqueSansMono 18"
 		    :weight 'normal
-		    :foreground "#A9F16C")
+		    ;; :foreground "#A9F16C"
+		    )
 
 ;; Now set our custom faces that should persist
 (set-face-attribute 'font-lock-keyword-face nil
