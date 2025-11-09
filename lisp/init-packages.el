@@ -1,4 +1,4 @@
-(require 'cl)
+;; (require 'cl)
 (require 'use-package)
 (my/install-package-if-not-found 'orderless)
 (my/install-package-if-not-found 'company-box)
@@ -15,18 +15,21 @@
 (command-log-mode 1)
 
 ;; Configure the translation.
-(require 'gt)
-(setq gt-langs '(en zh))
-(setq gt-default-translator
-     (gt-translator :engines (gt-bing-engine)
-		     :render (gt-posframe-pop-render)))
-(global-set-key (kbd "C-c y") 'gt-translate)
+(use-package gt
+  :ensure t
+  :defer t                    ; 不立即加载
+  :custom
+  (gt-langs '(en zh))
+  (gt-default-translator
+   (gt-translator :engines (gt-bing-engine)
+                  :render (gt-posframe-pop-render)))
+  :bind ("C-c y" . gt-translate))
 
-
-(require 'projectile)
-(projectile-mode 1)
-;; Recommended keymap prefix on Windows/Linux
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+;; ------ I think it will make the tramp somewhat slow. So I remove it.
+;; (require 'projectile)
+;; (projectile-mode 1)
+;; ;; Recommended keymap prefix on Windows/Linux
+;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;;;;
   ;; 评价：适合自己写库的人使用，目前感觉还不是很好用，就不多做评论了

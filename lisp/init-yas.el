@@ -26,11 +26,17 @@
   (auto-insert-mode 1)
 
   :config
-  (define-auto-insert "\\.el$" ["~/.emacs.d/auto-insert/default-el.el" lz/autoinsert-yas-expand])
-  (define-auto-insert "\\.sh$" ["~/.emacs.d/auto-insert/default-sh.sh" lz/autoinsert-yas-expand])
-  (define-auto-insert "\\.html$" ["~/.emacs.d/auto-insert/default-html.html" lz/autoinsert-yas-expand])
-  (define-auto-insert "\\.py$" ["~/.emacs.d/auto-insert/default-py.py" lz/autoinsert-yas-expand])
-  (define-auto-insert "\\.org$" ["~/.emacs.d/auto-insert/default-org.org" lz/autoinsert-yas-expand])
+  (define-auto-insert "\\.el$"
+    [
+     (expand-file-name "~/.emacs.d/auto-insert/default-el.el")
+     lz/autoinsert-yas-expand])
+  (define-auto-insert "\\.sh$"
+    [ (expand-file-name "~/.emacs.d/auto-insert/default-sh.sh") lz/autoinsert-yas-expand])
+  (define-auto-insert "\\.html$"
+    [
+     (expand-file-name "~/.emacs.d/auto-insert/default-html.html") lz/autoinsert-yas-expand])
+  (define-auto-insert "\\.py$" [(expand-file-name "~/.emacs.d/auto-insert/default-py.py") lz/autoinsert-yas-expand])
+  (define-auto-insert "\\.org$" [(expand-file-name "~/.emacs.d/auto-insert/default-org.org") lz/autoinsert-yas-expand])
   (define-auto-insert "\\.txt$" ["~/.emacs.d/auto-insert/default-txt.txt" lz/autoinsert-yas-expand])
   ;; (define-auto-insert "\\.py$" ["default-py.py" lz/autoinsert-yas-expand])
   )

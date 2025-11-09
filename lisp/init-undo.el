@@ -15,6 +15,7 @@
     (setq undo-tree-visualizer-timestamps t)
     (setq undo-tree-visualizer-diff t)
     ))
+(global-undo-tree-mode)
 
 (global-set-key (kbd "C-x u") 'undo-tree-undo)
 

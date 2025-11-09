@@ -17,13 +17,6 @@
 (setenv "LC_ALL" "C.UTF-8")
 (setenv "LANG"   "C.UTF-8")
 
-;; ;;;; Config Python Path
-;; (use-package pyvenv
-;;   :ensure t
-;;   :config (pyvenv-mode 1)
-;;   )
-;; (pyvenv-activate "~/.emacs.d/.venv")
-
 ;; (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-threshold (* 50 1024 1024)) 
 
@@ -35,8 +28,6 @@
 
 (set-frame-parameter nil 'alpha-background  0.90)
 ;; (setq default-frame-alist '((alpha-background . 99)))
-
-;; (set-frame-parameter nil 'alpha 0.99999)
 
 (defun open-my-init-file()
   (interactive)
@@ -85,7 +76,7 @@
 (require 'init-citre)
 (require 'init-python)
 ;;(require 'init-haskell)
-(require 'init-latex)
+(require 'init-latex) ;; Not optimized yet.
 (require 'init-cl)
 (require 'init-cpp)
 (require 'init-rust)

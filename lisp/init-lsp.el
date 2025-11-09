@@ -1,6 +1,5 @@
 (my/install-package-if-not-found 'eglot)
 
-(global-company-mode)
 ;; (require 'eglot)
 ;; (add-hook 'rust-mode-hook 'eglot-ensure)
 ;; (add-hook 'python-mode-hook 'eglot-ensure)
