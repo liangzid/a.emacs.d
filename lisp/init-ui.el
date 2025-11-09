@@ -303,20 +303,32 @@ load a beautiful theme."
 
 
 ;; (load-theme 'monokai t)
-(require 'rainbow-mode)
-(require ' rainbow-delimiters)
-(add-hook 'prog-mode-hook (rainbow-mode t))
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
-(rainbow-turn-on)
-(set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
-(set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
-(set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue
-(set-face-foreground 'rainbow-delimiters-depth-4-face "#cc6")  ; yellow
-(set-face-foreground 'rainbow-delimiters-depth-5-face "#6cc")  ; cyan
-(set-face-foreground 'rainbow-delimiters-depth-6-face "#c6c")  ; magenta
-(set-face-foreground 'rainbow-delimiters-depth-7-face "#ccc")  ; light gray
-(set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
-(set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
+;; rainbow-delimiters
+(use-package rainbow-delimiters
+  :ensure t
+  :hook (prog-mode-hook text-mode-hook))
+
+;; rainbow-mode（针对普通文本）
+(use-package rainbow-mode
+  :ensure t
+  :diminish rainbow-mode
+  :commands rainbow-mode
+  :config (rainbow-mode 1))   ; 加载完再开全局
+
+;; (require 'rainbow-mode)
+;; (require ' rainbow-delimiters)
+;; (add-hook 'prog-mode-hook (rainbow-mode t))
+;; (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
+;; (rainbow-turn-on)
+;; (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
+;; (set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
+;; (set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue
+;; (set-face-foreground 'rainbow-delimiters-depth-4-face "#cc6")  ; yellow
+;; (set-face-foreground 'rainbow-delimiters-depth-5-face "#6cc")  ; cyan
+;; (set-face-foreground 'rainbow-delimiters-depth-6-face "#c6c")  ; magenta
+;; (set-face-foreground 'rainbow-delimiters-depth-7-face "#ccc")  ; light gray
+;; (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
+;; (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
 
 
 ;; 设置编码格式为UTF-8

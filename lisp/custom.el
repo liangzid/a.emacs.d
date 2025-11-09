@@ -154,16 +154,16 @@
 		   dracula-theme eglot fantom-theme format-all
 		   git-gutter go-translate gruvbox-theme haskell-mode
 		   inkpot-theme ivy-posframe jinx kaolin-themes
-		   langtool lsp-grammarly lsp-ltex lsp-mode marginalia
-		   modus-themes mwim nerd-icons nimbus-theme org-alert
-		   org-dynamic-bullets org-fragtog org-modern
-		   org-pomodoro org-pomotoro org-promotoro org-reveal
-		   org-superstar org-visual-indent
-		   org-visual-indent-mode ox-reveal pangu-spacing
-		   posframe pyim pyim-basedict rg rime solarized-theme
-		   straight sublime-themes tao-theme tramp use-package
-		   valign vue-mode winum wucuo zenburn-theme zoom
-		   zoom-window))
+		   langtool lsp-grammarly lsp-ltex lsp-mode magit
+		   marginalia modus-themes mwim nerd-icons
+		   nimbus-theme org-alert org-dynamic-bullets
+		   org-fragtog org-modern org-pomodoro org-pomotoro
+		   org-promotoro org-reveal org-superstar
+		   org-visual-indent org-visual-indent-mode ox-reveal
+		   pangu-spacing posframe pyim pyim-basedict rg rime
+		   solarized-theme straight sublime-themes tao-theme
+		   telega tramp use-package valign vue-mode winum
+		   wucuo zenburn-theme zoom zoom-window))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)

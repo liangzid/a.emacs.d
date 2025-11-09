@@ -1,16 +1,16 @@
-;; (require 'cl)
+(require 'cl)
 (require 'use-package)
 (my/install-package-if-not-found 'orderless)
 (my/install-package-if-not-found 'company-box)
 (my/install-package-if-not-found 'company-prescient)
 (my/install-package-if-not-found 'gt)
+(my/install-package-if-not-found 'magit)
 
 ;; (my/install-package-if-not-found 'exec-path-from-shell)
 
 ;; (require 'exec-path-from-shell)
 
 ;; (exec-path-from-shell-initialize)
-
 
 (command-log-mode 1)
 
@@ -24,6 +24,7 @@
    (gt-translator :engines (gt-bing-engine)
                   :render (gt-posframe-pop-render)))
   :bind ("C-c y" . gt-translate))
+
 
 ;; ------ I think it will make the tramp somewhat slow. So I remove it.
 ;; (require 'projectile)
