@@ -150,7 +150,7 @@
   (unless (package-installed-p pkg)
     ;;	(when (need-refresh-contents)
     (message "%s" "Refreshing package database...")
-    ;;(package-refresh-contents)
+    ;; (package-refresh-contents)
     )
   ;;	  )
   (message "install package %s ..." pkg)

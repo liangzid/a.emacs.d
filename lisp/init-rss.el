@@ -17,6 +17,7 @@
 ;; use an org file to organise feeds
 (use-package elfeed-org
   :ensure t
+  :defer t
   :config
   (elfeed-org)
   (setq rmh-elfeed-org-files (list "~/.emacs.d/feeds/myfeeds.org")))

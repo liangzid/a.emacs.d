@@ -64,7 +64,7 @@
 ;; (advice-add 'company-capf--candidates :around #'just-one-face)
 ;; ;; 自动补全
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+(require 'company)
 (setq company-idle-delay 0)
 (setq company-minimum-prefix-length 1)
 (add-hook 'latex-mode-hook
@@ -77,6 +77,7 @@
 (setq company-tooltip-flip-when-above t)
 (setq company-require-match nil)
 (setq company-global-modes '(not sh-mode))
+(global-company-mode)
 ;; 暂时关闭 COMPANY MODE
 
 ;; (setq company-auto-complete-chars '((kbd "TAB")))

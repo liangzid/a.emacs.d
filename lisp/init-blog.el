@@ -1,12 +1,13 @@
-(require 'ox-publish)
-;; (require 'ox-rss)
-
-
 (defvar blog-note-path "~/liangzid.github.io/orgs/" "my path of take notes.")
-
 (defun open-org-note()
   (interactive)
   (counsel-find-file blog-note-path))
+
+(use-package ox-publish
+  :ensure nil                 ; 内置库
+  :defer t                    ; 不立即加载
+  :config
+
 
 (setq org-publish-project-alist
       '(
@@ -56,6 +57,8 @@
           )
          ("blog" :components ("blog-notes" "blog-static"))
         ))
+
+  )
 
 (defun lz/org-publish-sitemap-with-time (entry style project)
   "Format ENTRY for the RSS feed.

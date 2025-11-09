@@ -307,8 +307,7 @@ load a beautiful theme."
 (require ' rainbow-delimiters)
 (add-hook 'prog-mode-hook (rainbow-mode t))
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
-(rainbow-mode t)
-(rainbow-delimiters-mode t)
+(rainbow-turn-on)
 (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
 (set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
 (set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue
@@ -352,15 +351,15 @@ load a beautiful theme."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\
 
 ;; set icons
-(if (and *is-gui* (not (equal *is-gui* ":0")))
-    (progn
-      (require 'all-the-icons)
-      ;; now config all the icons completion
-      (require 'all-the-icons-completion)
-      (all-the-icons-completion-mode)
-      ;; now config dired
-      (load "all-the-icons-dired.el")
-      (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)))
+;; (if (and *is-gui* (not (equal *is-gui* ":0")))
+;;     (progn
+;;       (require 'all-the-icons)
+;;       ;; now config all the icons completion
+;;       (require 'all-the-icons-completion)
+;;       (all-the-icons-completion-mode)
+;;       ;; now config dired
+;;       (load "all-the-icons-dired.el")
+;;       (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)))
 
 
 

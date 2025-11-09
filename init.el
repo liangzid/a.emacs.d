@@ -1,3 +1,9 @@
+;; (setq use-package-compute-statistics t)   ; early-init.el 或 init.el 最前面
+;; (use-package benchmark-init               ; 可选，提供更细瀑布图
+;;   :ensure t
+;;   :config
+;;   (benchmark-init/activate))
+
 ;;;;; Config Environment Path 
 (add-to-list 'exec-path (concat
 			 (getenv "HOME")
