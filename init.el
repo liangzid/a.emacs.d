@@ -87,7 +87,7 @@
 (require 'init-cpp)
 (require 'init-rust)
 (require 'init-cider)
-(require 'init-blog)
+;; (require 'init-blog)
 (require 'init-web)
 ;;(require 'init-astaple)
 (require 'init-path)
