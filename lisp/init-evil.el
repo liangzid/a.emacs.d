@@ -287,7 +287,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; resetting the vanilla emacs Keybindings
 ;; (global-set-key (kbd "C-e") 'move-end-of-line)
-(define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line)
+(define-key evil-normal-state-map (kbd "C-e") 'mwim-end-of-line-or-code)
+(define-key evil-visual-state-map (kbd "C-e") 'mwim-end-of-line-or-code)
 (define-key evil-normal-state-map (kbd "C-p") 'previous-line)
 (define-key evil-normal-state-map (kbd "C-n") 'next-line)
 (define-key evil-normal-state-map (kbd "C-b") 'backward-char)
