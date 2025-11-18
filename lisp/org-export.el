@@ -19,7 +19,7 @@
   :ensure t
   :config
   ;; (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
-  (setq org-reveal-root (expand-file-name "../reveal.js"))
+  (setq org-reveal-root (expand-file-name "~/.emacs.d/reveal.js"))
   (setq org-reveal-hlevel 2)
   (setq org-reveal-plugins '(markdown notes highlight zoom))
   (setq org-reveal-theme "moon")

@@ -33,7 +33,7 @@
 	 )
 
     (unless (file-directory-p "./images/")
-      (make-directory img-dir t))
+      (make-directory "./images/" t))
     ;; xclip -selection clipboard -t TARGETS -o
     (shell-command (concat "xclip -selection clipboard -t image/png -o >" file-path))
     (insert (concat "[[file:" file-path "]]"))
