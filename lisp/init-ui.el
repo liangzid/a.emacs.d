@@ -186,6 +186,26 @@
 		    ;; gruvbox-light-medium
 		    ;; gruvbox-light-hard
 		    ;; tao-yang
+
+
+		    ef-arbutus
+		    ef-cyprus
+		    ef-day
+		    ef-deuteranopia-light
+		    ef-duo-light
+		    ef-eagle
+		    ef-elea-light
+		    ef-frost
+		    ef-kassio
+		    ef-light
+		    ef-maris-light
+		    ef-melissa-light
+		    ef-reverie
+		    ef-spring
+		    ef-summer
+		    ef-trio-light
+		    ef-tritanopia-light
+
 	))
 (setq dark-themes '(
 		;;; Beautiful but cannot be used.
@@ -193,15 +213,34 @@
 		;; doom-dracula
 		;; doom-feather-dark
 
+
+		ef-autumn
+		ef-bio
+		ef-cherie
+		ef-dark
+		ef-deuteranopia-dark
+		ef-dream
+		ef-duo-dark
+		ef-elea-dark
+		ef-maris-dark
+		ef-melissa-dark
+		ef-night
+		ef-owl
+		ef-rosa
+		ef-symbiosis
+		ef-trio-dark
+		ef-tritanopia-dark
+		ef-winter
+		    
 		;;; dark
-		kaolin-eclipse
-		kaolin-dark
-		kaolin-aurora
-		kaolin-blossom
-		kaolin-galaxy
-		kaolin-valley-dark
-		kaolin-mono-dark
-		kaolin-shiva
+		;; kaolin-eclipse
+		;; kaolin-dark
+		;; kaolin-aurora
+		;; kaolin-blossom
+		;; kaolin-galaxy
+		;; kaolin-valley-dark
+		;; kaolin-mono-dark
+		;; kaolin-shiva
 
 		;; gruvbox-dark-medium
 		;; gruvbox-dark-hard
@@ -213,7 +252,62 @@
 
 ;; Then load theme but don't allow it to override our custom faces
 ;; (load-theme 'challenger-deep t)  ;; Third argument prevents override
-(load-theme 'monokai t)  ;; Third argument prevents override
+
+;; (load-theme 'monokai t)  ;; Third argument prevents override
+
+;; (use-package standard-themes
+;;   :ensure t
+;;   :init
+;;   ;; This makes the Modus commands listed below consider only the Ef
+;;   ;; themes.  For an alternative that includes Modus and all
+;;   ;; derivative themes (like Ef), enable the
+;;   ;; `modus-themes-include-derivatives-mode' instead.  The manual of
+;;   ;; the Ef themes has a section that explains all the possibilities:
+;;   ;;
+;;   ;; - Evaluate `(info "(standard-themes) Working with other Modus themes or taking over Modus")'
+;;   ;; - Visit <https://protesilaos.com/emacs/standard-themes#h:d8ebe175-cd61-4e0b-9b84-7a4f5c7e09cd>
+;;   :bind
+;;   (("<f5>" . modus-themes-rotate)
+;;    ("C-<f5>" . modus-themes-select)
+;;    ("M-<f5>" . modus-themes-load-random))
+;;   :config
+;;   ;; All customisations here.
+;;   (standard-themes-take-over-modus-themes-mode 1)
+;;   (setq modus-themes-mixed-fonts t)
+;;   (setq modus-themes-italic-constructs t)
+
+;;   ;; Finally, load your theme of choice (or a random one with
+;;   ;; `modus-themes-load-random', `modus-themes-load-random-dark',
+;;   ;; `modus-themes-load-random-light').
+;;   (modus-themes-load-theme 'standard-light-tinted))
+
+(use-package ef-themes
+  :ensure t
+  :init
+  ;; This makes the Modus commands listed below consider only the Ef
+  ;; themes.  For an alternative that includes Modus and all
+  ;; derivative themes (like Ef), enable the
+  ;; `modus-themes-include-derivatives-mode' instead.  The manual of
+  ;; the Ef themes has a section that explains all the possibilities:
+  ;;
+  ;; - Evaluate `(info "(ef-themes) Working with other Modus themes or taking over Modus")'
+  ;; - Visit <https://protesilaos.com/emacs/ef-themes#h:6585235a-5219-4f78-9dd5-6a64d87d1b6e>
+  :bind
+  (("<f5>" . modus-themes-rotate)
+   ("C-<f5>" . modus-themes-select)
+   ("M-<f5>" . modus-themes-load-random))
+  :config
+  ;; All customisations here.
+  (ef-themes-take-over-modus-themes-mode 1)
+  (setq modus-themes-mixed-fonts t)
+  (setq modus-themes-italic-constructs t)
+
+  ;; Finally, load your theme of choice (or a random one with
+  ;; `modus-themes-load-random', `modus-themes-load-random-dark',
+  ;; `modus-themes-load-random-light').
+  (modus-themes-load-theme 'ef-summer))
+(load-theme 'ef-summer t t)
+
 
 (set-face-attribute 'default nil 
 		    ;; :font "Iosevka 17"
@@ -239,13 +333,13 @@ load a beautiful theme."
 	 (random-index (random (length my-prefer-themes)))
 	 (selected-theme (nth random-index my-prefer-themes )))
     (message "theme name: %s" selected-theme)
-    (load-theme selected-theme t)
-    (if (version< emacs-version "29")
-	(global-linum-mode t)
-        (global-display-line-numbers-mode 1)
-	)
-    (window-divider-mode -1)
-    (scroll-bar-mode -1)
+    (load-theme selected-theme t t)
+    ;; (if (version< emacs-version "29")
+    ;; 	(global-linum-mode t)
+    ;;     (global-display-line-numbers-mode 1)
+    ;; 	)
+    ;; (window-divider-mode -1)
+    ;; (scroll-bar-mode -1)
 
     ;;;; hard coding of the themes
     ;; (set-face-attribute 'font-lock-keyword-face nil :weight 'light
@@ -260,6 +354,11 @@ load a beautiful theme."
     ;; (set-face-attribute 'border nil :weight 'black)
     ))
 
+(defun my/random-a-theme ()
+  (interactive)
+  (my/random-theme (append light-themes dark-themes))
+  )
+
 (defun _between-hours (a b)
   "After hours `a', and before the hours `b' is true"
   (let* ((current-time (decode-time))
@@ -268,22 +367,28 @@ load a beautiful theme."
     (or (> hour a) (< hour b)))
   )
 
-;;; THEME RANDOMIZATION
+;; ;;; THEME RANDOMIZATION
 ;; (if *is-gui*
 ;;     (setq random-theme-timer
-;; 	  (run-with-timer 0 (* 30 60)
+;; 	  (run-with-timer 0 (* 15 60)
 ;; 		    (lambda ()
 
 ;;                       (my/set-fonts font-ls)
-;; 		      (if (_between-hours 18 9)
-;; 			  (my/random-theme dark-themes)
-;; 			(my/random-theme (append
-;; 					  light-themes
-;; 					  dark-themes)))
+
+;; 		      ;; (if (_between-hours 18 9)
+;; 		      ;; 	  (my/random-theme dark-themes)
+;; 		      ;; 	(my/random-theme (append
+;; 		      ;; 			  light-themes
+;; 		      ;; 			  dark-themes))
+;; 		      ;; 	)
+;; 		      (my/random-theme (append
+;; 					light-themes
+;; 					dark-themes))
+
 ;; 		      )
 ;; 		    )
 ;;     )
-;;     ;; (load-theme 'monokai t)
+;;     (load-theme 'monokai t)
 ;; )
 
 ;; THEME

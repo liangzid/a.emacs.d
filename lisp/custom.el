@@ -96,7 +96,8 @@
      (tramp-connection-local-default-system-profile
       (path-separator . ":") (null-device . "/dev/null"))))
  '(custom-safe-themes
-   '("37c8c2817010e59734fe1f9302a7e6a2b5e8cc648cf6a6cc8b85f3bf17fececf"
+   '("08e1b320892fc3dc3699e092765982a05d87ecd0f5efad5b6415065145d45be9"
+     "37c8c2817010e59734fe1f9302a7e6a2b5e8cc648cf6a6cc8b85f3bf17fececf"
      "f5f80dd6588e59cfc3ce2f11568ff8296717a938edd448a947f9823a4e282b66"
      "0170347031e5dfa93813765bc4ef9269a5e357c0be01febfa3ae5e5fcb351f09"
      "3f1dcd824a683e0ab194b3a1daac18a923eed4dba5269eecb050c718ab4d5a26"
@@ -151,17 +152,18 @@
 		   challenger-deeper-theme company company-box
 		   company-prescient counsel-tramp darcula-theme
 		   dockerfile-mode doom-modeline doom-themes
-		   dracula-theme eglot fantom-theme format-all
-		   git-gutter go-translate gruvbox-theme haskell-mode
-		   inkpot-theme ivy-posframe jinx kaolin-themes
-		   langtool lsp-grammarly lsp-ltex lsp-mode magit
-		   marginalia modus-themes mwim nerd-icons
-		   nimbus-theme org-alert org-dynamic-bullets
-		   org-fragtog org-modern org-pomodoro org-pomotoro
-		   org-promotoro org-reveal org-superstar
-		   org-visual-indent org-visual-indent-mode ox-reveal
-		   pangu-spacing posframe pyim pyim-basedict rg rime
-		   solarized-theme straight sublime-themes tao-theme
+		   dracula-theme ef-themes eglot fantom-theme
+		   format-all git-gutter go-translate gruvbox-theme
+		   haskell-mode inkpot-theme ivy-posframe jinx
+		   kaolin-themes langtool lsp-grammarly lsp-ltex
+		   lsp-mode magit marginalia modus-themes mwim
+		   nerd-icons nimbus-theme org-alert
+		   org-dynamic-bullets org-fragtog org-modern
+		   org-pomodoro org-pomotoro org-promotoro org-reveal
+		   org-superstar org-visual-indent
+		   org-visual-indent-mode ox-reveal pangu-spacing
+		   posframe pyim pyim-basedict rg rime solarized-theme
+		   standard-themes straight sublime-themes tao-theme
 		   telega tramp use-package valign vue-mode winum
 		   wucuo zenburn-theme zoom zoom-window))
  '(pos-tip-background-color "#FFFACE")
