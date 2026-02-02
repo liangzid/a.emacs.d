@@ -74,7 +74,7 @@
                                   (t      . 20)))
 (set-face-background 'ivy-posframe-border "#F4FF81")
 (set-face-background 'ivy-posframe-cursor "#F4FF81")
-(setq ivy-posframe-border-width 0)
+(setq ivy-posframe-border-width 1)
 
 (ivy-posframe-mode 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -89,14 +89,6 @@
 ;; (require 'avy)
 ;; ;; (global-set-key (kbd "C-;") 'avy-goto-char)
 ;; (global-set-key (kbd "C-;") 'avy-goto-char-timer)
-
-
-;;;;; add keybindings for better debug emacs lisp files.
-(defun lz/load-current-file ()
-  (interactive)
-  (load-file (buffer-name)))
-
-(add-hook 'elisp-byte-code-mode-hook '(lambda () (local-set-key (kbd "<f8>") 'lz/load-current-file)))
 
 (global-set-key (kbd "M-r") 'query-replace)
 

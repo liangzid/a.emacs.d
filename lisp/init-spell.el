@@ -11,12 +11,12 @@
 ;;       ))
 
 
-(when *is-linux*
-  (use-package flycheck-vale
-    :ensure t        ;; 自动装
-    :after flycheck  ;; 等到 flycheck 加载完再执行
-    :config
-    (flycheck-vale-setup)))
+;; (when *is-linux*
+;;   (use-package flycheck-vale
+;;     :ensure t        ;; 自动装
+;;     :after flycheck  ;; 等到 flycheck 加载完再执行
+;;     :config
+;;     (flycheck-vale-setup)))
 
 
 (provide 'init-spell)

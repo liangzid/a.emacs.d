@@ -22,58 +22,28 @@
   (gt-langs '(en zh))
   (gt-default-translator
    (gt-translator :engines (gt-bing-engine)
-                  :render (gt-posframe-pop-render)))
+		  :taker (gt-taker :langs '(en zh) :text 'word :prompt nil)
+                  :render (gt-posframe-pop-render)
+		  ))
   :bind ("C-c y" . gt-translate))
 
 
-;; ------ I think it will make the tramp somewhat slow. So I remove it.
-;; (require 'projectile)
-;; (projectile-mode 1)
+(require 'projectile)
+(projectile-mode 1)
 ;; ;; Recommended keymap prefix on Windows/Linux
-;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-;;;;
-  ;; 评价：适合自己写库的人使用，目前感觉还不是很好用，就不多做评论了
-;;;;;
-
-;; (require 'citre-config)
-;; (use-package citre
-;;   :defer t
-;;   :init
-;;   ;; This is needed in `:init' block for lazy load to work.
-;;   ;; Bind your frequently used commands.
-;;   (global-set-key (kbd "C-x c j") 'citre-jump)
-;;   (global-set-key (kbd "C-x c J") 'citre-jump-back)
-;;   (global-set-key (kbd "C-x c p") 'citre-ace-peek)
-;;   :config
-;;   (setq
-;;    ;; Set this if readtags is not in your path.
-;;    ;; citre-readtags-program "/home/liangzi/.emacs.d/.tags"
-;;    ;; Set this if you use project management plugin like projectile.  It's
-;;    ;; only used to display paths relatively, and doesn't affect actual use.
-;;    ;; citre-project-root-function #'projectile-project-root
-;;    ))
-
-;; (require 'orderless)
-;; (setq completion-styles '(orderless))
-;; (setq orderless-component-separator "[ &]")
-
-;; (defun just-one-face (fn &rest args)
-;;   (let ((orderless-match-faces [completions-common-part]))
-;;     (apply fn args)))
-
-;; (advice-add 'company-capf--candidates :around #'just-one-face)
 ;; ;; 自动补全
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'company)
-(setq company-idle-delay 0)
+(setq company-idle-delay 0.04)
 (setq company-minimum-prefix-length 1)
 (add-hook 'latex-mode-hook
 	  (lambda ()
 	    (setq-local company-minimum-prefix-length 5)
 	    ))
 (setq company-show-numbers t)
-(setq company-tooltip-limit 15)
+(setq company-tooltip-limit 8)
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-flip-when-above t)
 (setq company-require-match nil)
@@ -135,13 +105,12 @@
     (setq neo-theme (if *is-gui* 'icons 'arrow))))
 
 ;; ;; smart TAB
-;; (use-package smart-tab
-;;   :config
-;;   (progn
-;;     (defun @-enable-smart-tab ()
-;;       (smart-tab-mode))
-;;     (add-hook 'prog-mode-hook '@-enable-smart-tab)
-;;     ))
+(use-package smart-tab
+  :config
+  (progn
+      (global-smart-tab-mode)
+    ))
+
 
 ;; (require 'company-english-helper)
 ;; (setq company-english-helper-active-p nil)

@@ -146,26 +146,28 @@
  '(magit-diff-use-overlays nil)
  '(org-agenda-files nil)
  '(package-selected-packages
-   '(all-the-icons all-the-icons-completion all-the-icons-dired
-		   almost-mono-themes ample-theme avy beacon
-		   benchmark-init challenger-deep-theme
-		   challenger-deeper-theme company company-box
-		   company-prescient counsel-tramp darcula-theme
-		   dockerfile-mode doom-modeline doom-themes
-		   dracula-theme ef-themes eglot fantom-theme
-		   format-all git-gutter go-translate gruvbox-theme
-		   haskell-mode inkpot-theme ivy-posframe jinx
-		   kaolin-themes langtool lsp-grammarly lsp-ltex
-		   lsp-mode magit marginalia modus-themes mwim
-		   nerd-icons nimbus-theme org-alert
-		   org-dynamic-bullets org-fragtog org-modern
-		   org-pomodoro org-pomotoro org-promotoro org-reveal
-		   org-superstar org-visual-indent
-		   org-visual-indent-mode ox-reveal pangu-spacing
-		   posframe pyim pyim-basedict rg rime solarized-theme
-		   standard-themes straight sublime-themes tao-theme
-		   telega tramp use-package valign vue-mode winum
-		   wucuo zenburn-theme zoom zoom-window))
+   '(ace-flyspell aidermacs all-the-icons-completion all-the-icons-dired
+		  almost-mono-themes ample-theme beacon cdlatex
+		  challenger-deep-theme cider citre command-log-mode
+		  company-anaconda company-auctex company-box
+		  company-prescient company-reftex counsel
+		  darcula-theme dirvish doom-modeline doom-themes
+		  ef-themes elfeed-org elpy emmet-mode epc evil-escape
+		  evil-leader evil-surround evil-visualstar
+		  exec-path-from-shell flycheck-vale general
+		  git-gutter gruvbox-theme gt highlight-symbol htmlize
+		  hungry-delete inkpot-theme ivy-bibtex ivy-posframe
+		  js2-refactor kaolin-themes keyfreq langtool leetcode
+		  lsp-grammarly lsp-ltex magit marginalia
+		  monokai-theme mwim neotree nimbus-theme orderless
+		  org-alert org-bullets org-download org-fragtog
+		  org-pomodoro org-roam org-superstar
+		  org-visual-indent ox-reveal pangu-spacing popwin
+		  projectile pyenv-mode pyim-basedict python-black
+		  rainbow-delimiters rainbow-mode rg rime rustic sly
+		  smart-tab smartparens solarized-theme sublime-themes
+		  tao-theme undo-fu undo-tree valign vterm web-mode
+		  winum))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)

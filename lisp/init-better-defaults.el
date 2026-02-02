@@ -8,7 +8,7 @@
 ;; 不蜂鸣
 (setq ring-bell-function 'ignore)
 
-;; 自动还原模式
+;; 自动检查所读取到buffer的文件是否经过了修改
 (global-auto-revert-mode t)
 
 ;; 显示行号
@@ -34,7 +34,7 @@
 (setenv "LC_TIME" "en_US.UTF-8")
 
 ;; 不进行文件备份
-(setq make-backup-files t)
+(setq make-backup-files nil)
 
 ;; 不进行自动保存
 (setq auto-save-default nil)
@@ -49,22 +49,6 @@
 ;; 可以通过键入字符代替被选中的对象，或者键入删除删除被选中的对象。
 (delete-selection-mode t)
 
-(if (version< "29" emacs-version)
-    (progn
-
-      ; set pixel scroll
-      (pixel-scroll-precision-mode 1)
-      (setq pixel-scroll-precision-interpolate-page t)
-      (defalias 'scroll-up-command 'pixel-scroll-interpolate-down)
-      (defalias 'scroll-down-command 'pixel-scroll-interpolate-up)
-
-	; solve the problem of xref
-      ;;?
-      (setq xref-history-storage 'xref-window-local-history)
-
-      ;; (display-line-numbers-mode)
-
-      ))
 
 
 (provide 'init-better-defaults)
