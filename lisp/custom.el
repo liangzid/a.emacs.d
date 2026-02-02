@@ -145,29 +145,10 @@
      ("#3C3D37" . 100)))
  '(magit-diff-use-overlays nil)
  '(org-agenda-files nil)
- '(package-selected-packages
-   '(ace-flyspell aidermacs all-the-icons-completion all-the-icons-dired
-		  almost-mono-themes ample-theme beacon cdlatex
-		  challenger-deep-theme cider citre command-log-mode
-		  company-anaconda company-auctex company-box
-		  company-prescient company-reftex counsel
-		  darcula-theme dirvish doom-modeline doom-themes
-		  ef-themes elfeed-org elpy emmet-mode epc evil-escape
-		  evil-leader evil-surround evil-visualstar
-		  exec-path-from-shell flycheck-vale general
-		  git-gutter gruvbox-theme gt highlight-symbol htmlize
-		  hungry-delete inkpot-theme ivy-bibtex ivy-posframe
-		  js2-refactor kaolin-themes keyfreq langtool leetcode
-		  lsp-grammarly lsp-ltex magit marginalia
-		  monokai-theme mwim neotree nimbus-theme orderless
-		  org-alert org-bullets org-download org-fragtog
-		  org-pomodoro org-roam org-superstar
-		  org-visual-indent ox-reveal pangu-spacing popwin
-		  projectile pyenv-mode pyim-basedict python-black
-		  rainbow-delimiters rainbow-mode rg rime rustic sly
-		  smart-tab smartparens solarized-theme sublime-themes
-		  tao-theme undo-fu undo-tree valign vterm web-mode
-		  winum))
+ '(package-selected-packages '(copilot))
+ '(package-vc-selected-packages
+   '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
+	      "main")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)
@@ -189,4 +170,21 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background nil)))))
+ '(default ((t (:background nil))))
+ '(org-block ((t (:family "Cascadia Code 15" :height 130 :foreground "#f8f8f2" :background "#272822"))))
+ '(org-bold ((t (:family "LXGW WenKai Mono 19" :weight bold :foreground "#f8f8f2"))))
+ '(org-bold-italic ((t (:family "LXGW WenKai Mono 19" :weight bold :slant italic :foreground "#f8f8f2"))))
+ '(org-checkbox ((t (:family "Cascadia Code 15" :weight bold :foreground "#a6e22e"))))
+ '(org-code ((t (:family "Cascadia Code 15" :height 130 :foreground "#f8f8f2" :background "#272822"))))
+ '(org-default ((t (:family "LXGW WenKai Mono 18" :height 140 :weight regular :foreground "#f8f8f2"))))
+ '(org-italic ((t (:family "LXGW WenKai Mono 19" :slant italic :foreground "#f8f8f2"))))
+ '(org-level-1 ((t (:family "LXGW WenKai Mono 21" :height 180 :weight bold :foreground "#f92672"))))
+ '(org-level-2 ((t (:family "LXGW WenKai Mono 21" :height 160 :weight bold :foreground "#66d9ef"))))
+ '(org-level-3 ((t (:family "LXGW WenKai Mono 21" :height 150 :weight semi-bold :foreground "#a6e22e"))))
+ '(org-level-4 ((t (:family "LXGW WenKai Mono 21" :height 140 :weight semi-bold :foreground "#e6db74"))))
+ '(org-level-5 ((t (:inherit org-level-4))))
+ '(org-level-6 ((t (:inherit org-level-4))))
+ '(org-level-7 ((t (:inherit org-level-4))))
+ '(org-level-8 ((t (:inherit org-level-4))))
+ '(org-link ((t (:family "Cascadia Code 15" :foreground "#f92672" :underline t))))
+ '(org-list-dt ((t (:family "Cascadia Code 15" :weight bold :foreground "#66d9ef")))))

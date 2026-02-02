@@ -32,8 +32,8 @@
 ;; Improve lsp perf https://emacs-lsp.github.io/lsp-mode/page/performance/#increase-the-amount-of-data-which-emacs-reads-from-the-process
 (setq read-process-output-max (* 3 1024 1024))
 
-(set-frame-parameter nil 'alpha-background  0.90)
-;; (setq default-frame-alist '((alpha-background . 99)))
+(set-frame-parameter nil 'alpha-background  0.99)
+;; (set-frame-parameter nil 'alpha-background  0.99)
 
 (defun open-my-init-file()
   (interactive)

@@ -108,8 +108,9 @@
 (use-package smart-tab
   :config
   (progn
-      (global-smart-tab-mode)
+    (global-smart-tab-mode)
     ))
+
 
 
 ;; (require 'company-english-helper)
