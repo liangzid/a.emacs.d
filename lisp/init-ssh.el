@@ -226,5 +226,12 @@
   (interactive)
   (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@10.21.20.141:/home/zi/")
   )
+
+
+
+(defun ssh-connect-vuln ()
+  (interactive)
+  (counsel-find-file "/ssh:ubuntu@129.226.147.182:/home/ubuntu/")
+  )
  
 (provide 'init-ssh)
