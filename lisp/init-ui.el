@@ -21,19 +21,6 @@
 (require 'challenger-deep-theme)
 
 
-;; This is an example `use-package' configuration
-;; It is not tangled into wallpaper.el
-(use-package wallpaper
-  :ensure t
-  :hook ((exwm-randr-screen-change . wallpaper-set-wallpaper)
-         (after-init . wallpaper-cycle-mode))
-  :custom ((wallpaper-cycle-single t)
-           (wallpaper-scaling 'scale)
-           (wallpaper-cycle-interval 45)
-           (wallpaper-cycle-directory "~/Pictures/deskthemes/")))
-
-
-
 ;; remove beacon as it is useless
 ;; (require 'beacon)
 ;; (setq beacon-blink-when-focused t)
@@ -68,7 +55,13 @@
 
 ;; 激活高亮当前行的功能
 (require 'hl-line)
-(global-hl-line-mode -1)
+(global-hl-line-mode 1)
+
+(my/install-package-if-not-found 'highlight-indentation)
+(require 'highlight-indentation)
+(highlight-indentation-mode)
+(set-face-background 'highlight-indentation-face "#4b2b22")
+
 
 ;; 取消UI界面的多余展示
 (tool-bar-mode 0)
@@ -115,16 +108,17 @@
 
 	(set-face-attribute 'default nil 
 			    ;; :font "Iosevka 17"
-			    :font "LXGWWenKaiMono 18"
-			    ;; :font "JetbrainsMono 12"
+			    ;; :font "LXGWWenKaiMono 18"
+			    :font "JetbrainsMono 17"
+		            ;; "Cascadia Mono PL 17"
 			    :weight 'normal
 			    :foreground "#A9F16C")
-        ;; (set-face-attribute 'org-headline-done nil
-	;; 		;; :slant 'italic
-	;; 		;; :font "DejaVu Sans Mono 15"
-	;; 		;; :weight 'normal
-	;; 		:foreground "#96a0aa"
-	;; 		)
+        (set-face-attribute 'font-lock-comment-face nil
+			;; :slant 'italic
+			;; :font "DejaVu Sans Mono 15"
+			;; :weight 'normal
+			:foreground "#96a0aa"
+			)
 
 	;; Bold the keywords
 	(set-face-attribute 'font-lock-keyword-face nil
@@ -176,142 +170,61 @@
 
 (setq light-themes '(
 		    ;;; light
-		    ;; kaolin-valley-light
-		    ;; kaolin-breeze
-		    ;; kaolin-light
-		    ;; kaolin-mono-light
+		    kaolin-valley-light
+		    kaolin-breeze
+		    kaolin-light
+		    kaolin-mono-light
 		    
 		    ;; almost-mono-white
-		    ;; modus-operandi
-		    ;; gruvbox-light-medium
-		    ;; gruvbox-light-hard
-		    ;; tao-yang
+		    modus-operandi
+		    gruvbox-light-medium
+		    gruvbox-light-hard
+		    tao-yang
 
 
-		    ef-arbutus
-		    ef-cyprus
-		    ef-day
-		    ef-deuteranopia-light
-		    ef-duo-light
-		    ef-eagle
-		    ef-elea-light
-		    ef-frost
-		    ef-kassio
-		    ef-light
-		    ef-maris-light
-		    ef-melissa-light
-		    ef-reverie
-		    ef-spring
-		    ef-summer
-		    ef-trio-light
-		    ef-tritanopia-light
 
 	))
 (setq dark-themes '(
 		;;; Beautiful but cannot be used.
-		;; doom-monokai-pro
-		;; doom-dracula
-		;; doom-feather-dark
-
-
-		ef-autumn
-		ef-bio
-		ef-cherie
-		ef-dark
-		ef-deuteranopia-dark
-		ef-dream
-		ef-duo-dark
-		ef-elea-dark
-		ef-maris-dark
-		ef-melissa-dark
-		ef-night
-		ef-owl
-		ef-rosa
-		ef-symbiosis
-		ef-trio-dark
-		ef-tritanopia-dark
-		ef-winter
+		doom-monokai-pro
+		doom-dracula
+		doom-feather-dark
 		    
 		;;; dark
-		;; kaolin-eclipse
-		;; kaolin-dark
-		;; kaolin-aurora
-		;; kaolin-blossom
-		;; kaolin-galaxy
-		;; kaolin-valley-dark
-		;; kaolin-mono-dark
-		;; kaolin-shiva
+		kaolin-eclipse
+		kaolin-dark
+		kaolin-aurora
+		kaolin-blossom
+		kaolin-galaxy
+		kaolin-valley-dark
+		kaolin-mono-dark
+		kaolin-shiva
 
-		;; gruvbox-dark-medium
-		;; gruvbox-dark-hard
-		;; tao-yin
+		gruvbox-dark-medium
+		gruvbox-dark-hard
+		tao-yin
 	))
-
-;; First set fonts
-(my/set-fonts font-ls)
 
 ;; Then load theme but don't allow it to override our custom faces
 ;; (load-theme 'challenger-deep t)  ;; Third argument prevents override
 
-;; (load-theme 'monokai t)  ;; Third argument prevents override
+(load-theme 'monokai t) 
 
-;; (use-package standard-themes
-;;   :ensure t
-;;   :init
-;;   ;; This makes the Modus commands listed below consider only the Ef
-;;   ;; themes.  For an alternative that includes Modus and all
-;;   ;; derivative themes (like Ef), enable the
-;;   ;; `modus-themes-include-derivatives-mode' instead.  The manual of
-;;   ;; the Ef themes has a section that explains all the possibilities:
-;;   ;;
-;;   ;; - Evaluate `(info "(standard-themes) Working with other Modus themes or taking over Modus")'
-;;   ;; - Visit <https://protesilaos.com/emacs/standard-themes#h:d8ebe175-cd61-4e0b-9b84-7a4f5c7e09cd>
-;;   :bind
-;;   (("<f5>" . modus-themes-rotate)
-;;    ("C-<f5>" . modus-themes-select)
-;;    ("M-<f5>" . modus-themes-load-random))
-;;   :config
-;;   ;; All customisations here.
-;;   (standard-themes-take-over-modus-themes-mode 1)
-;;   (setq modus-themes-mixed-fonts t)
-;;   (setq modus-themes-italic-constructs t)
+;; First set fonts
+(my/set-fonts font-ls)
 
-;;   ;; Finally, load your theme of choice (or a random one with
-;;   ;; `modus-themes-load-random', `modus-themes-load-random-dark',
-;;   ;; `modus-themes-load-random-light').
-;;   (modus-themes-load-theme 'standard-light-tinted))
-
-(use-package ef-themes
-  :ensure t
-  :init
-  ;; This makes the Modus commands listed below consider only the Ef
-  ;; themes.  For an alternative that includes Modus and all
-  ;; derivative themes (like Ef), enable the
-  ;; `modus-themes-include-derivatives-mode' instead.  The manual of
-  ;; the Ef themes has a section that explains all the possibilities:
-  ;;
-  ;; - Evaluate `(info "(ef-themes) Working with other Modus themes or taking over Modus")'
-  ;; - Visit <https://protesilaos.com/emacs/ef-themes#h:6585235a-5219-4f78-9dd5-6a64d87d1b6e>
-  :bind
-  (("<f5>" . modus-themes-rotate)
-   ("C-<f5>" . modus-themes-select)
-   ("M-<f5>" . modus-themes-load-random))
-  :config
-  ;; All customisations here.
-  (ef-themes-take-over-modus-themes-mode 1)
-  (setq modus-themes-mixed-fonts t)
-  (setq modus-themes-italic-constructs t)
-
-  ;; Finally, load your theme of choice (or a random one with
-  ;; `modus-themes-load-random', `modus-themes-load-random-dark',
-  ;; `modus-themes-load-random-light').
-  (modus-themes-load-theme 'ef-summer))
-(load-theme 'ef-summer t t)
-
+(set-face-attribute 'default nil 
+		    :foreground "#A9F16C")
+(set-face-attribute 'font-lock-comment-face nil
+		;; :slant 'italic
+		;; :font "DejaVu Sans Mono 15"
+		;; :weight 'normal
+		:foreground "#96a0aa"
+		)
 
 (set-face-attribute 'default nil 
 		    ;; :font "Iosevka 17"
-		    :font "JetbrainsMono 15"
+		    :font "JetbrainsMono 17"
 		    ;; :font "FantasqueSansMono 18"
 		    :weight 'normal
 		    ;; :foreground "#A9F16C"

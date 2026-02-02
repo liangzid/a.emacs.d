@@ -31,17 +31,10 @@
   :ensure t
   :hook (org-mode . org-fragtog-mode))
 
-;; 按需安装并加载 valign（表格列对齐） ---------------------------------------
-(use-package valign
-  :ensure t
-  :hook (org-mode . (lambda ()
-                      (when (display-graphic-p)
-                        (valign-mode +1)))))
 
 ;; ;; 按需安装并加载 org-visual-indent -----------------------------------------
-;; (use-package org-visual-indent
-;;   :ensure t
-;;   :hook (org-mode . org-visual-indent-mode))
+(require 'org-visual-indent)
+(org-visual-indent-mode)
 
 ;; ;; 按需安装并加载 org-dynamic-bullets ---------------------------------------
 ;; (use-package org-dynamic-bullets
@@ -68,27 +61,60 @@
   ;; LaTeX 预览缩放
   (plist-put org-format-latex-options :scale 2))
 
-;; 平台相关字体 --------------------------------------------------------------
-(defun my-org--set-platform-fonts ()
-  "Set fonts depending on platform."
-  (cond
-   (*is-windows*
-    (set-face-attribute 'default nil :font "LXGWWenKaiMono 12")
-    (set-face-attribute 'fixed-pitch nil :family "LXGWWenKaiMono")
-    (set-face-attribute 'variable-pitch nil :family "LXGWWenKaiMono" :height 1.18))
-   (t
-    (set-face-attribute 'default nil :font "LXGWWenKaiMono 12")
-    (set-face-attribute 'fixed-pitch nil :family "LXGWWenKaiMono")
-    (set-face-attribute 'variable-pitch nil :family "LXGWWenKaiMono" :height 1.18))))
+(my-org--set-vars)
+
+;; ########## Org Mode 全局字体/样式完整自定义 ##########
+
+(custom-set-faces
+  ;; 1. Org 正文基础字体（全局Org文件的正文文字）
+ '(org-default ((t (:family "LXGW WenKai Mono 22" :height 140 :weight regular :foreground "#f8f8f2")))) ; Monokai默认亮白正文
+  ;; 2. Org 各级标题（Monokai经典配色梯度，1级最大依次递减）
+ '(org-level-1 ((t (:family "LXGW WenKai Mono 22" :height 180 :weight bold :foreground "#f92672")))) ; 1级标题：Monokai品红（主标题色）
+ '(org-level-2 ((t (:family "LXGW WenKai Mono 22" :height 160 :weight bold :foreground "#66d9ef")))) ; 2级标题：Monokai浅蓝
+ '(org-level-3 ((t (:family "LXGW WenKai Mono 22" :height 150 :weight semi-bold :foreground "#a6e22e")))) ; 3级标题：Monokai嫩绿
+ '(org-level-4 ((t (:family "LXGW WenKai Mono 22" :height 140 :weight semi-bold :foreground "#e6db74")))) ; 4级标题：Monokai明黄
+ '(org-level-5 ((t (:inherit org-level-4)))) ; 5级及以下继承4级样式，保持梯度统一
+ '(org-level-6 ((t (:inherit org-level-4))))
+ '(org-level-7 ((t (:inherit org-level-4))))
+ '(org-level-8 ((t (:inherit org-level-4))))
+  ;; 3. Org 强调文本（*斜体* / **粗体** / ***粗斜体***）
+ '(org-italic ((t (:family "LXGW WenKai Mono 22" :slant italic :foreground "#f8f8f2")))) ; 斜体：继承正文色，仅加斜体样式
+ '(org-bold ((t (:family "LXGW WenKai Mono 22" :weight bold :foreground "#f8f8f2"))))     ; 粗体：继承正文色，仅加粗
+ '(org-bold-italic ((t (:family "LXGW WenKai Mono 22" :weight bold :slant italic :foreground "#f8f8f2")))) ; 粗斜体：组合样式，统一正文色
+  ;; 4. Org 代码相关（`行内代码` / 代码块）- Monokai代码区经典配色
+ '(org-code ((t (:family "Cascadia Code 22" :height 130 :foreground "#f8f8f2" :background "#272822")))) ; 行内代码：亮白字+深灰底
+ '(org-block ((t (:family "Cascadia Code 22" :height 130 :foreground "#f8f8f2" :background "#272822")))) ; 代码块：与行内代码统一，贴合Monokai代码区
+  ;; 5. Org 链接（[[链接][文字]]）- Monokai链接经典色
+ '(org-link ((t (:family "Cascadia Code 22" :foreground "#f92672" :underline t)))) ; 链接：Monokai品红（标志性链接色）+ 下划线
+  ;; 6. Org 列表/复选框（- /* [ ] */ [X]）- 适配Monokai配色，突出交互元素
+ '(org-list-dt ((t (:family "Cascadia Code 22" :weight bold :foreground "#66d9ef")))) ; 列表项：Monokai浅蓝，与2级标题呼应
+ '(org-checkbox ((t (:family "Cascadia Code 22" :weight bold :foreground "#a6e22e")))) ; 复选框：Monokai嫩绿，醒目且不刺眼
+)
+
+;; 可选：Org Mode 开启自动换行（避免横向滚动，提升排版体验）
+(setq org-startup-truncated nil)
+;; 可选：Org 标题折叠/展开的缩进优化
+(setq org-indent-mode t)
 
 
-;; pangu-spacing 只给中文用户留手动命令，不全局加载 ---------------------------
-(use-package pangu-spacing
-  :ensure t
-  :config
-  (global-pangu-spacing-mode 0)          ; 关闭全局
-  :commands (pangu-spacing-mode
-             pangu-spacing-search-overlay))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 (provide 'org-ui)
