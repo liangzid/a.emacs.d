@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: img
+# key: img
+# --
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.98\linewidth]{figs/$1.pdf}
+  \caption{$0}
+  \label{fig:${$2}}
+\end{figure}
