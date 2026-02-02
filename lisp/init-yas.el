@@ -7,6 +7,7 @@
 (yas-global-mode 1)
 (add-hook 'prog-mode-hook 'yas-minor-mode)
 (add-hook 'text-mode-hook 'yas-minor-mode)
+(define-key yas-minor-mode-map (kbd "M-`") 'yas-expand)
 
 ;; definiting my auto init file for initilization files
 (defun lz/autoinsert-yas-expand()

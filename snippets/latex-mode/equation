@@ -3,6 +3,6 @@
 # key: eq
 # --
 \begin{equation}
-\label{$0}
+\label{eq:$0}
 $1
 \end{equation}

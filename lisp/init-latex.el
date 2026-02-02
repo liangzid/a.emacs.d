@@ -76,7 +76,7 @@
 		  (setq TeX-clean-confirm nil) ;; cleaning file without ask human.
 		  (setq TeX-save-query nil);; for save permission. we give it.
 		  (setq font-latex-fontify-script t) ;;简单的可视化
-		  (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
+		  ;; (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
 		  (setq TeX-electric-escape nil) ;; press \ then, jump to mini-buffer to input commands
 		  (if *is-linux*
 		      (message "setted before.")

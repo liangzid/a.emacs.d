@@ -2,4 +2,4 @@
 # name: cite
 # key: c
 # --
-\cite{$1} $0
+~\cite{$1} $0
