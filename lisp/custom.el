@@ -145,7 +145,7 @@
      ("#3C3D37" . 100)))
  '(magit-diff-use-overlays nil)
  '(org-agenda-files nil)
- '(package-selected-packages '(copilot))
+ '(package-selected-packages nil)
  '(package-vc-selected-packages
    '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
 	      "main")))
