@@ -174,6 +174,7 @@
 
 ;; First set fonts
 (my/set-fonts font-ls)
+;; (ematrix-set-font)
 
 (defun my/random-theme (my-prefer-themes)
   "Random load the theme from random theme list. I use it for random
