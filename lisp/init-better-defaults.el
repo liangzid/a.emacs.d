@@ -28,10 +28,10 @@
 ;;                                               ("qqmail" "2273067585@qq.com")
 ;;                                               ))
 
-(setenv "LANG" "en_US.UTF-8")
-(setenv "LC_ALL" "en_US.UTF-8")
-(setenv "LC_CTYPE" "en_US.UTF-8")
-(setenv "LC_TIME" "en_US.UTF-8")
+(setenv "LANG" "C.UTF-8")
+(setenv "LC_ALL" "C.UTF-8")
+(setenv "LC_CTYPE" "C.UTF-8")
+(setenv "LC_TIME" "C.UTF-8")
 
 ;; 不进行文件备份
 (setq make-backup-files nil)

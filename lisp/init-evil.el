@@ -1,6 +1,5 @@
 (my/install-package-if-not-found 'evil)
 (my/install-package-if-not-found 'evil-escape)
-(my/install-package-if-not-found 'undo-fu)
 (my/install-package-if-not-found 'evil-surround)
 (my/install-package-if-not-found 'evil-visualstar)
 (my/install-package-if-not-found 'evil-leader)
@@ -30,26 +29,10 @@
 
 
 ;; -------------------EVIL style undo-redo---------------------------------
-;; {{ replace undo-tree with undo-fu
-;; @see https://github.com/emacs-evil/evil/issues/1074
-;; copied from doom-emacs
-;; 这一部分不需要看，只使用下面的撤销与反撤销按键就好了
-(define-minor-mode undo-fu-mode
-  "Enables `undo-fu' for the current session."
-  :keymap (let ((map (make-sparse-keymap)))
-            (define-key map [remap undo] #'undo-fu-only-undo)
-            (define-key map [remap redo] #'undo-fu-only-redo)
-            ;; (define-key map (kbd "C-_")     #'undo-fu-only-undo)
-            (define-key map (kbd "M-_")     #'undo-fu-only-redo)
-            (define-key map (kbd "C-M-_")   #'undo-fu-only-redo-all)
-            ;; (define-key map (kbd "C-x r u") #'undo-fu-session-save)
-            (define-key map (kbd "C-x r U") #'undo-fu-session-recover)
-            map)
-  :init-value nil
-  :global t)
-(undo-fu-mode 1)
-(define-key evil-normal-state-map "u" 'undo-fu-only-undo)
-(define-key evil-normal-state-map (kbd "C-r") 'undo-fu-only-redo)
+;; {{ Keep undo-tree for undo/redo
+;; set up undo-tree keybindings in evil normal state
+(define-key evil-normal-state-map "u" 'undo-tree-undo)
+(define-key evil-normal-state-map (kbd "C-r") 'undo-tree-redo)
 ;; }}
 
 ;; Store more undo history to prevent loss of data
@@ -95,6 +78,7 @@
 
 ;; ---------------evil leader key---------------------------------------
 ;; set evil key mode.
+(require 'general)
 (require 'evil-leader)
 
 ;; {{ use `,` as leader key
@@ -270,9 +254,7 @@
                       ((evil-insert-state-p) '("#C53030" . "#ffffff"))
                       ((evil-emacs-state-p)  '("#2F855A" . "#ffffff"))
                       ((buffer-modified-p)   '("#E9B44C" . "#000000"))
-                      ;; (t my-default-color)
-                      ;; (t zl-modeline-color)
-		      )))
+                      (t zl-modeline-color))))
     (set-face-background 'mode-line (car color))
     (set-face-foreground 'mode-line (cdr color))
     (set-face-foreground 'mode-line-buffer-id (cdr color))

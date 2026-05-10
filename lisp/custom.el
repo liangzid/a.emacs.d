@@ -145,10 +145,9 @@
      ("#3C3D37" . 100)))
  '(magit-diff-use-overlays nil)
  '(org-agenda-files nil)
- '(package-selected-packages nil)
  '(package-vc-selected-packages
    '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
-	      "main")))
+	       "main")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)
@@ -170,7 +169,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background nil))))
+ '(default ((t (:background unspecified))))
  '(org-block ((t (:family "Cascadia Code 15" :height 130 :foreground "#f8f8f2" :background "#272822"))))
  '(org-bold ((t (:family "LXGW WenKai Mono 19" :weight bold :foreground "#f8f8f2"))))
  '(org-bold-italic ((t (:family "LXGW WenKai Mono 19" :weight bold :slant italic :foreground "#f8f8f2"))))

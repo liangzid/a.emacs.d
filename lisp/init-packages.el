@@ -1,4 +1,4 @@
-(require 'cl)
+(require 'cl-lib)
 (require 'use-package)
 (my/install-package-if-not-found 'orderless)
 (my/install-package-if-not-found 'company-box)
@@ -52,7 +52,7 @@
 (setq company-tooltip-align-annotations t)
 (setq company-tooltip-flip-when-above t)
 (setq company-require-match nil)
-(setq company-global-modes '(not sh-mode))
+;; (setq company-global-modes '(not sh-mode))
 (global-company-mode)
 ;; 暂时关闭 COMPANY MODE
 

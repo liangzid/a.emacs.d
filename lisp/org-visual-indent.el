@@ -261,9 +261,9 @@ The function stands in place of `org-indent--compute-prefixes'."
 ;;;###autoload
 (define-minor-mode org-visual-indent-mode 
   "Add vertical lines to `org-indent'."
-  nil
-  " vert-indent"
-  nil
+  :init-value nil
+  :lighter " vert-indent"
+  :keymap nil
   (if org-visual-indent-mode
       (progn
 	(org-add-props org-visual-indent-pipe

@@ -72,7 +72,7 @@
 
 (with-eval-after-load "tramp" 
   (progn
-    (loop for pth in new-tramp-pth
+    (cl-loop for pth in new-tramp-pth
 	  do (add-to-list 'tramp-remote-path pth))
     ))
 

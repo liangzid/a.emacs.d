@@ -25,7 +25,6 @@
 (setq doom-modeline-env-enable-python nil)
 (setq doom-modeline-env-python-executable nil)
 (setq doom-modeline-buffer-encoding nil)
-(setq doom-modeline- nil)
 
 (with-eval-after-load 'doom-modeline
   (set-face-attribute 'mode-line nil

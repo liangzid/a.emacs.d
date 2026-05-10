@@ -27,7 +27,7 @@
 (global-set-key (kbd "C-c l") 'org-store-link)
 
 ;; (message "========begin for auto image thing.============")
-(add-hook 'org-mode-hook (auto-image-file-mode t))
+(add-hook 'org-mode-hook #'auto-image-file-mode)
 ;; (org-toggle-inline-images)
 ;; (add-hook 'org-mode-hook #'iimage-mode)
 ;; (message "====end for auto image thing====")

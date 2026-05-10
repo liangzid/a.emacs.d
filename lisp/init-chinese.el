@@ -4,31 +4,14 @@
 (my/install-package-if-not-found 'pyim)
 (my/install-package-if-not-found 'posframe)
 (my/install-package-if-not-found 'pyim-basedict)
-(my/install-package-if-not-found 'rime)
-
-(require 'use-package)
-
-(use-package rime
-  :init
-  (setq rime-posframe-properties
-	(list :background-color "#333333"
-            :foreground-color "#dcdccc"
-            :internal-border-width 10))
-  (setq default-input-method "rime"
-	rime-show-candidate 'posframe)
-  :custom
-  (default-input-method "rime"))
-
-
 
 ;; (add-hook 'emacs-startup-hook
 ;; 	  (lambda () (pyim-restart-1 t)))
 
 (setq pyim-dicts
       '((:name "bigdict" :file "~/.emacs.d/imdict/pyim-bigdict.pyim")
-      '(:name "aidict" :file "~/.emacs.d/imdict/ai.pyim")
-      '(:name "progdict" :file "~/.emacs.d/imdict/prog.pyim"))
-      )
+        (:name "aidict" :file "~/.emacs.d/imdict/ai.pyim")
+        (:name "progdict" :file "~/.emacs.d/imdict/prog.pyim")))
 
 
 ;; {{ make IME compatible with evil-mode

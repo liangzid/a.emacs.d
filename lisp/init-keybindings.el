@@ -52,7 +52,6 @@
 (global-set-key (kbd "C-h f") 'counsel-describe-function)
 (global-set-key (kbd "C-h v") 'counsel-describe-variable)
 (global-set-key (kbd "M-s") 'counsel-rg)
-(global-set-key (kbd "M-s") 'counsel-rg)
 ;; (global-set-key (kbd "M-s") 'counsel-ag)
 
 ;; (global-set-key "\C-x\ \C-r" 'recentf-open-files)

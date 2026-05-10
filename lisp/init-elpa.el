@@ -3,7 +3,7 @@
 ;; zi liang. 2021.03.25
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'cl)
+(require 'cl-lib)
 ;(setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
 ;                         ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
 ;                         ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/melpa-stable/")
@@ -31,10 +31,9 @@
 ;;(setq package-archives '(("gnu"   . "http://1.15.88.122/gnu/")
 ;;                           ("melpa" . "http://1.15.88.122/melpa/")))
 
-(if (file-exists-p "~/.emacs.d/lisp/")
-    (message "no fresh")
-  (package-refresh-contents)
-    )
+(if (file-exists-p "~/.emacs.d/elpa/")
+    (message "elpa directory exists, skip refresh")
+  (package-refresh-contents))
 
 
 ;; (package-refresh-contents)
@@ -135,9 +134,9 @@
 (setq package-selected-packages my/packages)
 
 (defun my/packages-installed-p ()
-  (loop for pkg in my/packages
-	when (not (package-installed-p pkg)) do (return nil)
-	finally (return t)))
+  (cl-loop for pkg in my/packages
+	when (not (package-installed-p pkg)) do (cl-return nil)
+	finally (cl-return t)))
 
 (unless (my/packages-installed-p)
   (message "%s" "Refreshing package database...")
@@ -148,13 +147,10 @@
 
 (defun my/install-package-if-not-found (pkg)
   (unless (package-installed-p pkg)
-    ;;	(when (need-refresh-contents)
-    (message "%s" "Refreshing package database...")
-    ;; (package-refresh-contents)
-    )
-  ;;	  )
-  (message "install package %s ..." pkg)
-  (package-install pkg))
+    (message "Refreshing package database...")
+    (package-refresh-contents)
+    (message "install package %s ..." pkg)
+    (package-install pkg)))
 
 
 
