@@ -1,7 +1,6 @@
 ;; 关于快捷键绑定的一些东西。
 
 (my/install-package-if-not-found 'ivy-posframe)
-(my/install-package-if-not-found 'mwim)
 ;; (my/install-package-if-not-found 'avy)
 (require 'use-package)
 

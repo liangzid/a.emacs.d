@@ -64,9 +64,7 @@
 
 
 ;; 取消UI界面的多余展示
-(tool-bar-mode 0)
 (menu-bar-mode 0)
-(scroll-bar-mode 0)
 ;; (setq inhibit-startup-message t)
 ;; (setq inhibit-startup-screen t)
 
@@ -305,11 +303,6 @@ load a beautiful theme."
 ;; )
 
 ;; THEME
-
-(if (version< emacs-version "29")
-    (global-linum-mode t)
-  (global-display-line-numbers-mode 1)
-    )
 
 
 ;; (set-face-attribute 'font-lock-function-name-face nil

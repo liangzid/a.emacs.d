@@ -10,7 +10,6 @@
  '(cnblogs-server-url
    "http://www.cnblogs.com/frostliangzi/services/metaweblog.aspx")
  '(cnblogs-user-name "frostliangzi")
- '(cnblogs-user-passwd "liangzi227302875")
  '(compilation-message-face 'default)
  '(connection-local-criteria-alist
    '(((:machine "10.21.20.141") 10.21.20.141-vars)

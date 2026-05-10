@@ -65,8 +65,6 @@
              ;; keybinding for inserting code blocks
              (local-set-key (kbd "C-c s i") 'org-insert-src-block )))
 
-(setq make-backup-files nil)
-
 ;;code running
 (org-babel-do-load-languages
      'org-babel-load-languages

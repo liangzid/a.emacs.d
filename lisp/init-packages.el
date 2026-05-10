@@ -3,9 +3,7 @@
 (my/install-package-if-not-found 'orderless)
 (my/install-package-if-not-found 'company-box)
 (my/install-package-if-not-found 'company-prescient)
-(my/install-package-if-not-found 'gt)
 (my/install-package-if-not-found 'magit)
-(my/install-package-if-not-found 'sudo-edit)
 
 (use-package sudo-edit
     :ensure t
