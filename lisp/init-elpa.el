@@ -64,6 +64,12 @@
     (message "install package %s ..." pkg)
     (package-install pkg)))
 
+;; install ematrix theme from GitHub
+(unless (package-installed-p 'ematrix)
+  (message "Installing ematrix from GitHub...")
+  (package-vc-install "https://github.com/liangzid/ematrix"))
+(add-to-list 'load-path (expand-file-name "ematrix" package-user-dir))
+
 
 
 

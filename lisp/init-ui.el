@@ -95,52 +95,14 @@
       (progn
 	(message "INIT-UI.EL:>>>is GUI: %s" *is-gui*)
 
-	;;;; rqandom selection
-
-	;; (set-face-attribute
-	;; 'default nil :font
-	;; (nth
-	;; (random (length font-ls))
-	;; font-ls)
-	;; :weight 'normal)
-
 	(set-face-attribute 'default nil 
-			    ;; :font "Iosevka 17"
-			    ;; :font "LXGWWenKaiMono 18"
 			    :font "Maple Mono 11"
-		            ;; "Cascadia Mono PL 17"
-			    :weight 'normal
-			    :foreground "#A9F16C")
-        (set-face-attribute 'font-lock-comment-face nil
-			;; :slant 'italic
-			;; :font "DejaVu Sans Mono 15"
-			;; :weight 'normal
-			:foreground "#96a0aa"
-			)
-
-	;; Bold the keywords
-	(set-face-attribute 'font-lock-keyword-face nil
-                    :weight 'bold)
-
-        (set-face-attribute 'font-lock-function-name-face nil
-			    :bold
-			    )
-	(set-face-attribute 'show-paren-match nil
-                    :weight 'bold)
-	
-        (set-face-attribute 'font-lock-string-face nil
-			    :slant 'italic
-			    )
+			    :weight 'normal)
 
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font (frame-parameter nil 'font)
 			  charset
-			  (font-spec :family "LXGW WenKai Mono" :font 14
-				     ;; :weight 'normal
-				     )))
-	;; (set-face-attribute 'default nil :font "FiraCode 10")
-	;;(set-face-attribute 'default nil :font "文泉驿正黑 10")
-	))))
+			  (font-spec :family "LXGW WenKai Mono" :font 14)))))))
 
 
 ;; set face for flymake-warning and flymake-error
@@ -206,36 +168,12 @@
 ;; Then load theme but don't allow it to override our custom faces
 ;; (load-theme 'challenger-deep t)  ;; Third argument prevents override
 
-(load-theme 'monokai t) 
+;; Load ematrix theme from https://github.com/liangzid/ematrix
+(require 'ematrix)
+(load-theme 'ematrix t)
 
 ;; First set fonts
 (my/set-fonts font-ls)
-
-(set-face-attribute 'default nil 
-		    :foreground "#A9F16C")
-(set-face-attribute 'font-lock-comment-face nil
-		;; :slant 'italic
-		;; :font "DejaVu Sans Mono 15"
-		;; :weight 'normal
-		:foreground "#96a0aa"
-		)
-
-(set-face-attribute 'default nil 
-		    ;; :font "Iosevka 17"
-		    :font "Maple Mono 11"
-		    ;; :font "FantasqueSansMono 18"
-		    :weight 'normal
-		    ;; :foreground "#A9F16C"
-		    )
-
-;; Now set our custom faces that should persist
-(set-face-attribute 'font-lock-keyword-face nil
-                    :weight 'bold
-                    )
-
-(set-face-attribute 'font-lock-string-face nil
-                    :slant 'italic
-                    )
 
 (defun my/random-theme (my-prefer-themes)
   "Random load the theme from random theme list. I use it for random

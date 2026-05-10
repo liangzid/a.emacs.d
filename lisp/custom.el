@@ -95,7 +95,10 @@
      (tramp-connection-local-default-system-profile
       (path-separator . ":") (null-device . "/dev/null"))))
  '(custom-safe-themes
-   '("08e1b320892fc3dc3699e092765982a05d87ecd0f5efad5b6415065145d45be9"
+   '("0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1"
+     "5a0ddbd75929d24f5ef34944d78789c6c3421aa943c15218bac791c199fc897d"
+     "8363207a952efb78e917230f5a4d3326b2916c63237c1f61d7e5fe07def8d378"
+     "08e1b320892fc3dc3699e092765982a05d87ecd0f5efad5b6415065145d45be9"
      "37c8c2817010e59734fe1f9302a7e6a2b5e8cc648cf6a6cc8b85f3bf17fececf"
      "f5f80dd6588e59cfc3ce2f11568ff8296717a938edd448a947f9823a4e282b66"
      "0170347031e5dfa93813765bc4ef9269a5e357c0be01febfa3ae5e5fcb351f09"
@@ -146,7 +149,7 @@
  '(org-agenda-files nil)
  '(package-vc-selected-packages
    '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
-	       "main")))
+	      "main")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)
@@ -168,21 +171,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background unspecified))))
- '(org-block ((t (:family "Cascadia Code 15" :height 130 :foreground "#f8f8f2" :background "#272822"))))
- '(org-bold ((t (:family "LXGW WenKai Mono 19" :weight bold :foreground "#f8f8f2"))))
- '(org-bold-italic ((t (:family "LXGW WenKai Mono 19" :weight bold :slant italic :foreground "#f8f8f2"))))
- '(org-checkbox ((t (:family "Cascadia Code 15" :weight bold :foreground "#a6e22e"))))
- '(org-code ((t (:family "Cascadia Code 15" :height 130 :foreground "#f8f8f2" :background "#272822"))))
- '(org-default ((t (:family "LXGW WenKai Mono 18" :height 140 :weight regular :foreground "#f8f8f2"))))
- '(org-italic ((t (:family "LXGW WenKai Mono 19" :slant italic :foreground "#f8f8f2"))))
- '(org-level-1 ((t (:family "LXGW WenKai Mono 21" :height 180 :weight bold :foreground "#f92672"))))
- '(org-level-2 ((t (:family "LXGW WenKai Mono 21" :height 160 :weight bold :foreground "#66d9ef"))))
- '(org-level-3 ((t (:family "LXGW WenKai Mono 21" :height 150 :weight semi-bold :foreground "#a6e22e"))))
- '(org-level-4 ((t (:family "LXGW WenKai Mono 21" :height 140 :weight semi-bold :foreground "#e6db74"))))
- '(org-level-5 ((t (:inherit org-level-4))))
- '(org-level-6 ((t (:inherit org-level-4))))
- '(org-level-7 ((t (:inherit org-level-4))))
- '(org-level-8 ((t (:inherit org-level-4))))
- '(org-link ((t (:family "Cascadia Code 15" :foreground "#f92672" :underline t))))
- '(org-list-dt ((t (:family "Cascadia Code 15" :weight bold :foreground "#66d9ef")))))
+)
