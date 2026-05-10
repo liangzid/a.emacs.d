@@ -77,7 +77,7 @@
 		"LXGWWenKaiMono 18"
 		;; "Cascadia Mono PL 17"
 		"Cascadia Code 15"
-		"JetbrainsMono 15"
+		"Maple Mono 15"
 		)
       )
 
@@ -109,7 +109,7 @@
 	(set-face-attribute 'default nil 
 			    ;; :font "Iosevka 17"
 			    ;; :font "LXGWWenKaiMono 18"
-			    :font "JetbrainsMono 17"
+			    :font "Maple Mono 11"
 		            ;; "Cascadia Mono PL 17"
 			    :weight 'normal
 			    :foreground "#A9F16C")
@@ -224,7 +224,7 @@
 
 (set-face-attribute 'default nil 
 		    ;; :font "Iosevka 17"
-		    :font "JetbrainsMono 17"
+		    :font "Maple Mono 11"
 		    ;; :font "FantasqueSansMono 18"
 		    :weight 'normal
 		    ;; :foreground "#A9F16C"

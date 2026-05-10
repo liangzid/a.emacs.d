@@ -24,22 +24,35 @@
     (message "insert DONE.")
     ))
 
-
 (defun linux-my-yank-image-through-bash()
-  "Using scrot to make yank in linux, if you like."
+  "自动检测 Wayland/X11 环境并从剪贴板粘贴图片到 Org-mode。"
   (interactive)
   (let* ((file-name (format-time-string "screenshot_%Y%m%d_%H%M%S.png"))
-	 (file-path (concat "./images/" file-name))
-	 )
+         (dir "./images/")
+         (file-path (concat dir file-name))
+         ;; 检测环境：如果有 WAYLAND_DISPLAY 则使用 wl-paste，否则使用 xclip
+         (command (if (getenv "WAYLAND_DISPLAY")
+                      (format "wl-paste -t image/png > %s" file-path)
+                    (format "xclip -selection clipboard -t image/png -o > %s" file-path))))
 
-    (unless (file-directory-p "./images/")
-      (make-directory "./images/" t))
-    ;; xclip -selection clipboard -t TARGETS -o
-    (shell-command (concat "xclip -selection clipboard -t image/png -o >" file-path))
-    (insert (concat "[[file:" file-path "]]"))
-    (message "insert DONE.")
-    )
-  )
+    ;; 确保目录存在
+    (unless (file-directory-p dir)
+      (make-directory dir t))
+
+    ;; 执行命令并检查退出状态 (0 表示成功)
+    (if (= 0 (shell-command command))
+        (progn
+          (insert (concat "[[file:" file-path "]]"))
+          (message "图片已插入: %s" file-path))
+      ;; 如果失败（通常是剪贴板没图片），删除可能产生的空文件并提示
+      (progn
+        (when (file-exists-p file-path)
+          (delete-file file-path))
+        (error "剪贴板中没有可用的 PNG 图片！")))))
+
+
+
+
 ;; (defun linux-my-yank-image-through-bash ()
 ;;   "把剪贴板里的 PNG 或 JPEG 落到 ./images/ 并插入 org 链接。"
 ;;   (interactive)
