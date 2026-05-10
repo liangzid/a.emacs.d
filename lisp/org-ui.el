@@ -63,43 +63,6 @@
 
 (my-org--set-vars)
 
-;; ########## Org Mode 全局字体/样式完整自定义 ##########
-
-(defun my-org-apply-faces ()
-  "Apply custom org faces."
-  (set-face-attribute 'org-default nil
-    :family "LXGW WenKai Mono 22" :height 140 :weight 'regular :foreground "#f8f8f2")
-  (set-face-attribute 'org-level-1 nil
-    :family "LXGW WenKai Mono 22" :height 180 :weight 'bold :foreground "#f92672")
-  (set-face-attribute 'org-level-2 nil
-    :family "LXGW WenKai Mono 22" :height 160 :weight 'bold :foreground "#66d9ef")
-  (set-face-attribute 'org-level-3 nil
-    :family "LXGW WenKai Mono 22" :height 150 :weight 'semi-bold :foreground "#a6e22e")
-  (set-face-attribute 'org-level-4 nil
-    :family "LXGW WenKai Mono 22" :height 140 :weight 'semi-bold :foreground "#e6db74")
-  (set-face-attribute 'org-level-5 nil :inherit 'org-level-4)
-  (set-face-attribute 'org-level-6 nil :inherit 'org-level-4)
-  (set-face-attribute 'org-level-7 nil :inherit 'org-level-4)
-  (set-face-attribute 'org-level-8 nil :inherit 'org-level-4)
-  (set-face-attribute 'org-italic nil
-    :family "LXGW WenKai Mono 22" :slant 'italic :foreground "#f8f8f2")
-  (set-face-attribute 'org-bold nil
-    :family "LXGW WenKai Mono 22" :weight 'bold :foreground "#f8f8f2")
-  (set-face-attribute 'org-bold-italic nil
-    :family "LXGW WenKai Mono 22" :weight 'bold :slant 'italic :foreground "#f8f8f2")
-  (set-face-attribute 'org-code nil
-    :family "Cascadia Code 22" :height 130 :foreground "#f8f8f2" :background "#272822")
-  (set-face-attribute 'org-block nil
-    :family "Cascadia Code 22" :height 130 :foreground "#f8f8f2" :background "#272822")
-  (set-face-attribute 'org-link nil
-    :family "Cascadia Code 22" :foreground "#f92672" :underline t)
-  (set-face-attribute 'org-list-dt nil
-    :family "Cascadia Code 22" :weight 'bold :foreground "#66d9ef")
-  (set-face-attribute 'org-checkbox nil
-    :family "Cascadia Code 22" :weight 'bold :foreground "#a6e22e"))
-
-(add-hook 'org-mode-hook #'my-org-apply-faces)
-
 ;; 可选：Org Mode 开启自动换行（避免横向滚动，提升排版体验）
 (setq org-startup-truncated nil)
 ;; 可选：Org 标题折叠/展开的缩进优化
