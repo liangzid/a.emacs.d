@@ -50,8 +50,8 @@
 
 
 (setq org-todo-keyword-faces
-      '(("TODO" :foreground "red" :weight "bold")
-        ("INPROGRESS" :foreground "blue" :weight "bold")
+ '(("TODO" :foreground "red" :weight bold)
+   ("INPROGRESS" :foreground "blue" :weight bold)
         ("WAITING" . "purple")
         ("REVIEW" . "orange")
         ("DONE" . "forest green")
