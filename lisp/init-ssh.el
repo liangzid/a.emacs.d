@@ -14,10 +14,10 @@
       ;; (setq shell-file-name explicit-shell-file-name)
       ;; (setq tramp-default-remote-shell "/bin/bash")
       ;; (add-to-list 'tramp-connection-properties
-      ;; 		   (list (regexp-quote "/plink:liangzi")
+      ;; 		   (list (regexp-quote "/rpc:liangzi")
       ;; 			 "remote-shell" "/bin/bash"))
       ;; (add-to-list 'tramp-connection-properties
-      ;; 		   (list (regexp-quote "/plink:liangzi")
+      ;; 		   (list (regexp-quote "/rpc:liangzi")
       ;;              "remote-shell-login" '("-i")))
       ;; (connection-local-set-profile-variables
       ;;  'remote-bash
@@ -37,19 +37,19 @@
     (message "...")
 
    ;;  (add-to-list 'tramp-connection-properties
-   ;; 		 (list (regexp-quote "/ssh:liangzi")
+   ;; 		 (list (regexp-quote "/rpc:liangzi")
    ;;                     "remote-shell" "/bin/bash"))
    ;;  (add-to-list 'tramp-connection-properties
-   ;; 		 (list (regexp-quote "/ssh:liangzi")
+   ;; 		 (list (regexp-quote "/rpc:liangzi")
    ;;                     "remote-shell-login" '("-i")))
    ;;  (add-to-list 'tramp-connection-properties
-   ;; 		 (list (regexp-quote "/ssh:zi")
+   ;; 		 (list (regexp-quote "/rpc:zi")
    ;;                     "remote-shell" "/bin/bash"))
    ;;  (add-to-list 'tramp-connection-properties
-   ;; 		 (list (regexp-quote "/ssh:zi")
+   ;; 		 (list (regexp-quote "/rpc:zi")
    ;;                     "remote-shell-login" '("-i")))
 
-   (setq tramp-default-method "sshx")
+   ;; (setq tramp-default-method "sshx")  ; overridden by init-tramp-rpc to "rpc"
    ;; (setq tramp-ssh-controlmaster-options "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
    ;; (setq tramp-ssh-extra-args "-o ForwardAgent=yes")
     )
@@ -81,24 +81,24 @@
 (defun ssh-connect-142 ()
   (interactive)
   (if *is-windows*
-  (counsel-find-file "/plink:zi@10.21.20.142:/home/zi/")
-  (counsel-find-file "/ssh:zi@10.21.20.142:/home/zi/")
+  (counsel-find-file "/rpc:zi@10.21.20.142:/home/zi/")
+  (counsel-find-file "/rpc:zi@10.21.20.142:/home/zi/")
   )
   )
 
 (defun ssh-connect-141 ()
   (interactive)
   (if *is-windows*
-  (counsel-find-file "/plink:zi@10.21.20.141:/home/zi/")
-  (counsel-find-file "/ssh:zi@10.21.20.141:/home/zi/")
+  (counsel-find-file "/rpc:zi@10.21.20.141:/home/zi/")
+  (counsel-find-file "/rpc:zi@10.21.20.141:/home/zi/")
   )
   )
 
 (defun ssh-connect-designer ()
   (interactive)
   (if *is-windows*
-  (counsel-find-file "/plink:ronghua@206.189.46.166:/home/ronghua/")
-  (counsel-find-file "/ssh:ronghua@206.189.46.166:/home/ronghua/")
+  (counsel-find-file "/rpc:ronghua@206.189.46.166:/home/ronghua/")
+  (counsel-find-file "/rpc:ronghua@206.189.46.166:/home/ronghua/")
   )
   )
 
@@ -106,132 +106,132 @@
 
 (defun ssh-connect-cs1 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@cs1.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@cs1.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-cs2 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@cs2.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@cs2.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-gs9 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@gs9.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@gs9.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-gs10 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@gs10.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@gs10.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-gs11 ()
   (interactive)
-  (counsel-find-file "/ssh:liangzi@gs11.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:liangzi@gs11.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-gs12 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@gs12.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@gs12.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-gs13 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@gs13.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@gs13.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-gs14 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@gs14.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@gs14.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-gs15 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@gs15.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@gs15.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-gs16 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@gs16.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@gs16.astaple.com:/home/zi")
   )
 
 ;; setting servers from out service.
 
 (defun ssh-connect-fromout-cs1 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@cs1.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@cs1.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-fromout-cs2 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@cs2.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@cs2.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-fromout-gs9 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs9.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@gs9.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-fromout-gs10 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs10.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@gs10.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-fromout-gs11 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:liangzi@gs11.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:liangzi@gs11.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-fromout-gs12 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs12.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@gs12.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-fromout-gs13 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs13.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@gs13.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-fromout-gs14 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs14.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@gs14.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-fromout-gs15 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs15.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@gs15.astaple.com:/home/zi")
   )
 
 (defun ssh-connect-fromout-gs16 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs16.astaple.com:/home/zi")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@gs16.astaple.com:/home/zi")
   )
 
 
 (defun ssh-connect-fromout-226 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs9.astaple.com:/home/zi/")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@gs9.astaple.com:/home/zi/")
   )
 
 (defun ssh-connect-fromout-231 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@gs10.astaple.com:/home/zi/")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@gs10.astaple.com:/home/zi/")
   )
 
 (defun ssh-connect-fromout-142 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@10.21.20.142:/home/zi")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@10.21.20.142:/home/zi")
   )
 
 (defun ssh-connect-fromout-141 ()
   (interactive)
-  (counsel-find-file "/ssh:zi@is1.astaple.com|ssh:zi@10.21.20.141:/home/zi/")
+  (counsel-find-file "/rpc:zi@is1.astaple.com|rpc:zi@10.21.20.141:/home/zi/")
   )
 
 
 
 (defun ssh-connect-vuln ()
   (interactive)
-  (counsel-find-file "/ssh:ubuntu@129.226.147.182:/home/ubuntu/")
+  (counsel-find-file "/rpc:ubuntu@129.226.147.182:/home/ubuntu/")
   )
  
 (provide 'init-ssh)
