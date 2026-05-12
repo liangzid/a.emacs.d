@@ -37,6 +37,7 @@
 
 ;;; search and replace with ivy-counsel-swiper
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(my/install-package-if-not-found 'counsel)
 (require 'ivy)
 (require 'counsel)
 (ivy-mode 1)

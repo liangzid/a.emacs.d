@@ -1,5 +1,6 @@
 (my/install-package-if-not-found 'evil-escape)
 (my/install-package-if-not-found 'evil-visualstar)
+(my/install-package-if-not-found 'general)
 (my/install-package-if-not-found 'evil-leader)
 
 

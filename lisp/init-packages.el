@@ -15,6 +15,7 @@
 
 ;; (exec-path-from-shell-initialize)
 
+(my/install-package-if-not-found 'command-log-mode)
 (command-log-mode 1)
 
 ;; Configure the translation.
@@ -31,6 +32,7 @@
   :bind ("C-c y" . gt-translate))
 
 
+(my/install-package-if-not-found 'projectile)
 (require 'projectile)
 (projectile-mode 1)
 ;; ;; Recommended keymap prefix on Windows/Linux
@@ -38,6 +40,7 @@
 
 ;; ;; 自动补全
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(my/install-package-if-not-found 'company)
 (require 'company)
 (setq company-idle-delay 0.04)
 (setq company-minimum-prefix-length 1)
@@ -83,6 +86,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; the windows you have used will be clear after used. 
+(my/install-package-if-not-found 'popwin)
 (require 'popwin)
 (popwin-mode t)
 
@@ -90,6 +94,7 @@
 
 ;; display keybindings with which key
 (use-package which-key
+  :ensure t
   :config
   (progn
     (which-key-mode)
@@ -98,6 +103,7 @@
 
 ;; 项目文件的树状图
 (use-package neotree
+  :ensure t
   :config
   (progn
     (setq neo-smart-open t)
@@ -109,6 +115,7 @@
 
 ;; ;; smart TAB
 (use-package smart-tab
+  :ensure t
   :config
   (progn
     (global-smart-tab-mode)

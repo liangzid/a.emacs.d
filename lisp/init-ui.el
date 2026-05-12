@@ -380,6 +380,7 @@ load a beautiful theme."
 ;; (global-unset-key (vector (list 'shift 'down)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(my/install-package-if-not-found 'smartparens)
 (require 'smartparens)
 (require 'smartparens-config)
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil) ;; 停止对单引号的smart补全
