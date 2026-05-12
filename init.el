@@ -71,7 +71,7 @@
 (require 'init-wsl)
 (require 'init-elpa)
 (require 'init-openai)
-;; (require 'init-pdf)
+(require 'init-pdf)
 (require 'init-eshell)
 ;; (require 'init-docker)
 (require 'init-proxy)
@@ -108,6 +108,7 @@
 ;;(require 'init-netease)
 (require 'init-org)
 (require 'init-ssh)
+(require 'init-tramp-rpc)
 
 (require 'easy-surround)
 
@@ -159,3 +160,18 @@
 ;;   (add-hook 'emacs-startup-hook #'easysession-save-mode))
 
 (provide 'init)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files nil)
+ '(package-vc-selected-packages
+   '((tramp-rpc :url "https://github.com/ArthurHeymans/emacs-tramp-rpc"
+		:lisp-dir "lisp"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background nil)))))
