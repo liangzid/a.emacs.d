@@ -1,4 +1,4 @@
-;;; INIT-PDF --- 
+;;; INIT-PDF --- pdf-tools configuration
 ;;
 ;; Author: Zi Liang <zi1415926.liang@connect.polyu.hk>
 ;; Copyright © 2025, ZiLiang, all rights reserved.
@@ -6,14 +6,16 @@
 ;;
 ;;; Commentary:
 ;;
-;;  
+;;  Configure pdf-tools as the PDF reader in Emacs.
 ;;
 ;;; Code:
 
-;; (use-package reader
-;; :straight '(reader :type git :host codeberg :repo "divyaranjan/emacs-reader"
-;; 	    :files ("reader.el" "render-core.so")
-;; 	    :pre-build ("make" "all")))
+(unless (package-installed-p 'pdf-tools)
+  (package-refresh-contents)
+  (package-install 'pdf-tools))
+
+(pdf-tools-install)
+
 
 (provide 'init-pdf)
 
