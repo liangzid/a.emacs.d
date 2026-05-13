@@ -393,4 +393,9 @@ load a beautiful theme."
 
 ;; (require 'dangerous-ui)
 
+;; Fix emacsclient frames missing icon on PGTK/Wayland
+(add-hook 'server-after-make-frame-hook
+          (lambda ()
+            (set-frame-parameter nil 'icon-type t)))
+
 (provide 'init-ui)
